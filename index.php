@@ -18,11 +18,11 @@
 
 <body>
 
-	<?php include 'components/navbar.php' ?>
-
-
 	<!-- jQuery -->
 	<script type="text/javascript" src="js/jquery.min.js"></script>
+
+	<?php include 'components/navbar.php' ?>
+
 	<!-- Bootstrap core JavaScript -->
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<!-- MDB core JavaScript -->
