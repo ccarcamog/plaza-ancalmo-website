@@ -9,6 +9,8 @@
 	<!-- MDB icon -->
 	<!-- Bootstrap core CSS -->
 	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<!-- favicon  -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
 	<!-- Material Design Bootstrap -->
 	<!-- <link rel="stylesheet" href="css/mdb.min.css"> -->
 	<!-- Your custom styles (optional) -->
@@ -20,8 +22,6 @@
 
 	<!-- jQuery -->
 	<script type="text/javascript" src="js/jquery.min.js"></script>
-
-
 	<?php include 'components/navbar.php' ?>
 
 	<main>
@@ -84,6 +84,12 @@
 							<p> Telefono: 2243 0300</p>
 							<p> Email: <a class="text-white" href="mailto:servicioalcliente@ancalmo.com" target="_blank"> servicioalcliente@ancalmo.com</a></p>
 							<p>Blv. Walter Deininger, Antiguo Cuscatlán</p>
+							<h4>
+								<a class=text-white href="https://www.facebook.com/PlazaAncalmo/" target="_blank">
+									<i class="fab fa-facebook"></i>
+								</a>
+								<i class="fab fa-instagram"></i>
+							</h4>
 							<p></p>
 						</div>
 
