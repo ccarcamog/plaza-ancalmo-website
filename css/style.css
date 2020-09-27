@@ -70,19 +70,30 @@
 #conozcanos{
 	background-image: url("/img/edificio-gato.jpg");
 	background-size: cover;
-	
+	color:white;
+	padding: 0;
+	border-radius:15px;
+}
+#conozcanosInfo{
+	display:grid;
+	place-items: center;
+}
+#inicioMapa{
+	display: grid;
+	place-items: center;
 }
 #conozcanos>div{
-	height: 500px;
-	background-color: rgba(107, 199, 222, 0.7);
-	display: grid;
-	color:white;
-	text-align: center;
-	place-items: center;
+	background-color: rgba(107, 176, 222, 0.6);
+	border-radius: 15px;
+	
+	width: 100%;
+}
+#conozcanos iframe{
+	border-radius: 15px;
 }
 #conozcanos h2{
 	font-weight: bold;
-	font-size: 4em;
+	
 }
 #conozcanos p{
 	font-size: 20px;
@@ -103,6 +114,4 @@ h1, h2, h3{
 	font-family: "Montserrat", sans-serif;
 }
 
-#nuestrosServicios{
-	background-image: ;
-}
+
