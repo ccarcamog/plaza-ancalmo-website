@@ -6,7 +6,7 @@
 }
 #contactUs{
 	position: absolute;
-	left: 80vw;
+	left: 70vw;
 	height: 50px;
 	border-bottom-left-radius:15px;
 	border-bottom-right-radius: 15px;
@@ -71,7 +71,6 @@
 	background-image: url("/img/edificio-gato.jpg");
 	background-size: cover;
 	color:white;
-	padding: 0;
 	border-radius:15px;
 }
 #conozcanosInfo{
@@ -83,8 +82,8 @@
 	place-items: center;
 }
 #conozcanos>div{
-	background-color: rgba(107, 176, 222, 0.6);
-	border-radius: 15px;
+	/* background-color: rgba(107, 176, 222, 0.6);
+	border-radius: 15px; */
 	
 	width: 100%;
 }
