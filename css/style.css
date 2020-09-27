@@ -1,16 +1,108 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
 
+#spacing{
+	height: 50px;
+	background-color:rgba(164, 166, 168, 0.1);
+}
+#contactUs{
+	position: absolute;
+	left: 80vw;
+	height: 50px;
+	border-bottom-left-radius:15px;
+	border-bottom-right-radius: 15px;
+	
+	text-align: center;
+	font-family: "Montserrat", sans-serif;
+	font-weight: bold;
+	font-size: 0.9em;
+	padding:10px;
+	background-color:  rgb(107,217,222);
+	
+}
+
+/* TOP NAVBAR */
+#top-navbar{
+	background-color: rgba(164, 166, 168, 0.1);
+}
 #top-navbar .navbar-brand {
 	font-family: 'Montserrat', sans-serif;
 }
-
 #top-navbar .nav-link {
 	font-family: 'Montserrat', sans-serif;
-	font-weight: light;
+	font-size: 0.9em;
+	text-align: center;
+	white-space: nowrap;
+	color: rgba(0, 0, 0, 0.5)
+}
+
+#top-navbar .nav-link:hover{
+	color: rgba(0, 0, 0, 0.8)
 }
 
 #top-navbar .dropdown-menu {
 	font-family: 'Montserrat', sans-serif;
 	font-weight: light;
 	border-radius: 15px;
+}
+/* CAROUSEL */
+#carouselJumbotron{	
+	background-color: rgba(107,217,222, 0.5);
+}
+#carouselJumbotron .carousel-item{
+	height: 80vh;
+	background-size: cover;
+}
+#carouselJumbotron .filter{
+	height: 100%;
+	width: 100%;
+	background-color: rgba(107,217,222, 0.5);
+	display: grid;
+	place-items: center;
+	text-align: center;
+}
+#carouselJumbotron .filter h1{
+	color: white;
+	font-family: "Montserrat", sans-serif;	
+	font-weight: 600;
+}
+
+
+#conozcanos{
+	background-image: url("/img/edificio-gato.jpg");
+	background-size: cover;
+	
+}
+#conozcanos>div{
+	height: 500px;
+	background-color: rgba(107, 199, 222, 0.7);
+	display: grid;
+	color:white;
+	text-align: center;
+	place-items: center;
+}
+#conozcanos h2{
+	font-weight: bold;
+	font-size: 4em;
+}
+#conozcanos p{
+	font-size: 20px;
+}
+
+
+#carouselJumbotron #item1{
+	background-image: url("/img/lab.jpg");
+}
+#carouselJumbotron #item2{
+	background-image: url("/img/dentist.jpg");
+}
+#carouselJumbotron #item3{
+	background-image: url("/img/apointment.jpg")
+}
+
+h1, h2, h3{
+	font-family: "Montserrat", sans-serif;
+}
+
+#nuestrosServicios{
+	background-image: ;
 }
