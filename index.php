@@ -56,10 +56,10 @@
 
 		<div class="container">
 
-			<div class="row">
+			<div class="text-center">
 
 
-				<div class="col-md-12 text-center m-4">
+				<div class=" m-4">
 					<h2 class="mt-5">Plaza Ancalmo</h2>
 					<hr>
 					<p class="text-center">
@@ -67,12 +67,16 @@
 					</p>
 				</div>
 
+
+				<a href="#" class="btn btn-lg btn-warning">
+					Conoce más
+				</a>
 			</div>
 
 		</div>
 
 
-		<div class="container" id="conozcanos">
+		<div class="container mt-5" id="conozcanos">
 
 			<div class="row">
 
@@ -84,13 +88,15 @@
 						<p> Telefono: 2243 0300</p>
 						<p> Email: <a class="text-white" href="mailto:servicioalcliente@ancalmo.com" target="_blank"> servicioalcliente@ancalmo.com</a></p>
 						<p>Blv. Walter Deininger, Antiguo Cuscatlán</p>
-						<h4>
+						<a href="#" class="btn btn-lg btn-primary">
+							Contactanos
+						</a>
+						<h4 class="mt-2">
 							<a class=text-white href="https://www.facebook.com/PlazaAncalmo/" target="_blank">
 								<i class="fab fa-facebook"></i>
 							</a>
 							<i class="fab fa-instagram"></i>
 						</h4>
-						<p></p>
 					</div>
 
 				</div>
@@ -101,38 +107,42 @@
 			</div>
 		</div>
 		<div class="container-fluid p-5 mt-5" id="serviciosMedicos">
+			<center>
+				<h4 class="text-white">Contamos con variadas especialidades médicas</h4>
+				<hr class="border-white">
+			</center>
 
-			<div class="container" >
+			<div class="container">
 
-				<div class="row mt-5 justify-content-around">
+				<div class="row mt-5">
 
 					<div class="service col-md-4 text-center text-white">
-						<img src="img/svg/medicina-general.svg" alt="medicina general icon" width="80">
+						<img class="svg-inverted" src="img/svg/noun_Stethoscope_2049574.svg" alt="medicina general icon" width="80">
 						<h3>Medicina General</h3>
 						<p>Primero tu salud</p>
 					</div>
 					<div class="service col-md-4  text-center text-white">
-						<img src="img/svg/odontologia.svg" alt="odontología icon" width="80">
-						<h3>Odontología</h3>
-						<p>Atendiendo tu salud dental.</p>
+						<img class="svg-inverted"src="img/svg/noun_Pharmacy_3125931.svg" alt="farmacia icon" width="80">
+						<h3>Farmacia</h3>
+						<p>Equipada con productos de calidad/</p>
 					</div>
 					<div class="service col-md-4  text-center text-white">
-						<img src="img/svg/ginecologia.svg" alt="ginecologia icon" width="80">
+						<img class="svg-inverted" src="img/svg/ginecologia.svg" alt="ginecologia icon" width="80">
 						<h3>Ginecologia</h3>
 						<p>Te ayudamos a cuidarte.</p>
 					</div>
 					<div class="service col-md-4 text-center text-white">
-						<img src="img/svg/podologia.svg" alt="podologia icon" width="80">
+						<img class="svg-inverted" src="img/svg/podologia.svg" alt="podologia icon" width="80">
 						<h3>Podología</h3>
 						<p>Para la salud de tus pies.</p>
 					</div>
 					<div class="service col-md-4 text-center text-white">
-						<img src="img/svg/optometría.svg" alt="optometría icon" width="80">
+						<img class="svg-inverted" src="img/svg/optometría.svg" alt="optometría icon" width="80">
 						<h3>Optometría</h3>
 						<p>Lo mejor en salud visual.</p>
 					</div>
 					<div class="service col-md-4 text-center text-white">
-						<img src="img/svg/laboratorio.svg" alt="laboratorio icon" width="80">
+						<img class="svg-inverted" src="img/svg/laboratorio.svg" alt="laboratorio icon" width="80">
 						<h3>Laboratorio</h3>
 						<p>Un laboratorio de alta tecnologia <br>para ti.</p>
 					</div>
@@ -141,7 +151,33 @@
 			</div>
 		</div>
 
+		<div class="container mt-5" id="serviciosPracticos">
 
+			<center>
+				<h4>Tambien ofrecemos</h4>
+				<!-- <hr> -->
+			</center>
+
+			<div class="row mt-5">
+				<div class="col-md-4 text-center">
+					<img src="img/svg/noun_ATM_1791339.svg" height=100 alt="retiro de efectivo">
+					<hr>
+					<h3>Retiro de efectivo</h3>
+				</div>
+				<div class="col-md-4 text-center">
+					<img src="img/svg/cash-payment.svg" height="100" alt="pago de servicios">
+					<hr>
+					<h3>Pago de servicios</h3>
+				</div>
+				<div class="col-md-4 text-center">
+					<img src="img/svg/home-location.svg" height="100" alt="pago de servicios">
+					<hr>
+					<h3>Servicio a domicilio</h3>
+				</div>
+			</div>
+		</div>
+
+		
 
 	</main>
 

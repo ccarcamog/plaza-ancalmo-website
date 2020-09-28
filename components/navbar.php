@@ -6,11 +6,11 @@
     </a>
   </div>
 </div>
-<nav class="navbar navbar-expand-lg navbar-light" id="top-navbar">
+<nav class="navbar navbar-expand-lg navbar-light d-print" id="top-navbar">
 
   <!-- Brand -->
   <a class="navbar-brand" href="/">
-    <img src="img/logo.png" width=80px alt="Logo de Plaza Ancalmo">
+    <img src="img/Logo Plaza Ancalmo.png" width="80" alt="Logo de Plaza Ancalmo">
   </a>
 
   <a href="/" class="navbar-brand">PLAZA <br>ANCALMO</a>
