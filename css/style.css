@@ -67,37 +67,6 @@
 }
 
 
-#conozcanos{
-	background-image: url("/img/edificio-gato.jpg");
-	background-size: cover;
-	color:white;
-	border-radius:15px;
-}
-#conozcanosInfo{
-	display:grid;
-	place-items: center;
-}
-#inicioMapa{
-	display: grid;
-	place-items: center;
-}
-#conozcanos>div{
-	/* background-color: rgba(107, 176, 222, 0.6);
-	border-radius: 15px; */
-	
-	width: 100%;
-}
-#conozcanos iframe{
-	border-radius: 15px;
-}
-#conozcanos h2{
-	font-weight: bold;
-	
-}
-#conozcanos p{
-	font-size: 20px;
-}
-
 
 #carouselJumbotron #item1{
 	background-image: url("/img/lab.jpg");
@@ -113,4 +82,36 @@ h1, h2, h3{
 	font-family: "Montserrat", sans-serif;
 }
 
+#conozcanos{
+	background-image: url("/img/edificio-gato.jpg");
+	background-size: cover;
+	color:white;
+	border-radius:15px;
+}
+#conozcanosInfo{
+	display:grid;
+	place-items: center;
+}
+#inicioMapa{
+	display: grid;
+	place-items: center;
+}
 
+#conozcanos iframe{
+	border-radius: 15px;
+}
+#conozcanos h2{
+	font-weight: bold;
+	
+}
+#conozcanos p{
+	font-size: 20px;
+}
+
+#serviciosMedicos{
+	background-image: url("/img/estetoscopio.jpg");
+	background-size:cover;
+}
+.service{
+	
+}

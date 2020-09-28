@@ -100,6 +100,46 @@
 
 			</div>
 		</div>
+		<div class="container-fluid p-5 mt-5" id="serviciosMedicos">
+
+			<div class="container" >
+
+				<div class="row mt-5 justify-content-around">
+
+					<div class="service col-md-4 text-center text-white">
+						<img src="img/svg/medicina-general.svg" alt="medicina general icon" width="80">
+						<h3>Medicina General</h3>
+						<p>Primero tu salud</p>
+					</div>
+					<div class="service col-md-4  text-center text-white">
+						<img src="img/svg/odontologia.svg" alt="odontología icon" width="80">
+						<h3>Odontología</h3>
+						<p>Atendiendo tu salud dental.</p>
+					</div>
+					<div class="service col-md-4  text-center text-white">
+						<img src="img/svg/ginecologia.svg" alt="ginecologia icon" width="80">
+						<h3>Ginecologia</h3>
+						<p>Te ayudamos a cuidarte.</p>
+					</div>
+					<div class="service col-md-4 text-center text-white">
+						<img src="img/svg/podologia.svg" alt="podologia icon" width="80">
+						<h3>Podología</h3>
+						<p>Para la salud de tus pies.</p>
+					</div>
+					<div class="service col-md-4 text-center text-white">
+						<img src="img/svg/optometría.svg" alt="optometría icon" width="80">
+						<h3>Optometría</h3>
+						<p>Lo mejor en salud visual.</p>
+					</div>
+					<div class="service col-md-4 text-center text-white">
+						<img src="img/svg/laboratorio.svg" alt="laboratorio icon" width="80">
+						<h3>Laboratorio</h3>
+						<p>Un laboratorio de alta tecnologia <br>para ti.</p>
+					</div>
+
+				</div>
+			</div>
+		</div>
 
 
 
@@ -113,5 +153,7 @@
 	<!-- Your custom scripts (optional) -->
 
 </body>
+
+
 
 </html>
