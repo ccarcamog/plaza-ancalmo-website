@@ -9,7 +9,7 @@
 <nav class="navbar navbar-expand-lg navbar-light d-print" id="top-navbar">
 
   <!-- Brand -->
-  <a class="navbar-brand" href="/">
+  <a class="navbar-brand ml-lg-5" href="/">
     <img src="img/Logo Plaza Ancalmo.png" width="80" alt="Logo de Plaza Ancalmo">
   </a>
 
@@ -21,10 +21,10 @@
   <!-- Items de la navbar -->
   <div class="collapse navbar-collapse" id="navbarNav">
     <div class="navbar-nav">
-      <a class="nav-link" href="#">Farmacia</a>
+      <a class="nav-link" href="/farmacia">Farmacia</a>
       <a class="nav-link" href="http://www.menendezlab.com/" target="_blank">Laboratorio Menendez</a>
       <a class="nav-link" href="#">Lifestyle</a>
-
+  
       <div class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" id="especialidadesDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Especialidades

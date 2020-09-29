@@ -181,6 +181,7 @@
 
 	</main>
 
+	<?php include "components/footer.php" ?>
 
 	<!-- Bootstrap core JavaScript -->
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
