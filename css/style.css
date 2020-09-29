@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700');
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@500&display=swap');
 p{
 	font-family: 'IBM Plex Sans';	
 }
@@ -125,4 +126,59 @@ h1, h2, h3, h4{
 
 #serviciosMedicos h4{
 	margin: auto;
+}
+
+#farmaciaHeader{
+	display: grid;
+	place-items: center;
+	height: 50vh;
+	background-image: url("/img/farmacy-background.jpg");
+	background-size: cover;
+}
+#farmaciaHeader h1{
+	font-weight: bold;
+	font-size: 60px;
+}
+#farmaciaHeader img{
+	float: left;
+	margin-right: 30px;
+}
+
+#introFarmacia a{
+	text-decoration: none;
+}
+#introFarmacia img{
+	opacity: 0.8;
+	width: 50px;
+}
+#introFarmacia img:hover{
+	opacity: 0.9;	
+}
+
+#farmaciaPuntos{
+	
+	background-image: url("/img/delivery.jpg");
+	border-radius: 15px;
+	background-size: cover;
+
+}
+
+#domicilioInfo h2{
+	font-family: 'Sansita Swashed';
+	color:#4bb7bc;
+}
+#domicilioInfo p{
+
+	font-size: 1.1em;
+}
+
+#domicilioLugares{
+	display: grid;
+	place-items: center;
+}
+
+#domicilioLugares ul{
+	list-style-type: none;
+	text-align: left;
+	
 }
