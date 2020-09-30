@@ -8,13 +8,14 @@
 
 	<!-- MDB icon -->
 	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="/css/bootstrap.min.css">
 	<!-- favicon  -->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
 	<!-- Material Design Bootstrap -->
 	<!-- <link rel="stylesheet" href="css/mdb.min.css"> -->
 	<!-- Your custom styles (optional) -->
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/farmacia/farmacia-style.css">
 
 </head>
 
@@ -83,27 +84,6 @@
 		</div>
 	</div>
 
-	<div class="container-fluid" id="bancoServices">
-
-		<div class="container">
-			<div class="row">
-				<div class="col-md-3">
-
-				</div>
-				<div class="col-md-3">
-
-				</div>
-				<div class="col-md-3">
-
-				</div>
-				<div class="col-md-3">
-
-				</div>
-			</div>
-		</div>
-
-	</div>
-
 	<div class="container mt-5" id="domicilioInfo">
 		<center>
 			<h2>Servicio a domicilio</h2>
@@ -147,68 +127,65 @@
 			</div>
 		</div>
 	</div>
-	<div class="container p-4" id="marcasCarousel">
+	<div class="container-fluid p-4" id="marcasCarousel">
 
 		<h3 class="text-center">Contamos con marcas de la mas alta calidad</h3>
 		<hr>
 
-		<div id="carouselMarcas" class="carousel slide carousel-slide" data-ride="carousel">
 
-			<ol class="carousel-indicators">
-				<li data-target="#carouselMarcas" data-slide-to="0" class="active"></li>
-				<li data-target="#carouselMarcas" data-slide-to="1"></li>
-				<li data-target="#carouselMarcas" data-slide-to="2"></li>
-				<li data-target="#carouselMarcas" data-slide-to="3"></li>
-				<li data-target="#carouselMarcas" data-slide-to="4"></li>
-			</ol>
+		<div id="carouselMarcas" class=" row carousel slide carousel-slide" data-ride="carousel">
 
-			<div class="carousel-inner" role="listbox">
+			<div class="container">
+				
+				<div class="carousel-inner" role="listbox">
 
-				<div class="carousel-item active">
-					<div class="carousel-item-image p-4">
-						<img class="d-block " src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Logo_Bayer.svg/200px-Logo_Bayer.svg.png" alt="First slide">
+					<div class="carousel-item active">
+						<div class="row">
+							<div class="col-3"><img src="https://cdn.freebiesupply.com/logos/large/2x/oral-b-1-logo-png-transparent.png" alt="oralb logo"></div>
+							<div class="col-3"><img src="https://logosvector.net/wp-content/uploads/2013/01/bayer-.eps-logo-vector.png" alt="bayer logo"></div>
+							<div class="col-3"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Colgate_logo.svg/1024px-Colgate_logo.svg.png" alt="colgate logo"></div>
+							<div class="col-3"><img src="https://logos-marcas.com/wp-content/uploads/2020/09/Nestle-Logo.png" alt="nestle logo"></div>
+						</div>
 					</div>
-				</div>
-
-				<div class="carousel-item">
-					<div class="carousel-item-image p-4">
-						<img class="d-block " src="/img/oralb.png" alt="First slide">
+					<div class="carousel-item">
+						<div class="row">
+							<div class="col-3"><img src="https://cdn.freebiesupply.com/logos/large/2x/oral-b-1-logo-png-transparent.png" alt="oralb logo"></div>
+							<div class="col-3"><img src="https://logosvector.net/wp-content/uploads/2013/01/bayer-.eps-logo-vector.png" alt="bayer logo"></div>
+							<div class="col-3"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Colgate_logo.svg/1024px-Colgate_logo.svg.png" alt="colgate logo"></div>
+							<div class="col-3"><img src="https://logos-marcas.com/wp-content/uploads/2020/09/Nestle-Logo.png" alt="nestle logo"></div>
+						</div>
 					</div>
-				</div>
-
-				<div class="carousel-item">
-					<div class="carousel-item-image p-4">
-						<img class="d-block " src="https://www.invacare.com.au/sites/default/files/header-logo.png" alt="First slide">
+					<div class="carousel-item">
+						<div class="row">
+							<div class="col-3"><img src="https://cdn.freebiesupply.com/logos/large/2x/oral-b-1-logo-png-transparent.png" alt="oralb logo"></div>
+							<div class="col-3"><img src="https://logosvector.net/wp-content/uploads/2013/01/bayer-.eps-logo-vector.png" alt="bayer logo"></div>
+							<div class="col-3"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Colgate_logo.svg/1024px-Colgate_logo.svg.png" alt="colgate logo"></div>
+							<div class="col-3"><img src="https://logos-marcas.com/wp-content/uploads/2020/09/Nestle-Logo.png" alt="nestle logo"></div>
+						</div>
 					</div>
-				</div>
-
-				<div class="carousel-item">
-					<div class="carousel-item-image p-4">
-						<img class="d-block " src="https://www.numeroservicioalcliente.com/wp-content/uploads/2016/12/nestle.png" alt="First slide">
+					<div class="carousel-item">
+						<div class="row">
+							<div class="col-3"><img src="https://cdn.freebiesupply.com/logos/large/2x/oral-b-1-logo-png-transparent.png" alt="oralb logo"></div>
+							<div class="col-3"><img src="https://logosvector.net/wp-content/uploads/2013/01/bayer-.eps-logo-vector.png" alt="bayer logo"></div>
+							<div class="col-3"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Colgate_logo.svg/1024px-Colgate_logo.svg.png" alt="colgate logo"></div>
+							<div class="col-3"><img src="https://logos-marcas.com/wp-content/uploads/2020/09/Nestle-Logo.png" alt="nestle logo"></div>
+						</div>
 					</div>
+					
 				</div>
-
-				<div class="carousel-item">
-					<div class="carousel-item-image p-4">
-						<img class="d-block " src="https://seeklogo.com/images/M/mustela-logo-A5CFAB7ED6-seeklogo.com.png" alt="First slide">
-					</div>
-				</div>
-
 			</div>
-
-			<a class="carousel-control-prev" href="#carouselMarcas" role="button" data-slide="prev">
-				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-				<span class="sr-only">Previous</span>
+			
+			<a class="carousel-control-prev svg-inverted d-none d-md-flex" href="#carouselMarcas" role="button" data-slide="prev">
+				<img src="/img/svg/arrow_left.svg" alt="arrow left prev">
 			</a>
-			<a class="carousel-control-next" href="#carouselMarcas" role="button" data-slide="next">
-				<span class="carousel-control-next-icon" aria-hidden="true"></span>
-				<span class="sr-only">Next</span>
+			<a class="carousel-control-next svg-inverted d-none d-md-flex" href="#carouselMarcas" role="button" data-slide="next">
+				<img src="/img/svg/arrow_right.svg" alt="arrow right next">
 			</a>
-
+			
 		</div>
-
+		
 	</div>
-
+	
 	<?php include "../components/footer.php" ?>
 
 

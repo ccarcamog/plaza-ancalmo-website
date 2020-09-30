@@ -1,0 +1,155 @@
+/* FARMACIA ----------------------------------------------------------- */
+#farmaciaHeader{
+	height: 50vh;
+	padding: 0;
+	background-image: url("/img/farmacy-background.jpg");
+	background-size: cover;
+}
+
+#farmaciaHeader div{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	width: 100%;
+	margin:0;
+	background-color: rgb(255,255,255,0.8);
+}
+
+#farmaciaHeader img{
+	max-width: 90vw;
+	max-height: 50vh;
+}
+
+/* INTRO FARMACIA ---------------------------------------------- */
+#introFarmacia a{
+	text-decoration: none;
+}
+#introFarmacia img{
+	opacity: 0.8;
+	width: 50px;
+}
+#introFarmacia #introTexto img:hover{
+	opacity: 0.9;	
+}
+#introFarmacia #introTexto{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-content: center;
+}
+#introTexto h2{
+	font-family: 'Sansita Swashed';
+	color:#4bb7bc;
+}
+#introTexto hr{
+	/* border: solid black 1px; */
+	width: 100%;
+}
+#introFarmacia #introImg img{
+	width: 100%;
+	border-radius: 15px;
+}
+/* FARMACIA PUNTOS --------------------------------------------------------- */
+#farmaciaPuntos{
+	
+	background-image: url("/img/delivery.jpg");
+	border-radius: 15px;
+	background-size: cover;
+
+}
+/* DOMICILIO --------------------------------------------------------------- */
+#domicilioInfo h2{
+	font-family: 'Sansita Swashed';
+	color:#4bb7bc;
+}
+#domicilioInfo p{
+
+	font-size: 1.1em;
+}
+#domicilioInfo img{
+	opacity: 0.8;
+}
+#domicilioInfo img:hover{
+	opacity: 0.9;
+}
+#domicilioLugares{
+	display: grid;
+	place-items: center;
+}
+
+#domicilioLugares ul{
+	/* list-style-type: none; */
+	text-align: left;
+	
+}
+
+/* HUGO ENTREGAS ---------------------------------------------------- */
+#hugoImage img{
+	width: 100%;
+	border-radius: 15px;
+}
+#hugoIcon{
+	width: 100px;
+
+}
+
+#hugoTexto{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-content: center;
+
+}
+#hugoLogo{
+	height: 1em;
+	margin-left: 5px;
+	width: auto;
+}
+#hugoTexto hr{
+	width: 60%;
+	/* border: solid 1px black; */
+}
+
+#hugoTexto h3{
+	font-family: 'Sansita Swashed';
+	color: #4bb7bc;
+}
+
+#hugoTexto h3 span{
+	color: rgb(95,66,140);
+}
+
+
+/* CAROUSEL MARCAS ------------------------------------------------------*/
+#marcasCarousel h3{
+	font-family: 'Sansita Swashed';
+	color: #4bb7bc;
+}
+
+#marcasCarousel{
+	max-width: 100vw;
+}
+
+#carouselMarcas .container{
+	/* height: 30vh; */
+	padding: 0;
+}
+
+#carouselMarcas .carousel-inner{
+	height: 100%;
+	width: 100%;
+}
+
+#carouselMarcas .col-3{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.carousel-indicators{
+	color: black;
+}
+
+#carouselMarcas .carousel-inner img{
+	width: 100%;
+}
