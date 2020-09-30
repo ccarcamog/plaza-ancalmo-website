@@ -26,7 +26,7 @@
 
 	<main>
 
-		<div id="carouselJumbotron" class="carousel slide" data-ride="carousel">
+		<header id="carouselJumbotron" class="carousel slide" data-ride="carousel">
 			<div class="carousel-inner">
 				<div id="item1" class="carousel-item active">
 					<div class="filter">
@@ -52,7 +52,7 @@
 				<span class="carousel-control-next-icon" aria-hidden="true"></span>
 				<span class="sr-only">Next</span>
 			</a>
-		</div>
+		</header>
 
 		<div class="container">
 

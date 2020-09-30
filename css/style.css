@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700');
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@500&display=swap');
 p{
 	font-family: 'IBM Plex Sans';	
 }
@@ -125,4 +126,115 @@ h1, h2, h3, h4{
 
 #serviciosMedicos h4{
 	margin: auto;
+}
+
+#farmaciaHeader{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	height: 50vh;
+	background-image: url("/img/farmacy-background.jpg");
+	background-size: cover;
+}
+
+#farmaciaHeader img{
+	max-width: 90vw;
+	max-height: 50vh;
+}
+
+
+#introFarmacia a{
+	text-decoration: none;
+}
+#introFarmacia img{
+	opacity: 0.8;
+	width: 50px;
+}
+#introFarmacia #introTexto img:hover{
+	opacity: 0.9;	
+}
+#introFarmacia #introTexto{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-content: center;
+}
+#introTexto h2{
+	font-family: 'Sansita Swashed';
+	color:#4bb7bc;
+}
+#introTexto hr{
+	/* border: solid black 1px; */
+	width: 100%;
+}
+#introFarmacia #introImg img{
+	width: 100%;
+	border-radius: 15px;
+}
+
+#farmaciaPuntos{
+	
+	background-image: url("/img/delivery.jpg");
+	border-radius: 15px;
+	background-size: cover;
+
+}
+
+#domicilioInfo h2{
+	font-family: 'Sansita Swashed';
+	color:#4bb7bc;
+}
+#domicilioInfo p{
+
+	font-size: 1.1em;
+}
+#domicilioInfo img{
+	opacity: 0.8;
+}
+#domicilioInfo img:hover{
+	opacity: 0.9;
+}
+#domicilioLugares{
+	display: grid;
+	place-items: center;
+}
+
+#domicilioLugares ul{
+	/* list-style-type: none; */
+	text-align: left;
+	
+}
+#hugoImage img{
+	width: 100%;
+	border-radius: 15px;
+}
+#hugoIcon{
+	width: 100px;
+
+}
+
+#hugoTexto{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-content: center;
+
+}
+#hugoLogo{
+	height: 1em;
+	margin-left: 5px;
+	width: auto;
+}
+#hugoTexto hr{
+	width: 60%;
+	/* border: solid 1px black; */
+}
+
+#hugoTexto h3{
+	font-family: 'Sansita Swashed';
+	color: #4bb7bc;
+}
+
+#hugoTexto h3 span{
+	color: rgb(95,66,140);
 }
