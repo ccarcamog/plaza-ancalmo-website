@@ -129,12 +129,20 @@ h1, h2, h3, h4{
 }
 
 #farmaciaHeader{
+	height: 50vh;
+	padding: 0;
+	background-image: url("/img/farmacy-background.jpg");
+	background-size: cover;
+}
+
+#farmaciaHeader div{
 	display:flex;
 	justify-content: center;
 	align-items: center;
-	height: 50vh;
-	background-image: url("/img/farmacy-background.jpg");
-	background-size: cover;
+	height: 100%;
+	width: 100%;
+	margin:0;
+	background-color: rgb(255,255,255,0.8);
 }
 
 #farmaciaHeader img{
