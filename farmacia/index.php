@@ -147,44 +147,67 @@
 			</div>
 		</div>
 	</div>
-	<div class="container">
-		
-		<div id="carousel-example-1z" class="carousel slide carousel-fade" data-ride="carousel">
-		
+	<div class="container p-4" id="marcasCarousel">
+
+		<h3 class="text-center">Contamos con marcas de la mas alta calidad</h3>
+		<hr>
+
+		<div id="carouselMarcas" class="carousel slide carousel-slide" data-ride="carousel">
+
 			<ol class="carousel-indicators">
-				<li data-target="#carousel-example-1z" data-slide-to="0" class="active"></li>
-				<li data-target="#carousel-example-1z" data-slide-to="1"></li>
-				<li data-target="#carousel-example-1z" data-slide-to="2"></li>
+				<li data-target="#carouselMarcas" data-slide-to="0" class="active"></li>
+				<li data-target="#carouselMarcas" data-slide-to="1"></li>
+				<li data-target="#carouselMarcas" data-slide-to="2"></li>
+				<li data-target="#carouselMarcas" data-slide-to="3"></li>
+				<li data-target="#carouselMarcas" data-slide-to="4"></li>
 			</ol>
-		
+
 			<div class="carousel-inner" role="listbox">
-				
+
 				<div class="carousel-item active">
-					<img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(130).jpg" alt="First slide">
+					<div class="carousel-item-image p-4">
+						<img class="d-block " src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Logo_Bayer.svg/200px-Logo_Bayer.svg.png" alt="First slide">
+					</div>
 				</div>
-				
+
 				<div class="carousel-item">
-					<img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(129).jpg" alt="Second slide">
+					<div class="carousel-item-image p-4">
+						<img class="d-block " src="/img/oralb.png" alt="First slide">
+					</div>
 				</div>
-				
+
 				<div class="carousel-item">
-					<img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(70).jpg" alt="Third slide">
+					<div class="carousel-item-image p-4">
+						<img class="d-block " src="https://www.invacare.com.au/sites/default/files/header-logo.png" alt="First slide">
+					</div>
 				</div>
-				
+
+				<div class="carousel-item">
+					<div class="carousel-item-image p-4">
+						<img class="d-block " src="https://www.numeroservicioalcliente.com/wp-content/uploads/2016/12/nestle.png" alt="First slide">
+					</div>
+				</div>
+
+				<div class="carousel-item">
+					<div class="carousel-item-image p-4">
+						<img class="d-block " src="https://seeklogo.com/images/M/mustela-logo-A5CFAB7ED6-seeklogo.com.png" alt="First slide">
+					</div>
+				</div>
+
 			</div>
-			
-			<a class="carousel-control-prev" href="#carousel-example-1z" role="button" data-slide="prev">
+
+			<a class="carousel-control-prev" href="#carouselMarcas" role="button" data-slide="prev">
 				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
 				<span class="sr-only">Previous</span>
 			</a>
-			<a class="carousel-control-next" href="#carousel-example-1z" role="button" data-slide="next">
+			<a class="carousel-control-next" href="#carouselMarcas" role="button" data-slide="next">
 				<span class="carousel-control-next-icon" aria-hidden="true"></span>
 				<span class="sr-only">Next</span>
 			</a>
-			
+
 		</div>
-		
-	</div> 
+
+	</div>
 
 	<?php include "../components/footer.php" ?>
 

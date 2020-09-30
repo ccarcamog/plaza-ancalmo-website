@@ -246,3 +246,32 @@ h1, h2, h3, h4{
 #hugoTexto h3 span{
 	color: rgb(95,66,140);
 }
+#marcasCarousel h3{
+	font-family: 'Sansita Swashed';
+	color: #4bb7bc;
+}
+
+#marcasCarousel .carousel-inner {
+	border-radius: 15px;
+	height:50vh;
+}
+#marcasCarousel .carousel-item{
+	height: 100%;
+}
+
+#carouselMarcas .carousel-item img{
+	height: 80%;	
+}
+.carousel-inner{
+	background-image: url("/img/carousel-background.jpg");
+	background-size: cover;
+	background-position: center;
+}
+
+#carouselMarcas .carousel-item-image{
+	height: 100%;
+	background-color: rgba(198, 231, 233, 0.9);
+	display: flex;
+	justify-content: center;
+	align-content: center;
+}
