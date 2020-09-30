@@ -2,7 +2,7 @@
 <div id="spacing">
   <div class="text-white" id="contactUs">
     <a class="text-white" href="facebook.com">
-      Contact Us
+      Contactanos
     </a>
   </div>
 </div>

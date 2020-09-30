@@ -129,20 +129,19 @@ h1, h2, h3, h4{
 }
 
 #farmaciaHeader{
-	display: grid;
-	place-items: center;
+	display:flex;
+	justify-content: center;
+	align-items: center;
 	height: 50vh;
 	background-image: url("/img/farmacy-background.jpg");
 	background-size: cover;
 }
-#farmaciaHeader h1{
-	font-weight: bold;
-	font-size: 60px;
-}
+
 #farmaciaHeader img{
-	float: left;
-	margin-right: 30px;
+	max-width: 90vw;
+	max-height: 50vh;
 }
+
 
 #introFarmacia a{
 	text-decoration: none;
@@ -151,8 +150,26 @@ h1, h2, h3, h4{
 	opacity: 0.8;
 	width: 50px;
 }
-#introFarmacia img:hover{
+#introFarmacia #introTexto img:hover{
 	opacity: 0.9;	
+}
+#introFarmacia #introTexto{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-content: center;
+}
+#introTexto h2{
+	font-family: 'Sansita Swashed';
+	color:#4bb7bc;
+}
+#introTexto hr{
+	/* border: solid black 1px; */
+	width: 100%;
+}
+#introFarmacia #introImg img{
+	width: 100%;
+	border-radius: 15px;
 }
 
 #farmaciaPuntos{
@@ -171,14 +188,53 @@ h1, h2, h3, h4{
 
 	font-size: 1.1em;
 }
-
+#domicilioInfo img{
+	opacity: 0.8;
+}
+#domicilioInfo img:hover{
+	opacity: 0.9;
+}
 #domicilioLugares{
 	display: grid;
 	place-items: center;
 }
 
 #domicilioLugares ul{
-	list-style-type: none;
+	/* list-style-type: none; */
 	text-align: left;
 	
+}
+#hugoImage img{
+	width: 100%;
+	border-radius: 15px;
+}
+#hugoIcon{
+	width: 100px;
+
+}
+
+#hugoTexto{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-content: center;
+
+}
+#hugoLogo{
+	height: 1em;
+	margin-left: 5px;
+	width: auto;
+}
+#hugoTexto hr{
+	width: 60%;
+	/* border: solid 1px black; */
+}
+
+#hugoTexto h3{
+	font-family: 'Sansita Swashed';
+	color: #4bb7bc;
+}
+
+#hugoTexto h3 span{
+	color: rgb(95,66,140);
 }
