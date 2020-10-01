@@ -151,14 +151,15 @@
 			</div>
 		</div>
 
-		<div class="container mt-5" id="serviciosPracticos">
+		<center class="mt-5">
+			<h4>Tambien ofrecemos</h4>
+			<!-- <hr> -->
+		</center>
 
-			<center>
-				<h4>Tambien ofrecemos</h4>
-				<!-- <hr> -->
-			</center>
+		<div class="container mt-4" id="serviciosPracticos">
 
-			<div class="row mt-5">
+
+			<div class="row">
 				<div class="col-md-4 text-center">
 					<img src="img/svg/noun_ATM_1791339.svg" height=100 alt="retiro de efectivo">
 					<hr>

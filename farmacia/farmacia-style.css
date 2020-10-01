@@ -58,10 +58,33 @@
 	background-size: cover;
 
 }
+/* BANCO AMIGO */
+
+#bancoAmigo .row{
+	padding: 50px;
+	padding-bottom: 120px;
+	border-radius: 15px;
+	border: solid rgba(0, 0, 0, 0.8) 1px;
+}
+#bancoAmigoImg{
+	position: relative;
+	top:-120px;
+}
+#bancoAmigoImg p{
+	margin-bottom: 0px !important;
+}
+#bancoAmigoImg img{
+	background-color: white;
+}
+#bancoAmigoTitle h3{
+	font-family: 'Sansita Swashed';
+	color:#4bb7bc;
+}
 /* DOMICILIO --------------------------------------------------------------- */
 #domicilioInfo h2{
 	font-family: 'Sansita Swashed';
 	color:#4bb7bc;
+	
 }
 #domicilioInfo p{
 

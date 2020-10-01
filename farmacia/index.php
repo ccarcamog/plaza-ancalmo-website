@@ -84,6 +84,40 @@
 		</div>
 	</div>
 
+
+	<center class="mt-5" id="bancoAmigoTitle">
+		<h3>Tambien ofrecemos</h3>
+	</center>
+
+	<div class="container mt-5" id="bancoAmigo">
+
+		<div class="row mt-5">
+			<div class="col-md-3 text-center">
+				<img src="img/svg/retiro-remesas.svg" height=100 alt="retiro de efectivo">
+				<h4 class="mt-4">Retiro de remesas</h4>
+			</div>
+			<div class="col-md-3 text-center">
+				<img src="img/svg/ahorro-efectivo.svg" height=100 alt="retiro de efectivo">
+				<h4 class="mt-4">Abono a cuentas de ahorro</h4>
+			</div>
+			<div class="col-md-3 text-center">
+				<img src="img/svg/retiro-efectivo.svg" height=100 alt="retiro de efectivo">
+				<h4 class="mt-4">Retiro de efectivo</h4>
+			</div>
+			<div class="col-md-3 text-center">
+				<img src="img/svg/pago-servicios.svg" height=100 alt="retiro de efectivo">
+				<h4 class="mt-4">Pago de servicios</h4>
+			</div>
+		</div>
+		<center class="mt-4" id="bancoAmigoImg">
+			<p class="text-muted">En alianza con:</p>
+			<img src="https://lh3.googleusercontent.com/proxy/MXWGLteoI1BD9VVCBBfMp2T6UX1q3Jfpym0AVPhSVdvxwBrxq06eQzYcaLVB2a_9HrpPAKcihrR0x3Px9wgG5zQ9XaDMI8L3J3RX3uGgsSiok0bFtYzzGE97otpYm87vbsrcu6Q6Hw" width="200" alt="bancoamigo logo">
+		</center>
+	</div>
+
+
+	<hr>
+
 	<div class="container mt-5" id="domicilioInfo">
 		<center>
 			<h2>Servicio a domicilio</h2>
@@ -127,16 +161,16 @@
 			</div>
 		</div>
 	</div>
+	<hr>
 	<div class="container-fluid p-4" id="marcasCarousel">
 
 		<h3 class="text-center">Contamos con marcas de la mas alta calidad</h3>
-		<hr>
 
 
 		<div id="carouselMarcas" class=" row carousel slide carousel-slide" data-ride="carousel">
 
 			<div class="container">
-				
+
 				<div class="carousel-inner" role="listbox">
 
 					<div class="carousel-item active">
@@ -171,21 +205,22 @@
 							<div class="col-3"><img src="https://logos-marcas.com/wp-content/uploads/2020/09/Nestle-Logo.png" alt="nestle logo"></div>
 						</div>
 					</div>
-					
 				</div>
 			</div>
-			
+
 			<a class="carousel-control-prev svg-inverted d-none d-md-flex" href="#carouselMarcas" role="button" data-slide="prev">
 				<img src="/img/svg/arrow_left.svg" alt="arrow left prev">
 			</a>
 			<a class="carousel-control-next svg-inverted d-none d-md-flex" href="#carouselMarcas" role="button" data-slide="next">
 				<img src="/img/svg/arrow_right.svg" alt="arrow right next">
 			</a>
-			
+
 		</div>
-		
+
 	</div>
-	
+
+	<hr>
+
 	<?php include "../components/footer.php" ?>
 
 
