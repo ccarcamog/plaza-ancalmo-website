@@ -176,3 +176,11 @@
 #carouselMarcas .carousel-inner img{
 	width: 100%;
 }
+
+/* Galeria de imagenes */
+
+
+#farmaciaGaleria h3{
+	font-family: 'Sansita Swashed';
+	color: #4bb7bc;
+}

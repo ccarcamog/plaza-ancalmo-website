@@ -1,0 +1,64 @@
+
+/*!
+ * jQuery simple gallery Plugin 1.1.0
+ *
+ * http://fernandomoreiraweb.com/
+ *
+ * Copyright 2013 Fernando Moreira
+ * Released under the MIT license:
+ *   http://mit.fernandomoreiraweb.com/
+ */
+
+
+.simplegallery {
+  margin: 0 auto;
+  /* width: 80vw; */
+
+}
+
+.simplegallery .content {
+  background: #fff;
+  position: relative;
+  /* width: 50vw; */
+  /* align-self: center; */
+  /* width: 418px; */
+  /* height: 270px; */
+  /* overflow: scroll; */
+}
+
+.simplegallery .content img {
+  /* width: 60%; */
+  /* border: 1px solid #9c9c9c; */
+  border-radius: 15px;
+}
+
+.simplegallery .thumbnail {
+  margin-top: 25px; 
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: horizontal;
+  justify-content:center;
+  align-items: center;
+  padding: 20px;
+  overflow-x: auto;
+  
+}
+
+.simplegallery .thumbnail .thumb {
+  /* float: left; */
+  /* height: 100px; */
+  
+  height: 100px;
+  width: auto;
+  margin: 15px;
+  cursor: pointer;
+}
+
+.simplegallery .thumbnail .thumb img {
+  /* border: 1px solid #9c9c9c; */
+  border-radius: 15px;
+  width: 150px;
+  margin:20px;
+}
+
+.simplegallery .thumbnail .last { margin: 0; }

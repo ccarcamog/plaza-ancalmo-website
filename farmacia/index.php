@@ -16,6 +16,8 @@
 	<!-- Your custom styles (optional) -->
 	<link rel="stylesheet" href="/css/style.css">
 	<link rel="stylesheet" href="/farmacia/farmacia-style.css">
+	<link rel="stylesheet" href="css/simplegallery.demo1.css">
+
 
 </head>
 
@@ -221,15 +223,86 @@
 
 	<hr>
 
-	<?php include "../components/footer.php" ?>
+
+	<div class="container-fluid" id="farmaciaGaleria">
+		<center class="mt-5 mb-5">
+			<h3>Galeria</h3>
+		</center>
+
+		<div id="gallery" class="simplegallery">
+			<div class="content text-center">
+				<img src="farmacia/galeria/foto0.jpg" class="w-75 image_1" alt="" />
+				<img src="farmacia/galeria/foto1.jpg" class="w-75 image_2" style="display:none" alt="" />
+				<img src="farmacia/galeria/foto2.jpg" class="w-75 image_3" style="display:none" alt="" />
+				<img src="farmacia/galeria/foto3.jpg" class="w-75 image_4" style="display:none" alt="" />
+				<img src="farmacia/galeria/foto4.jpg" class="w-75 image_5" style="display:none" alt="" />
+				<img src="farmacia/galeria/foto5.jpg" class="w-75 image_6" style="display:none" alt="" />
+			</div>
+
+			<div class="clear"></div>
+
+			<div class="thumbnail">
+				<div class="thumb">
+					<a href="#" rel="1">
+						<img src="farmacia/galeria/foto0.jpg" id="thumb_1" alt="" />
+					</a>
+				</div>
+				<div class="thumb">
+					<a href="#" rel="2">
+						<img src="farmacia/galeria/foto1.jpg" id="thumb_2" alt="" />
+					</a>
+				</div>
+				<div class="thumb">
+					<a href="#" rel="3">
+						<img src="farmacia/galeria/foto2.jpg" id="thumb_3" alt="" />
+					</a>
+				</div>
+				<div class="thumb ">
+					<a href="#" rel="4">
+						<img src="farmacia/galeria/foto3.jpg" id="thumb_4" alt="" />
+					</a>
+				</div>
+				<div class="thumb">
+					<a href="#" rel="5">
+						<img src="farmacia/galeria/foto4.jpg" id="thumb_5" alt="" />
+					</a>
+				</div>
+	
+				<div class="thumb">
+					<a href="#" rel="6">
+						<img src="farmacia/galeria/foto5.jpg" id="thumb_6" alt="" />
+					</a>
+				</div>
+	
+
+			</div>
 
 
-	<script type="text/javascript" src="js/jquery.min.js"></script>
-	<!-- Bootstrap core JavaScript -->
-	<script type="text/javascript" src="js/bootstrap.min.js"></script>
-	<!-- MDB core JavaScript -->
-	<script type="text/javascript" src="js/mdb.min.js"></script>
-	<!-- Your custom scripts (optional) -->
+		</div>
+
+		<?php include "../components/footer.php" ?>
+
+
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<!-- Bootstrap core JavaScript -->
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<!-- MDB core JavaScript -->
+		<script type="text/javascript" src="js/mdb.min.js"></script>
+		<!-- Your custom scripts (optional) -->
+		<script type="text/javascript" src="js/simplegallery.min.js"></script>
+		<script>
+			$(document).ready(function() {
+
+				$('#gallery').simplegallery({
+					galltime: 400,
+					gallcontent: '.content',
+					gallthumbnail: '.thumbnail',
+					gallthumb: '.thumb'
+				});
+
+			});
+		</script>
+
 </body>
 
 </html>
