@@ -267,41 +267,42 @@
 						<img src="farmacia/galeria/foto4.jpg" id="thumb_5" alt="" />
 					</a>
 				</div>
-	
+
 				<div class="thumb">
 					<a href="#" rel="6">
 						<img src="farmacia/galeria/foto5.jpg" id="thumb_6" alt="" />
 					</a>
 				</div>
-	
+
 
 			</div>
 
 
 		</div>
+	</div>
 
-		<?php include "../components/footer.php" ?>
+	<?php include "../components/footer.php" ?>
 
 
-		<script type="text/javascript" src="js/jquery.min.js"></script>
-		<!-- Bootstrap core JavaScript -->
-		<script type="text/javascript" src="js/bootstrap.min.js"></script>
-		<!-- MDB core JavaScript -->
-		<script type="text/javascript" src="js/mdb.min.js"></script>
-		<!-- Your custom scripts (optional) -->
-		<script type="text/javascript" src="js/simplegallery.min.js"></script>
-		<script>
-			$(document).ready(function() {
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<!-- Bootstrap core JavaScript -->
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<!-- MDB core JavaScript -->
+	<script type="text/javascript" src="js/mdb.min.js"></script>
+	<!-- Your custom scripts (optional) -->
+	<script type="text/javascript" src="js/simplegallery.min.js"></script>
+	<script>
+		$(document).ready(function() {
 
-				$('#gallery').simplegallery({
-					galltime: 400,
-					gallcontent: '.content',
-					gallthumbnail: '.thumbnail',
-					gallthumb: '.thumb'
-				});
-
+			$('#gallery').simplegallery({
+				galltime: 400,
+				gallcontent: '.content',
+				gallthumbnail: '.thumbnail',
+				gallthumb: '.thumb'
 			});
-		</script>
+
+		});
+	</script>
 
 </body>
 
