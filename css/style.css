@@ -14,11 +14,11 @@ p{
 }
 #contactUs{
 	position: absolute;
-	left: 65vw;
+	left: calc(100vw - 150px) ;
 	height: 50px;
 	border-bottom-left-radius:15px;
 	border-bottom-right-radius: 15px;
-	
+	width: 115px;
 	text-align: center;
 	font-family: "Montserrat", sans-serif;
 	font-weight: bold;
@@ -127,3 +127,4 @@ h1, h2, h3, h4{
 #serviciosMedicos h4{
 	margin: auto;
 }
+

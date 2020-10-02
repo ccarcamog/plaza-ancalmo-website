@@ -1,7 +1,7 @@
 
 <div id="spacing">
   <div class="text-white" id="contactUs">
-    <a class="text-white" href="facebook.com">
+    <a class="text-white" href="/contacto">
       Contactanos
     </a>
   </div>
@@ -38,9 +38,9 @@
         </div>
       </div>
 
-      <a class="nav-link" href="#">Acerca de</a>
       <a class="nav-link" href="#">Locales disponibles</a>
       <a class="nav-link" href="#">Galería</a>
+      <a class="nav-link" href="#">Acerca de</a>
     </div>
   </div>
 </nav>
