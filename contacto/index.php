@@ -23,11 +23,15 @@
 
 <body>
 
+	<?php 
+		include "../php/contact-form.php";
+	?>
+
 	<?php include "../components/navbar.php" ?>
 
 	<header class="container-fluid" id="contactoHeader">
-		<div class="filter p-5">
-			<h1>Contáctanos</h1>
+		<div class="filter p-3 p-md-5">
+			<h1>Contacto</h1>
 		</div>
 	</header>
 
@@ -40,7 +44,7 @@
 	</div>
 
 	<div class="container-fluid" id="contactoMapa">
-		<div class="text-center p-5">
+		<div class="text-center p-3 p-md-5">
 
 			<h3>Encuentranos</h3>
 			<p class="">
@@ -102,12 +106,11 @@
 						</div>
 					</div>
 					<div class="row form-group p-3">
-						<textarea name="comentario" id="comentario" rows="5" class="form-control">Comentario</textarea>
+						<textarea name="comentario" id="comentario" rows="5" class="form-control" placeholder="Comentario"></textarea>
 					</div>
 					<div class="row form-group p-3 pb-0">
 						<div class="col">
-
-							<input type="submit" value="Enviar" class="btn btn-lg btn-warning">
+							<input type="submit" name="submit" value="Enviar" class="btn btn-lg btn-warning">
 						</div>
 					</div>
 				</form>
