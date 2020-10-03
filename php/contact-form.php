@@ -1,19 +1,23 @@
 <?php 
 
-	echo $_POST['nombre'];
+	// mail("luismarioram99@gmail.com", "Test", "Hello world");
 
-	if(isset($_POST['submit'])){
+	if(!empty($_POST)){
+		
+		
 		$nombre = $_POST['nombre'];
 		$apellido = $_POST['apellido'];
 		$email = $_POST['email'];
 		$comentario = $_POST['comentario'];
 
 		$subject = "Mensaje de tu pagina web.";
-		$mailTo = "rp18011@ues.edu.sv";
+		$mailTo = "luismarioram99@gmail.com";
 		$headers = "From: $email";
-		$txt = "You have received an e-mail from $name.\n\n $message";
+		$txt = "Has recibido un correo de $nombre $apellido.\n\n $comentario";
 
-		mail($mailTo, $subject, $txt, $headers);
+		if(mail($mailTo, $subject, $txt, $headers)){
+			
+		}
 	}
 
-?>
+	?>
