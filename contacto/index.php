@@ -23,11 +23,11 @@
 
 <body>
 
+	<?php include "../components/navbar.php" ?>
+	
 	<?php 
 		include "../php/contact-form.php";
 	?>
-
-	<?php include "../components/navbar.php" ?>
 
 	<header class="container-fluid" id="contactoHeader">
 		<div class="filter p-3 p-md-5">
