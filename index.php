@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Plaza ANCALMO</title>
 
+	<link rel="icon" href="/img/Logo Plaza Ancalmo.png">
 	<!-- MDB icon -->
 	<!-- Bootstrap core CSS -->
 	<link rel="stylesheet" href="css/bootstrap.min.css">
@@ -68,7 +69,7 @@
 				</div>
 
 
-				<a href="#" class="btn btn-lg btn-warning">
+				<a href="/acerca-de" class="btn btn-lg btn-warning">
 					Conoce más
 				</a>
 			</div>

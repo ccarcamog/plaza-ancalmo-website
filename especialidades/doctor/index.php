@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Dr. John Doe</title>
-
+	<link rel="icon" href="/img/Logo Plaza Ancalmo.png">
 	<!-- Bootstrap core CSS -->
 	<link rel="stylesheet" href="/css/bootstrap.min.css">
 	<!-- favicon  -->
