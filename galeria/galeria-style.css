@@ -1,0 +1,11 @@
+#galeriaHeader{
+	background: url("/img/galeria-background.jpg");
+	background-size: cover;
+	background-position: center center;
+}
+#galeriaHeader .filter{
+	background-color: rgba(69, 119, 128, 0.5);
+}
+#galeriaHeader h2{
+	font-weight: 600;
+}

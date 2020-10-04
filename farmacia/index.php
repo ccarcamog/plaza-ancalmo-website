@@ -241,7 +241,7 @@
 
 			<div class="clear"></div>
 
-			<div class="thumbnail">
+			<div class="thumbnail container">
 				<div class="thumb">
 					<a href="#" rel="1">
 						<img src="farmacia/galeria/foto0.jpg" id="thumb_1" alt="" />

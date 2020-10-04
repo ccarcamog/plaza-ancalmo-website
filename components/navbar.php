@@ -39,7 +39,7 @@
       </div>
 
       <a class="nav-link" href="#">Locales disponibles</a>
-      <a class="nav-link" href="#">Galería</a>
+      <a class="nav-link" href="/galeria">Galería</a>
       <a class="nav-link" href="#">Acerca de</a>
     </div>
   </div>
