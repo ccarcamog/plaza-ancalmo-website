@@ -28,28 +28,37 @@
 		</div>
 	</div>
 
-	<div class="container p-5 text-center" id="acerca-de-intro">
-		<h3 class="text-muted">¿Quienes Somos?</h3>
-		<hr>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam nec auctor est. Vivamus a pharetra.</p>
+	<div class="container text-center" id="acerca-de-intro">
+		<div class="container-fluid px-5 pt-5">
+			<h3 class="text-muted">¿Quienes Somos?</h3>
+			<hr>
+		</div>
+		<img src="img/featured-image.jpg" alt="featured image" id="featured-image">
+		<p class="px-5 pb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam nec auctor est. Vivamus a pharetra.</p>
 	</div>
 
 	<div class="container" id="acerca-de-mision">
-		<div class="filter">
-			<div class="row text-white">
-				<div class="col-md-6 p-5 text-center">
-					<h4>Misión</h4>
-					<hr>
-					<p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin cursus eu leo vitae lacinia. Aliquam id enim quis tellus ultricies gravida non nec justo. Donec commodo turpis egestas venenatis condimentum. Sed lobortis enim eget dolor rutrum sollicitudin. Vestibulum tempor sem ipsum, vitae mattis nulla elementum eget. </p>
-				</div>
-				<div class="col-md-6 p-5 text-center">
-					<h4>Vision</h4>
-					<hr>
-					<p class="text-justify">Nulla ac tempus erat, vel tristique mauris. Proin eleifend turpis non ante fringilla, id auctor augue tempor. Aliquam euismod ex at volutpat vestibulum. Sed vel porta massa. Ut lacinia nisl ac vestibulum hendrerit. Vivamus nec nulla nec ligula tincidunt efficitur. Pellentesque vel sem non augue tempor eleifend. Quisque tempor, purus et hendrerit gravida, neque eros finibus leo, ac accumsan erat tortor non arcu.</p>
-				</div>
+
+
+		<div class="row text-white">
+			<div class="col-md-6 p-5">
+				<h4>Mision</h4>
+				<hr>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget enim eros. Nam porta, leo facilisis porta viverra, nunc enim laoreet ligula, vitae bibendum mauris quam nec diam. Proin fringilla mi ac elit varius, in lobortis urna pellentesque. Pellentesque molestie neque venenatis mauris tincidunt porttitor. Aliquam efficitur orci non elit lobortis, eu eleifend elit laoreet. Morbi efficitur sodales sem, sed commodo enim rutrum et. Nulla quis ante vitae arcu condimentum condimentum commodo sed ante. Aenean cursus, nibh eget laoreet bibendum, sem tortor cursus lectus, in placerat ligula enim vel nunc. Praesent nec dapibus mi. Nunc massa arcu, iaculis vel commodo non, lobortis ac massa.
+				</p>
+			</div>
+			<div class="col-md-6 p-5">
+				<h4>Vision</h4>
+				<hr>
+				<p>
+					Vivamus in dui non risus pulvinar varius. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nullam euismod mauris massa. Aliquam et rhoncus orci. Nam eros nulla, tincidunt a tempor sit amet, egestas et urna. Nunc imperdiet quis est et ullamcorper. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur aliquam pellentesque augue vitae cursus. Nulla at sapien cursus, tristique risus et, consectetur orci. Proin sagittis, ante ac faucibus consectetur, magna tellus scelerisque odio, quis dictum tellus arcu quis nisi. In tristique mauris et lorem ornare, eget ultrices nunc egestas. Praesent luctus ultrices quam. Duis commodo purus sed tempor vehicula.
+				</p>
 			</div>
 		</div>
 	</div>
+
+
 
 	<div class="container p-5" id="historia">
 		<h4>Historia</h4>
