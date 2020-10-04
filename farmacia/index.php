@@ -95,25 +95,25 @@
 
 		<div class="row mt-5">
 			<div class="col-md-3 text-center">
-				<img src="img/svg/retiro-remesas.svg" height=100 alt="retiro de efectivo">
+				<img src="/img/svg/retiro-remesas.svg" height=100 alt="retiro de efectivo">
 				<h4 class="mt-4">Retiro de remesas</h4>
 			</div>
 			<div class="col-md-3 text-center">
-				<img src="img/svg/ahorro-efectivo.svg" height=100 alt="retiro de efectivo">
+				<img src="/img/svg/ahorro-efectivo.svg" height=100 alt="retiro de efectivo">
 				<h4 class="mt-4">Abono a cuentas de ahorro</h4>
 			</div>
 			<div class="col-md-3 text-center">
-				<img src="img/svg/retiro-efectivo.svg" height=100 alt="retiro de efectivo">
+				<img src="/img/svg/retiro-efectivo.svg" height=100 alt="retiro de efectivo">
 				<h4 class="mt-4">Retiro de efectivo</h4>
 			</div>
 			<div class="col-md-3 text-center">
-				<img src="img/svg/pago-servicios.svg" height=100 alt="retiro de efectivo">
+				<img src="/img/svg/pago-servicios.svg" height=100 alt="retiro de efectivo">
 				<h4 class="mt-4">Pago de servicios</h4>
 			</div>
 		</div>
 		<center class="mt-4" id="bancoAmigoImg">
 			<p class="text-muted">En alianza con:</p>
-			<img src="https://lh3.googleusercontent.com/proxy/MXWGLteoI1BD9VVCBBfMp2T6UX1q3Jfpym0AVPhSVdvxwBrxq06eQzYcaLVB2a_9HrpPAKcihrR0x3Px9wgG5zQ9XaDMI8L3J3RX3uGgsSiok0bFtYzzGE97otpYm87vbsrcu6Q6Hw" width="200" alt="bancoamigo logo">
+			<img src="/img/bancoamigo.png" width="200" alt="bancoamigo logo">
 		</center>
 	</div>
 

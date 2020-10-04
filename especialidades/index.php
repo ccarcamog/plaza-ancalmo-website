@@ -45,10 +45,10 @@
 
 			<div class="row doctor">
 				<div class=" col-sm-4 doctor-image mb-3">
-					<img src="img/doctor-1149149_1920.jpg" alt="">
+					<img src="/img/doctor-1149149_1920.jpg" alt="">
 				</div>
 				<div class=" col-sm-8 doctor-text">
-					<a href="#" class="doctor-title d-inline">
+					<a href="/especialidades/doctor/" class="doctor-title d-inline">
 						<h3 class="m-0">Dr. John Doe</h3>
 						<h4 class="text-muted ml-md-3">Odontologo</h4>
 					</a>

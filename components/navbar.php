@@ -10,7 +10,7 @@
 
   <!-- Brand -->
   <a class="navbar-brand ml-lg-5" href="/">
-    <img src="img/Logo Plaza Ancalmo.png" width="80" alt="Logo de Plaza Ancalmo">
+    <img src="/img/Logo Plaza Ancalmo.png" width="80" alt="Logo de Plaza Ancalmo">
   </a>
 
   <a href="/" class="navbar-brand">PLAZA <br>ANCALMO</a>
