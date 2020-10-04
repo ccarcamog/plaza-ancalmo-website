@@ -232,7 +232,7 @@
 									<img src="/especialidades/doctor/galeria/foto5.jpg" id="thumb_6" alt="" />
 								</a>
 							</div>
-
+							
 
 						</div>
 

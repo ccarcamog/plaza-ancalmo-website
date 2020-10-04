@@ -35,12 +35,13 @@
 .simplegallery .thumbnail {
   margin-top: 25px; 
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
   flex-direction: horizontal;
-  justify-content:center;
+  justify-content:space-around;
   align-items: center;
   padding: 20px;
-  overflow-x: auto;
+  overflow-y: visible;
   
 }
 
@@ -48,7 +49,7 @@
   /* float: left; */
   /* height: 100px; */
   
-  height: 100px;
+  /* height: 100px; */
   width: auto;
   margin: 15px;
   cursor: pointer;
@@ -57,7 +58,7 @@
 .simplegallery .thumbnail .thumb img {
   /* border: 1px solid #9c9c9c; */
   border-radius: 15px;
-  width: 150px;
+  width: 200px;
   margin:20px;
 }
 
