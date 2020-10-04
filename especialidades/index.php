@@ -45,7 +45,7 @@
 
 			<div class="row doctor">
 				<div class=" col-sm-4 doctor-image mb-3">
-					<img src="/img/doctor-1149149_1920.jpg" alt="">
+					<img src="/img/doctor-1149149_1920.jpg" alt="doctor profile pic">
 				</div>
 				<div class=" col-sm-8 doctor-text">
 					<a href="/especialidades/doctor/" class="doctor-title d-inline">
@@ -72,11 +72,11 @@
 	<body>
 
 
-		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="/js/jquery.min.js"></script>
 		<!-- Bootstrap core JavaScript -->
-		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="/js/bootstrap.min.js"></script>
 		<!-- MDB core JavaScript -->
-		<script type="text/javascript" src="js/mdb.min.js"></script>
+		<script type="text/javascript" src="/js/mdb.min.js"></script>
 
 	</body>
 

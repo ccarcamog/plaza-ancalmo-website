@@ -22,7 +22,7 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <div class="navbar-nav">
       <a class="nav-link" href="/farmacia">Farmacia</a>
-      <a class="nav-link" href="http://www.menendezlab.com/" target="_blank">Laboratorio Menendez</a>
+      <a class="nav-link" href="http://www.menendezlab.com/" target="_blank">Laboratorio Menéndez</a>
       <a class="nav-link" href="#">Lifestyle</a>
   
       <div class="nav-item dropdown">

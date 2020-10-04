@@ -38,6 +38,7 @@ p{
 #top-navbar .nav-link {
 	font-family: 'Montserrat', sans-serif;
 	font-size: 0.9em;
+	padding:6px;
 	text-align: center;
 	/* white-space: nowrap; */
 	color: rgba(0, 0, 0, 0.5)

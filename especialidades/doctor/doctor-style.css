@@ -1,0 +1,16 @@
+
+#doctorInfo .col-sm-4 img{
+	width: 100%;
+	border-radius: 15px;
+}
+#doctorInfo .doctor-title h3, h4{
+	display: inline;
+}
+
+#lista-seguros ul{
+	list-style: none;
+	padding:0;
+}
+#lista-seguros li{
+	margin: 10px;
+}
