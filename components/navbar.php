@@ -31,7 +31,7 @@
         </a>
         <div class="dropdown-menu" id="especialidadesMenu" aria-labelledby="especialidadesDropdown">
           <p class="dropdown-header">Populares</p>
-          <a class="dropdown-item" href="#">Odontologia</a>
+          <a class="dropdown-item" href="/especialidades">Odontologia</a>
           <a class="dropdown-item" href="#">Cardiologia</a>
 
           <p class="dropdown-header">Todos</p>

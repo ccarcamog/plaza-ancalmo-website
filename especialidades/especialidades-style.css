@@ -1,0 +1,50 @@
+#especialidadTitle{
+	background-image: url("/img/especialidad-bg.jpg");
+	background-size: cover;
+	background-position: center center;
+	height: 30vh;
+	padding:0;
+}
+#especialidadTitle .filter{
+	background-color:rgba(76, 143, 187, 0.623);
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	height: 100%;
+	width: 100%;
+}
+#especialidadTitle h1{
+	font-weight: 600;
+	font-size: 2em;
+}
+
+#listaDoctores .doctor{
+	padding:20px;
+	margin:30px 0;	
+	border: solid rgba(0, 0, 0, 0.267) 1px;
+	/* border-radius: 15px;	 */
+	box-shadow: rgba(0, 0, 0, 0.267) 2px 2px 10px;
+	width:100%;
+	/* display: flex;
+	flex-direction: row;
+	justify-content: space-between; */
+	align-items: center;
+}
+
+#listaDoctores .doctor img{
+	width: 100%;
+	border-radius: 15px;
+}
+
+#listaDoctores .doctor-title {
+	color: rgba(0, 0, 0, 0.7);
+}
+#listaDoctores .doctor-title h3, h4{
+	display: inline;
+}
+
+#listaDoctores .doctor-title:hover{
+	color: rgba(0, 0, 0, 1);
+	text-decoration: none;
+}
