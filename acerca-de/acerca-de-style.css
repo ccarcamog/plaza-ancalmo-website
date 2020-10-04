@@ -1,0 +1,24 @@
+#acerca-de-header{
+	height: 30vh;
+	background-image: url("/img/acerca-de-bg9.jpg");
+}
+#acerca-de-header .filter{
+	background-color: rgba(26, 68, 85, 0.63);
+	color:white;
+	font-weight: 700;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#acerca-de-mision{
+	background-image:url("/img/mision-bg.jpg");
+	border-radius: 15px;
+	padding:0;
+}
+#acerca-de-mision .filter{
+	width: 100%;
+	height: 100%;
+	background-color: rgba(69, 131, 134, 0.767);
+	border-radius: 15px;
+}

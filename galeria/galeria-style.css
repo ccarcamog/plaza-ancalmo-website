@@ -5,6 +5,10 @@
 }
 #galeriaHeader .filter{
 	background-color: rgba(69, 119, 128, 0.5);
+	height: 30vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 #galeriaHeader h2{
 	font-weight: 600;

@@ -40,7 +40,7 @@
 
       <a class="nav-link" href="#">Locales disponibles</a>
       <a class="nav-link" href="/galeria">Galería</a>
-      <a class="nav-link" href="#">Acerca de</a>
+      <a class="nav-link" href="/acerca-de">Acerca de</a>
     </div>
   </div>
 </nav>

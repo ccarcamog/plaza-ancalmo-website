@@ -34,62 +34,34 @@
 
 		<div id="gallery" class="simplegallery">
 			<div class="content text-center">
+
 				<img src="galeria/galeria/foto0.jpg" class="w-75 image_1" alt="" />
-				<img src="galeria/galeria/foto1.jpg" class="w-75 image_2" style="display:none" alt="" />
-				<img src="galeria/galeria/foto2.jpg" class="w-75 image_3" style="display:none" alt="" />
-				<img src="galeria/galeria/foto3.jpg" class="w-75 image_4" style="display:none" alt="" />
-				<img src="galeria/galeria/foto4.jpg" class="w-75 image_5" style="display:none" alt="" />
-				<img src="galeria/galeria/foto5.jpg" class="w-75 image_6" style="display:none" alt="" />
-				<img src="galeria/galeria/foto6.jpg" class="w-75 image_7" style="display:none" alt="" />
-				<img src="galeria/galeria/foto7.jpg" class="w-75 image_8" style="display:none" alt="" />
+				<?php
+					for ($i = 1; $i < 9; $i++) {
+				?>
+					<img src="galeria/galeria/foto<?php echo $i ?>.jpg" class="w-75 image_<?php echo ($i + 1) ?>" style="display:none" alt="" />
+				<?php
+					}
+				?>
+
+				
 			</div>
 
 			<div class="clear"></div>
 
 			<div class="thumbnail container">
-				<div class="thumb">
-					<a href="#" rel="1">
-						<img src="galeria/galeria/foto0.jpg" id="thumb_1" alt="" />
-					</a>
-				</div>
-				<div class="thumb">
-					<a href="#" rel="2">
-						<img src="galeria/galeria/foto1.jpg" id="thumb_2" alt="" />
-					</a>
-				</div>
-				<div class="thumb">
-					<a href="#" rel="3">
-						<img src="galeria/galeria/foto2.jpg" id="thumb_3" alt="" />
-					</a>
-				</div>
-				<div class="thumb ">
-					<a href="#" rel="4">
-						<img src="galeria/galeria/foto3.jpg" id="thumb_4" alt="" />
-					</a>
-				</div>
-				<div class="thumb">
-					<a href="#" rel="5">
-						<img src="galeria/galeria/foto4.jpg" id="thumb_5" alt="" />
-					</a>
-				</div>
-
-				<div class="thumb">
-					<a href="#" rel="6">
-						<img src="galeria/galeria/foto5.jpg" id="thumb_6" alt="" />
-					</a>
-				</div>
-
-				<div class="thumb">
-					<a href="#" rel="7">
-						<img src="galeria/galeria/foto6.jpg" id="thumb_7" alt="" />
-					</a>
-				</div>
-
-				<div class="thumb">
-					<a href="#" rel="8">
-						<img src="galeria/galeria/foto7.jpg" id="thumb_8" alt="" />
-					</a>
-				</div>
+				<?php 
+					for($i = 0; $i < 9; $i++){
+				?>
+					<div class="thumb">
+						<a href="#" rel="<?php echo ($i+1) ?>">
+							<img src="galeria/galeria/foto<?php echo $i ?>.jpg" id="thumb_<?php echo ($i + 1) ?>" class="thumbs" alt="" />
+						</a>
+					</div>
+				<?php		
+					}
+				?>
+		
 
 			</div>
 
