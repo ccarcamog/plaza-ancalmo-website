@@ -1,7 +1,5 @@
 <div class="d-none d-sm-block" id="contactUs">
-  <a class="text-white" href="/contacto">
-    Contactanos
-  </a>
+  <a class="text-white" href="/contacto">Contactanos</a>
 </div>
 <nav class="navbar navbar-expand-xl navbar-light d-print" id="top-navbar">
 
