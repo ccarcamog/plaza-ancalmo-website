@@ -36,32 +36,38 @@
 			<div class="content text-center">
 
 				<img src="/galeria/galeria/foto0.jpg" class="w-75 image_1" alt="" />
+				<p class="caption caption_1 image_1">Image Caption 1</p>
 				<?php
-					for ($i = 1; $i < 9; $i++) {
+				for ($i = 1; $i < 9; $i++) {
 				?>
 					<img src="/galeria/galeria/foto<?php echo $i ?>.jpg" class="w-75 image_<?php echo ($i + 1) ?>" style="display:none" alt="" />
 				<?php
-					}
+				}
+				for ($i = 1; $i < 9; $i++) {
+				?>
+					<p class="caption caption_<?php echo ($i + 1) ?> image_<?php echo ($i + 1) ?>" style="display:none" >Image Caption <?php echo ($i + 1) ?></p>
+				<?php
+				}
 				?>
 
-				
+
 			</div>
 
 			<div class="clear"></div>
 
 			<div class="thumbnail container">
-				<?php 
-					for($i = 0; $i < 9; $i++){
+				<?php
+				for ($i = 0; $i < 9; $i++) {
 				?>
 					<div class="thumb">
-						<a href="#" rel="<?php echo ($i+1) ?>">
+						<a href="#" rel="<?php echo ($i + 1) ?>">
 							<img src="/galeria/galeria/foto<?php echo $i ?>.jpg" id="thumb_<?php echo ($i + 1) ?>" class="thumbs" alt="" />
 						</a>
 					</div>
-				<?php		
-					}
+				<?php
+				}
 				?>
-		
+
 
 			</div>
 
@@ -85,6 +91,12 @@
 				gallcontent: '.content',
 				gallthumbnail: '.thumbnail',
 				gallthumb: '.thumb'
+			});
+			$(".thumbs").click(function(){
+				var id = $(this).attr("id");
+				var cap_id = ".caption_" + id.substr(id.length - 1);
+				$(".caption").css("display","none");
+				$(cap_id).css("display", "block");
 			});
 
 		});
