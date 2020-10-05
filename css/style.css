@@ -14,7 +14,7 @@ p{
 }
 #contactUs{
 	position: absolute;
-	left: calc(100vw - 150px) ;
+	left: calc(100vw - 200px) ;
 	height: 50px;
 	border-bottom-left-radius:15px;
 	border-bottom-right-radius: 15px;
@@ -26,6 +26,12 @@ p{
 	padding:10px;
 	background-color:  rgb(107,217,222);
 	
+}
+#contactanos-tab{
+	border-radius: 5px;
+	background-color:  rgb(107,217,222);
+	font-weight: 700;
+	color: white !important;
 }
 
 /* TOP NAVBAR */

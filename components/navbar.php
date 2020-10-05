@@ -1,12 +1,9 @@
-
-<div id="spacing">
-  <div class="text-white" id="contactUs">
-    <a class="text-white" href="/contacto">
-      Contactanos
-    </a>
-  </div>
+<div class="d-none d-sm-block" id="contactUs">
+  <a class="text-white" href="/contacto">
+    Contactanos
+  </a>
 </div>
-<nav class="navbar navbar-expand-lg navbar-light d-print" id="top-navbar">
+<nav class="navbar navbar-expand-xl navbar-light d-print" id="top-navbar">
 
   <!-- Brand -->
   <a class="navbar-brand ml-lg-5" href="/">
@@ -24,23 +21,25 @@
       <a class="nav-link" href="/farmacia">Farmacia</a>
       <a class="nav-link" href="http://www.menendezlab.com/" target="_blank">Laboratorio Menéndez</a>
       <a class="nav-link" href="#">Lifestyle</a>
-  
+
       <div class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" id="especialidadesDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Especialidades
+          Doctores
         </a>
         <div class="dropdown-menu" id="especialidadesMenu" aria-labelledby="especialidadesDropdown">
-          <p class="dropdown-header">Populares</p>
           <a class="dropdown-item" href="/especialidades">Odontologia</a>
-          <a class="dropdown-item" href="#">Cardiologia</a>
+          <a class="dropdown-item" href="#">Cardiología</a>
+          <a class="dropdown-item" href="#">Pedriatría</a>
+          <a class="dropdown-item" href="#">Ginecología</a>
+          <a class="dropdown-item" href="#">Gastroenterología</a>
 
-          <p class="dropdown-header">Todos</p>
         </div>
       </div>
 
       <a class="nav-link" href="#">Locales disponibles</a>
       <a class="nav-link" href="/galeria">Galería</a>
       <a class="nav-link" href="/acerca-de">Acerca de</a>
+      <a class="nav-link d-block d-sm-none" id="contactanos-tab" href="/contacto">Contactanos</a>
     </div>
   </div>
 </nav>
