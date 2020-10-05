@@ -12,11 +12,11 @@
 	<!-- favicon  -->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
 	<!-- Material Design Bootstrap -->
-	<!-- <link rel="stylesheet" href="css/mdb.min.css"> -->
+	<!-- <link rel="stylesheet" href="/css/mdb.min.css"> -->
 	<!-- Your custom styles (optional) -->
 	<link rel="stylesheet" href="/css/style.css">
 	<link rel="stylesheet" href="/contacto/contacto-style.css">
-	<link rel="stylesheet" href="css/simplegallery.demo1.css">
+	<link rel="stylesheet" href="/css/simplegallery.demo1.css">
 
 
 </head>
@@ -53,10 +53,10 @@
 			</p>
 			<p>
 				<a href="https://goo.gl/maps/r68MJvPQSkSZuzhP6" target="_blank">
-					<img src="img/svg/Google_Maps_icon_(2020).svg" height="70" alt="google maps icon">
+					<img src="/img/svg/Google_Maps_icon_(2020).svg" height="70" alt="google maps icon">
 				</a>
 				<a href="https://www.waze.com/es/livemap/directions/el-salvador/la-libertad/plaza-ancalmo?navigate=yes&place=ChIJE5ckf9YxY48Rm8MCSCS55RA" target="_blank">
-					<img src="img/svg/icons8-waze.svg" height="75" alt="waze icon">
+					<img src="/img/svg/icons8-waze.svg" height="75" alt="waze icon">
 				</a>
 			</p>
 			<div class="container">
@@ -73,7 +73,7 @@
 					<p class="text-muted">facebook.com/PlazaAncalmo</p>
 				</a>
 				<a href="https://www.facebook.com/PlazaAncalmo/" target="_blank">
-					<img src="img/svg/facebook.svg" alt="facebook icon" height="60">
+					<img src="/img/svg/facebook.svg" alt="facebook icon" height="60">
 				</a>
 			</div>
 			<div class="vertical-line d-none d-md-flex"></div>
@@ -81,7 +81,7 @@
 			<div class="col-md-5">
 				<h3 id="llamanos-title">O llamanos</h3>
 				<p class="text-muted">2243 0300</p>
-				<img src="img/svg/phone-square.svg" alt="phone icon" height="60">
+				<img src="/img/svg/phone-square.svg" alt="phone icon" height="60">
 			</div>
 		</div>
 	</div>
@@ -89,8 +89,8 @@
 	<div class="container mt-5" id="contactoForma">
 		
 			<div class="filter p-5">
-				<h4>Forma de contacto</h4>
-				<hr>
+				<h4 class="mb-4">Forma de contacto</h4>
+				
 				<form action="/contacto" method="POST">
 					<div class="row form-group">
 						<div class="col">
@@ -122,11 +122,11 @@
 	<?php include "../components/footer.php" ?>
 
 
-	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="/js/jquery.min.js"></script>
 	<!-- Bootstrap core JavaScript -->
-	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/js/bootstrap.min.js"></script>
 	<!-- MDB core JavaScript -->
-	<script type="text/javascript" src="js/mdb.min.js"></script>
+	<script type="text/javascript" src="/js/mdb.min.js"></script>
 	<!-- Your custom scripts (optional) -->
 	<script>
 

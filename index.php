@@ -76,6 +76,77 @@
 
 		</div>
 
+		<div class="container-fluid p-5 mt-5" id="serviciosMedicos">
+			<center>
+				<h4 class="text-white">Contamos con variadas especialidades médicas</h4>
+				<hr class="border-white">
+			</center>
+
+			<div class="container">
+
+				<div class="row mt-5">
+
+					<div class="service col-md-4 text-center text-white">
+						<img class="svg-inverted" src="/img/svg/noun_Stethoscope_2049574.svg" alt="medicina general icon" width="80">
+						<h3>Medicina General</h3>
+						<p>Primero tu salud</p>
+					</div>
+					<div class="service col-md-4  text-center text-white">
+						<img class="svg-inverted" src="/img/svg/noun_Pharmacy_3125931.svg" alt="farmacia icon" width="80">
+						<h3>Farmacia</h3>
+						<p>Equipada con productos de calidad/</p>
+					</div>
+					<div class="service col-md-4  text-center text-white">
+						<img class="svg-inverted" src="/img/svg/ginecologia.svg" alt="ginecologia icon" width="80">
+						<h3>Ginecologia</h3>
+						<p>Te ayudamos a cuidarte.</p>
+					</div>
+					<div class="service col-md-4 text-center text-white">
+						<img class="svg-inverted" src="/img/svg/podologia.svg" alt="podologia icon" width="80">
+						<h3>Podología</h3>
+						<p>Para la salud de tus pies.</p>
+					</div>
+					<div class="service col-md-4 text-center text-white">
+						<img class="svg-inverted" src="/img/svg/optometria.svg" alt="optometría icon" width="80">
+						<h3>Optometría</h3>
+						<p>Lo mejor en salud visual.</p>
+					</div>
+					<div class="service col-md-4 text-center text-white">
+						<img class="svg-inverted" src="/img/svg/laboratorio.svg" alt="laboratorio icon" width="80">
+						<h3>Laboratorio</h3>
+						<p>Un laboratorio de alta tecnologia <br>para ti.</p>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<center class="mt-5">
+			<h4>Tambien ofrecemos</h4>
+			<!-- <hr> -->
+		</center>
+
+		<div class="container mt-4" id="serviciosPracticos">
+
+
+			<div class="row">
+				<div class="col-md-4 text-center">
+					<img src="/img/svg/noun_ATM_1791339.svg" height=100 alt="retiro de efectivo">
+					<hr>
+					<h3>Retiro de efectivo</h3>
+				</div>
+				<div class="col-md-4 text-center">
+					<img src="/img/svg/cash-payment.svg" height="100" alt="pago de servicios">
+					<hr>
+					<h3>Pago de servicios</h3>
+				</div>
+				<div class="col-md-4 text-center">
+					<img src="/img/svg/home-location.svg" height="100" alt="pago de servicios">
+					<hr>
+					<h3>Servicio a domicilio</h3>
+				</div>
+			</div>
+		</div>
 
 		<div class="container mt-5" id="conozcanos">
 
@@ -107,86 +178,13 @@
 
 			</div>
 		</div>
-		<div class="container-fluid p-5 mt-5" id="serviciosMedicos">
-			<center>
-				<h4 class="text-white">Contamos con variadas especialidades médicas</h4>
-				<hr class="border-white">
-			</center>
-
-			<div class="container">
-
-				<div class="row mt-5">
-
-					<div class="service col-md-4 text-center text-white">
-						<img class="svg-inverted" src="img/svg/noun_Stethoscope_2049574.svg" alt="medicina general icon" width="80">
-						<h3>Medicina General</h3>
-						<p>Primero tu salud</p>
-					</div>
-					<div class="service col-md-4  text-center text-white">
-						<img class="svg-inverted"src="img/svg/noun_Pharmacy_3125931.svg" alt="farmacia icon" width="80">
-						<h3>Farmacia</h3>
-						<p>Equipada con productos de calidad/</p>
-					</div>
-					<div class="service col-md-4  text-center text-white">
-						<img class="svg-inverted" src="img/svg/ginecologia.svg" alt="ginecologia icon" width="80">
-						<h3>Ginecologia</h3>
-						<p>Te ayudamos a cuidarte.</p>
-					</div>
-					<div class="service col-md-4 text-center text-white">
-						<img class="svg-inverted" src="img/svg/podologia.svg" alt="podologia icon" width="80">
-						<h3>Podología</h3>
-						<p>Para la salud de tus pies.</p>
-					</div>
-					<div class="service col-md-4 text-center text-white">
-						<img class="svg-inverted" src="img/svg/optometría.svg" alt="optometría icon" width="80">
-						<h3>Optometría</h3>
-						<p>Lo mejor en salud visual.</p>
-					</div>
-					<div class="service col-md-4 text-center text-white">
-						<img class="svg-inverted" src="img/svg/laboratorio.svg" alt="laboratorio icon" width="80">
-						<h3>Laboratorio</h3>
-						<p>Un laboratorio de alta tecnologia <br>para ti.</p>
-					</div>
-
-				</div>
-			</div>
-		</div>
-
-		<center class="mt-5">
-			<h4>Tambien ofrecemos</h4>
-			<!-- <hr> -->
-		</center>
-
-		<div class="container mt-4" id="serviciosPracticos">
-
-
-			<div class="row">
-				<div class="col-md-4 text-center">
-					<img src="img/svg/noun_ATM_1791339.svg" height=100 alt="retiro de efectivo">
-					<hr>
-					<h3>Retiro de efectivo</h3>
-				</div>
-				<div class="col-md-4 text-center">
-					<img src="img/svg/cash-payment.svg" height="100" alt="pago de servicios">
-					<hr>
-					<h3>Pago de servicios</h3>
-				</div>
-				<div class="col-md-4 text-center">
-					<img src="img/svg/home-location.svg" height="100" alt="pago de servicios">
-					<hr>
-					<h3>Servicio a domicilio</h3>
-				</div>
-			</div>
-		</div>
-
-		
 
 	</main>
 
 	<?php include "components/footer.php" ?>
 
 	<!-- Bootstrap core JavaScript -->
-	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/js/bootstrap.min.js"></script>
 	<!-- MDB core JavaScript -->
 	<!-- <script type="text/javascript" src="js/mdb.min.js"></script> -->
 	<!-- Your custom scripts (optional) -->

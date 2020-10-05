@@ -12,11 +12,11 @@
 	<!-- favicon  -->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
 	<!-- Material Design Bootstrap -->
-	<!-- <link rel="stylesheet" href="css/mdb.min.css"> -->
+	<!-- <link rel="stylesheet" href="/css/mdb.min.css"> -->
 	<!-- Your custom styles (optional) -->
 	<link rel="stylesheet" href="/css/style.css">
 	<link rel="stylesheet" href="/galeria/galeria-style.css">
-	<link rel="stylesheet" href="css/simplegallery.demo1.css">
+	<link rel="stylesheet" href="/css/simplegallery.demo1.css">
 
 </head>
 
@@ -35,11 +35,11 @@
 		<div id="gallery" class="simplegallery">
 			<div class="content text-center">
 
-				<img src="galeria/galeria/foto0.jpg" class="w-75 image_1" alt="" />
+				<img src="/galeria/galeria/foto0.jpg" class="w-75 image_1" alt="" />
 				<?php
 					for ($i = 1; $i < 9; $i++) {
 				?>
-					<img src="galeria/galeria/foto<?php echo $i ?>.jpg" class="w-75 image_<?php echo ($i + 1) ?>" style="display:none" alt="" />
+					<img src="/galeria/galeria/foto<?php echo $i ?>.jpg" class="w-75 image_<?php echo ($i + 1) ?>" style="display:none" alt="" />
 				<?php
 					}
 				?>
@@ -55,7 +55,7 @@
 				?>
 					<div class="thumb">
 						<a href="#" rel="<?php echo ($i+1) ?>">
-							<img src="galeria/galeria/foto<?php echo $i ?>.jpg" id="thumb_<?php echo ($i + 1) ?>" class="thumbs" alt="" />
+							<img src="/galeria/galeria/foto<?php echo $i ?>.jpg" id="thumb_<?php echo ($i + 1) ?>" class="thumbs" alt="" />
 						</a>
 					</div>
 				<?php		
@@ -70,13 +70,13 @@
 
 	<?php include "../components/footer.php" ?>
 
-	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="/js/jquery.min.js"></script>
 	<!-- Bootstrap core JavaScript -->
-	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/js/bootstrap.min.js"></script>
 	<!-- MDB core JavaScript -->
-	<!-- <script type="text/javascript" src="js/mdb.min.js"></script> -->
+	<!-- <script type="text/javascript" src="/js/mdb.min.js"></script> -->
 	<!-- Your custom scripts (optional) -->
-	<script type="text/javascript" src="js/simplegallery.min.js"></script>
+	<script type="text/javascript" src="/js/simplegallery.min.js"></script>
 	<script>
 		$(document).ready(function() {
 

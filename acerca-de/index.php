@@ -12,7 +12,7 @@
 	<!-- favicon  -->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
 	<!-- Material Design Bootstrap -->
-	<!-- <link rel="stylesheet" href="css/mdb.min.css"> -->
+	<!-- <link rel="stylesheet" href="/css/mdb.min.css"> -->
 	<!-- Your custom styles (optional) -->
 	<link rel="stylesheet" href="/css/style.css">
 	<link rel="stylesheet" href="/acerca-de/acerca-de-style.css">
@@ -33,7 +33,7 @@
 			<h3 class="text-muted">¿Quienes Somos?</h3>
 			<hr>
 		</div>
-		<img src="img/featured-image.jpg" alt="featured image" id="featured-image">
+		<img src="/img/featured-image.jpg" alt="featured image" id="featured-image">
 		<p class="px-5 pb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam nec auctor est. Vivamus a pharetra.</p>
 	</div>
 
@@ -80,11 +80,11 @@
 
 	<?php include "../components/footer.php" ?>
 
-	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="/js/jquery.min.js"></script>
 	<!-- Bootstrap core JavaScript -->
-	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/js/bootstrap.min.js"></script>
 	<!-- MDB core JavaScript -->
-	<!-- <script type="text/javascript" src="js/mdb.min.js"></script> -->
+	<!-- <script type="text/javascript" src="/js/mdb.min.js"></script> -->
 	<!-- Your custom scripts (optional) -->
 </body>
 
