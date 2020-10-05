@@ -36,7 +36,7 @@
 			<div class="content text-center">
 
 				<img src="/galeria/galeria/foto0.jpg" class="w-75 image_1" alt="" />
-				<p class="caption caption_1 image_1">Image Caption 1</p>
+				<p class="caption caption_1">Descripción de la imagen  1</p>
 				<?php
 				for ($i = 1; $i < 9; $i++) {
 				?>
@@ -45,7 +45,7 @@
 				}
 				for ($i = 1; $i < 9; $i++) {
 				?>
-					<p class="caption caption_<?php echo ($i + 1) ?> image_<?php echo ($i + 1) ?>" style="display:none" >Image Caption <?php echo ($i + 1) ?></p>
+					<p class="caption caption_<?php echo ($i + 1) ?> " style="display:none" >Descripción de la imagen <?php echo ($i + 1) ?></p>
 				<?php
 				}
 				?>
@@ -59,7 +59,7 @@
 				<?php
 				for ($i = 0; $i < 9; $i++) {
 				?>
-					<div class="thumb">
+					<div class="thumb" id="thumbid_<?php echo ($i + 1) ?>">
 						<a href="#" rel="<?php echo ($i + 1) ?>">
 							<img src="/galeria/galeria/foto<?php echo $i ?>.jpg" id="thumb_<?php echo ($i + 1) ?>" class="thumbs" alt="" />
 						</a>
@@ -92,7 +92,7 @@
 				gallthumbnail: '.thumbnail',
 				gallthumb: '.thumb'
 			});
-			$(".thumbs").click(function(){
+			$(".thumb").click(function(){
 				var id = $(this).attr("id");
 				var cap_id = ".caption_" + id.substr(id.length - 1);
 				$(".caption").css("display","none");
