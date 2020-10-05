@@ -1,6 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700');
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@500&display=swap');
+body, html{
+	max-width: 100vw;
+	
+}
+
 p{
 	font-family: 'IBM Plex Sans';	
 }
@@ -100,21 +105,21 @@ h1, h2, h3, h4{
 
 #conozcanos{
 	background-image: url("/img/edificio-gato.jpg");
-	background-size: cover;
+	background-size: cover;  
 	color:white;
 	border-radius:15px;
 }
 #conozcanosInfo{
-	display:grid;
-	place-items: center;
+	
 }
 #inicioMapa{
-	display: grid;
-	place-items: center;
+	/* display: grid;
+	place-items: center; */
 }
 
 #conozcanos iframe{
 	border-radius: 15px;
+	width: 100%;
 }
 #conozcanos h2{
 	font-weight: bold;

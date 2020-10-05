@@ -126,7 +126,7 @@
 			<!-- <hr> -->
 		</center>
 
-		<div class="container mt-4" id="serviciosPracticos">
+<div class="container mt-4" id="serviciosPracticos">
 
 
 			<div class="row">
@@ -152,9 +152,9 @@
 
 			<div class="row">
 
-				<div class="col-md-6 p-5 text-center" id="conozcanosInfo">
+				<div class="col-md-6 p-md-5 text-center" id="conozcanosInfo">
 
-					<div>
+					<div class="">
 						<h2>Conózcanos</h2>
 						<hr class="border-white">
 						<p> Telefono: 2243 0300</p>
@@ -172,7 +172,7 @@
 					</div>
 
 				</div>
-				<div class="col-md-6 p-5" id="inicioMapa">
+				<div class="col-md-6 p-md-5" id="inicioMapa">
 					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3876.70656254132!2d-89.24696348563988!3d13.675598602740347!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f6331d67f249713%3A0x10e5b9244802c39b!2sPlaza%20Ancalmo!5e0!3m2!1ses!2ssv!4v1601178596250!5m2!1ses!2ssv" height="400" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
 				</div>
 
