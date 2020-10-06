@@ -191,51 +191,37 @@
 					<div id="gallery" class="simplegallery">
 						<div class="content text-center">
 							<img src="/especialidades/doctor/galeria/foto0.jpg" class="w-75 image_1" alt="" />
-							<img src="/especialidades/doctor/galeria/foto1.jpg" class="w-75 image_2" style="display:none" alt="" />
-							<img src="/especialidades/doctor/galeria/foto2.jpg" class="w-75 image_3" style="display:none" alt="" />
-							<img src="/especialidades/doctor/galeria/foto3.jpg" class="w-75 image_4" style="display:none" alt="" />
-							<img src="/especialidades/doctor/galeria/foto4.jpg" class="w-75 image_5" style="display:none" alt="" />
-							<img src="/especialidades/doctor/galeria/foto5.jpg" class="w-75 image_6" style="display:none" alt="" />
+							<p class="caption caption_1">Descripción de la imagen 1</p>
+							<?php
+							for ($i = 1; $i < 6; $i++) {
+							?>
+								<img src="/especialidades/doctor/galeria/foto<?php echo $i ?>.jpg" class="w-75 image_<?php echo ($i + 1) ?>" style="display:none" alt="" />
+							<?php
+							}
+							for ($i = 1; $i < 6; $i++) {
+							?>
+								<p class="caption caption_<?php echo ($i + 1) ?> " style="display:none">Descripción de la imagen <?php echo ($i + 1) ?></p>
+							<?php
+							}
+							?>
 						</div>
 
 						<div class="clear"></div>
 
-						<div class="thumbnail">
-							<div class="thumb">
-								<a href="#" rel="1">
-									<img src="/especialidades/doctor/galeria/foto0.jpg" id="thumb_1" alt="" />
-								</a>
-							</div>
-							<div class="thumb">
-								<a href="#" rel="2">
-									<img src="/especialidades/doctor/galeria/foto1.jpg" id="thumb_2" alt="" />
-								</a>
-							</div>
-							<div class="thumb">
-								<a href="#" rel="3">
-									<img src="/especialidades/doctor/galeria/foto2.jpg" id="thumb_3" alt="" />
-								</a>
-							</div>
-							<div class="thumb ">
-								<a href="#" rel="4">
-									<img src="/especialidades/doctor/galeria/foto3.jpg" id="thumb_4" alt="" />
-								</a>
-							</div>
-							<div class="thumb">
-								<a href="#" rel="5">
-									<img src="/especialidades/doctor/galeria/foto4.jpg" id="thumb_5" alt="" />
-								</a>
-							</div>
-
-							<div class="thumb">
-								<a href="#" rel="6">
-									<img src="/especialidades/doctor/galeria/foto5.jpg" id="thumb_6" alt="" />
-								</a>
-							</div>
-							
+						<div class="thumbnail container">
+							<?php
+							for ($i = 0; $i < 6; $i++) {
+							?>
+								<div class="thumb" id="thumbid_<?php echo ($i + 1) ?>">
+									<a href="#" rel="<?php echo ($i + 1) ?>">
+										<img src="/especialidades/doctor/galeria/foto<?php echo $i ?>.jpg" id="thumb_<?php echo ($i + 1) ?>" class="thumbs" alt="" />
+									</a>
+								</div>
+							<?php
+							}
+							?>
 
 						</div>
-
 
 					</div>
 				</div>
@@ -272,7 +258,13 @@
 				if ($(window).width() <= 768) {
 					$("#myTab").tabCollapse();
 				}
-			})
+			});
+			$(".thumb").click(function(){
+				var id = $(this).attr("id");
+				var cap_id = ".caption_" + id.substr(id.length - 1);
+				$(".caption").css("display","none");
+				$(cap_id).css("display", "block");
+			});
 		</script>
 	</body>
 
