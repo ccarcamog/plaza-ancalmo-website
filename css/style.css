@@ -55,6 +55,15 @@ p{
 	/* white-space: nowrap; */
 	color: rgba(0, 0, 0, 0.5)
 }
+@media(min-width:1200px){
+
+	#top-navbar #navbarNav{
+		margin-top: 32px;
+	}
+	#top-navbar .navbar-nav{
+		margin-left: calc(50vw - 595px);
+	}
+}
 
 #top-navbar .nav-link:hover{
 	color: rgba(0, 0, 0, 0.8)
