@@ -2,8 +2,9 @@
 #farmaciaHeader{
 	height: 50vh;
 	padding: 0;
-	background-image: url("/img/farmacy-background.jpg");
+	background-image: url("/img/farmacia-background.png");
 	background-size: cover;
+	background-position: center 60%;
 }
 
 #farmaciaHeader div{
