@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Farmacia ANCALMO</title>
-	<link rel="icon" href="/img/Logo Plaza Ancalmo.png">
+	<link rel="icon" href="/img/svg/Logo Plaza Ancalmo.svg">
 	<!-- MDB icon -->
 	<!-- Bootstrap core CSS -->
 	<link rel="stylesheet" href="/css/bootstrap.min.css">

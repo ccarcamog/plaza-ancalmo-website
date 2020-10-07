@@ -1,87 +1,107 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Generator: Adobe Illustrator 24.1.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
-	<!ENTITY ns_extend "http://ns.adobe.com/Extensibility/1.0/">
-	<!ENTITY ns_ai "http://ns.adobe.com/AdobeIllustrator/10.0/">
-	<!ENTITY ns_graphs "http://ns.adobe.com/Graphs/1.0/">
-	<!ENTITY ns_vars "http://ns.adobe.com/Variables/1.0/">
-	<!ENTITY ns_imrep "http://ns.adobe.com/ImageReplacement/1.0/">
-	<!ENTITY ns_sfw "http://ns.adobe.com/SaveForWeb/1.0/">
-	<!ENTITY ns_custom "http://ns.adobe.com/GenericCustomNamespace/1.0/">
-	<!ENTITY ns_adobe_xpath "http://ns.adobe.com/XPath/1.0/">
-]>
-<svg version="1.1" id="Layer_1" xmlns:x="&ns_extend;" xmlns:i="&ns_ai;" xmlns:graph="&ns_graphs;"
-	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1190.55 841.89"
-	 style="enable-background:new 0 0 1190.55 841.89;" xml:space="preserve">
-<style type="text/css">
+
+<svg
+   xmlns:i="&amp;ns_ai;"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   id="Layer_1"
+   x="0px"
+   y="0px"
+   viewBox="0 0 1190.55 841.89"
+   style="enable-background:new 0 0 1190.55 841.89;"
+   xml:space="preserve"
+   sodipodi:docname="Logo Plaza Ancalmo.svg"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"><metadata
+   id="metadata53"><rdf:RDF><cc:Work
+       rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /></cc:Work></rdf:RDF></metadata><defs
+   id="defs51">
+			
+			
+		</defs><sodipodi:namedview
+   pagecolor="#ffffff"
+   bordercolor="#666666"
+   borderopacity="1"
+   objecttolerance="10"
+   gridtolerance="10"
+   guidetolerance="10"
+   inkscape:pageopacity="0"
+   inkscape:pageshadow="2"
+   inkscape:window-width="1366"
+   inkscape:window-height="729"
+   id="namedview49"
+   showgrid="false"
+   inkscape:zoom="0.69846503"
+   inkscape:cx="568.60413"
+   inkscape:cy="293.99257"
+   inkscape:window-x="0"
+   inkscape:window-y="0"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="g44" />
+<style
+   type="text/css"
+   id="style2">
 	.st0{fill:#66D7DE;}
 	.st1{fill:#FFFFFF;}
 	.st2{fill:#A3A5A8;}
 </style>
-<switch>
-	<foreignObject requiredExtensions="&ns_ai;" x="0" y="0" width="1" height="1">
-		<i:aipgfRef  xlink:href="#adobe_illustrator_pgf">
+<switch
+   id="switch46">
+	<foreignObject
+   requiredExtensions="http://ns.adobe.com/AdobeIllustrator/10.0/"
+   x="0"
+   y="0"
+   width="1"
+   height="1">
+		<i:aipgfRef
+   xlink:href="#adobe_illustrator_pgf">
 		</i:aipgfRef>
 	</foreignObject>
-	<g i:extraneous="self">
-		<g>
-			<g>
-				<g>
-					<path class="st0" d="M576.3,571.97l142.58-0.04c69.56-0.05,35.52-87.78,35.52-87.78L674.99,275.8
-						c-11.17-29.3,32.39-44.92,32.39-44.92l43.37-14.09v-8.08H576.3"/>
-					<path class="st0" d="M585,571.97l-153.54-0.04c-69.56-0.05-35.52-87.78-35.52-87.78l79.42-208.35
-						c11.17-29.3-32.39-44.92-32.39-44.92l-43.37-14.09v-8.08h177.87"/>
+	<g
+   i:extraneous="self"
+   id="g44">
+		<g
+   id="g14"
+   transform="matrix(2.1875218,0,0,2.1875218,-662.9219,-433.17289)">
+				<g
+   id="g8">
+					<path
+   style="fill:#66d7de"
+   inkscape:connector-curvature="0"
+   id="path4"
+   d="m 576.3,571.97 142.58,-0.04 c 69.56,-0.05 35.52,-87.78 35.52,-87.78 L 674.99,275.8 c -11.17,-29.3 32.39,-44.92 32.39,-44.92 l 43.37,-14.09 v -8.08 H 576.3"
+   class="st0" />
+					<path
+   style="fill:#66d7de"
+   inkscape:connector-curvature="0"
+   id="path6"
+   d="M 585,571.97 431.46,571.93 C 361.9,571.88 395.94,484.15 395.94,484.15 L 475.36,275.8 c 11.17,-29.3 -32.39,-44.92 -32.39,-44.92 L 399.6,216.79 v -8.08 h 177.87"
+   class="st0" />
 				</g>
-				<g>
-					<path class="st1" d="M749.32,562.86c-10.09,9.41-28.61,9.13-27.95,9.12l-26.29,0.41l-3.53-9.52l-39.38-96.55h-155.1
-						l-37.77,95.53l-3.89,10.32l-23.95,0.33c-14.6,0-22.78-3.35-28.19-8.03l5.71-13.99L544.52,208.4h60.23l141.31,346.38
-						L749.32,562.86z M517.29,416.82h114.67l-57.34-139.84L517.29,416.82z"/>
+				<g
+   id="g12">
+					<path
+   style="fill:#ffffff"
+   inkscape:connector-curvature="0"
+   id="path10"
+   d="m 749.32,562.86 c -10.09,9.41 -28.61,9.13 -27.95,9.12 l -26.29,0.41 -3.53,-9.52 -39.38,-96.55 h -155.1 l -37.77,95.53 -3.89,10.32 -23.95,0.33 c -14.6,0 -22.78,-3.35 -28.19,-8.03 l 5.71,-13.99 135.54,-342.08 h 60.23 L 746.06,554.78 Z M 517.29,416.82 H 631.96 L 574.62,276.98 Z"
+   class="st1" />
 				</g>
 			</g>
-			<g>
-				<path class="st2" d="M410.34,615.78h-8.33v17.26h-0.85v-38.38h0.85v20.27h8.33c5.37,0,9.68-4.37,9.68-9.68
-					c0-5.37-4.31-9.74-9.68-9.74l-8.33,0.01v-0.86h8.33c5.82,0,10.59,4.77,10.59,10.59C420.92,611.06,416.16,615.78,410.34,615.78z"
-					/>
-				<path class="st2" d="M426.44,633.04v-38.38h0.85v38.38H426.44z"/>
-				<path class="st2" d="M460.11,619.85v13.2h-0.85v-8.43c-1.96,5.17-6.97,8.88-12.8,8.88c-7.53,0-13.65-6.12-13.65-13.65
-					c0-7.53,6.12-13.65,13.65-13.65C453.99,606.2,460.11,612.32,460.11,619.85z M459.25,619.85c0-7.07-5.77-12.79-12.8-12.79
-					c-7.07,0-12.79,5.72-12.79,12.79c0,7.03,5.72,12.75,12.79,12.75C453.48,632.59,459.25,626.87,459.25,619.85z M460.11,606.6
-					h-0.85l0,7.5l0.85,4.13V606.6z"/>
-				<path class="st2" d="M464.62,607.45v-0.85h14.5v0.85H464.62z M464.77,632.44c-0.2-0.4-0.2-0.85,0.05-1.21l18.57-23.33
-					c0.1-0.1,0.05-0.25,0-0.3c0-0.05-0.1-0.15-0.25-0.15h-4.01v-0.85h4.01c0.45,0,0.85,0.25,1.05,0.65c0.2,0.35,0.15,0.8-0.1,1.2
-					l-18.57,23.28c-0.1,0.1-0.05,0.25,0,0.3c0,0.05,0.1,0.15,0.25,0.15h18.77v0.85h-18.77
-					C465.37,633.04,464.97,632.79,464.77,632.44z"/>
-				<path class="st2" d="M514.34,619.85v13.2h-0.85v-8.43c-1.96,5.17-6.97,8.88-12.79,8.88c-7.53,0-13.65-6.12-13.65-13.65
-					c0-7.53,6.12-13.65,13.65-13.65C508.22,606.2,514.34,612.32,514.34,619.85z M513.49,619.85c0-7.07-5.77-12.79-12.79-12.79
-					c-7.08,0-12.8,5.72-12.8,12.79c0,7.03,5.72,12.75,12.8,12.75C507.72,632.59,513.49,626.87,513.49,619.85z M514.34,606.6h-0.85
-					l-0.06,8.34l0.85,3.64L514.34,606.6z"/>
-				<path class="st2" d="M552.62,618.94v0.85h-13.35l-6.17,13.25h-0.95l17.76-38.19c0.15-0.35,0.55-0.6,0.95-0.6
-					c0.45,0,0.85,0.25,1.05,0.6l3.81,8.23l-0.8,0.35l-3.81-8.18c-0.05-0.15-0.15-0.15-0.25-0.15c0,0-0.15,0-0.2,0.15l-11.04,23.68
-					H552.62z M555.73,603.09l13.9,29.96h-0.95l-13.75-29.6L555.73,603.09z"/>
-				<path class="st2" d="M575.15,633.04v-14.8c0-6.68,5.42-12.09,12.14-12.09c6.67,0,12.09,5.42,12.09,12.09h-0.85
-					c0-6.17-5.07-11.24-11.24-11.24c-6.22,0-11.29,5.07-11.29,11.24v14.8H575.15z M575.15,618.24V606.6H576l0.01,11.13
-					L575.15,618.24z M598.53,633.04v-14.8h0.85v14.8H598.53z"/>
-				<path class="st2" d="M657.38,619.85v13.2h-0.85v-8.43c-1.96,5.17-6.98,8.88-12.79,8.88c-7.53,0-13.65-6.12-13.65-13.65
-					c0-7.53,6.12-13.65,13.65-13.65S657.38,612.32,657.38,619.85z M656.53,619.85c0-7.07-5.77-12.79-12.79-12.79
-					c-7.08,0-12.8,5.72-12.8,12.79c0,7.03,5.72,12.75,12.8,12.75C650.75,632.59,656.53,626.87,656.53,619.85z M657.38,606.6h-0.85
-					l-0.04,8.4l0.89,5.7V606.6z"/>
-				<path class="st2" d="M663.14,633.04v-38.38H664v38.38H663.14z"/>
-				<path class="st2" d="M669.61,606.43l0.86,0.02l-0.11,11.8h-0.85L669.61,606.43z M716.28,618.24c0-6.17-5.07-11.24-11.24-11.24
-					c-6.22,0-11.29,5.07-11.29,11.24v8.45l-0.85,0.23v-8.68c0-6.17-5.07-11.24-11.29-11.24c-6.17,0-11.24,5.07-11.24,11.24v14.8
-					h-0.85v-14.8c0-6.68,5.42-12.09,12.09-12.09c5.62,0,10.29,3.76,11.74,8.88c1.4-5.12,6.12-8.88,11.69-8.88
-					c6.67,0,12.14,5.42,12.14,12.09H716.28z M692.9,633.04v-6.57h0.85v6.57H692.9z M716.28,633.04l0.06-14.57l0.84-0.23v14.8H716.28
-					z"/>
-				<path class="st2" d="M725.15,619.85c0-7.53,6.12-13.65,13.65-13.65c7.52,0,13.65,6.12,13.65,13.65
-					c0,7.53-6.12,13.65-13.65,13.65C731.28,633.49,725.15,627.37,725.15,619.85z M726.01,619.85c0,7.03,5.72,12.75,12.8,12.75
-					c7.07,0,12.79-5.72,12.79-12.75c0-7.07-5.72-12.79-12.79-12.79C731.73,607.05,726.01,612.77,726.01,619.85z"/>
-				<path class="st2" d="M625.66,630.42c-2.04,1.37-4.49,2.17-7.12,2.17c-7.08,0-12.8-5.72-12.8-12.75c0-7.07,5.72-12.79,12.8-12.79
-					c2.8,0,5.41,0.91,7.53,2.46l0.49-0.7c-2.25-1.64-5.03-2.61-8.02-2.61c-7.53,0-13.65,6.12-13.65,13.65
-					c0,7.53,6.12,13.65,13.65,13.65c2.82,0,5.44-0.87,7.63-2.35L625.66,630.42z"/>
-			</g>
-		</g>
 	</g>
 </switch>
-<i:aipgf  id="adobe_illustrator_pgf" i:pgfEncoding="zstd/base64" i:pgfVersion="24">
+<i:aipgf
+   id="adobe_illustrator_pgf"
+   i:pgfEncoding="zstd/base64"
+   i:pgfVersion="24">
 	<![CDATA[
 	KLUv/QBYfMUD7iHF1wotsBKRBgMqMYTSQgmgqRt07kUM0KoSWSIioNxi3SIiUpIpvRjOAN9+0J9n
 /8G5nw0FCtUJhuepoWI8ckYb2wkPyw0RxLzjuaioIB7Je372eVusRHKM6itCIFT2l70+lhIRE1EV

@@ -58,7 +58,7 @@ p{
 @media(min-width:1200px){
 
 	#top-navbar #navbarNav{
-		margin-top: 32px;
+		margin-top: 30px;
 	}
 	#top-navbar .navbar-nav{
 		margin-left: calc(50vw - 595px);
