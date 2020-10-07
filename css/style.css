@@ -99,13 +99,17 @@ p{
 
 
 #carouselJumbotron #item1{
-	background-image: url("/img/lab.jpg");
+	background-image: url("/img/fachada-1.jpg");
 }
 #carouselJumbotron #item2{
-	background-image: url("/img/dentist.jpg");
+	background-image: url("/img/apointment.jpg");
+	/* background-image: url("/img/lab.jpg"); */ 
+	/* background-image: url("/img/dentist.jpg"); */
+	
 }
 #carouselJumbotron #item3{
-	background-image: url("/img/apointment.jpg")
+	background-image: url("/img/fachada-2.jpg");
+	
 }
 
 h1, h2, h3, h4{
@@ -113,14 +117,12 @@ h1, h2, h3, h4{
 }
 
 #conozcanos{
-	background-image: url("/img/edificio-gato.jpg");
+	background-image: url("/img/edificio-plaza.jpg");
 	background-size: cover;  
 	color:white;
 	border-radius:15px;
 }
-#conozcanosInfo{
-	
-}
+
 #inicioMapa{
 	/* display: grid;
 	place-items: center; */
