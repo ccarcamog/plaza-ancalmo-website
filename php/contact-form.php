@@ -2,7 +2,7 @@
 
 // mail("luismarioram99@gmail.com", "Test", "Hello world");
 
-if (!empty($_POST)) {
+if (isset($_POST["contact-submit"])) {
 
 
 	$nombre = $_POST['nombre'];

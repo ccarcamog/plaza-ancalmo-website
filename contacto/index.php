@@ -110,7 +110,7 @@
 					</div>
 					<div class="row form-group p-3 pb-0">
 						<div class="col">
-							<input type="submit" name="submit" value="Enviar" class="btn btn-lg btn-warning">
+							<input type="submit" name="contact-submit" value="Enviar" class="btn btn-lg btn-warning">
 						</div>
 					</div>
 				</form>
