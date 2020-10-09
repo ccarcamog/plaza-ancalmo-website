@@ -37,8 +37,6 @@
 
 			<div class="col-md-6 p-4" id="introTexto">
 
-
-
 				<h2>Tenemos lo que necesitas</h2>
 				<hr>
 				<p>Nuestra visión de servicio nos inspira a trabajar con excelencia, ofreciéndote medicamentos y productos de calidad. Somos tu lugar de confianza.</p>
@@ -51,37 +49,38 @@
 					</a>
 				</p>
 
-
 			</div>
 			<div class="col-md-6 p-4" id="introImg">
-				<img src="/img/medications.jpg" alt="Imagen medicamentos">
+				<img src="/img/farmacia-estantes.jpg" alt="Imagen medicamentos">
 			</div>
 
-		</div>
 
+		</div>
 
 	</div>
 
 	<div class="container" id="farmaciaPuntos">
-		<div class="row p-3">
-			<div class="col-md-4 text-white p-4 text-center">
-				<img class="svg-inverted" src="/img/svg/check.svg" height=100 alt="conveniencia icon">
-				<hr class="border-white">
-				<h3><b>Conveniencia</b></h3>
-				<p>Contamos con servicio a domicilio, pago de servicios y muchas cosas mas.</p>
-			</div>
-			<div class="col-md-4 p-4 text-white text-center">
-				<img src="/img/svg/security.svg" alt="seguridad icon" height=100 class="svg-inverted">
-				<hr class="border-white">
-				<h3>Seguridad</h3>
-				<p>Seguimos protocolos de bioseguridad y contamos con seguridad para tu confianza.</p>
+		<div class="filter">
+			<div class="row p-3">
+				<div class="col-md-4 text-white p-4 text-center">
+					<img class="svg-inverted" src="/img/svg/check.svg" height=100 alt="conveniencia icon">
+					<hr class="border-white">
+					<h3><b>Conveniencia</b></h3>
+					<p>Contamos con servicio a domicilio, pago de servicios y muchas cosas mas.</p>
+				</div>
+				<div class="col-md-4 p-4 text-white text-center">
+					<img src="/img/svg/security.svg" alt="seguridad icon" height=100 class="svg-inverted">
+					<hr class="border-white">
+					<h3>Seguridad</h3>
+					<p>Seguimos protocolos de bioseguridad y contamos con seguridad para tu confianza.</p>
 
-			</div>
-			<div class="col-md-4 p-4 text-white text-center">
-				<img src="/img/svg/variety.svg" alt="seguridad icon" height=100 class="svg-inverted">
-				<hr class="border-white">
-				<h3>Variedad</h3>
-				<p>Contamos con una amplia variedad de productos de la mas alta calidad.</p>
+				</div>
+				<div class="col-md-4 p-4 text-white text-center">
+					<img src="/img/svg/variety.svg" alt="seguridad icon" height=100 class="svg-inverted">
+					<hr class="border-white">
+					<h3>Variedad</h3>
+					<p>Contamos con una amplia variedad de productos de la mas alta calidad.</p>
+				</div>
 			</div>
 		</div>
 	</div>

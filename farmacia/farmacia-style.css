@@ -2,7 +2,7 @@
 #farmaciaHeader{
 	height: 50vh;
 	padding: 0;
-	background-image: url("/img/farmacia-background.png");
+	background-image: url("/img/banner-farmacia.jpg");
 	background-size: cover;
 	background-position: center 60%;
 }
@@ -54,10 +54,17 @@
 /* FARMACIA PUNTOS --------------------------------------------------------- */
 #farmaciaPuntos{
 	
-	background-image: url("/img/delivery.jpg");
+	background-image: url("/img/farmacia-cajero.jpg");
+	background-size: cover;
+	background-position: center;
 	border-radius: 15px;
+	padding:0;
 	background-size: cover;
 
+}
+#farmaciaPuntos .filter{
+	background-color: rgba(66, 122, 136, 0.651);
+	border-radius: 15px;
 }
 /* BANCO AMIGO */
 
