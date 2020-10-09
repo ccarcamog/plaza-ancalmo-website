@@ -24,23 +24,26 @@
 
 	<?php 
 
-$titulo = "Odontología";
-$nombre = "Dr. John Doe";
-$especialidad = "Odontologo";
-$imgPerfil = "doctor-john-doe.jpg";
+	class doctor{ 
+		
+		public $nombre;
+		public $titulo;
+		public $especialidad;
+		public $imgPerfil;
+	}
 
-if($_GET["especialidad"] == "ginecologia"){
-	$titulo = "Ginecología";
-	$nombre = "Dra. Diana Flores Urrutia";
-	$especialidad = "Ginecologa";
-	$galeria = "ginecologia";
-	$imgPerfil = "doctor-diana-flores.jpg";
-}else if($_GET["especialidad"] == "pediatria"){
-	$titulo = "Pediatría";
-	$nombre = "Dr. Guillermo Mata";
-	$especialidad = "Pediatra";
-	$imgPerfil = "doctor-guillermo-mata.jpg";
-}
+	$doctores = [new doctor, new doctor];
+	
+
+	$doctores[0]->nombre = "Dra. Diana Flores Urrutia";
+	$doctores[0]->titulo = "Ginecologa";
+	$doctores[0]->especialidad = "ginecología";
+	$doctores[0]->imgPerfil = "doctor-diana-flores.jpg";
+
+	$doctores[1]->nombre = "Dr. Guillermo Mata";
+	$doctores[1]->titulo = "Pediatra";
+	$doctores[1]->especialidad = "pediatría";
+	$doctores[1]->imgPerfil = "doctor-guillermo-mata.jpg";
 	
 	?>
 
@@ -59,20 +62,26 @@ if($_GET["especialidad"] == "ginecologia"){
 
 	<hr>
 
+
 	<div class="container" id="listaDoctores">
 		<?php
-		for ($i = 0; $i < 1; $i++) {
+		for ($i = 0; $i < 2; $i++) {
+
+			if(isset($_GET["especialidad"]) && $_GET["especialidad"] != $doctores[$i]->especialidad ){
+				
+				continue;
+			}
 
 		?>
 
 			<div class="row doctor">
 				<div class=" col-sm-4 doctor-image mb-3">
-					<img src="/img/<?php echo $imgPerfil?>" alt="doctor profile pic">
+					<img src="/img/<?php echo $doctores[$i]->imgPerfil?>" alt="doctor profile pic">
 				</div>
 				<div class=" col-sm-8 doctor-text">
 					<a href="/especialidades/doctor/?especialidad=<?php echo $_GET["especialidad"] ?>" class="doctor-title d-inline">
-						<h3 class="m-0"><?php echo $nombre ?></h3>
-						<h4 class="text-muted ml-md-3"><?php echo $especialidad ?></h4>
+						<h3 class="m-0"><?php echo $doctores[$i]->nombre ?></h3>
+						<h4 class="text-muted ml-md-3"><?php echo $doctores[$i]->titulo ?></h4>
 					</a>
 					<hr>
 					<p>Contacto: <br>

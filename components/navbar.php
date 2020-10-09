@@ -25,8 +25,9 @@
           Doctores
         </a>
         <div class="dropdown-menu" id="especialidadesMenu" aria-labelledby="especialidadesDropdown">
-          <a class="dropdown-item" href="/especialidades/?especialidad=ginecologia">Ginecología</a>
-          <a class="dropdown-item" href="/especialidades/?especialidad=pediatria">Pedriatría</a>
+        <a class="dropdown-item" href="/especialidades/">Todos</a>
+          <a class="dropdown-item" href="/especialidades/?especialidad=ginecología">Ginecología</a>
+          <a class="dropdown-item" href="/especialidades/?especialidad=pediatría">Pedriatría</a>
 
         </div>
       </div>
