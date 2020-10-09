@@ -100,15 +100,22 @@ p{
 
 #carouselJumbotron #item1{
 	background-image: url("/img/fachada-1.jpg");
+	background-size: cover;
+	background-position: center center;
 }
 #carouselJumbotron #item2{
-	background-image: url("/img/apointment.jpg");
+	background-image: url("/img/fachada-2.jpg");
+	background-size: cover;
+	background-position: center center;
+	/* background-image: url("/img/apointment.jpg"); */
 	/* background-image: url("/img/lab.jpg"); */ 
 	/* background-image: url("/img/dentist.jpg"); */
 	
 }
 #carouselJumbotron #item3{
-	background-image: url("/img/fachada-2.jpg");
+	background-image: url("/img/fachada-3.jpg");
+	background-size: cover;
+	background-position: center center;
 	
 }
 
