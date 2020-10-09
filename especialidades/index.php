@@ -61,7 +61,7 @@ if($_GET["especialidad"] == "ginecologia"){
 
 	<div class="container" id="listaDoctores">
 		<?php
-		for ($i = 0; $i < 5; $i++) {
+		for ($i = 0; $i < 1; $i++) {
 
 		?>
 
