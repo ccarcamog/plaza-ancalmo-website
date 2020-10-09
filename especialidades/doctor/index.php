@@ -23,15 +23,36 @@
 
 	<?php include "../../components/navbar.php" ?>
 
+	<?php 
+
+		$nombre = "Dr. John Doe";
+		$especialidad = "Odontologo";
+		$galeria = "foto";
+		$imgPerfil = "doctor-john-doe.jpg";
+
+		if($_GET["especialidad"] == "ginecologia"){
+			$nombre = "Dra. Diana Flores Urrutia";
+			$especialidad = "Ginecologa";
+			$galeria = "ginecologia";
+			$imgPerfil = "doctor-diana-flores.jpg";
+		}else if($_GET["especialidad"] == "pediatria"){
+			$nombre = "Dr. Guillermo Mata";
+			$especialidad = "Pediatra";
+			$galeria = "pediatria";
+			$imgPerfil = "doctor-guillermo-mata.jpg";
+		}
+
+	?>
+
 	<div class="container" id="doctorInfo">
 		<div class="row p-3">
 			<div class="col-sm-4 pb-3">
-				<img src="/img/doctor-1149149_1920.jpg" alt="doctor seguro pic">
+				<img src="/img/<?php echo $imgPerfil ?>" alt="doctor seguro pic">
 			</div>
 			<div class="col-sm-8">
 				<div class="doctor-title">
-					<h3 class="m-0">Dr. John Doe</h3>
-					<h4 class="text-muted ml-md-3">Odontologo</h4>
+					<h3 class="m-0"><?php echo $nombre ?></h3>
+					<h4 class="text-muted ml-md-3"> <?php echo $especialidad ?> </h4>
 				</div>
 				<hr>
 				<p>Contacto: <br>
@@ -48,7 +69,7 @@
 			<li>
 				<a href="#" class="btn btn-danger mr-3">
 					<img src="/img/svg/calendar-line.svg" class="svg-inverted mr-2" alt="calendar icon" height="20px">
-					Pedir consulta
+					Agendar consulta
 				</a>
 			</li>
 			<li role="presentation" class="nav-item active">
@@ -71,7 +92,7 @@
 		<div class="tab-content mt-5" id="myTabContent">
 			<div role="tabpanel" class="tab-pane fade show active" id="resumen" role="tabpanel" aria-labelledby="resumen-tab">
 				<div class="container-fluid">
-					<h4>Acerca de Dr. John Doe</h4>
+					<h4>Acerca de <?php echo $nombre ?></h4>
 					<hr>
 					<div class="row">
 						<div class="col-md-8">
@@ -190,12 +211,18 @@
 				<div class="container-fluid">
 					<div id="gallery" class="simplegallery">
 						<div class="content text-center">
-							<img src="/especialidades/doctor/galeria/foto0.jpg" class="w-75 image_1" alt="" />
+							<img src="/especialidades/doctor/galeria/<?php 
+										echo $galeria;
+										echo 0;
+										?>.jpg" class="w-75 image_1" alt="" />
 							<p class="caption caption_1">Descripción de la imagen 1</p>
 							<?php
 							for ($i = 1; $i < 6; $i++) {
 							?>
-								<img src="/especialidades/doctor/galeria/foto<?php echo $i ?>.jpg" class="w-75 image_<?php echo ($i + 1) ?>" style="display:none" alt="" />
+								<img src="/especialidades/doctor/galeria/<?php 
+										echo $galeria;
+										echo $i;
+										?>.jpg" class="w-75 image_<?php echo ($i + 1) ?>" style="display:none" alt="" />
 							<?php
 							}
 							for ($i = 1; $i < 6; $i++) {
@@ -214,7 +241,10 @@
 							?>
 								<div class="thumb" id="thumbid_<?php echo ($i + 1) ?>">
 									<a href="#" rel="<?php echo ($i + 1) ?>">
-										<img src="/especialidades/doctor/galeria/foto<?php echo $i ?>.jpg" id="thumb_<?php echo ($i + 1) ?>" class="thumbs" alt="" />
+										<img src="/especialidades/doctor/galeria/<?php 
+										echo $galeria;
+										echo $i;
+										?>.jpg" id="thumb_<?php echo ($i + 1) ?>" class="thumbs" alt="" />
 									</a>
 								</div>
 							<?php

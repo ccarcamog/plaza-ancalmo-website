@@ -22,6 +22,28 @@
 
 	<?php include "../components/navbar.php" ?>
 
+	<?php 
+
+$titulo = "Odontología";
+$nombre = "Dr. John Doe";
+$especialidad = "Odontologo";
+$imgPerfil = "doctor-john-doe.jpg";
+
+if($_GET["especialidad"] == "ginecologia"){
+	$titulo = "Ginecología";
+	$nombre = "Dra. Diana Flores Urrutia";
+	$especialidad = "Ginecologa";
+	$galeria = "ginecologia";
+	$imgPerfil = "doctor-diana-flores.jpg";
+}else if($_GET["especialidad"] == "pediatria"){
+	$titulo = "Pediatría";
+	$nombre = "Dr. Guillermo Mata";
+	$especialidad = "Pediatra";
+	$imgPerfil = "doctor-guillermo-mata.jpg";
+}
+	
+	?>
+
 	<div class="container-fluid" id="especialidadTitle">
 		<div class="filter p-md-5">
 			<h1>Especialidades:</h1>
@@ -30,7 +52,7 @@
 
 	<div class="container p-md-4 mt-3" id="especialidad info">
 		<div>
-			<h2>Odontología</h2>
+			<h2><?php echo $titulo ?></h2>
 			<p class="text-muted">Contamos con las siguientes opciones para ti. </p>
 		</div>
 	</div>
@@ -45,12 +67,12 @@
 
 			<div class="row doctor">
 				<div class=" col-sm-4 doctor-image mb-3">
-					<img src="/img/doctor-1149149_1920.jpg" alt="doctor profile pic">
+					<img src="/img/<?php echo $imgPerfil?>" alt="doctor profile pic">
 				</div>
 				<div class=" col-sm-8 doctor-text">
-					<a href="/especialidades/doctor/" class="doctor-title d-inline">
-						<h3 class="m-0">Dr. John Doe</h3>
-						<h4 class="text-muted ml-md-3">Odontologo</h4>
+					<a href="/especialidades/doctor/?especialidad=<?php echo $_GET["especialidad"] ?>" class="doctor-title d-inline">
+						<h3 class="m-0"><?php echo $nombre ?></h3>
+						<h4 class="text-muted ml-md-3"><?php echo $especialidad ?></h4>
 					</a>
 					<hr>
 					<p>Contacto: <br>
