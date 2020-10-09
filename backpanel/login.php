@@ -21,7 +21,6 @@
 	<?php include "../components/navbar.php" ?>
 	<div class="container-fluid p-5">
 		
-
 		<h4>Log In</h4>
 		<hr>
 		<div class="row">
