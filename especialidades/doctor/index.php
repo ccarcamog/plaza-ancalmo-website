@@ -49,17 +49,12 @@
 			<div class="col-sm-4 pb-3">
 				<img src="/img/<?php echo $imgPerfil ?>" alt="doctor seguro pic">
 			</div>
-			<div class="col-sm-8">
-				<div class="doctor-title">
+			<div class="col-sm-4 doctor-title">
+				<div class="">
 					<h3 class="m-0"><?php echo $nombre ?></h3>
-					<h4 class="text-muted ml-md-3"> <?php echo $especialidad ?> </h4>
+					<h4 class="text-muted"> <?php echo $especialidad ?> </h4>
 				</div>
-				<hr>
-				<p>Contacto: <br>
-					doctores@ancalmo.com <br>
-					7398-3470 <br>
-					<a href="#">Leer más</a>
-				</p>
+				
 			</div>
 		</div>
 	</div>
@@ -76,7 +71,7 @@
 				<a class="nav-link active" id="resumen-tab" data-toggle="tab" href="#resumen" role="tab" aria-controls="resumen" aria-selected="true">Resumen</a>
 			</li>
 			<li role="presentation" class="nav-item">
-				<a class="nav-link" id="seguro-tab" data-toggle="tab" href="#seguro" role="tab" aria-controls="seguro" aria-selected="false">Seguros Médicos</a>
+				<a class="nav-link" id="seguro-tab" data-toggle="tab" href="#seguro" role="tab" aria-controls="seguro" aria-selected="false">Redes de seguros</a>
 			</li>
 			<li role="presentation" class="nav-item">
 				<a class="nav-link" id="contacto-tab" data-toggle="tab" href="#contacto" role="tab" aria-controls="contacto" aria-selected="false">Contacto</a>
@@ -92,7 +87,7 @@
 		<div class="tab-content mt-5" id="myTabContent">
 			<div role="tabpanel" class="tab-pane fade show active" id="resumen" role="tabpanel" aria-labelledby="resumen-tab">
 				<div class="container-fluid">
-					<h4>Acerca de <?php echo $nombre ?></h4>
+					<h4><?php echo $nombre ?></h4>
 					<hr>
 					<div class="row">
 						<div class="col-md-8">
@@ -102,9 +97,17 @@
 							</p>
 							<h5 class="text-muted">Especialidades</h5>
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam lacus nisl, dignissim eget augue faucibus, convallis pretium mauris. Vivamus hendrerit eros vitae tempus tempor. Nulla facilisi. </p>
-							<h5 class="text-muted">Sub-especialidades</h5>
+							<h5 class="text-muted">Horarios de atención</h5>
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam lacus nisl, dignissim eget augue faucibus, convallis pretium mauris. Vivamus hendrerit eros vitae tempus tempor. Nulla facilisi. </p>
-							<h5 class="text-muted">Seguros médicos</h5>
+							<h5 class="text-muted">Redes de Seguros</h5>
+							<ul>
+								<li>Duis nec elit non leo molestie varius.</li>
+								<li>Pellentesque eu purus vitae felis mollis bibendum at sed sem.</li>
+								<li>Aenean rhoncus nibh vel vehicula dapibus.</li>
+								<li>Fusce aliquet felis in viverra interdum.</li>
+								<li>Etiam pulvinar justo at turpis lacinia, id aliquam sem facilisis.</li>
+							</ul>
+							<h5 class="text-muted">Formas de pago</h5>
 							<ul>
 								<li>Duis nec elit non leo molestie varius.</li>
 								<li>Pellentesque eu purus vitae felis mollis bibendum at sed sem.</li>
@@ -114,10 +117,10 @@
 							</ul>
 						</div>
 						<div class="col-md-4">
+							<h5 class="text-muted">Local</h5>
+							<p>5</p>
 							<h5 class="text-muted">Años de experiencia</h5>
 							<p>10</p>
-							<h5 class="text-muted"> No de Local</h5>
-							<p>5</p>
 						</div>
 					</div>
 				</div>
@@ -125,9 +128,8 @@
 			</div>
 			<div role="tabpanel" class="tab-pane fade" id="seguro" role="tabpanel" aria-labelledby="seguro-tab">
 				<div class="container-fluid" id="lista-seguros">
-					<h4>Lista de seguros médicos</h4>
+					<h4>Lista de redes de seguros</h4>
 					<hr>
-					<h5 class="text-muted">Seguros privados</h5>
 					<div class="row">
 						<div class="col-md-6">
 							<ul>
