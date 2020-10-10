@@ -102,17 +102,17 @@
 						<p>Te ayudamos a cuidarte.</p>
 					</div>
 					<div class="service col-md-4 text-center text-white">
-						<img class="svg-inverted" src="/img/svg/podologia.svg" alt="podologia icon" width="80">
-						<h3>Podología</h3>
-						<p>Para la salud de tus pies.</p>
+						<img class="svg-inverted" src="/img/svg/noun_lipstick_3111444.svg" alt="podologia icon" width="80">
+						<h3>Cuidado Personal</h3>
+						<p>Queremos consentirte.</p>
 					</div>
 					<div class="service col-md-4 text-center text-white">
-						<img class="svg-inverted" src="/img/svg/optometria.svg" alt="optometría icon" width="80">
+						<img class="svg-inverted" src="/img/svg/noun_Glasses_2439301.svg" alt="optometría icon" width="80">
 						<h3>Optometría</h3>
 						<p>Lo mejor en salud visual.</p>
 					</div>
 					<div class="service col-md-4 text-center text-white">
-						<img class="svg-inverted" src="/img/svg/laboratorio.svg" alt="laboratorio icon" width="80">
+						<img class="svg-inverted" src="/img/svg/noun_lab_2355623.svg" alt="laboratorio icon" width="80">
 						<h3>Laboratorio</h3>
 						<p>Un laboratorio de alta tecnologia <br>para ti.</p>
 					</div>
