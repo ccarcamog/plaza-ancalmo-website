@@ -31,17 +31,17 @@
 			<div class="carousel-inner">
 				<div id="item1" class="carousel-item active">
 					<div class="filter">
-						<h1>Lorem Ipsum</h1>
+						<h1>A la vanguardia de tu salud</h1>
 					</div>
 				</div>
 				<div id="item2" class="carousel-item">
 					<div class="filter">
-						<h1>Dolor sit amet</h1>
+						<h1>A la vanguardia de tu salud</h1>
 					</div>
 				</div>
 				<div id="item3" class="carousel-item">
 					<div class="filter">
-						<h1 class="text-align-center">Proin viverra pharetra.</h1>
+						<h1 class="text-align-center">A la vanguardia de tu salud</h1>
 					</div>
 				</div>
 			</div>

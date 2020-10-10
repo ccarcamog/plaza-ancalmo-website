@@ -36,7 +36,7 @@
 	
 
 	$doctores[0]->nombre = "Dra. Diana Flores Urrutia";
-	$doctores[0]->titulo = "Ginecologa";
+	$doctores[0]->titulo = "Ginecóloga";
 	$doctores[0]->especialidad = "ginecología";
 	$doctores[0]->imgPerfil = "doctor-diana-flores.jpg";
 
@@ -56,7 +56,7 @@
 	<div class="container p-md-4 mt-3" id="especialidad info">
 		<div>
 			<h2><?php echo $titulo ?></h2>
-			<p class="text-muted">Contamos con las siguientes opciones para ti. </p>
+			<p class="text-muted">Contamos con los mejores especialistas para cuidar de tí y de tu familia</p>
 		</div>
 	</div>
 
@@ -85,9 +85,8 @@
 					</a>
 					<hr>
 					<p>Contacto: <br>
-						email@example.com <br>
-						+50300000000 <br>
-						<a href="#">Leer más</a>
+						doctor@ancalmo.com <br>
+						7398-3470 <br>
 					</p>
 				</div>
 			</div>

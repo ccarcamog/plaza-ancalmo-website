@@ -37,9 +37,11 @@
 
 			<div class="col-md-6 p-4" id="introTexto">
 
-				<h2>Tenemos lo que necesitas</h2>
+				<h2>Tu lugar de confianza</h2>
 				<hr>
+				<p>¡Somos un nuevo concepto en farmacias porque tenemos de todo para todos!</p>
 				<p>Nuestra visión de servicio nos inspira a trabajar con excelencia, ofreciéndote medicamentos y productos de calidad. Somos tu lugar de confianza.</p>
+				<p>Síguenos en nuestras redes:</p>
 				<p>
 					<a href="https://www.facebook.com/FarmaciasAncalmo/" target="_blank">
 						<img src="/img/svg/facebook.svg" alt="facebook logo" />

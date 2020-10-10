@@ -56,8 +56,8 @@
 				</div>
 				<hr>
 				<p>Contacto: <br>
-					email@example.com <br>
-					+50300000000 <br>
+					doctores@ancalmo.com <br>
+					7398-3470 <br>
 					<a href="#">Leer más</a>
 				</p>
 			</div>
