@@ -2,8 +2,11 @@
 
 	if(isset($_POST["createuser-submit"])){
 
-		require "dbh.inc.php";
+		require "../credentials.php";
+		require "../db.php";
 		require "salt.php";
+
+		$db = new db($dbHost, $dbUID, $dbPWD, $dbName);
 
 		$username 	= $_POST['username'];
 		$mail 		= $_POST['mail'];
@@ -15,18 +18,10 @@
 		}
 
 		$sql = "SELECT username FROM `user-login` WHERE username=?";
-		$stmt = mysqli_stmt_init($conn);
+		
+		$users = $db->query($sql, $username);
 
-		if(!mysqli_stmt_prepare($stmt, $sql)){
-			header("Location: ../../backpanel/create-user.php?error=sqlerror1");
-			exit();
-		}
-
-		mysqli_stmt_bind_param($stmt,"s", $username);
-		mysqli_stmt_execute($stmt);
-		mysqli_stmt_store_result($stmt);
-
-		$resultCheck = mysqli_stmt_num_rows($stmt); 
+		$resultCheck = $users->numRows(); 
 
 		if($resultCheck > 0){
 			header("Location: ../../backpanel/create-user.php?error=usertaken&mail=".$mail);
@@ -34,24 +29,15 @@
 		}
 
 		$sql = "INSERT INTO `user-login` (username, mail, salt, password) VALUES (?,?,?,?)"; 
-		$stmt = mysqli_stmt_init($conn);
-
-		if(!mysqli_stmt_prepare($stmt, $sql)){
-			header("Location: ../../backpanel/create-user.php?error=sqlerror");
-			exit();
-		}
+	
 		$salt = generate_random_string();
 		$pwdHashed = password_hash($password."".$salt, PASSWORD_DEFAULT);
 
-		mysqli_stmt_bind_param($stmt, "ssss", $username, $mail, $salt, $pwdHashed);
-		mysqli_stmt_execute($stmt);
-		// $stmt->execute();
-		echo mysqli_error($conn);
+		$db->query($sql,$username, $mail, $salt, $pwdHashed);
 
 		header("Location: ../../backpanel/create-user.php?signup=success");
 
-		mysqli_stmt_close($stmt);
-		mysqli_close($conn);
+		$db->close();
 
 	}else{
 

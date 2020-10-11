@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<?php session_start(); ?>
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,7 +23,7 @@
 				<form action="/php/include/createuser.inc.php" method="POST">
 					<div class="form-group row">
 						<div class="col-md-6">
-							<label for="username">Nombre de usuario </label>
+							<label for="username">Nombre de usuario</label>
 							<input class="form-control" type="text" name="username" id="username-field" required>
 						</div>
 						<div class="col-md-6">
