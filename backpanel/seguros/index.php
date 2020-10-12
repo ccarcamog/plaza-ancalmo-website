@@ -17,6 +17,8 @@
 </head>
 
 <body>
+
+
 	<?php include "../../components/navbar.php" ?>
 	<div class="container-fluid p-5">
 
@@ -44,34 +46,50 @@
 								<th scope="col">descripcion</th>
 								<th scope="col">link</th>
 								<th scope="col">img</th>
-								<th scope="col">Modificar</th>
+								<th></th>
+								<th></th>
 							</tr>
 						</thead>
 						<tbody>
 
-							<?php 
-								foreach($seguros as $seguro){
+							<?php
+							foreach ($seguros as $seguro) {
 							?>
 
-							<tr>
-								<th scope="row"><?php echo $seguro['doc_redes_seguros_key'] ?></th>
-								<td><?php echo $seguro['doc_redes_seguros_desc'] ?></td>
-								<td><?php echo $seguro['doc_redes_seguros_link'] ?></td>
-								<td><?php echo $seguro['doc_redes_seguros_img'] ?></td>
-								<td><?php echo $seguro['doc_redes_seguros_nombre'] ?></td>
-								<td><a class="btn btn-primary" href="#">Modificar</a></td>
-							</tr>
+								<tr>
+									<th scope="row"><?= $seguro['doc_redes_seguros_key'] ?></th>
+									<td><?= $seguro['doc_redes_seguros_nombre'] ?></td>
+									<td><?= $seguro['doc_redes_seguros_desc'] ?></td>
+									<td><a href="<?= $seguro['doc_redes_seguros_link'] ?>" target="_blank"><?= $seguro['doc_redes_seguros_link'] ?></a></td>
+									<td><a href="<?= $seguro['doc_redes_seguros_img']?>" target="_blank"><?= $seguro['doc_redes_seguros_img'] ?></a></td>
+									<td><a class="btn btn-warning" href="/backpanel/seguros/update.php/?id=<?= $seguro['doc_redes_seguros_key'] ?>">Modificar</a></td>
+									<td>
+										<button class="btn btn-danger" onclick="borrar_seguro(<?= $seguro['doc_redes_seguros_key']?>,'<?= $seguro['doc_redes_seguros_nombre']?>');">
+											Borrar
+										</button>
+									</td>
+								</tr>
 
-							<?php 
-								}
+							<?php
+							}
 							?>
 						</tbody>
 					</table>
+					<a href="/backpanel/seguros/create.php" class="btn btn-success">Nueva red de seguros</a>
 				</div>
 
 			</div>
 		</div>
 	</div>
+	<script type="text/javascript" src="/js/jquery.min.js"></script>
+	<!-- Bootstrap core JavaScript -->
+	<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+		function borrar_seguro(id, nombre){
+			confirm("Seguro que desea borrar el elemento: " + nombre);
+			window.location.href = "/backpanel/seguros/delete.php?id=" + id;
+		}
+	</script>
 </body>
 
 </html>
