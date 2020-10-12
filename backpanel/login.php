@@ -1,5 +1,9 @@
 <?php 
 	session_start();
+	if(isset($_SESSION['username'])){
+		header("Location: /backpanel/index.php");
+		exit();
+	}
 ?>
 
 <!DOCTYPE html>
@@ -21,10 +25,10 @@
 	<?php include "../components/navbar.php" ?>
 	<div class="container-fluid p-5">
 		
-		<h4>Log In</h4>
-		<hr>
-		<div class="row">
+		<div class="row justify-content-center">
 			<div class="col-md-8">
+				<h4>Log In</h4>
+				<hr>
 				<form action="/php/include/login.inc.php" method="POST">
 					<div class="form-group row">
 						<div class="col-md-12">

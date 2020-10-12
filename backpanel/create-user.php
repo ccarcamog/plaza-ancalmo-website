@@ -1,6 +1,6 @@
+<?php require "../php/verify-session.php" ?>
 <!DOCTYPE html>
 <html lang="en">
-<?php session_start(); ?>
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,10 +16,15 @@
 <body>
 	<?php include "../components/navbar.php" ?>
 	<div class="container-fluid p-5">
-		<h4>Crear usuario</h4>
-		<hr>
+		
+		
 		<div class="row">
+			<div class="col-md-4">
+				<?php include "../components/side-bar.php" ?>
+			</div>
 			<div class="col-md-8">
+				<h4>Crear usuario</h4>
+				<hr>
 				<form action="/php/include/createuser.inc.php" method="POST">
 					<div class="form-group row">
 						<div class="col-md-6">
