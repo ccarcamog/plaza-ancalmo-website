@@ -7,31 +7,31 @@
 			</a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="/backpanel/doctores.php">
+			<a class="nav-link" href="/backpanel/doctores">
 				<span data-feather="file"></span>
 				Doctores
 			</a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="/backpanel/seguros.php">
+			<a class="nav-link" href="/backpanel/seguros">
 				<span data-feather="users"></span>
 				Redes de seguros
 			</a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="/backpanel/especialidades.php">
+			<a class="nav-link" href="/backpanel/especialidades">
 				<span data-feather="bar-chart-2"></span>
 				Especialidades
 			</a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="/backpanel/galeria.php">
+			<a class="nav-link" href="/backpanel/galeria">
 				<span data-feather="shopping-cart"></span>
 				Galeria
 			</a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="#">
+			<a class="nav-link" href="/backpanel/signout">
 				<span data-feather="shopping-cart"></span>
 				Salir del backpanel
 			</a>

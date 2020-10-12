@@ -1,4 +1,4 @@
-<?php require "../php/verify-session.php" ?>
+<?php require "../../php/verify-session.php" ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,15 +15,15 @@
 </head>
 
 <body>
-	<?php include "../components/navbar.php" ?>
+	<?php include "../../components/navbar.php" ?>
 	<div class="container-fluid p-5">
 		
 		<div class="row">	
 			<div class="col-md-2">
-				<?php include "../components/side-bar.php" ?>
+				<?php include "../../components/side-bar.php" ?>
 			</div>
 			<div class="col-md-10">
-				
+				<h2>Especialidades</h2>
 			</div>
 		</div>
 	</div>

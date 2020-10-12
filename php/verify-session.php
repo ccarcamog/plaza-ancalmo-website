@@ -1,7 +1,7 @@
 <?php 
 	session_start();
 	if(!isset($_SESSION['username'])){
-		header("Location /backpanel/login.php");
+		header("Location: /backpanel/login.php");
 		exit();
 	}
 ?>
