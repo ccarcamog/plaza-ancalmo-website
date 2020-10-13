@@ -32,7 +32,7 @@
 		$_SESSION['username'] = $row['username'];
 		$_SESSION['email'] = $row['email'];
 
-		header("Location: /backpanel/login.php?login=success");
+		header("Location: /backpanel/index.php?login=success");
 
 	}else{	
 		header("Location: ../../");

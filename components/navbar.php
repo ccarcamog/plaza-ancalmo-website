@@ -16,25 +16,25 @@
   <!-- Items de la navbar -->
   <div class="collapse navbar-collapse" id="navbarNav">
     <div class="navbar-nav">
-      <a class="nav-link" href="/farmacia">Farmacia</a>
+      <a class="nav-link" href="/acerca-de">Nosotros</a>
+      <a class="nav-link" href="/farmacia">Farmacia Ancalmo</a>
       <a class="nav-link" href="http://www.menendezlab.com/" target="_blank">Laboratorio Menéndez</a>
       <a class="nav-link" href="#">Lifestyle</a>
-
       <div class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" id="especialidadesDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Doctores
         </a>
         <div class="dropdown-menu" id="especialidadesMenu" aria-labelledby="especialidadesDropdown">
-        <a class="dropdown-item" href="/especialidades/">Todos</a>
+          <a class="dropdown-item" href="/especialidades/">Todos</a>
           <a class="dropdown-item" href="/especialidades/?especialidad=ginecología">Ginecología</a>
           <a class="dropdown-item" href="/especialidades/?especialidad=pediatría">Pedriatría</a>
 
         </div>
       </div>
-
-      <a class="nav-link" href="#">Locales disponibles</a>
+      <a class="nav-link" href="#">Locales Disponibles</a>
       <a class="nav-link" href="/galeria">Galería</a>
-      <a class="nav-link" href="/acerca-de">Acerca de</a>
+
+
       <a class="nav-link d-block d-sm-none" id="contactanos-tab" href="/contacto">Contactanos</a>
     </div>
   </div>
