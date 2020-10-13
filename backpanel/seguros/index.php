@@ -61,7 +61,15 @@
 									<td><?= $seguro['doc_redes_seguros_nombre'] ?></td>
 									<td><?= $seguro['doc_redes_seguros_desc'] ?></td>
 									<td><a href="<?= $seguro['doc_redes_seguros_link'] ?>" target="_blank"><?= $seguro['doc_redes_seguros_link'] ?></a></td>
-									<td class="text-center"><img src="/backpanel/seguros/<?= $seguro['doc_redes_seguros_img'] ?>" height="50px" ></td>
+									<td class="text-center">
+										<?php if($seguro['doc_redes_seguros_img'] != ""){?>
+											<img src="/backpanel/seguros/<?= $seguro['doc_redes_seguros_img'] ?>" height="50px" >
+										<?php
+										} else{
+											echo "null";
+										}
+										?>
+									</td>
 									<td><a class="btn btn-warning" href="/backpanel/seguros/update.php/?id=<?= $seguro['doc_redes_seguros_key'] ?>">Modificar</a></td>
 									<td>
 										<button class="btn btn-danger delete" data-id="<?= $seguro['doc_redes_seguros_key'] ?>">

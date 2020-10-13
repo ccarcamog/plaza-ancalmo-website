@@ -30,35 +30,35 @@
 		$descripcion = $_POST['descripcion'];
 		$link = $_POST['link'];
 
-		$imageFileType = strtolower(pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION));
-		
-		// echo $imageFileType;
-
-		if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"){
-
-			header("Location: ?error=true&message=El tipo de imagen es incorrecto");
-			exit();
+		if($_FILES['image']['tmp_name'] != ""){
+			$imageFileType = strtolower(pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION));		
+			if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"){
+	
+				header("Location: ?error=true&message=El tipo de imagen es incorrecto");
+				exit();
+			}
+			if($_FILES['image']['size'] > 400000){
+				header("Location: ?error=true&message=Peso de la imagen excedido");
+				exit();
+			}
 		}
-
-		if($_FILES['image']['size'] > 400000){
-			header("Location: ?error=true&message=Peso de la imagen excedido");
-			exit();
-		}		
-
+ 
 		$db = new db($dbHost, $dbUID, $dbPWD, $dbName);
 
 		$sql = "INSERT INTO doc_redes_seguros (doc_redes_seguros_nombre, doc_redes_seguros_desc, doc_redes_seguros_link) VALUES (?,?,?)";
 		$db->query($sql, $nombre, $descripcion, $link);
 		
-		$index = $db->lastInsertID();
-
-		$target_dir = "img/";
-		$target_file = $target_dir."red-seguros".$index.".".$imageFileType; 
-		move_uploaded_file($_FILES["image"]["tmp_name"], $target_file);
-		
-		$sql = "UPDATE doc_redes_seguros SET doc_redes_seguros_img=? WHERE doc_redes_seguros_key=?";
-
-		$db->query($sql,$target_file, $index);
+		if($_FILES['image']['tmp_name'] != ""){
+			$index = $db->lastInsertID();
+	
+			$target_dir = "img/";
+			$target_file = $target_dir."red-seguros".$index.".".$imageFileType; 
+			move_uploaded_file($_FILES["image"]["tmp_name"], $target_file);
+			
+			$sql = "UPDATE doc_redes_seguros SET doc_redes_seguros_img=? WHERE doc_redes_seguros_key=?";
+	
+			$db->query($sql,$target_file, $index);
+		}
 		
 		$db->close();
 
@@ -97,7 +97,7 @@
 							<label for="image">Imagen</label>
 							<div class="input-group mb-3">
 								<div class="custom-file">
-									<input type="file" name="image" class="custom-file-input" id="imageInput" required>
+									<input type="file" name="image" class="custom-file-input" id="imageInput">
 									<label class="custom-file-label" for="imageInput">Escoger imagen</label>
 								</div>
 							</div>
