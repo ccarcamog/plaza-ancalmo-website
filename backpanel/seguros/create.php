@@ -7,7 +7,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Create user</title>
+	<title>Crear red de seguros</title>
 
 	<link rel="icon" href="/img/Logo Plaza Ancalmo.png">
 	<!-- MDB icon -->
@@ -97,7 +97,7 @@
 							<label for="image">Imagen</label>
 							<div class="input-group mb-3">
 								<div class="custom-file">
-									<input type="file" name="image" class="custom-file-input" id="imageInput">
+									<input type="file" name="image" class="custom-file-input" id="imageInput" required>
 									<label class="custom-file-label" for="imageInput">Escoger imagen</label>
 								</div>
 							</div>

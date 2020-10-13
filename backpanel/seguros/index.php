@@ -7,7 +7,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Create user</title>
+	<title>Redes de seguros</title>
 
 	<link rel="icon" href="/img/Logo Plaza Ancalmo.png">
 	<!-- MDB icon -->
@@ -45,7 +45,7 @@
 								<th scope="col">nombre</th>
 								<th scope="col">descripcion</th>
 								<th scope="col">link</th>
-								<th scope="col">img</th>
+								<th class="text-center" scope="col">img</th>
 								<th></th>
 								<th></th>
 							</tr>
@@ -61,10 +61,10 @@
 									<td><?= $seguro['doc_redes_seguros_nombre'] ?></td>
 									<td><?= $seguro['doc_redes_seguros_desc'] ?></td>
 									<td><a href="<?= $seguro['doc_redes_seguros_link'] ?>" target="_blank"><?= $seguro['doc_redes_seguros_link'] ?></a></td>
-									<td><a href="<?= $seguro['doc_redes_seguros_img']?>" target="_blank"><?= $seguro['doc_redes_seguros_img'] ?></a></td>
+									<td class="text-center"><img src="/backpanel/seguros/<?= $seguro['doc_redes_seguros_img'] ?>" height="50px" ></td>
 									<td><a class="btn btn-warning" href="/backpanel/seguros/update.php/?id=<?= $seguro['doc_redes_seguros_key'] ?>">Modificar</a></td>
 									<td>
-										<button class="btn btn-danger" onclick="borrar_seguro(<?= $seguro['doc_redes_seguros_key']?>,'<?= $seguro['doc_redes_seguros_nombre']?>');">
+										<button class="btn btn-danger delete" data-id="<?= $seguro['doc_redes_seguros_key'] ?>">
 											Borrar
 										</button>
 									</td>
@@ -85,10 +85,37 @@
 	<!-- Bootstrap core JavaScript -->
 	<script type="text/javascript" src="/js/bootstrap.min.js"></script>
 	<script type="text/javascript">
-		function borrar_seguro(id, nombre){
-			confirm("Seguro que desea borrar el elemento: " + nombre);
-			window.location.href = "/backpanel/seguros/delete.php?id=" + id;
-		}
+		$(document).ready(function() {
+			
+			$('.delete').click(function(){
+				var el = this;
+				
+				var deleteid = $(this).data('id');
+
+				var confirmAlert = confirm("Estas seguro?");
+				if (!confirmAlert) {
+					return;
+				}
+
+				$.ajax({
+					url: 'delete.php',
+					type: 'POST',
+					data: {
+						id: deleteid
+					},
+					success: function(response) {
+
+						if (response == 1) {
+							$(el).closest('tr').fadeOut(800, function() {
+								$(this).remove();
+							});
+						} else {
+							alert("Id invalido");
+						}
+					}
+				});
+			});
+		});
 	</script>
 </body>
 
