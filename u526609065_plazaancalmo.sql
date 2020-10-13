@@ -36,6 +36,7 @@ create table galeria_img (
 create table doc_especialidades
 (
 	doc_especialidades_key int auto_increment comment 'Valor autogenerado. Id de especialidad',
+	doc_especialidades_nombre varchar(100) not null comment 'Nombre de la especialidad a mostrar',
 	doc_especialidades_nombre_mas varchar(100) not null comment 'Nombre de la especialidad a mostrar, cuando el género del doctor sea masculino',
 	doc_especialidades_nombre_fem varchar(100) not null comment 'Nombre de la especialidad a mostrar, cuando el género del doctor sea femenino',
 	constraint doc_especialidades_pk
