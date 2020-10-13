@@ -24,7 +24,7 @@
 
 	<div class="container-fluid p-0" id="acerca-de-header">
 		<div class="filter w-100 h-100 p-5">
-			<h2>Acerca de</h2>
+			<h2>Nosotros</h2>
 		</div>
 	</div>
 
