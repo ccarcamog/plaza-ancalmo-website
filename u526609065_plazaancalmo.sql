@@ -24,7 +24,7 @@ create table galeria_img (
     galeria_img_nombre varchar(25) not null comment 'Nombre de la galería',
     galeria_img_url varchar(100) not null comment 'Url de imagen de galeria. Url interna del sitio Ej. /images/red.png',
     galeria_img_caption varchar(100) comment  'Caption a mostrar para imagen de galería',
-    galeria_img_orden char(2) comment 'Orden a mostrar de imagen de galería',
+    galeria_img_orden int default 1 comment 'Orden a mostrar de imagen de galería',
     galeria_img_galeria_key int comment 'Id de galeria',
     index (galeria_img_galeria_key),
     constraint galeria_img_pk
@@ -63,7 +63,7 @@ create table doc_doctores
     doc_doctor_exp varchar(850) comment 'Listado de experiencia profesional de doctor',
     doc_doctor_img varchar(100) not null comment 'Url de imagen de perfil de doctor. Url interna del sitio Ej. /images/red.png',
     doc_doctor_prioridad char(2) default 1 comment 'Prioridad de orden en lista de Todos los doctores. Mayor prioridad, mejor posicionamiento.',
-    doc_doctor_galeria int not null comment 'Id de galería',
+    doc_doctor_galeria int comment 'Id de galería',
     index (doc_doctor_galeria),
     constraint doc_doctores_pk
 		primary key (doc_doctores_key),
