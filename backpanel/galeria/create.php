@@ -19,14 +19,14 @@ if ($_FILES['imagen']['tmp_name'] != "") {
 	$imagenFileType = strtolower(pathinfo($_FILES['imagen']['name'], PATHINFO_EXTENSION));
 	if ($imagenFileType != "jpg" && $imagenFileType != "png" && $imagenFileType != "jpeg") {
 
-		$result['error'] = "El archivo debe ser una imagen";
+		$result['error'] = $_FILES['imagen']['name'].": El archivo debe ser una imagen";
 		$result['check'] = 0;
 
 		echo json_encode($result);
 		exit();
 	}
 	if ($_FILES['imagen']['size'] > 400000) {
-		$result['error'] = "El archivo debe ser inferior a 400kb";
+		$result['error'] = $_FILES['imagen']['name'].": El archivo debe ser inferior a 400kb";
 		$result['check'] = 0;
 
 		echo json_encode($result);
@@ -58,7 +58,7 @@ if ($_FILES['imagen']['tmp_name'] != "") {
 }
 
 $result['check'] = 0;
-$result['error'] = "no image detected";
+$result['error'] = $_FILES['imagen']['name'].": No se detecto una imagen";
 echo json_encode($result);
 exit();
 ?>

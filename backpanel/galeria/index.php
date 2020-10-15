@@ -79,7 +79,7 @@
 							foreach ($imagenes as $imagen) {
 							?>
 
-								<tr>
+								<tr id="row-<?= $imagen['galeria_img_key'] ?>">
 									<td><img src="/img/svg/sort-result.svg" style="height:1em"></td>
 									<th scope="row"><?= $imagen['galeria_img_key'] ?></th>
 									<td><img src="/backpanel/galeria/<?= $imagen['galeria_img_url'] ?>" height="100"></td>
@@ -87,7 +87,7 @@
 									<td><?= $imagen['galeria_img_caption'] ?></td>
 
 									<td>
-										<button class="btn btn-warning update-button" data-id="<?= $imagen['galeria_img_key'] ?>">
+										<button class="btn btn-warning update-btn" data-id="<?= $imagen['galeria_img_key'] ?>" data-path="<?= $imagen['galeria_img_url'] ?>">
 											Modificar
 										</button>
 									</td>
@@ -103,7 +103,6 @@
 							?>
 						</tbody>
 					</table>
-					<button class="btn btn-success agregar-btn" data-toggle="modal" data-target="#agregarModal">Agregar</button>
 					<div class="modal fade" id="agregarModal" tabindex="-1" aria-labelledby="#agregarModalLabel" aria-hidden="true">
 						<div class="modal-dialog modal-dialog-centered">
 							<div class="modal-content">
@@ -134,7 +133,55 @@
 							</div>
 						</div>
 					</div>
+					<div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="updateModalLabel" aria-hidden="true">
+						<div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title" id="updateModalLabel">Actualizar imagen</h5>
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
+								</div>
+								<div class="modal-body">
+									<form method="POST" id="update-form">
+										<div class="container-fluid">
+											<div class="row mb-5">
+												<div class="col">
+													<img src="/img/contact-header-background.jpg" id="update-img" style="width:100%">
+												</div>
+											</div>
+											<div class="form-group row">
+												<div class="col">
+													<label for="id">Id</label>
+													<input class="form-control" type="number" name="id" id="update-id" readonly>
+												</div>
+												<div class="col">
+													<label for="nombre">nombre</label>
+													<input class="form-control" type="text" name="nombre" id="update-nombre" required>
+												</div>
+											</div>
+
+											<div class="row">
+												<div class="col">
+													<label for="descripcion">Descripción</label>
+													<textarea class="form-control" name="descripcion" id="update-descripcion"></textarea>
+												</div>
+											</div>
+
+										</div>
+									</form>
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+									<button id="update-submit" name="update-submit" class="btn btn-primary">Guardar</button>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
+				<center class="mt-3">
+					<button class="btn btn-success agregar-btn" data-toggle="modal" data-target="#agregarModal">Agregar</button>
+				</center>
 			</div>
 		</div>
 	</div>
@@ -145,9 +192,11 @@
 	<script type="text/javascript" src="/js/jquery-ui.js"></script>
 	<script>
 		
-		$(document).ready(function(){
-			$("table tbody").sortable().disableSe();
+		$(document).ready(function() {
+			$("table tbody").sortable().disableSelection();
 		});
+		
+		var img_path = "";
 
 		var progress = {
 			total: 0,
@@ -162,6 +211,20 @@
 
 				$('#progressbar').css("width", str_progress);
 
+				html = '<tr id="row-' + key + '">';
+				html += '<td><img src="/img/svg/sort-result.svg" style="height:1em"></td>';
+				html += '<th scope="row">' + key + '</th>';
+				html += '<td><img src="/backpanel/galeria/' + path + '" height="100"></td>';
+				html += '<td>newImage</td>';
+				html += '<td></td>'
+				html += '<td><button class="btn btn-warning update-btn" data-id="' + key + '" data-path="' + path + '">Modificar</button></td>';
+				html += '<td><button class="btn btn-danger delete-button" data-id="' + key + '">Borrar</button></td>';
+				html += '</tr>';
+
+				$('table tbody').append(html)
+				$('table tbody tr:last-child').hide();
+				$('table tbody tr:last-child').fadeIn(1000);
+
 				if (this.current == this.total) {
 					this.finish();
 				}
@@ -173,7 +236,14 @@
 				var str_progress = progress * 100 + "%";
 				$('#progressbar').css("width", str_progress);
 
-				$()
+				html = '<tr class="error-row"><td><img src="/img/svg/sort-result.svg" style="height:1em"></td>'
+				html += '<td class="text-muted" colspan="4">' + error + '</td>';
+				html += '<td colspan="2"><button class="btn btn-info ignorar-btn">Ignorar</button></td>';
+				html += '</tr>';
+
+				$('table tbody').append(html)
+				$('table tbody tr:last-child').hide();
+				$('table tbody tr:last-child').fadeIn(1000);
 
 				if (this.current == this.total) {
 					this.finish();
@@ -191,6 +261,7 @@
 				$('#progressContainer').fadeOut(500);
 				$('#progressContainer').addClass('d-none');
 				$('#agregarForm')[0].reset();
+				$('#agregarForm .custom-file-label').html("Seleccionar Archivos");
 				$('#agregarModal').modal('hide');
 			}
 		}
@@ -204,6 +275,7 @@
 			} else {
 				labeltext = $(this).val();
 			}
+			
 
 			$(this).next('.custom-file-label').html(labeltext);
 		});
@@ -255,6 +327,69 @@
 				uploadImage(images[i]);
 
 			}
+
+		});
+
+		$(document).on('click', '.ignorar-btn', function() {
+
+			$(this).closest('tr').fadeOut(500, function() {
+				$(this).remove();
+			});
+
+		});
+
+		$(document).on('click', '.update-btn', function() {
+			img_path = $(this).data('path');
+			$('#update-img').prop('src', '/backpanel/galeria/' + $(this).data('path'));
+			$('#update-id').val($(this).data('id'));
+
+			var row = $(this).parents('tr').children().toArray();
+
+			var nombre = row[3].innerHTML;
+			var descripcion = row[4].innerHTML;
+
+			console.log(row);
+
+			$('#update-nombre').val(nombre);
+			$('#update-descripcion').val(descripcion);
+
+			$('#updateModal').modal('show');
+
+		});
+
+		$('#update-submit').click(function() {
+
+			$.ajax({
+				url: "/backpanel/galeria/update.php",
+				method: "POST",
+				data: $('#update-form').serialize(),
+				dataType: "json",
+				success: function(response) {
+					// alert(response.nombre);
+
+					var path = $('#update-img').prop('src');
+
+					var html = '';
+					
+					html += '<td><img src="/img/svg/sort-result.svg" style="height:1em"></td>';
+					html += '<th scope="row">' + response.id + '</th>';
+					html += '<td><img src="' + path + '" height="100"></td>';
+					html += '<td>'+ response.nombre +'</td>';
+					html += '<td>'+ response.descripcion +'</td>';
+					html += '<td><button class="btn btn-warning update-btn" data-id="' + response.id + '" data-path="' + img_path + '">Modificar</button></td>';
+					html += '<td><button class="btn btn-danger delete-button" data-id="' + response.id + '">Borrar</button></td>';
+					
+
+					$('#updateModal').modal('hide');
+
+					var rowID = '#row-' + response.id;
+					$(rowID).hide();
+					$(rowID).html(html);
+					$(rowID).fadeIn(500);
+				}
+			});
+
+			$('#update-form')[0].reset();
 
 		});
 	</script>
