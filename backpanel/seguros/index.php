@@ -89,6 +89,7 @@
 			</div>
 		</div>
 	</div>
+	<?php include "../../components/footer.php" ?>
 	<script type="text/javascript" src="/js/jquery.min.js"></script>
 	<!-- Bootstrap core JavaScript -->
 	<script type="text/javascript" src="/js/bootstrap.min.js"></script>
@@ -106,7 +107,7 @@
 				}
 
 				$.ajax({
-					url: 'delete.php',
+					url: '/backpanel/seguros/delete.php',
 					type: 'POST',
 					data: {
 						id: deleteid

@@ -111,6 +111,7 @@
 			</div>
 		</div>
 	</div>
+	<?php include "../../components/footer.php" ?>
 	<script type="text/javascript" src="/js/jquery.min.js"></script>
 	<!-- Bootstrap core JavaScript -->
 	<script type="text/javascript" src="/js/bootstrap.min.js"></script>
