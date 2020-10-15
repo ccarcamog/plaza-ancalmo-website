@@ -56,7 +56,7 @@
 	<div class="container p-md-4 mt-3" id="especialidad info">
 		<div>
 			<h2><?php echo $titulo ?></h2>
-			<p class="text-muted">Contamos con los mejores especialistas para cuidar de tí y de tu familia</p>
+			<p class="text-muted">Contamos con los mejores especialistas para cuidar de ti y de tu familia</p>
 		</div>
 	</div>
 

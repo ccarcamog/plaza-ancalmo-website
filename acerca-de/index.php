@@ -30,7 +30,7 @@
 
 	<div class="container text-center" id="acerca-de-intro">
 		<div class="container-fluid px-5 pt-5">
-			<h3 class="text-muted">¿Quienes Somos?</h3>
+			<h3 class="text-muted">¿Quiénes Somos?</h3>
 			<hr>
 		</div>
 		<img src="/img/featured-image.jpg" alt="featured image" id="featured-image">
@@ -42,14 +42,14 @@
 		<div class="filter">
 			<div class="row text-white">
 				<div class="col-md-6 p-5">
-					<h4>Mision</h4>
+					<h4>Misión</h4>
 					<hr>
 					<p>
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget enim eros. Nam porta, leo facilisis porta viverra, nunc enim laoreet ligula, vitae bibendum mauris quam nec diam. Proin fringilla mi ac elit varius, in lobortis urna pellentesque. Pellentesque molestie neque venenatis mauris tincidunt porttitor. Aliquam efficitur orci non elit lobortis, eu eleifend elit laoreet. Morbi efficitur sodales sem, sed commodo enim rutrum et. Nulla quis ante vitae arcu condimentum condimentum commodo sed ante. Aenean cursus, nibh eget laoreet bibendum, sem tortor cursus lectus, in placerat ligula enim vel nunc. Praesent nec dapibus mi. Nunc massa arcu, iaculis vel commodo non, lobortis ac massa.
 					</p>
 				</div>
 				<div class="col-md-6 p-5">
-					<h4>Vision</h4>
+					<h4>Visión</h4>
 					<hr>
 					<p>
 						Vivamus in dui non risus pulvinar varius. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nullam euismod mauris massa. Aliquam et rhoncus orci. Nam eros nulla, tincidunt a tempor sit amet, egestas et urna. Nunc imperdiet quis est et ullamcorper. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur aliquam pellentesque augue vitae cursus. Nulla at sapien cursus, tristique risus et, consectetur orci. Proin sagittis, ante ac faucibus consectetur, magna tellus scelerisque odio, quis dictum tellus arcu quis nisi. In tristique mauris et lorem ornare, eget ultrices nunc egestas. Praesent luctus ultrices quam. Duis commodo purus sed tempor vehicula.
