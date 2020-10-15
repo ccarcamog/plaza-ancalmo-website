@@ -68,7 +68,7 @@
 					<img class="svg-inverted" src="/img/svg/check.svg" height=100 alt="conveniencia icon">
 					<hr class="border-white">
 					<h3><b>Conveniencia</b></h3>
-					<p>Contamos con servicio a domicilio, pago de servicios y muchas cosas mas.</p>
+					<p>Contamos con servicio a domicilio, pago de servicios y muchas cosas más.</p>
 				</div>
 				<div class="col-md-4 p-4 text-white text-center">
 					<img src="/img/svg/security.svg" alt="seguridad icon" height=100 class="svg-inverted">
@@ -81,7 +81,7 @@
 					<img src="/img/svg/variety.svg" alt="seguridad icon" height=100 class="svg-inverted">
 					<hr class="border-white">
 					<h3>Variedad</h3>
-					<p>Contamos con una amplia variedad de productos de la mas alta calidad.</p>
+					<p>Contamos con una amplia variedad de productos de la más alta calidad.</p>
 				</div>
 			</div>
 		</div>
@@ -89,7 +89,7 @@
 
 
 	<center class="mt-5" id="bancoAmigoTitle">
-		<h3>Tambien ofrecemos</h3>
+		<h3>También ofrecemos</h3>
 	</center>
 
 	<div class="container mt-5" id="bancoAmigo">
@@ -156,9 +156,9 @@
 			</div>
 			<div class="col-md-6 p-4 text-center" id="hugoTexto">
 
-				<h3>Hacemos envios por <img id="hugoLogo" src="/img/hugo-logo.png" alt="Hugo Logo Texto"></h3>
+				<h3>Hacemos envíos por <img id="hugoLogo" src="/img/hugo-logo.png" alt="Hugo Logo Texto"></h3>
 				<hr>
-				<p>Encuentranos en la aplicación</p>
+				<p>Encuéntranos en la aplicación</p>
 				<p><img src="/img/hugoIcon.png" alt="Hugo Icon" id="hugoIcon" width="30"></p>
 
 			</div>
@@ -167,7 +167,7 @@
 	<hr>
 	<div class="container-fluid p-4" id="marcasCarousel">
 
-		<h3 class="text-center">Contamos con marcas de la mas alta calidad</h3>
+		<h3 class="text-center">Contamos con marcas de la más alta calidad</h3>
 
 
 		<div id="carouselMarcas" class=" row carousel slide carousel-slide" data-ride="carousel">
@@ -227,7 +227,7 @@
 
 	<div class="container-fluid" id="farmaciaGaleria">
 		<center class="mt-5 mb-5">
-			<h3>Galeria</h3>
+			<h3>Galería</h3>
 		</center>
 
 		<div id="gallery" class="simplegallery">

@@ -26,7 +26,7 @@
 
 	<div class="container-fluid p-0" id="galeriaHeader">
 		<div class="filter text-white text-center p-5">
-			<h2>Galeria de imagenes</h2>
+			<h2>Galería de imagenes</h2>
 		</div>
 	</div>
 

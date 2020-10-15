@@ -11,5 +11,5 @@
 
 	$sql = "UPDATE galeria_img SET galeria_img_orden=? WHERE galeria_img_key=?";
 	$db->query($sql, $order, $id);
-
+	echo 1;
 ?>
