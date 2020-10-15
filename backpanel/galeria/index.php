@@ -178,9 +178,29 @@
 							</div>
 						</div>
 					</div>
+					<div class="modal fade" id="esperarModal" tabindex="-1" aria-labelledby="#esperarModalLabel" aria-hidden="true">
+						<div class="modal-dialog modal-dialog-centered">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title" id="esperarModalLabel">Guardando orden de imagenes...</h5>
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
+								</div>
+								<div class="modal-body" id="progressContainer">
+									<div class="progress">
+										<div class="progress-bar bg-success" id="order-progressbar" role="progressbar" style="width: 0%"></div>
+									</div>
+								</div>
+
+
+							</div>
+						</div>
+					</div>
 				</div>
 				<center class="mt-3">
 					<button class="btn btn-success agregar-btn" data-toggle="modal" data-target="#agregarModal">Agregar</button>
+					<button class="btn btn-info ordenar-btn">Guardar Orden</button>
 				</center>
 			</div>
 		</div>
@@ -191,36 +211,64 @@
 	<script type="text/javascript" src="/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="/js/jquery-ui.js"></script>
 	<script>
+		orderProgress = {
+			total: 0,
+			current: 0,
+			tally: function() {
+				this.current++;
+				var progress = (this.current / this.total) * 100;
+				var str_progress = progress + "%";
+				$('#order-progressbar').css('width', str_progress);
 
-		function updateOrder(key, index){
+				if(this.current == this.total){
+					this.finish();
+				}
+
+			},
+			finish: function(){
+				$('#esperarModal').modal('hide');
+				$('#order-progressbar').css('width', 0);
+				this.current = 0;
+				this.total = 0;
+			}
+		};
+
+		function updateOrder(key, index) {
 			$.ajax({
 				url: '/backpanel/galeria/order.php',
 				type: 'POST',
 				data: {
 					id: key,
-					order:index
+					order: index
+				},
+				success:function(response){
+					orderProgress.tally();
 				}
 			});
 		}
 
-		var updateIndex = function(e, ui) {
-			console.clear();
+		var updateIndex = function() {
+			// console.clear();
+
+			orderProgress.current = 0;
+			orderProgress.total = $('table tbody').children().length;
+			$('#order-progressbar').css('width', 0);
+			$('#esperarModal').modal('show');
+
 			$('table tbody').children().each(function(i) {
 
-				if($(this).hasClass('error-row')){
+				if ($(this).hasClass('error-row')) {
 					return true;
 				}
 
-				var rowID  = $(this).children().toArray()[1].innerHTML;
-				console.log(rowID + "," + (i+1));
-				updateOrder(rowID, i+1);
+				var rowID = $(this).children().toArray()[1].innerHTML;
+				// console.log(rowID + "," + (i + 1));
+				updateOrder(rowID, i + 1);
 			});
 		};
 
 		$(document).ready(function() {
-			$("table tbody").sortable({
-				stop: updateIndex
-			}).disableSelection();
+			$("table tbody").sortable().disableSelection();
 		});
 
 		var img_path = "";
@@ -448,6 +496,11 @@
 					}
 				}
 			});
+
+		});
+		$('.ordenar-btn').click(function(){
+
+			updateIndex();
 
 		});
 	</script>

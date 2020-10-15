@@ -1,5 +1,5 @@
 <div class="d-none d-sm-block" id="contactUs">
-  <a class="text-white" href="/contacto">Contactanos</a>
+  <a class="text-white" href="/contacto">Contáctanos</a>
 </div>
 <nav class="navbar navbar-expand-xl navbar-light d-print" id="top-navbar">
 
@@ -35,7 +35,7 @@
       <a class="nav-link" href="/galeria">Galería</a>
 
 
-      <a class="nav-link d-block d-sm-none" id="contactanos-tab" href="/contacto">Contactanos</a>
+      <a class="nav-link d-block d-sm-none" id="contactanos-tab" href="/contacto">Contáctanos</a>
     </div>
   </div>
 </nav>
