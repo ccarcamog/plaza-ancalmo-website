@@ -155,7 +155,7 @@
 				<div class="col-md-6 p-md-5 text-center" id="conozcanosInfo">
 
 					<div class="">
-						<h2>Conózcanos</h2>
+						<h2>Conócenos</h2>
 						<hr class="border-white">
 						<p> Telefono: 2243 0300</p>
 						<p> Email: <a class="text-white" href="mailto:servicioalcliente@ancalmo.com" target="_blank"> servicioalcliente@ancalmo.com</a></p>
