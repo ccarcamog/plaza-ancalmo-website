@@ -36,12 +36,12 @@
 				</div>
 				<div id="item2" class="carousel-item">
 					<div class="filter">
-						<h1>A la vanguardia de tu salud</h1>
+						<h1>Tu lugar de confianza</h1>
 					</div>
 				</div>
 				<div id="item3" class="carousel-item">
 					<div class="filter">
-						<h1 class="text-align-center">A la vanguardia de tu salud</h1>
+						<h1 class="text-align-center">Sirviendo excelencia... Con amor</h1>
 					</div>
 				</div>
 			</div>
