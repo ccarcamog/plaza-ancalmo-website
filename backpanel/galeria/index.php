@@ -92,7 +92,7 @@
 										</button>
 									</td>
 									<td>
-										<button class="btn btn-danger delete-button" data-id="<?= $imagen['galeria_img_key'] ?>">
+										<button class="btn btn-danger delete-btn" data-id="<?= $imagen['galeria_img_key'] ?>">
 											Borrar
 										</button>
 									</td>
@@ -191,11 +191,38 @@
 	<script type="text/javascript" src="/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="/js/jquery-ui.js"></script>
 	<script>
-		
+
+		function updateOrder(key, index){
+			$.ajax({
+				url: '/backpanel/galeria/order.php',
+				type: 'POST',
+				data: {
+					id: key,
+					order:index
+				}
+			});
+		}
+
+		var updateIndex = function(e, ui) {
+			console.clear();
+			$('table tbody').children().each(function(i) {
+
+				if($(this).hasClass('error-row')){
+					return true;
+				}
+
+				var rowID  = $(this).children().toArray()[1].innerHTML;
+				console.log(rowID + "," + (i+1));
+				updateOrder(rowID, i+1);
+			});
+		};
+
 		$(document).ready(function() {
-			$("table tbody").sortable().disableSelection();
+			$("table tbody").sortable({
+				stop: updateIndex
+			}).disableSelection();
 		});
-		
+
 		var img_path = "";
 
 		var progress = {
@@ -218,7 +245,7 @@
 				html += '<td>newImage</td>';
 				html += '<td></td>'
 				html += '<td><button class="btn btn-warning update-btn" data-id="' + key + '" data-path="' + path + '">Modificar</button></td>';
-				html += '<td><button class="btn btn-danger delete-button" data-id="' + key + '">Borrar</button></td>';
+				html += '<td><button class="btn btn-danger delete-btn" data-id="' + key + '">Borrar</button></td>';
 				html += '</tr>';
 
 				$('table tbody').append(html)
@@ -275,7 +302,7 @@
 			} else {
 				labeltext = $(this).val();
 			}
-			
+
 
 			$(this).next('.custom-file-label').html(labeltext);
 		});
@@ -370,15 +397,15 @@
 					var path = $('#update-img').prop('src');
 
 					var html = '';
-					
+
 					html += '<td><img src="/img/svg/sort-result.svg" style="height:1em"></td>';
 					html += '<th scope="row">' + response.id + '</th>';
 					html += '<td><img src="' + path + '" height="100"></td>';
-					html += '<td>'+ response.nombre +'</td>';
-					html += '<td>'+ response.descripcion +'</td>';
+					html += '<td>' + response.nombre + '</td>';
+					html += '<td>' + response.descripcion + '</td>';
 					html += '<td><button class="btn btn-warning update-btn" data-id="' + response.id + '" data-path="' + img_path + '">Modificar</button></td>';
-					html += '<td><button class="btn btn-danger delete-button" data-id="' + response.id + '">Borrar</button></td>';
-					
+					html += '<td><button class="btn btn-danger delete-btn" data-id="' + response.id + '">Borrar</button></td>';
+
 
 					$('#updateModal').modal('hide');
 
@@ -390,6 +417,37 @@
 			});
 
 			$('#update-form')[0].reset();
+
+		});
+
+		$(document).on('click', '.delete-btn', function() {
+
+			var el = this;
+
+			var deleteid = $(this).data('id');
+
+			var confirmAlert = confirm("Estas seguro?");
+			if (!confirmAlert) {
+				return;
+			}
+
+			$.ajax({
+				url: '/backpanel/galeria/delete.php',
+				type: 'POST',
+				data: {
+					id: deleteid
+				},
+				success: function(response) {
+
+					if (response == 1) {
+						$(el).closest('tr').fadeOut(800, function() {
+							$(this).remove();
+						});
+					} else {
+						alert("Id invalido");
+					}
+				}
+			});
 
 		});
 	</script>
