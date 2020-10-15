@@ -106,11 +106,7 @@ p{
 #carouselJumbotron #item2{
 	background-image: url("/img/fachada-2.jpg");
 	background-size: cover;
-	background-position: center center;
-	/* background-image: url("/img/apointment.jpg"); */
-	/* background-image: url("/img/lab.jpg"); */ 
-	/* background-image: url("/img/dentist.jpg"); */
-	
+	background-position: center center;	
 }
 #carouselJumbotron #item3{
 	background-image: url("/img/fachada-3.jpg");
@@ -129,11 +125,11 @@ h1, h2, h3, h4{
 	color:white;
 	border-radius:15px;
 }
-
+/* 
 #inicioMapa{
 	/* display: grid;
-	place-items: center; */
-}
+	place-items: center;
+} */
 
 #conozcanos iframe{
 	border-radius: 15px;
