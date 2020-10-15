@@ -263,7 +263,7 @@
 
 				$('table tbody').append(html)
 				$('table tbody tr:last-child').hide();
-				$('table tbody tr:last-child').fadeIn(1000);
+				$('table tbody tr:last-child').fadeIn(800);
 
 				if (this.current == this.total) {
 					this.finish();
@@ -283,7 +283,7 @@
 
 				$('table tbody').append(html)
 				$('table tbody tr:last-child').hide();
-				$('table tbody tr:last-child').fadeIn(1000);
+				$('table tbody tr:last-child').fadeIn(800);
 
 				if (this.current == this.total) {
 					this.finish();
@@ -453,7 +453,7 @@
 				success: function(response) {
 
 					if (response == 1) {
-						$(el).closest('tr').fadeOut(800, function() {
+						$(el).closest('tr').fadeOut(500, function() {
 							$(this).remove();
 						});
 					} else {

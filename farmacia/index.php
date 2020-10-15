@@ -126,29 +126,31 @@
 			<h2>Servicio a domicilio</h2>
 		</center>
 		<div class="row p-3">
-			<div class="col-md-6 text-center p-3">
-				<h3> <i> TELEFONOS: </i> </h3>
-				<p>2243-1000 <br> 7860-2663 </p>
-				<a href="https://wa.me/50378602663" target="_blank"> <img src="/img/svg/whatsapp.svg" width=40 alt="whatsapp logo"></a>
+			<div class="col-md-4 p-3" id="domicilioContacto">
+				<h3>TELEFONOS:</h3>
+				<p><img src="/img/svg/telephone.svg" width=40 alt="whatsapp logo"> 2243-1000 <br> <a href="https://wa.me/50378602663" target="_blank"> <img src="/img/svg/whatsapp.svg" width=40 alt="whatsapp logo"></a> 7860-2663 </p>
+
 			</div>
-			<div class="col-md-6 p-3" id="domicilioLugares">
-				<div>
-					<h3><i>ENVIOS A:</i></h3>
-
-					<Ul>
-						<li>ANTIGUO CUSCATLAN</li>
-						<li>COLONIA ESCALON</li>
-						<li>CIUDAD MERLIOT</li>
-						<li>SANTA TECLA</li>
-					</Ul>
-
+			<div class="col-md-8 p-0 m-0" id="domicilioCard">
+				<div class="row m-0 p-0" >
+					<div class="col-md-6 m-0 p-3" id="domicilioLugares">
+						<center>
+							<h3>ENVIOS A:</h3>
+						</center>
+						<div id="locations">
+							<p><img src="/img/svg/pointer.svg" height="20px">ANTIGUO CUSCATLAN</p>
+							<p><img src="/img/svg/pointer.svg" height="20px">COLONIA ESCALON</p>
+							<p><img src="/img/svg/pointer.svg" height="20px">CIUDAD MERLIOT</p>
+							<p><img src="/img/svg/pointer.svg" height="20px">SANTA TECLA</p>
+						</div>
+					</div>
+					<div class="col-md-6 m-0 p-0" id="domicilioImg">
+						<img src="/img/deliveryman.jpg" alt="repartidor feliz">
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-
-	<hr>
-
 	<div class="container" id="hugoDeliveries">
 		<div class="row">
 			<div class="col-md-6 text-center p-4" id="hugoImage">

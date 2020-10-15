@@ -1,5 +1,5 @@
 /* FARMACIA ----------------------------------------------------------- */
-#farmaciaHeader{
+#farmaciaHeader {
 	height: 50vh;
 	padding: 0;
 	background-image: url("/img/banner-farmacia.jpg");
@@ -7,188 +7,232 @@
 	background-position: center 60%;
 }
 
-#farmaciaHeader div{
-	display:flex;
+#farmaciaHeader div {
+	display: flex;
 	justify-content: center;
 	align-items: center;
 	height: 100%;
 	width: 100%;
-	margin:0;
-	background-color: rgb(255,255,255,0.9);
+	margin: 0;
+	background-color: rgb(255, 255, 255, 0.9);
 }
 
-#farmaciaHeader img{
+#farmaciaHeader img {
 	max-width: 90vw;
 	max-height: 50vh;
 }
 
 /* INTRO FARMACIA ---------------------------------------------- */
-#introFarmacia a{
+#introFarmacia a {
 	text-decoration: none;
 }
-#introFarmacia img{
+
+#introFarmacia img {
 	opacity: 0.8;
 	width: 50px;
 }
-#introFarmacia #introTexto img:hover{
-	opacity: 0.9;	
+
+#introFarmacia #introTexto img:hover {
+	opacity: 0.9;
 }
-#introFarmacia #introTexto{
+
+#introFarmacia #introTexto {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-content: center;
 }
-#introTexto h2{
+
+#introTexto h2 {
 	font-family: 'Sansita Swashed';
-	color:#4bb7bc;
+	color: #4bb7bc;
 }
-#introTexto hr{
+
+#introTexto hr {
 	/* border: solid black 1px; */
 	width: 100%;
 }
-#introFarmacia #introImg img{
+
+#introFarmacia #introImg img {
 	width: 100%;
 	border-radius: 15px;
 }
+
 /* FARMACIA PUNTOS --------------------------------------------------------- */
-#farmaciaPuntos{
-	
+#farmaciaPuntos {
+
 	background-image: url("/img/farmacia-cajero.jpg");
 	background-size: cover;
 	background-position: center;
 	border-radius: 15px;
-	padding:0;
+	padding: 0;
 	background-size: cover;
 
 }
-#farmaciaPuntos .filter{
+
+#farmaciaPuntos .filter {
 	background-color: rgba(66, 122, 136, 0.651);
 	border-radius: 15px;
 }
+
 /* BANCO AMIGO */
 
-#bancoAmigo .row{
+#bancoAmigo .row {
 	padding: 50px;
 	padding-bottom: 120px;
 	border-radius: 15px;
 	border: solid rgba(0, 0, 0, 0.8) 1px;
 }
-#bancoAmigoImg{
+
+#bancoAmigoImg {
 	position: relative;
-	top:-120px;
+	top: -120px;
 }
-#bancoAmigoImg p{
+
+#bancoAmigoImg p {
 	margin-bottom: 0px !important;
 }
-#bancoAmigoImg img{
+
+#bancoAmigoImg img {
 	background-color: white;
 }
-#bancoAmigoTitle h3{
-	font-family: 'Sansita Swashed';
-	color:#4bb7bc;
-}
-/* DOMICILIO --------------------------------------------------------------- */
-#domicilioInfo h2{
-	font-family: 'Sansita Swashed';
-	color:#4bb7bc;
-	
-}
-#domicilioInfo p{
 
+#bancoAmigoTitle h3 {
+	font-family: 'Sansita Swashed';
+	color: #4bb7bc;
+}
+
+/* DOMICILIO --------------------------------------------------------------- */
+#domicilioInfo h2 {
+	font-family: 'Sansita Swashed';
+	color: #4bb7bc;
+
+}
+
+#domicilioInfo p {
 	font-size: 1.1em;
 }
-#domicilioInfo img{
+
+#domicilioInfo img {
 	opacity: 0.8;
+	margin: 5px;
 }
-#domicilioInfo img:hover{
+
+#domicilioInfo img:hover {
 	opacity: 0.9;
 }
-#domicilioLugares{
-	display: grid;
-	place-items: center;
+
+#domicilioContacto {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
-#domicilioLugares ul{
-	/* list-style-type: none; */
-	text-align: left;
-	
+#domicilioImg img{	
+	width: 100%;
+	margin:0;
 }
+#domicilioCard{
+	/* border:1px black solid; */
+	border-radius: 15px;
+	overflow: hidden;
+}
+
+#domicilioLugares {
+	background-color: #4bb7bc;
+	color: white;
+	font-size: 1em;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+
+#locations p {
+	margin: 0;
+}
+
 
 /* HUGO ENTREGAS ---------------------------------------------------- */
-#hugoImage img{
+#hugoImage img {
 	width: 100%;
 	border-radius: 15px;
 }
-#hugoIcon{
+
+#hugoIcon {
 	width: 100px;
 
 }
 
-#hugoTexto{
+#hugoTexto {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-content: center;
 
 }
-#hugoLogo{
+
+#hugoLogo {
 	height: 1em;
 	margin-left: 5px;
 	width: auto;
 }
-#hugoTexto hr{
+
+#hugoTexto hr {
 	width: 60%;
 	/* border: solid 1px black; */
 }
 
-#hugoTexto h3{
+#hugoTexto h3 {
 	font-family: 'Sansita Swashed';
 	color: #4bb7bc;
 }
 
-#hugoTexto h3 span{
-	color: rgb(95,66,140);
+#hugoTexto h3 span {
+	color: rgb(95, 66, 140);
 }
 
 
 /* CAROUSEL MARCAS ------------------------------------------------------*/
-#marcasCarousel h3{
+#marcasCarousel h3 {
 	font-family: 'Sansita Swashed';
 	color: #4bb7bc;
 }
 
-#marcasCarousel{
+#marcasCarousel {
 	max-width: 100vw;
 }
 
-#carouselMarcas .container{
+#carouselMarcas .container {
 	/* height: 30vh; */
 	padding: 0;
 }
 
-#carouselMarcas .carousel-inner{
+#carouselMarcas .carousel-inner {
 	height: 100%;
 	width: 100%;
 }
 
-#carouselMarcas .col-3{
+#carouselMarcas .col-3 {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
-.carousel-indicators{
+
+.carousel-indicators {
 	color: black;
 }
 
-#carouselMarcas .carousel-inner img{
+#carouselMarcas .carousel-inner img {
 	width: 100%;
 }
 
 /* Galeria de imagenes */
 
 
-#farmaciaGaleria h3{
+#farmaciaGaleria h3 {
 	font-family: 'Sansita Swashed';
 	color: #4bb7bc;
 	padding: 0;
