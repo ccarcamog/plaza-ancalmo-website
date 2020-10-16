@@ -42,7 +42,7 @@ p{
 
 /* TOP NAVBAR */
 #top-navbar{
-	background-color: rgba(164, 166, 168, 0.1);
+	background-color: white;
 }
 #top-navbar .navbar-brand {
 	font-family: 'Montserrat', sans-serif;
