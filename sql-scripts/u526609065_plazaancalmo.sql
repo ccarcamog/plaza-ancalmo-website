@@ -62,7 +62,7 @@ create table doc_doctores
     doc_doctor_especializaciones varchar(750) comment 'Listado de estudios de especializaciones de doctor',
     doc_doctor_exp varchar(850) comment 'Listado de experiencia profesional de doctor',
     doc_doctor_img varchar(100) not null comment 'Url de imagen de perfil de doctor. Url interna del sitio Ej. /images/red.png',
-    doc_doctor_prioridad char(2) default 1 comment 'Prioridad de orden en lista de Todos los doctores. Mayor prioridad, mejor posicionamiento.',
+    doc_doctor_prioridad int default 1 comment 'Prioridad de orden en lista de Todos los doctores. Mayor prioridad, mejor posicionamiento.',
     doc_doctor_galeria int comment 'Id de galería',
     index (doc_doctor_galeria),
     constraint doc_doctores_pk
