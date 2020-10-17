@@ -1,3 +1,5 @@
+<?php require "../php/db.php" ?>
+<?php require "../php/credentials.php" ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,26 +26,27 @@
 
 	<?php 
 
-	class doctor{ 
+		$db = new db($dbHost, $dbUID, $dbPWD, $dbName);
+
+		$especialidad;
+		$doctores;
+
+		if(isset($_GET['especialidad'])){
+			
+			$id = $_GET['especialidad'];
 		
-		public $nombre;
-		public $titulo;
-		public $especialidad;
-		public $imgPerfil;
-	}
+			$sql = "SELECT * FROM doc_especialidades WHERE doc_especialidades_key=?";
 
-	$doctores = [new doctor, new doctor];
+			$especialidad = $db->query($sql, $id)->fetchArray();	
+
+			$sql = "SELECT d.* FROM doc_doctores d INNER JOIN doc_doctores_especialidades de ON d.doc_doctores_key=de.doc_doctores_key WHERE de.doc_especialidades_key=?";
+			$doctores = $db->query($sql, $id)->fetchAll();
+
+			$doctores_json = json_encode($doctores);
+			// echo $doctores_json;
+
+		}
 	
-
-	$doctores[0]->nombre = "Dra. Diana Flores Urrutia";
-	$doctores[0]->titulo = "Ginecóloga";
-	$doctores[0]->especialidad = "ginecología";
-	$doctores[0]->imgPerfil = "doctor-diana-flores.jpg";
-
-	$doctores[1]->nombre = "Dr. Guillermo Mata";
-	$doctores[1]->titulo = "Pediatra";
-	$doctores[1]->especialidad = "pediatría";
-	$doctores[1]->imgPerfil = "doctor-guillermo-mata.jpg";
 	
 	?>
 
@@ -55,7 +58,7 @@
 
 	<div class="container p-md-4 mt-3" id="especialidad info">
 		<div>
-			<h2><?php echo $titulo ?></h2>
+			<h2><?=$especialidad['doc_especialidades_nombre']?></h2>
 			<p class="text-muted">Contamos con los mejores especialistas para cuidar de ti y de tu familia</p>
 		</div>
 	</div>
@@ -65,28 +68,31 @@
 
 	<div class="container" id="listaDoctores">
 		<?php
-		for ($i = 0; $i < 2; $i++) {
-
-			if(isset($_GET["especialidad"]) && $_GET["especialidad"] != $doctores[$i]->especialidad ){
-				
-				continue;
-			}
+		foreach($doctores as $doctor) {
 
 		?>
 
 			<div class="row doctor">
-				<div class=" col-sm-4 doctor-image mb-3">
-					<img src="/img/<?php echo $doctores[$i]->imgPerfil?>" alt="doctor profile pic">
+				<div class="col-sm-4 doctor-image mb-3">
+					<img src="/backpanel/doctores/<?= $doctor['doc_doctor_img']?>" alt="doctor profile pic">
 				</div>
 				<div class=" col-sm-8 doctor-text">
-					<a href="/especialidades/doctor/?especialidad=<?php echo $_GET["especialidad"] ?>" class="doctor-title d-inline">
-						<h3 class="m-0"><?php echo $doctores[$i]->nombre ?></h3>
-						<h4 class="text-muted ml-md-3"><?php echo $doctores[$i]->titulo ?></h4>
+					<a href="/especialidades/doctor/?id=<?= $doctor['doc_doctores_key']?>" class="doctor-title d-inline">
+						<h3 class="m-0"><?=$doctor['doc_doctor_nombre']?></h3>
+						<h4 class="text-muted ml-md-3">
+							<?php if($doctor['doc_doctor_genero'] == 'M'){ 
+								echo $especialidad['doc_especialidades_nombre_mas'];
+							}else{
+								echo $especialidad['doc_especialidades_nombre_fem'];	
+							}
+							?>
+						</h4>
 					</a>
 					<hr>
 					<p>Contacto: <br>
-						doctor@ancalmo.com <br>
-						7398-3470 <br>
+						<?= $doctor['doc_doctor_email'] ?><br>
+						<?= $doctor['doc_doctor_tel_1']?><br>
+						<?= $doctor['doc_doctor_tel_2']?>
 					</p>
 				</div>
 			</div>
