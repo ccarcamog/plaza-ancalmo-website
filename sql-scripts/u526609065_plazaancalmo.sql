@@ -64,6 +64,7 @@ create table doc_doctores
     doc_doctor_img varchar(100) not null comment 'Url de imagen de perfil de doctor. Url interna del sitio Ej. /images/red.png',
     doc_doctor_prioridad int default 1 comment 'Prioridad de orden en lista de Todos los doctores. Mayor prioridad, mejor posicionamiento.',
     doc_doctor_galeria int comment 'Id de galería',
+    doc_doctor_local varchar(10) null comment 'Local de la plaza donde está la clínica del doctor',
     index (doc_doctor_galeria),
     constraint doc_doctores_pk
 		primary key (doc_doctores_key),
