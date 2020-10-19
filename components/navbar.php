@@ -1,3 +1,18 @@
+<?php
+$root = realpath($_SERVER['DOCUMENT_ROOT']);
+
+if (!class_exists('db')) {
+  require $root."/php/db.php";
+}
+require $root."/php/credentials.php" 
+?>
+<?php
+$db = new db($dbHost, $dbUID, $dbPWD, $dbName);
+$sql = "SELECT * FROM doc_especialidades";
+$especialidades = $db->query($sql)->fetchAll();
+
+?>
+
 <div class="d-none d-sm-block" id="contactUs">
   <a class="text-white" href="/contacto">Contáctanos</a>
 </div>
@@ -26,9 +41,14 @@
         </a>
         <div class="dropdown-menu" id="especialidadesMenu" aria-labelledby="especialidadesDropdown">
           <a class="dropdown-item" href="/especialidades/">Todos</a>
-          <a class="dropdown-item" href="/especialidades/?especialidad=ginecología">Ginecología</a>
-          <a class="dropdown-item" href="/especialidades/?especialidad=pediatría">Pedriatría</a>
-
+          <?php
+          foreach ($especialidades as $especialidad) {
+          ?>
+            <a class="dropdown-item" href="/especialidades/?especialidad=<?=$especialidad['doc_especialidades_key']?>"><?=$especialidad['doc_especialidades_nombre']?></a>
+            
+          <?php
+          }
+          ?>
         </div>
       </div>
       <a class="nav-link" href="#">Locales Disponibles</a>

@@ -37,7 +37,7 @@
 			</a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="/backpanel/signout">
+			<a class="nav-link" href="/backpanel/signout.php">
 				
 				Salir del backpanel
 			</a>

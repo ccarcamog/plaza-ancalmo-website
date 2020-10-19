@@ -4,9 +4,12 @@
 
 <?php
 
+
 $db = new db($dbHost, $dbUID, $dbPWD, $dbName);
 
 if (isset($_POST['create-submit'])) {
+	
+	$imageFileType = "";
 
 	if($_FILES['image']['tmp_name'] != ""){
 		$imageFileType = strtolower(pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION));		
@@ -20,6 +23,9 @@ if (isset($_POST['create-submit'])) {
 			header("Location: ?error=true&message=Peso de la imagen excedido");
 			exit();
 		}
+	}else{
+		header("Location: ?error=true&message=Seleccionar una imagen de perfil");
+		exit();
 	}	
 
 	$nombre = $_POST['nombre'];
@@ -38,11 +44,12 @@ if (isset($_POST['create-submit'])) {
 	$exp_num = $_POST['exp_num'];
 	$horarios = $_POST['horarios'];
 	$pagos = $_POST['pagos'];
+	$local = $_POST['local'];
 
 
 	$sql = "INSERT INTO doc_doctores (doc_doctores_genero, doc_doctor_nombre, doc_doctor_desc, doc_doctor_horarios, doc_doctor_pagos, doc_doctor_exp_num, doc_doctor_tel_1, doc_doctor_tel_2,";
-	$sql = $sql . "doc_doctor_email, doc_doctor_fb, doc_doctor_ig, doc_doctor_estudios, doc_doctor_postgrados, doc_doctor_especializaciones, doc_doctor_exp, doc_doctor_prioridad)";
-	$sql = $sql . "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+	$sql = $sql . "doc_doctor_email, doc_doctor_fb, doc_doctor_ig, doc_doctor_estudios, doc_doctor_postgrados, doc_doctor_especializaciones, doc_doctor_exp, doc_doctor_prioridad, doc_doctor_local)";
+	$sql = $sql . "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 
 	$values = array(
 		$genero,
@@ -60,13 +67,49 @@ if (isset($_POST['create-submit'])) {
 		$postgrados,
 		$especializaciones,
 		$experiencia,
-		$prioridad
+		$prioridad,
+		$local
 	);
 
 	$insertion = $db->query($sql, $values);
 	$id = $insertion->lastInsertID();
 
-	echo $id;
+	$target_dir = "img/";
+	$target_file = $target_dir."profile_pic".$id.".".$imageFileType;
+	move_uploaded_file($_FILES["image"]["tmp_name"], $target_file);
+
+	$sql = "UPDATE doc_doctores SET doc_doctor_img=? WHERE doc_doctores_key=?";
+	$db->query($sql, $target_file, $id);
+
+	$galeria_nombre = "Galeria de ".$nombre;
+	$sql = "INSERT INTO galeria (galeria_nombre) VALUES (?)";
+
+	$db->query($sql, $galeria_nombre);
+	$galeria_id = $db->lastInsertID();
+
+	$sql = "UPDATE doc_doctores SET doc_doctor_galeria=? WHERE doc_doctores_key=?";
+	$db->query($sql, $galeria_id, $id);
+
+	$seguros = $_POST['seguros'];
+
+	foreach($seguros as $seguro){
+
+		$sql = "INSERT INTO doc_doctores_redes_seguros (doc_doctores_key, doc_redes_seguros_key) VALUES (?,?)";
+		
+		$db->query($sql, $id, $seguro);
+
+	}
+
+	$especialidades = $_POST['especialidades'];
+
+	foreach($especialidades as $especialidad){
+
+		$sql = "INSERT INTO doc_doctores_especialidades (doc_doctores_key, doc_especialidades_key) VALUES (?,?)";
+		$db->query($sql, $id, $especialidad);
+
+	}
+
+	header("Location: index.php");
 	exit();
 }
 
@@ -167,7 +210,11 @@ $especialidades_json = json_encode($especialidades);
 						<div class="form-group row">
 							<div class="col">
 								<label for="correo">Correo electrónico</label>
-								<input class="form-control" type="text" name="correo">
+								<input class="form-control" type="email" name="correo">
+							</div>
+							<div class="col">
+								<label for="local">Local</label>
+								<input class="form-control" type="number" min=1 name="local" required>
 							</div>
 						</div>
 						<div class="form-group row">

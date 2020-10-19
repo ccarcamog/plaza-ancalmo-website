@@ -40,12 +40,15 @@
 							<input class="form-control" type="password" name="password" id="password-field" required> 
 						</div>
 					</div>
-					<input class="btn btn-primary" type="submit" name="login-submit" value="Crear Usuario">
+					<input class="btn btn-primary" type="submit" name="login-submit" value="Ingresar">
 					
 				</form>
 			</div>
 		</div>
 	</div>
+
+	<script type="text/javascript" src="/js/jquery.min.js"></script>
+	<script type="text/javascript" src="/js/bootstrap.min.js"></script>
 </body>
 
 </html>

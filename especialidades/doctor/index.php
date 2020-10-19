@@ -5,35 +5,35 @@
 
 <?php
 
-	if (!isset($_GET['id'])) {
-		header('Location: /especialidades/');
-		exit();
+if (!isset($_GET['id'])) {
+	header('Location: /especialidades/');
+	exit();
+}
+$id = $_GET['id'];
+$db = new db($dbHost, $dbUID, $dbPWD, $dbName);
+
+$sql = "SELECT * FROM doc_doctores WHERE doc_doctores_key=?";
+$doctor = $db->query($sql, $id)->fetchArray();
+
+$sql = "SELECT e.* FROM doc_especialidades e INNER JOIN doc_doctores_especialidades de ON e.doc_especialidades_key=de.doc_especialidades_key WHERE de.doc_doctores_key=?";
+$especialidades = $db->query($sql, $id)->fetchAll();
+
+$especialidades_array = array();
+
+if ($doctor['doc_doctores_genero'] == 'M') {
+	foreach ($especialidades as $especialidad) {
+		$especialidades_array[] = $especialidad['doc_especialidades_nombre_mas'];
 	}
-	$id = $_GET['id'];
-	$db = new db($dbHost, $dbUID, $dbPWD, $dbName);
-
-	$sql = "SELECT * FROM doc_doctores WHERE doc_doctores_key=?";
-	$doctor = $db->query($sql, $id)->fetchArray();
-
-	$sql = "SELECT e.* FROM doc_especialidades e INNER JOIN doc_doctores_especialidades de ON e.doc_especialidades_key=de.doc_especialidades_key WHERE de.doc_doctores_key=?";
-	$especialidades = $db->query($sql, $id)->fetchAll();
-
-	$especialidades_array = array();
-
-	if ($doctor['doc_doctores_genero'] == 'M') {
-		foreach ($especialidades as $especialidad) {
-			$especialidades_array[] = $especialidad['doc_especialidades_nombre_mas'];
-		}
-	} else {
-		foreach ($especialidades as $especialidad) {
-			$especialidades_array[] = $especialidad['doc_especialidades_nombre_fem'];
-		}
+} else {
+	foreach ($especialidades as $especialidad) {
+		$especialidades_array[] = $especialidad['doc_especialidades_nombre_fem'];
 	}
+}
 
-	$especialidades_txt = implode(", ", $especialidades_array);
+$especialidades_txt = implode(", ", $especialidades_array);
 
-	$sql = "SELECT s.* FROM doc_redes_seguros s INNER JOIN doc_doctores_redes_seguros ds ON s.doc_redes_seguros_key=ds.doc_redes_seguros_key WHERE ds.doc_doctores_key=?";
-	$redes = $db->query($sql, $id)->fetchAll();
+$sql = "SELECT s.* FROM doc_redes_seguros s INNER JOIN doc_doctores_redes_seguros ds ON s.doc_redes_seguros_key=ds.doc_redes_seguros_key WHERE ds.doc_doctores_key=?";
+$redes = $db->query($sql, $id)->fetchAll();
 
 ?>
 
@@ -114,12 +114,12 @@
 							<p><?= $doctor['doc_doctor_horarios'] ?></p>
 							<h5 class="text-muted">Redes de Seguros</h5>
 							<ul>
-								<?php 
-									foreach($redes as $seguro){
+								<?php
+								foreach ($redes as $seguro) {
 								?>
-									<li><?=$seguro['doc_redes_seguros_nombre']?></li>
-								<?php 
-									}
+									<li><?= $seguro['doc_redes_seguros_nombre'] ?></li>
+								<?php
+								}
 								?>
 							</ul>
 							<h5 class="text-muted">Formas de pago</h5>
@@ -127,7 +127,7 @@
 						</div>
 						<div class="col-md-4">
 							<h5 class="text-muted">Local</h5>
-							<p>5</p>
+							<p><?= $doctor['doc_doctor_local'] ?></p>
 							<h5 class="text-muted">Años de experiencia</h5>
 							<p><?= $doctor['doc_doctor_exp_num'] ?></p>
 						</div>
@@ -140,24 +140,23 @@
 					<h4>Lista de redes de seguros</h4>
 					<hr>
 					<div class="row">
-						<div class="col-md-6">
-							<ul>
-								<li>Suspendisse sit amet</li>
-								<li>Proin finibus est</li>
-								<li>Integer consequat</li>
-								<li>Suspendisse a lorem</li>
-								<li>Aenean et mauris</li>
-							</ul>
-						</div>
-						<div class="col-md-6">
-							<ul>
-								<li>Suspendisse sit amet</li>
-								<li>Proin finibus est</li>
-								<li>Integer consequat</li>
-								<li>Suspendisse a lorem</li>
-								<li>Aenean et mauris</li>
-							</ul>
-						</div>
+						<?php
+						foreach ($redes as $seguro) {
+						?>
+							<div class="col-md-6 p-3">
+								<div class="card text-left">
+								  <div class="card-body d-flex align-items-center flex-wrap ">
+									  <img src="/backpanel/seguros/<?=$seguro['doc_redes_seguros_img']?>" width="200">
+									  <div class=" ml-3 d-flex flex-column justify-content-center">
+										<h4 class="card-title m-0"><?=$seguro['doc_redes_seguros_nombre']?></h4>
+										<p class="card-text text-muted"><?=$seguro['doc_redes_seguros_desc']?></p>
+									  </div>
+								  </div>
+								</div>
+							</div>
+						<?php
+						}
+						?>
 					</div>
 				</div>
 			</div>
@@ -168,16 +167,16 @@
 					<div class="row">
 						<div class="col-md-6">
 							<h5 class="text-muted">Numeros telefónico</h5>
-							<p><?= $doctor['doc_doctor_tel_1']?></p>
-							<p><?= $doctor['doc_doctor_tel_2']?></p>
+							<p><?= $doctor['doc_doctor_tel_1'] ?></p>
+							<p><?= $doctor['doc_doctor_tel_2'] ?></p>
 							<h5 class="text-muted">Correo electronico</h5>
-							<p><?= $doctor['doc_doctor_email']?></p>
+							<p><?= $doctor['doc_doctor_email'] ?></p>
 						</div>
 						<div class="col-md-6">
 							<h5 class="text-muted">Facebook</h5>
-							<p><?= $doctor['doc_doctor_fb']?></p>
+							<p><?= $doctor['doc_doctor_fb'] ?></p>
 							<h5 class="text-muted">Instagram</h5>
-							<p><?= $doctor['doc_doctor_ig']?></p>
+							<p><?= $doctor['doc_doctor_ig'] ?></p>
 						</div>
 					</div>
 				</div>
@@ -189,47 +188,47 @@
 					<div class="row">
 						<div class="col-md-6">
 							<h5 class="text-muted">Estudios Universitarios</h5>
-							<p><?= $doctor['doc_doctor_estudios']?></p>
+							<p><?= $doctor['doc_doctor_estudios'] ?></p>
 							<h5 class="text-muted">Posgrados</h5>
-							<p><?= $doctor['doc_doctor_postgrados']?></p>
+							<p><?= $doctor['doc_doctor_postgrados'] ?></p>
 						</div>
 						<div class="col-md-6">
 							<h5 class="text-muted">Especializaciónes</h5>
-							<p><?= $doctor['doc_doctor_especializaciones']?></p>
+							<p><?= $doctor['doc_doctor_especializaciones'] ?></p>
 							<h5 class="text-muted">Experiencia</h5>
-							<p><?= $doctor['doc_doctor_exp']?></p>
+							<p><?= $doctor['doc_doctor_exp'] ?></p>
 						</div>
 					</div>
 				</div>
 			</div>
-			<?php 
-				$galeria_id = $doctor['doc_doctor_galeria'];
-				
-				$sql = "SELECT * FROM galeria WHERE galeria_key=?";
-				$galeria = $db->query($sql, $galeria_id)->fetchArray();
+			<?php
+			$galeria_id = $doctor['doc_doctor_galeria'];
 
-				$sql = "SELECT * FROM galeria_img WHERE galeria_img_galeria_key=?";	
-				$galeria_img = $db->query($sql, $galeria_id)->fetchAll();
-									
+			$sql = "SELECT * FROM galeria WHERE galeria_key=?";
+			$galeria = $db->query($sql, $galeria_id)->fetchArray();
+
+			$sql = "SELECT * FROM galeria_img WHERE galeria_img_galeria_key=?";
+			$galeria_img = $db->query($sql, $galeria_id)->fetchAll();
+
 			?>
 			<div role="tabpanel" class="tab-pane fade" id="galeria" role="tabpanel" aria-labelledby="galeria-tab">
 				<div class="container-fluid">
 					<center>
-						<h4><?= $galeria['galeria_nombre']?></h4>
+						<h4><?= $galeria['galeria_nombre'] ?></h4>
 					</center>
 					<div id="gallery" class="simplegallery">
 						<div class="content text-center">
-							<img src="/backpanel/galeria/<?=  $galeria_img[0]['galeria_img_url']?>" class="w-75 image_1" alt="" />
-							<p class="caption caption_1"><strong><?= $galeria_img[0]['galeria_img_nombre']?></strong> <?= $galeria_img[0]['galeria_img_caption']?></p>
+							<img src="/backpanel/galeria/<?= $galeria_img[0]['galeria_img_url'] ?>" class="w-75 image_1" alt="" />
+							<p class="caption caption_1"><strong><?= $galeria_img[0]['galeria_img_nombre'] ?></strong> <?= $galeria_img[0]['galeria_img_caption'] ?></p>
 							<?php
 							for ($i = 1; $i < count($galeria_img); $i++) {
 							?>
-								<img src="/backpanel/galeria/<?=$galeria_img[$i]['galeria_img_url'] ?>" class="w-75 image_<?php echo ($i + 1) ?>" style="display:none" alt="" />
+								<img src="/backpanel/galeria/<?= $galeria_img[$i]['galeria_img_url'] ?>" class="w-75 image_<?php echo ($i + 1) ?>" style="display:none" alt="" />
 							<?php
 							}
 							for ($i = 1; $i < 6; $i++) {
 							?>
-								<p class="caption caption_<?php echo ($i + 1) ?> " style="display:none"><strong><?= $galeria_img[$i]['galeria_img_nombre']?></strong> <?= $galeria_img[$i]['galeria_img_caption']?></p>
+								<p class="caption caption_<?php echo ($i + 1) ?> " style="display:none"><strong><?= $galeria_img[$i]['galeria_img_nombre'] ?></strong> <?= $galeria_img[$i]['galeria_img_caption'] ?></p>
 							<?php
 							}
 							?>
@@ -243,7 +242,7 @@
 							?>
 								<div class="thumb" id="thumbid_<?php echo ($i + 1) ?>">
 									<a href="#" rel="<?php echo ($i + 1) ?>">
-										<img src="/backpanel/galeria/<?= $galeria_img[$i]['galeria_img_url']?>" id="thumb_<?php echo ($i + 1) ?>" class="thumbs" alt="" />
+										<img src="/backpanel/galeria/<?= $galeria_img[$i]['galeria_img_url'] ?>" id="thumb_<?php echo ($i + 1) ?>" class="thumbs" alt="" />
 									</a>
 								</div>
 							<?php
