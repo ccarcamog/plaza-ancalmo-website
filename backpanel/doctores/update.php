@@ -27,12 +27,13 @@ if (isset($_POST['update-submit'])) {
 	$horarios = $_POST['horarios'];
 	$pagos = $_POST['pagos'];
 	$local = $_POST['local'];
+	$galeria_id = $_POST['galeria'];
 
 	$sql = "UPDATE doc_doctores SET ";
 	$sql = $sql."doc_doctores_genero=?, ";
 	$sql = $sql."doc_doctor_nombre=?, ";
 	$sql = $sql."doc_doctor_desc=?, ";
-	$sql = $sql."doc_doctor_horario=?, ";
+	$sql = $sql."doc_doctor_horarios=?, ";
 	$sql = $sql."doc_doctor_pagos=?, ";
 	$sql = $sql."doc_doctor_exp_num=?, ";
 	$sql = $sql."doc_doctor_tel_1=?, ";
@@ -42,13 +43,13 @@ if (isset($_POST['update-submit'])) {
 	$sql = $sql."doc_doctor_ig=?, ";
 	$sql = $sql."doc_doctor_estudios=?, ";
 	$sql = $sql."doc_doctor_postgrados=?, ";
+	$sql = $sql."doc_doctor_especializaciones=?, ";
 	$sql = $sql."doc_doctor_exp=?, ";
 	$sql = $sql."doc_doctor_prioridad=?, ";
 	$sql = $sql."doc_doctor_local=? ";
 	$sql = $sql."WHERE doc_doctores_key=?";
 
-	$vals = array(
-		
+	$vals = array(		
 		$genero,
 		$nombre,
 		$descripcion,
@@ -71,8 +72,60 @@ if (isset($_POST['update-submit'])) {
 
 	$db->query($sql, $vals);
 
+	if($_FILES['image']['tmp_name'] != ""){
+		$imageFileType = strtolower(pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION));		
+		if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"){
+	
+			header("Location: ?id=".$id."&error=true&message=El tipo de imagen es incorrecto");
+			exit();
+			
+		}
+		if($_FILES['image']['size'] > 400000){
+			header("Location: ?id=".$id."&error=true&message=Peso de la imagen excedido");
+			exit();
+		}
 
+		$target_dir = "img/";
+		$target_file = $target_dir."profile_pic".$id.".".$imageFileType;
+		move_uploaded_file($_FILES["image"]["tmp_name"], $target_file);
 
+		$sql = "UPDATE doc_doctores SET doc_doctor_img=? WHERE doc_doctores_key=?";
+		$db->query($sql, $target_file, $id);
+		
+	}
+	
+	$sql = "DELETE FROM doc_doctores_redes_seguros WHERE doc_doctores_key=?";
+	$db->query($sql, $id);
+
+	$sql = "DELETE FROM doc_doctores_especialidades WHERE doc_doctores_key=?";
+	$db->query($sql, $id);
+	
+	$seguros = $_POST['seguros'];
+
+	foreach($seguros as $seguro){
+
+		$sql = "INSERT INTO doc_doctores_redes_seguros (doc_doctores_key, doc_redes_seguros_key) VALUES (?,?)";
+		
+		$db->query($sql, $id, $seguro);
+
+	}
+
+	$especialidades = $_POST['especialidades'];
+
+	foreach($especialidades as $especialidad){
+
+		$sql = "INSERT INTO doc_doctores_especialidades (doc_doctores_key, doc_especialidades_key) VALUES (?,?)";
+		$db->query($sql, $id, $especialidad);
+
+	}
+	
+	$galeria_nombre = "Galeria de ".$nombre;
+	$sql = "UPDATE galeria SET galeria_nombre=? WHERE galeria_key=?";
+
+	$db->query($sql, $galeria_nombre, $galeria_id);
+
+	header("Location: index.php");
+	exit();
 
 }
 
@@ -128,13 +181,13 @@ $especialidades_json = json_encode($especialidades);
 				<h2>Actualizar doctor</h2>
 
 				<div class="container">
-					<form action="create.php" method="POST" enctype="multipart/form-data">
+					<form action="update.php" method="POST" enctype="multipart/form-data">
 
 						<h3>Información personal</h3>
 						<div class="form-group row">
 							<div class="col">
 								<label for="id">Id</label>
-								<input class="form-control" type="number" name="id" value="<?=$doctor['doc_doctores_key']?>">
+								<input class="form-control" type="number" name="id" value="<?=$doctor['doc_doctores_key']?>" readonly>
 							</div>
 							<div class="col">
 								<label for="nombre">Nombre</label>
@@ -263,9 +316,13 @@ $especialidades_json = json_encode($especialidades);
 								<select class="form-control seguros-select" name="seguros[]" multiple="multiple">
 								</select>
 							</div>
+							<div class="col">
+								<label for="galeria">Galeria id</label>
+								<input class="form-control" type="number" name="galeria" value="<?=$doctor['doc_doctor_galeria']?>" readonly>
+							</div>
 						</div>
 						<div class="form-group text-center">
-							<input type="submit" name="update-submit" value="Crear" class="btn btn-success">
+							<input type="submit" name="update-submit" value="Actualizar" class="btn btn-success">
 						</div>
 					</form>
 				</div>
@@ -305,7 +362,7 @@ $especialidades_json = json_encode($especialidades);
 					obj.selected=true;
 				}
 			});
-			
+
 			console.log(especialidades_json);
 			console.log(seguros_json);
 			$('.especialidades-select').select2({

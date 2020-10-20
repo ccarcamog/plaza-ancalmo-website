@@ -14,6 +14,8 @@
 	<!-- Bootstrap core CSS -->
 	<link rel="stylesheet" href="/css/bootstrap.min.css">
 	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/especialidades/doctor/doctor-style.css">
+	<link rel="stylesheet" href="/css/simplegallery.demo1.css">
 </head>
 
 <body>
@@ -46,6 +48,8 @@
 								<th scope="col">img</th>
 								<th scope="col">prioridad</th>
 								<th scope="col">galeria</th>
+								<th></th>
+								<th></th>
 
 							</tr>
 						</thead>
@@ -60,6 +64,8 @@
 									<td><?= $doctor['doc_doctor_img'] ?></td>
 									<td><?= $doctor['doc_doctor_prioridad'] ?></td>
 									<td><?= $doctor['doc_doctor_galeria'] ?></td>
+									<td><a class="btn btn-warning actualizar-btn" href="/backpanel/doctores/update.php?id=<?= $doctor['doc_doctores_key'] ?>">Actualizar</a></td>
+									<td><a class="btn btn-danger actualizar-btn" href="#">Borrar</a></td>
 								</tr>
 
 							<?php
@@ -84,9 +90,9 @@
 										<div class="col-sm-4 pb-3">
 											<img src="" alt="doctor seguro pic" class="doctor_img">
 										</div>
-										<div class="col-sm-4 doctor-title">
+										<div class="col-sm-8 doctor-title">
 											<div class="">
-												<h3 class="m-0 doctor_name">John doe</h3>
+												<h3 class="m-0 doctor_nombre">John doe</h3>
 												<h4 class="text-muted doctor_especialidad">Odontologo</h4>
 											</div>
 
@@ -272,10 +278,31 @@
 	<!-- Bootstrap core JavaScript -->
 	<script type="text/javascript" src="/js/bootstrap.min.js"></script>
 	<script type="text/javascript">
-		$(document).ready(function() {
+		$('.table > tbody > tr').click(function(){
+			var doctor_id = $(this).data('id');
 
-			$('#previewModal').modal('show');
+			$.ajax({
+				url:'/backpanel/doctores/get_doctor.php',
+				type: 'POST',
+				data:{
+					id: doctor_id
+				},
+				dataType: 'json',
+				success: function(response){
+					console.log(response);
+					
+					$('.doctor_nombre').html( response['doc_doctor_nombre']);
+					$('.doctor_especialidad').html( response['especialidades'].join(", "));
+					$('.doctor_img').attr("src","/backpanel/doctores/" + response['doc_doctor_img'])
 
+					$('#previewModal').modal('show');
+					
+				}				
+			});
+
+		});
+		$('.actualizar-btn').click(function(e){
+			e.stopPropagation();
 		});
 	</script>
 </body>
