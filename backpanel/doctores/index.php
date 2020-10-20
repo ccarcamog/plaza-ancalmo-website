@@ -95,7 +95,6 @@
 												<h3 class="m-0 doctor_nombre">John doe</h3>
 												<h4 class="text-muted doctor_especialidad">Odontologo</h4>
 											</div>
-
 										</div>
 									</div>
 								</div>
@@ -136,28 +135,24 @@
 														<p class="doctor_descripcion">
 															Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...
 														</p>
-														<h5 class="text-muted">Especialidades</h5>
+														<h5 class="text-muted">Especializaciones</h5>
 														<p class="doctor_especialidades">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam lacus nisl, dignissim eget augue faucibus, convallis pretium mauris. Vivamus hendrerit eros vitae tempus tempor. Nulla facilisi. </p>
 														<h5 class="text-muted">Horarios de atención</h5>
 														<p class="doctor_horarios">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam lacus nisl, dignissim eget augue faucibus, convallis pretium mauris. Vivamus hendrerit eros vitae tempus tempor. Nulla facilisi. </p>
 														<h5 class="text-muted">Redes de Seguros</h5>
 														<ul class="doctor_seguros">
-															<li>Duis nec elit non leo molestie varius.</li>
-															<li>Pellentesque eu purus vitae felis mollis bibendum at sed sem.</li>
-															<li>Aenean rhoncus nibh vel vehicula dapibus.</li>
-															<li>Fusce aliquet felis in viverra interdum.</li>
-															<li>Etiam pulvinar justo at turpis lacinia, id aliquam sem facilisis.</li>
+
 														</ul>
 														<h5 class="text-muted">Formas de pago</h5>
-														<p class="pagos">
+														<p class="doctor_pagos">
 															Duis nec elit non leo molestie varius. Pellentesque eu purus vitae felis mollis bibendum at sed sem. Aenean rhoncus nibh vel vehicula dapibus. Fusce aliquet felis in viverra interdum. Etiam pulvinar justo at turpis lacinia, id aliquam sem facilisis.
 														</p>
 													</div>
 													<div class="col-md-4">
 														<h5 class="text-muted">Local</h5>
-														<p class="">5</p>
+														<p class="doctor_local">5</p>
 														<h5 class="text-muted">Años de experiencia</h5>
-														<p class="doctor_experiencia">10</p>
+														<p class="doctor_exp_num">10</p>
 													</div>
 												</div>
 											</div>
@@ -167,26 +162,10 @@
 											<div class="container-fluid" id="lista-seguros">
 												<h4>Lista de redes de seguros</h4>
 												<hr>
-												<div class="row">
-													<div class="col-md-6">
-														<ul>
-															<li>Suspendisse sit amet</li>
-															<li>Proin finibus est</li>
-															<li>Integer consequat</li>
-															<li>Suspendisse a lorem</li>
-															<li>Aenean et mauris</li>
-														</ul>
-													</div>
-													<div class="col-md-6">
-														<ul>
-															<li>Suspendisse sit amet</li>
-															<li>Proin finibus est</li>
-															<li>Integer consequat</li>
-															<li>Suspendisse a lorem</li>
-															<li>Aenean et mauris</li>
-														</ul>
-													</div>
+												<div class="row doctor-seguros-card">
+
 												</div>
+
 											</div>
 										</div>
 										<div role="tabpanel" class="tab-pane fade" id="contacto" role="tabpanel" aria-labelledby="contacto-tab">
@@ -219,7 +198,7 @@
 														<h5 class="text-muted">Estudios Universitarios</h5>
 														<p class="doctor_estudios">Proin ullamcorper egestas tellus vel.</p>
 														<h5 class="text-muted">Posgrados</h5>
-														<p class="doctor_posgrados">
+														<p class="doctor_postgrados">
 															Fusce elementum quam et tempus pellentesque. Proin eu ex iaculis, ultricies leo sit amet, rhoncus ligula. Praesent nec est tempor, accumsan tortor vitae, commodo risus. Fusce vitae dolor id justo auctor feugiat.
 														</p>
 													</div>
@@ -254,7 +233,7 @@
 																<img src="" id="thumb_0" class="thumbs" alt="" />
 															</a>
 														</div>
-														
+
 													</div>
 
 												</div>
@@ -278,30 +257,64 @@
 	<!-- Bootstrap core JavaScript -->
 	<script type="text/javascript" src="/js/bootstrap.min.js"></script>
 	<script type="text/javascript">
-		$('.table > tbody > tr').click(function(){
+		$('.table > tbody > tr').click(function() {
 			var doctor_id = $(this).data('id');
 
 			$.ajax({
-				url:'/backpanel/doctores/get_doctor.php',
+				url: '/backpanel/doctores/get_doctor.php',
 				type: 'POST',
-				data:{
+				data: {
 					id: doctor_id
 				},
 				dataType: 'json',
-				success: function(response){
+				success: function(response) {
 					console.log(response);
-					
-					$('.doctor_nombre').html( response['doc_doctor_nombre']);
-					$('.doctor_especialidad').html( response['especialidades'].join(", "));
-					$('.doctor_img').attr("src","/backpanel/doctores/" + response['doc_doctor_img'])
+
+					$('.doctor_nombre').html(response['doc_doctor_nombre']);
+					$('.doctor_especialidad').html(response['especialidades'].join(", "));
+					$('.doctor_img').attr("src", "/backpanel/doctores/" + response['doc_doctor_img']);
+					$('.doctor_descripcion').html(response['doc_doctor_desc']);
+					$('.doctor_especialidades').html(response['doc_doctor_especializaciones']);
+					$('.doctor_horarios').html(response['doc_doctor_horarios']);
+					$('.doctor_pagos').html(response['doc_doctor_pagos']);
+					$('.doctor_local').html(response['doc_doctor_local']);
+					$('.doctor_exp_num').html(response['doc_doctor_exp_num']);
+					$('.doctor_seguros').html('');
+
+					for (var i = 0; i < response['seguros'].length; i++) {
+						$('.doctor_seguros').append('<li>' + response['seguros'][i]['doc_redes_seguros_nombre'] + '</li>');
+
+						var html = '';
+						html += '<div class="col-md-6 p-3">';
+						html += '	<div class="card text-left">';
+						html += '		<div class="card-body d-flex align-items-center flex-nowrap ">';
+						html += '			<img src="/backpanel/seguros/' + response['seguros'][i]['doc_redes_seguros_img'] + '" width="200">';
+						html += '			<div class=" ml-3 d-flex flex-column justify-content-center">';
+						html += '				<h4 class="card-title m-0">'+response['seguros'][i]['doc_redes_seguros_nombre'] +'</h4>';
+						html += '				<p class="card-text text-muted">'+ response['seguros'][i]['doc_redes_seguros_desc']+'</p>';
+						html += '			</div>';
+						html += '		</div>';
+						html += '	</div>';
+						html += '</div>';
+						$('.doctor-seguros-card').append(html);
+
+					}
+					$('.doctor_telefono_1').html(response['doc_doctor_tel_1']);
+					$('.doctor_telefono_2').html(response['doc_doctor_tel_2']);
+					$('.doctor_correo').html(response['doc_doctor_email']);
+					$('.doctor_facebook').html(response['doc_doctor_fb']);
+					$('.doctor_estudios').html(response['doc_doctor_estudios']);
+					$('.doctor_postgrados').html(response['doc_doctor_postgrados']);
+					$('.doctor_especializaciones').html(response['doc_doctor_especializaciones']);
+					$('.doctor_experiencia').html(response['doc_doctor_exp']);
 
 					$('#previewModal').modal('show');
-					
-				}				
+
+				}
 			});
 
 		});
-		$('.actualizar-btn').click(function(e){
+		$('.actualizar-btn').click(function(e) {
 			e.stopPropagation();
 		});
 	</script>
