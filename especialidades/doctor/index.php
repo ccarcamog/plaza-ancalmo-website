@@ -226,7 +226,7 @@ $redes = $db->query($sql, $id)->fetchAll();
 								<img src="/backpanel/galeria/<?= $galeria_img[$i]['galeria_img_url'] ?>" class="w-75 image_<?php echo ($i + 1) ?>" style="display:none" alt="" />
 							<?php
 							}
-							for ($i = 1; $i < 6; $i++) {
+							for ($i = 1; $i < count($galeria_img); $i++) {
 							?>
 								<p class="caption caption_<?php echo ($i + 1) ?> " style="display:none"><strong><?= $galeria_img[$i]['galeria_img_nombre'] ?></strong> <?= $galeria_img[$i]['galeria_img_caption'] ?></p>
 							<?php

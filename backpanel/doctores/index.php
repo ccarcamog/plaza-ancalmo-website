@@ -218,22 +218,12 @@
 										<div role="tabpanel" class="tab-pane fade" id="galeria" role="tabpanel" aria-labelledby="galeria-tab">
 											<div class="container-fluid">
 												<div id="gallery" class="simplegallery">
-													<div class="content text-center">
-														<img src="" class="w-75 image_1" alt="" />
-														<p class="caption caption_1"></p>
-
+													<div class="content text-center galeria_content">
 													</div>
 
 													<div class="clear"></div>
 
 													<div class="thumbnail container">
-
-														<div class="thumb" id="thumbid_0">
-															<a href="#" rel="<?php echo ($i + 1) ?>">
-																<img src="" id="thumb_0" class="thumbs" alt="" />
-															</a>
-														</div>
-
 													</div>
 
 												</div>
@@ -254,8 +244,19 @@
 	</div>
 	<?php include "../../components/footer.php" ?>
 	<script type="text/javascript" src="/js/jquery.min.js"></script>
+	<script type="text/javascript" src="/js/simplegallery.min.js"></script>
 	<!-- Bootstrap core JavaScript -->
 	<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+	<script>
+		$('#previewModal').on('shown.bs.modal', function () {
+			$(".thumb").click(function() {
+				var id = $(this).attr("id");
+				var cap_id = ".caption_" + id.substr(id.length - 1);
+				$(".caption").css("display", "none");
+				$(cap_id).css("display", "block");
+			});
+		})
+	</script>
 	<script type="text/javascript">
 		$('.table > tbody > tr').click(function() {
 			var doctor_id = $(this).data('id');
@@ -290,13 +291,13 @@
 						html += '		<div class="card-body d-flex align-items-center flex-nowrap ">';
 						html += '			<img src="/backpanel/seguros/' + response['seguros'][i]['doc_redes_seguros_img'] + '" width="200">';
 						html += '			<div class=" ml-3 d-flex flex-column justify-content-center">';
-						html += '				<h4 class="card-title m-0">'+response['seguros'][i]['doc_redes_seguros_nombre'] +'</h4>';
-						html += '				<p class="card-text text-muted">'+ response['seguros'][i]['doc_redes_seguros_desc']+'</p>';
+						html += '				<h4 class="card-title m-0">' + response['seguros'][i]['doc_redes_seguros_nombre'] + '</h4>';
+						html += '				<p class="card-text text-muted">' + response['seguros'][i]['doc_redes_seguros_desc'] + '</p>';
 						html += '			</div>';
 						html += '		</div>';
 						html += '	</div>';
 						html += '</div>';
-						$('.doctor-seguros-card').append(html);
+						$('.doctor-seguros-card').append($(html));
 
 					}
 					$('.doctor_telefono_1').html(response['doc_doctor_tel_1']);
@@ -307,6 +308,47 @@
 					$('.doctor_postgrados').html(response['doc_doctor_postgrados']);
 					$('.doctor_especializaciones').html(response['doc_doctor_especializaciones']);
 					$('.doctor_experiencia').html(response['doc_doctor_exp']);
+
+					console.log(response['galeria']);
+
+					var galeria_nombre = response['galeria']['galeria_nombre'];
+					var galeria = response['galeria_img'];
+
+					$('.galeria_content').html('');
+					for (var i = 0; i < galeria.length; i++) {
+
+						if (i == 0) var html = '<img src="/backpanel/galeria/' + galeria[i]['galeria_img_url'] + '" class="w-75 image_' + (i + 1) + '"/>';
+						else var html = '<img src="/backpanel/galeria/' + galeria[i]['galeria_img_url'] + '" class="w-75 image_' + (i + 1) + '" style="display:none"/>';
+						$('.galeria_content').append(html);
+
+					}
+					// $('.galeria_content').html('');
+					for (var i = 0; i < galeria.length; i++) {
+						if (i == 0) var html = '<p class="caption caption_' + (i + 1) + '"><strong>' + galeria[i]['galeria_img_nombre'] + '</strong> ' + galeria[i]['galeria_img_caption'] + '</p>';
+						else var html = '<p class="caption caption_' + (i + 1) + '" style="display:none"><strong>' + galeria[i]['galeria_img_nombre'] + '</strong> ' + galeria[i]['galeria_img_caption'] + '</p>';
+						$('.galeria_content').append(html);
+
+					}
+
+					$('.thumbnail').html('');
+					for (var i = 0; i < galeria.length; i++) {
+						var html = '';
+						html += '<div class="thumb" id="thumbid_' + (i + 1) + '">';
+						html += '<a href="#" rel="' + (i + 1) + '">';
+						html += '<img src="/backpanel/galeria/' + galeria[i]['galeria_img_url'] + '" id="thumb_' + (i + 1) + '" class="thumbs" alt="" />';
+						html += '</a>';
+						html += '</div>';
+
+						$('.thumbnail').append(html);
+
+					}
+
+					$('#gallery').simplegallery({
+						galltime: 500,
+						gallcontent: '.content',
+						gallthumbnail: '.thumbnail',
+						gallthumb: '.thumb'
+					});
 
 					$('#previewModal').modal('show');
 
