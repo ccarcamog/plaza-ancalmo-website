@@ -32,7 +32,7 @@
 			'doc_especialidades_nombre' => 'Todos'
 		);
 
-		$sql = "SELECT * FROM doc_doctores";
+		$sql = "SELECT * FROM doc_doctores ORDER BY doc_doctor_prioridad DESC";
 
 		if(isset($_GET['especialidad'])){
 			
@@ -42,7 +42,7 @@
 
 			$especialidad = $db->query($sql, $id)->fetchArray();	
 
-			$sql = "SELECT d.* FROM doc_doctores d INNER JOIN doc_doctores_especialidades de ON d.doc_doctores_key=de.doc_doctores_key WHERE de.doc_especialidades_key=?";
+			$sql = "SELECT d.* FROM doc_doctores d INNER JOIN doc_doctores_especialidades de ON d.doc_doctores_key=de.doc_doctores_key WHERE de.doc_especialidades_key=? ORDER BY d.doc_doctor_prioridad DESC";
 			
 		}
 		
