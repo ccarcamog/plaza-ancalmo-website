@@ -28,8 +28,11 @@
 
 		$db = new db($dbHost, $dbUID, $dbPWD, $dbName);
 
-		$especialidad;
-		$doctores;
+		$especialidad = array(
+			'doc_especialidades_nombre' => 'Todos'
+		);
+
+		$sql = "SELECT * FROM doc_doctores";
 
 		if(isset($_GET['especialidad'])){
 			
@@ -40,13 +43,10 @@
 			$especialidad = $db->query($sql, $id)->fetchArray();	
 
 			$sql = "SELECT d.* FROM doc_doctores d INNER JOIN doc_doctores_especialidades de ON d.doc_doctores_key=de.doc_doctores_key WHERE de.doc_especialidades_key=?";
-			$doctores = $db->query($sql, $id)->fetchAll();
-
-			$doctores_json = json_encode($doctores);
-			// echo $doctores_json;
-
+			
 		}
-	
+		
+		$doctores = $db->query($sql, $id)->fetchAll();
 	
 	?>
 
