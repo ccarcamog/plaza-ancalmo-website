@@ -145,10 +145,12 @@ $redes = $db->query($sql, $id)->fetchAll();
 						?>
 							<div class="col-md-6 p-3">
 								<div class="card text-left">
-								  <div class="card-body d-flex align-items-center flex-wrap ">
-									  <img src="/backpanel/seguros/<?=$seguro['doc_redes_seguros_img']?>" width="200">
+								  <div class="card-body d-flex align-items-center">
+									  <img src="/backpanel/seguros/<?=$seguro['doc_redes_seguros_img']?>">
 									  <div class=" ml-3 d-flex flex-column justify-content-center">
-										<h4 class="card-title m-0"><?=$seguro['doc_redes_seguros_nombre']?></h4>
+										<a href="<?=$seguro['doc_redes_seguros_link']?>" target="_blank">
+											<h4 class="card-title m-0"><?=$seguro['doc_redes_seguros_nombre']?></h4>
+										</a>
 										<p class="card-text text-muted"><?=$seguro['doc_redes_seguros_desc']?></p>
 									  </div>
 								  </div>

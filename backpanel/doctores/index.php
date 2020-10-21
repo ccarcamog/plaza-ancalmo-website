@@ -45,8 +45,6 @@
 							<tr>
 								<th scope="col">id</th>
 								<th scope="col">nombre</th>
-								<th scope="col">img</th>
-								<th scope="col">prioridad</th>
 								<th scope="col">galeria</th>
 								<th></th>
 								<th></th>
@@ -61,11 +59,12 @@
 								<tr id="row-<?= $doctor['doc_doctores_key'] ?>" data-id="<?= $doctor['doc_doctores_key'] ?>">
 									<th scope="row"><?= $doctor['doc_doctores_key'] ?></th>
 									<td><?= $doctor['doc_doctor_nombre'] ?></td>
-									<td><?= $doctor['doc_doctor_img'] ?></td>
-									<td><?= $doctor['doc_doctor_prioridad'] ?></td>
-									<td><?= $doctor['doc_doctor_galeria'] ?></td>
+									<td>
+										<a class="btn btn-info galeria-btn" href="/backpanel/galeria/?id=<?= $doctor['doc_doctor_galeria'] ?>">Ir a galeria</a>
+										
+									</td>
 									<td><a class="btn btn-warning actualizar-btn" href="/backpanel/doctores/update.php?id=<?= $doctor['doc_doctores_key'] ?>">Actualizar</a></td>
-									<td><a class="btn btn-danger actualizar-btn" href="#">Borrar</a></td>
+									<td><button class="btn btn-danger borrar-btn" data-id="<?= $doctor['doc_doctores_key'] ?>">Borrar</button></td>
 								</tr>
 
 							<?php
@@ -282,6 +281,7 @@
 					$('.doctor_exp_num').html(response['doc_doctor_exp_num']);
 					$('.doctor_seguros').html('');
 
+					$('.doctor-seguros-card').html('');
 					for (var i = 0; i < response['seguros'].length; i++) {
 						$('.doctor_seguros').append('<li>' + response['seguros'][i]['doc_redes_seguros_nombre'] + '</li>');
 
@@ -289,9 +289,11 @@
 						html += '<div class="col-md-6 p-3">';
 						html += '	<div class="card text-left">';
 						html += '		<div class="card-body d-flex align-items-center flex-nowrap ">';
-						html += '			<img src="/backpanel/seguros/' + response['seguros'][i]['doc_redes_seguros_img'] + '" width="200">';
+						html += '			<img src="/backpanel/seguros/' + response['seguros'][i]['doc_redes_seguros_img'] + '">';
 						html += '			<div class=" ml-3 d-flex flex-column justify-content-center">';
-						html += '				<h4 class="card-title m-0">' + response['seguros'][i]['doc_redes_seguros_nombre'] + '</h4>';
+						html += '				<a href="'+response['seguros'][i]['doc_redes_seguros_link'] + '" target="_blank">';
+						html += '					<h4 class="card-title m-0">' + response['seguros'][i]['doc_redes_seguros_nombre'] + '</h4>';
+						html += '				</a>';
 						html += '				<p class="card-text text-muted">' + response['seguros'][i]['doc_redes_seguros_desc'] + '</p>';
 						html += '			</div>';
 						html += '		</div>';
@@ -358,6 +360,36 @@
 		});
 		$('.actualizar-btn').click(function(e) {
 			e.stopPropagation();
+		});
+		$('.galeria-btn').on('click', function(e) {
+			e.stopPropagation();
+		});
+		
+		$('.borrar-btn').click(function(e){
+			e.stopPropagation();
+
+			var confirm_alert = confirm("Esta seguro que desea borrar la información.");
+			if(!confirm_alert) return;
+
+			var row = $(this).closest('tr');
+
+			var doctor_id = $(this).data('id');
+
+			$.ajax({
+				url: '/backpanel/doctores/delete.php',
+				type: 'POST',
+				data:{
+					id: doctor_id
+				},
+				success: function(response){
+					
+					$(row).fadeOut(500, function(){
+						$(this).remove();
+					})
+
+				}
+			});
+
 		});
 	</script>
 </body>
