@@ -1,23 +1,26 @@
 <?php require "../../php/verify-session.php" ?>
 <?php require "../../php/db.php" ?>
 <?php require "../../php/credentials.php" ?>
-<?php 
+<?php
 
-	$id = $_POST['id'];
+$id = $_POST['id'];
 
-	$db = new db($dbHost, $dbUID, $dbPWD, $dbName);
 
-	$sql = "DELETE FROM doc_especialidades WHERE doc_especialidades_key=?";
+$db = new db($dbHost, $dbUID, $dbPWD, $dbName);
 
-	$deleted = $db->query($sql, $id);
+$sql = "SELECT * FROM locales WHERE locales_key = ?";
+$deleted = $db->query($sql, $id)->fetchArray();
+$galeria_id = $deleted['locales_galeria_key'];
 
-	if($db->affectedRows() > 0){
-		echo 1;
-		exit();
-	}else{
-		echo 0;
-		exit();
-	}
+$sql = "DELETE FROM locales WHERE locales_key=?";
+$affected = $db->query($sql, $id)->affectedRows();
 
+$sql = "DELETE FROM galeria_img WHERE galeria_img_galeria_key=?";
+$db->query($sql, $galeria_id);
+$sql = "DELETE FROM galeria WHERE galeria_key=?";
+$db->query($sql, $galeria_id);
+
+$img = fopen($deleted['locales_preview'], "w+");
+unlink($img);
 
 ?>

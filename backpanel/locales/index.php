@@ -319,13 +319,36 @@
 					var rowID = '#row-'+response['id'];
 					$(rowID).hide();
 					$(rowID).html(html);
-					$(rowID).fadeIn(500);
+					$(rowID).fadeIn(800);
 
 					$('#update-form')[0].reset();
 					$('#updateModal').modal('hide');
 
 				}
 			});
+		});
+		$(document).on('click', '.delete-btn', function(){
+
+			var delete_id = $(this).data('id');
+
+			var row = $(this).closest('tr');	
+
+			$.ajax({
+				url:'/backpanel/locales/delete.php',
+				type:'POST',
+				data:{
+					id: delete_id
+				},
+				success:function(response){
+
+					console.log(response);
+
+					$(row).fadeOut(800, function(){
+						$(this).remove();
+					})
+				}
+			});
+
 		});
 	</script>
 </body>
