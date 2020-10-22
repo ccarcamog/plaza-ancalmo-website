@@ -148,7 +148,7 @@
 			</div>
 		</div>
 
-		<div class="container mt-5" id="conozcanos">
+		<div class="container mt-5 mb-5" id="conozcanos">
 
 			<div class="row">
 

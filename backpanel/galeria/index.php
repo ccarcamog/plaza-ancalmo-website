@@ -20,8 +20,6 @@
 
 <body>
 
-	<?php include "../../components/navbar.php" ?>
-
 	<?php
 
 	if (!isset($_GET['id'])) {
@@ -51,158 +49,159 @@
 	$imagenes = $db->query($sql, $id)->fetchAll();
 
 	?>
+	<main class="d-flex align-items-stretch">
 
-	<div class="container-fluid p-5">
-		<div class="row">
-			<div class="col-md-2">
-				<?php include "../../components/side-bar.php" ?>
-			</div>
-			<div class="col-md-10">
-				<h3><?= $galeria['galeria_nombre'] ?></h3>
-				<div class="table-responsive  mt-4">
-					<table class="table table-hover">
-						<thead class="thead-dark">
-							<tr>
-								<th></th>
-								<th scope="col">id</th>
-								<th scope="col">img</th>
-								<th scope="col">nombre</th>
-								<th scope="col">descripcion</th>
+		<div class="container-fluid d-flex align-items-stretch">
+			<div class="row" style="width: 100vw;">
+				<div class="col-md-3 p-0">
+					<?php include "../../components/side-bar.php" ?>
+				</div>
+				<div class="col-md-9 p-5">
+					<h3><?= $galeria['galeria_nombre'] ?></h3>
+					<div class="table-responsive  mt-4">
+						<table class="table table-hover">
+							<thead class="thead-dark">
+								<tr>
+									<th></th>
+									<th scope="col">id</th>
+									<th scope="col">img</th>
+									<th scope="col">nombre</th>
+									<th scope="col">descripcion</th>
 
-								<th></th>
-								<th></th>
-							</tr>
-						</thead>
-						<tbody>
-
-							<?php
-							foreach ($imagenes as $imagen) {
-							?>
-
-								<tr id="row-<?= $imagen['galeria_img_key'] ?>">
-									<td><img src="/img/svg/sort-result.svg" style="height:1em"></td>
-									<th scope="row"><?= $imagen['galeria_img_key'] ?></th>
-									<td><img src="/backpanel/galeria/<?= $imagen['galeria_img_url'] ?>" height="100"></td>
-									<td><?= $imagen['galeria_img_nombre'] ?></td>
-									<td><?= $imagen['galeria_img_caption'] ?></td>
-
-									<td>
-										<button class="btn btn-warning update-btn" data-id="<?= $imagen['galeria_img_key'] ?>" data-path="<?= $imagen['galeria_img_url'] ?>">
-											Modificar
-										</button>
-									</td>
-									<td>
-										<button class="btn btn-danger delete-btn" data-id="<?= $imagen['galeria_img_key'] ?>">
-											Borrar
-										</button>
-									</td>
+									<th></th>
+									<th></th>
 								</tr>
+							</thead>
+							<tbody>
 
-							<?php
-							}
-							?>
-						</tbody>
-					</table>
-					<div class="modal fade" id="agregarModal" tabindex="-1" aria-labelledby="#agregarModalLabel" aria-hidden="true">
-						<div class="modal-dialog modal-dialog-centered">
-							<div class="modal-content">
-								<div class="modal-header">
-									<h5 class="modal-title" id="agregarModalLabel">Agregar Imagenes</h5>
-									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-										<span aria-hidden="true">&times;</span>
-									</button>
-								</div>
-								<form id="agregarForm">
-									<div class="modal-body">
-										<div class="custom-file">
-											<input type="file" class="custom-file-input" name="imagenes[]" multiple id="imagenesInput" lang="es" required>
-											<label class="custom-file-label" for="imagenes[]" data-browse="Elegir">Seleccionar Archivos</label>
+								<?php
+								foreach ($imagenes as $imagen) {
+								?>
+
+									<tr id="row-<?= $imagen['galeria_img_key'] ?>">
+										<td><img src="/img/svg/sort-result.svg" style="height:1em"></td>
+										<th scope="row"><?= $imagen['galeria_img_key'] ?></th>
+										<td><img src="/backpanel/galeria/<?= $imagen['galeria_img_url'] ?>" height="100"></td>
+										<td><?= $imagen['galeria_img_nombre'] ?></td>
+										<td><?= $imagen['galeria_img_caption'] ?></td>
+
+										<td>
+											<button class="btn btn-warning update-btn" data-id="<?= $imagen['galeria_img_key'] ?>" data-path="<?= $imagen['galeria_img_url'] ?>">
+												Modificar
+											</button>
+										</td>
+										<td>
+											<button class="btn btn-danger delete-btn" data-id="<?= $imagen['galeria_img_key'] ?>">
+												Borrar
+											</button>
+										</td>
+									</tr>
+
+								<?php
+								}
+								?>
+							</tbody>
+						</table>
+						<div class="modal fade" id="agregarModal" tabindex="-1" aria-labelledby="#agregarModalLabel" aria-hidden="true">
+							<div class="modal-dialog modal-dialog-centered">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h5 class="modal-title" id="agregarModalLabel">Agregar Imagenes</h5>
+										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+										</button>
+									</div>
+									<form id="agregarForm">
+										<div class="modal-body">
+											<div class="custom-file">
+												<input type="file" class="custom-file-input" name="imagenes[]" multiple id="imagenesInput" lang="es" required>
+												<label class="custom-file-label" for="imagenes[]" data-browse="Elegir">Seleccionar Archivos</label>
+											</div>
 										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+											<button type="submit" id="agregar-submit" class="btn btn-primary">Agregar</button>
+										</div>
+									</form>
+									<div class="modal-body d-none" id="progressContainer">
+										<div class="progress">
+											<div class="progress-bar" id="progressbar" role="progressbar" style="width: 0%"></div>
+										</div>
+									</div>
+
+								</div>
+							</div>
+						</div>
+						<div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="updateModalLabel" aria-hidden="true">
+							<div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h5 class="modal-title" id="updateModalLabel">Actualizar imagen</h5>
+										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+										</button>
+									</div>
+									<div class="modal-body">
+										<form method="POST" id="update-form">
+											<div class="container-fluid">
+												<div class="row mb-5">
+													<div class="col">
+														<img src="/img/contact-header-background.jpg" id="update-img" style="width:100%">
+													</div>
+												</div>
+												<div class="form-group row">
+													<div class="col">
+														<label for="id">Id</label>
+														<input class="form-control" type="number" name="id" id="update-id" readonly>
+													</div>
+													<div class="col">
+														<label for="nombre">nombre</label>
+														<input class="form-control" type="text" name="nombre" id="update-nombre" required>
+													</div>
+												</div>
+
+												<div class="row">
+													<div class="col">
+														<label for="descripcion">Descripción</label>
+														<textarea class="form-control" name="descripcion" id="update-descripcion"></textarea>
+													</div>
+												</div>
+
+											</div>
+										</form>
 									</div>
 									<div class="modal-footer">
 										<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-										<button type="submit" id="agregar-submit" class="btn btn-primary">Agregar</button>
+										<button id="update-submit" name="update-submit" class="btn btn-primary">Guardar</button>
 									</div>
-								</form>
-								<div class="modal-body d-none" id="progressContainer">
-									<div class="progress">
-										<div class="progress-bar" id="progressbar" role="progressbar" style="width: 0%"></div>
-									</div>
-								</div>
-
-							</div>
-						</div>
-					</div>
-					<div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="updateModalLabel" aria-hidden="true">
-						<div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
-							<div class="modal-content">
-								<div class="modal-header">
-									<h5 class="modal-title" id="updateModalLabel">Actualizar imagen</h5>
-									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-										<span aria-hidden="true">&times;</span>
-									</button>
-								</div>
-								<div class="modal-body">
-									<form method="POST" id="update-form">
-										<div class="container-fluid">
-											<div class="row mb-5">
-												<div class="col">
-													<img src="/img/contact-header-background.jpg" id="update-img" style="width:100%">
-												</div>
-											</div>
-											<div class="form-group row">
-												<div class="col">
-													<label for="id">Id</label>
-													<input class="form-control" type="number" name="id" id="update-id" readonly>
-												</div>
-												<div class="col">
-													<label for="nombre">nombre</label>
-													<input class="form-control" type="text" name="nombre" id="update-nombre" required>
-												</div>
-											</div>
-
-											<div class="row">
-												<div class="col">
-													<label for="descripcion">Descripción</label>
-													<textarea class="form-control" name="descripcion" id="update-descripcion"></textarea>
-												</div>
-											</div>
-
-										</div>
-									</form>
-								</div>
-								<div class="modal-footer">
-									<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-									<button id="update-submit" name="update-submit" class="btn btn-primary">Guardar</button>
 								</div>
 							</div>
 						</div>
+
 					</div>
-					
+					<center class="mt-3">
+						<button class="btn btn-success agregar-btn" data-toggle="modal" data-target="#agregarModal">Agregar</button>
+					</center>
 				</div>
-				<center class="mt-3">
-					<button class="btn btn-success agregar-btn" data-toggle="modal" data-target="#agregarModal">Agregar</button>
-				</center>
 			</div>
 		</div>
-	</div>
-
+	</main>
+	<?php include "../../components/footer.php" ?>
 	<script type="text/javascript" src="/js/jquery.min.js"></script>
 	<!-- Bootstrap core JavaScript -->
 	<script type="text/javascript" src="/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="/js/jquery-ui.js"></script>
 	<script>
-
 		function updateOrder(keys) {
 			var dataString = JSON.stringify(keys);
 			$.ajax({
 				url: '/backpanel/galeria/order.php',
 				type: 'POST',
 				data: {
-					keys: dataString,					
+					keys: dataString,
 				},
-				success:function(response){
-				
+				success: function(response) {
+
 				}
 			});
 		}

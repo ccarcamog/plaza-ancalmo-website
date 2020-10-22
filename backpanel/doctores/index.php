@@ -20,234 +20,233 @@
 
 <body>
 
-
-	<?php include "../../components/navbar.php" ?>
-	<div class="container-fluid p-5">
-
-		<div class="row">
-			<div class="col-md-2">
-				<?php include "../../components/side-bar.php" ?>
-			</div>
-			<div class="col-md-10">
-				<h2>DOCTORES</h2>
-				<?php
-
-				$db = new db($dbHost, $dbUID, $dbPWD, $dbName);
-
-				$sql = "SELECT * FROM doc_doctores";
-
-				$doctores = $db->query($sql)->fetchAll();
-
-				?>
-				<div class="table-responsive  mt-4">
-					<table class="table table-hover">
-						<thead class="thead-dark">
-							<tr>
-								<th scope="col">id</th>
-								<th scope="col">nombre</th>
-								<th scope="col">galeria</th>
-								<th></th>
-								<th></th>
-
-							</tr>
-						</thead>
-						<tbody>
-
-							<?php
-							foreach ($doctores as $doctor) {
-							?>
-								<tr id="row-<?= $doctor['doc_doctores_key'] ?>" data-id="<?= $doctor['doc_doctores_key'] ?>">
-									<th scope="row"><?= $doctor['doc_doctores_key'] ?></th>
-									<td><?= $doctor['doc_doctor_nombre'] ?></td>
-									<td>
-										<a class="btn btn-info galeria-btn" href="/backpanel/galeria/?id=<?= $doctor['doc_doctor_galeria'] ?>">Ir a galeria</a>
-										
-									</td>
-									<td><a class="btn btn-warning actualizar-btn" href="/backpanel/doctores/update.php?id=<?= $doctor['doc_doctores_key'] ?>">Actualizar</a></td>
-									<td><button class="btn btn-danger borrar-btn" data-id="<?= $doctor['doc_doctores_key'] ?>">Borrar</button></td>
-								</tr>
-
-							<?php
-							}
-							?>
-						</tbody>
-					</table>
-					<a href="/backpanel/doctores/create.php" class="btn btn-success">Nueva red de seguros</a>
+	<main class="d-flex align-items-stretch">
+		<div class="container-fluid d-flex align-items-stretch">
+			<div class="row" style="width: 100vw;">
+				<div class="col-md-3 p-0">
+					<?php include "../../components/side-bar.php" ?>
 				</div>
-				<div class="modal fade" id="previewModal" tabindex="-1" aria-labelledby="previewModalLabel" aria-hidden="true">
-					<div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable w-75">
-						<div class="modal-content">
-							<div class="modal-header">
-								<h5 class="modal-title" id="previewModalLabel">Pagina del doctor</h5>
-								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-									<span aria-hidden="true">&times;</span>
-								</button>
-							</div>
-							<div class="modal-body">
-								<div class="container" id="doctorInfo">
-									<div class="row p-3">
-										<div class="col-sm-4 pb-3">
-											<img src="" alt="doctor seguro pic" class="doctor_img">
-										</div>
-										<div class="col-sm-8 doctor-title">
-											<div class="">
-												<h3 class="m-0 doctor_nombre">John doe</h3>
-												<h4 class="text-muted doctor_especialidad">Odontologo</h4>
-											</div>
-										</div>
-									</div>
+				<div class="col-md-9 p-5">
+					<h2>DOCTORES</h2>
+					<?php
+
+					$db = new db($dbHost, $dbUID, $dbPWD, $dbName);
+
+					$sql = "SELECT * FROM doc_doctores";
+
+					$doctores = $db->query($sql)->fetchAll();
+
+					?>
+					<div class="table-responsive mt-4">
+						<table class="table table-hover">
+							<thead class="thead-dark">
+								<tr>
+									<th scope="col">id</th>
+									<th scope="col">nombre</th>
+									<th scope="col">galeria</th>
+									<th></th>
+									<th></th>
+
+								</tr>
+							</thead>
+							<tbody>
+
+								<?php
+								foreach ($doctores as $doctor) {
+								?>
+									<tr id="row-<?= $doctor['doc_doctores_key'] ?>" data-id="<?= $doctor['doc_doctores_key'] ?>">
+										<th scope="row"><?= $doctor['doc_doctores_key'] ?></th>
+										<td><?= $doctor['doc_doctor_nombre'] ?></td>
+										<td>
+											<a class="btn btn-info galeria-btn" href="/backpanel/galeria/?id=<?= $doctor['doc_doctor_galeria'] ?>">Ir a galeria</a>
+
+										</td>
+										<td><a class="btn btn-warning actualizar-btn" href="/backpanel/doctores/update.php?id=<?= $doctor['doc_doctores_key'] ?>">Actualizar</a></td>
+										<td><button class="btn btn-danger borrar-btn" data-id="<?= $doctor['doc_doctores_key'] ?>">Borrar</button></td>
+									</tr>
+
+								<?php
+								}
+								?>
+							</tbody>
+						</table>
+					</div>
+					<a href="/backpanel/doctores/create.php" class="btn btn-success">Agregar doctor</a>
+					<div class="modal fade" id="previewModal" tabindex="-1" aria-labelledby="previewModalLabel" aria-hidden="true">
+						<div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable w-75">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title" id="previewModalLabel">Pagina del doctor</h5>
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
 								</div>
-
-								<div class="container" id="doctorTabs">
-									<ul class="nav nav-tabs" id="myTab" role="tablist">
-										<li>
-											<a href="#" class="btn btn-danger mr-3">
-												<img src="/img/svg/calendar-line.svg" class="svg-inverted mr-2" alt="calendar icon" height="20px">
-												Agendar consulta
-											</a>
-										</li>
-										<li role="presentation" class="nav-item active">
-											<a class="nav-link active" id="resumen-tab" data-toggle="tab" href="#resumen" role="tab" aria-controls="resumen" aria-selected="true">Resumen</a>
-										</li>
-										<li role="presentation" class="nav-item">
-											<a class="nav-link" id="seguro-tab" data-toggle="tab" href="#seguro" role="tab" aria-controls="seguro" aria-selected="false">Redes de seguros</a>
-										</li>
-										<li role="presentation" class="nav-item">
-											<a class="nav-link" id="contacto-tab" data-toggle="tab" href="#contacto" role="tab" aria-controls="contacto" aria-selected="false">Contacto</a>
-										</li>
-										<li role="presentation" class="nav-item">
-											<a class="nav-link" id="experiencia-tab" data-toggle="tab" href="#experiencia" role="tab" aria-controls="experiencia" aria-selected="false">Experiencia</a>
-										</li>
-										<li role="presentation" class="nav-item">
-											<a class="nav-link" id="galeria-tab" data-toggle="tab" href="#galeria" role="tab" aria-controls="galeria" aria-selected="false">Galeria</a>
-										</li>
-
-									</ul>
-									<div class="tab-content mt-5" id="myTabContent">
-										<div role="tabpanel" class="tab-pane fade show active" id="resumen" role="tabpanel" aria-labelledby="resumen-tab">
-											<div class="container-fluid">
-												<h4 class="doctor_nombre">John Doe</h4>
-												<hr>
-												<div class="row">
-													<div class="col-md-8">
-
-														<p class="doctor_descripcion">
-															Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...
-														</p>
-														<h5 class="text-muted">Especializaciones</h5>
-														<p class="doctor_especialidades">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam lacus nisl, dignissim eget augue faucibus, convallis pretium mauris. Vivamus hendrerit eros vitae tempus tempor. Nulla facilisi. </p>
-														<h5 class="text-muted">Horarios de atención</h5>
-														<p class="doctor_horarios">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam lacus nisl, dignissim eget augue faucibus, convallis pretium mauris. Vivamus hendrerit eros vitae tempus tempor. Nulla facilisi. </p>
-														<h5 class="text-muted">Redes de Seguros</h5>
-														<ul class="doctor_seguros">
-
-														</ul>
-														<h5 class="text-muted">Formas de pago</h5>
-														<p class="doctor_pagos">
-															Duis nec elit non leo molestie varius. Pellentesque eu purus vitae felis mollis bibendum at sed sem. Aenean rhoncus nibh vel vehicula dapibus. Fusce aliquet felis in viverra interdum. Etiam pulvinar justo at turpis lacinia, id aliquam sem facilisis.
-														</p>
-													</div>
-													<div class="col-md-4">
-														<h5 class="text-muted">Local</h5>
-														<p class="doctor_local">5</p>
-														<h5 class="text-muted">Años de experiencia</h5>
-														<p class="doctor_exp_num">10</p>
-													</div>
-												</div>
+								<div class="modal-body">
+									<div class="container" id="doctorInfo">
+										<div class="row p-3">
+											<div class="col-sm-4 pb-3">
+												<img src="" alt="doctor seguro pic" class="doctor_img">
 											</div>
-
-										</div>
-										<div role="tabpanel" class="tab-pane fade" id="seguro" role="tabpanel" aria-labelledby="seguro-tab">
-											<div class="container-fluid" id="lista-seguros">
-												<h4>Lista de redes de seguros</h4>
-												<hr>
-												<div class="row doctor-seguros-card">
-
-												</div>
-
-											</div>
-										</div>
-										<div role="tabpanel" class="tab-pane fade" id="contacto" role="tabpanel" aria-labelledby="contacto-tab">
-											<div class="container-fluid">
-												<h4>Información de contacto</h4>
-												<hr>
-												<div class="row">
-													<div class="col-md-6">
-														<h5 class="text-muted">Numeros telefónico</h5>
-														<p class="doctor_telefono_1">(+503) 0000 0000</p>
-														<p class="doctor_telefono_2">(+503) 0000 0000</p>
-														<h5 class="text-muted">Correo electronico</h5>
-														<p class="doctor_correo">email@example.com</p>
-													</div>
-													<div class="col-md-6">
-														<h5 class="text-muted">Facebook</h5>
-														<p class="doctor_facebook">/john-doe</p>
-														<h5 class="text-muted ">Instagram</h5>
-														<p class="doctor_instagram">@johndoe.sv</p>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div role="tabpanel" class="tab-pane fade" id="experiencia" role="tabpanel" aria-labelledby="experiencia-tab">
-											<div class="container-fluid">
-												<h4>Experiencia y Educación</h4>
-												<hr>
-												<div class="row">
-													<div class="col-md-6">
-														<h5 class="text-muted">Estudios Universitarios</h5>
-														<p class="doctor_estudios">Proin ullamcorper egestas tellus vel.</p>
-														<h5 class="text-muted">Posgrados</h5>
-														<p class="doctor_postgrados">
-															Fusce elementum quam et tempus pellentesque. Proin eu ex iaculis, ultricies leo sit amet, rhoncus ligula. Praesent nec est tempor, accumsan tortor vitae, commodo risus. Fusce vitae dolor id justo auctor feugiat.
-														</p>
-													</div>
-													<div class="col-md-6">
-														<h5 class="text-muted">Especializaciónes</h5>
-														<p class="doctor_especializaciones">
-															Fusce interdum urna non finibus commodo. Aenean ut enim vel nisl efficitur fermentum. Maecenas vitae erat aliquet, rhoncus ante id, euismod odio.
-														</p>
-														<h5 class="text-muted">Experiencia</h5>
-														<p class="doctor_experiencia">
-															Mauris nec leo vitae nisl blandit dapibus. Nunc ac tellus sodales, blandit elit non, varius purus. Cras efficitur arcu vitae neque rutrum accumsan. Quisque suscipit velit ut libero maximus suscipit. Morbi auctor tortor non sem posuere elementum. Morbi in orci ultrices nibh tristique facilisis at ut erat.
-														</p>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div role="tabpanel" class="tab-pane fade" id="galeria" role="tabpanel" aria-labelledby="galeria-tab">
-											<div class="container-fluid">
-												<div id="gallery" class="simplegallery">
-													<div class="content text-center galeria_content">
-													</div>
-
-													<div class="clear"></div>
-
-													<div class="thumbnail container">
-													</div>
-
+											<div class="col-sm-8 doctor-title">
+												<div class="">
+													<h3 class="m-0 doctor_nombre">John doe</h3>
+													<h4 class="text-muted doctor_especialidad">Odontologo</h4>
 												</div>
 											</div>
 										</div>
 									</div>
+
+									<div class="container" id="doctorTabs">
+										<ul class="nav nav-tabs" id="myTab" role="tablist">
+											<li>
+												<a href="#" class="btn btn-danger mr-3">
+													<img src="/img/svg/calendar-line.svg" class="svg-inverted mr-2" alt="calendar icon" height="20px">
+													Agendar consulta
+												</a>
+											</li>
+											<li role="presentation" class="nav-item active">
+												<a class="nav-link active" id="resumen-tab" data-toggle="tab" href="#resumen" role="tab" aria-controls="resumen" aria-selected="true">Resumen</a>
+											</li>
+											<li role="presentation" class="nav-item">
+												<a class="nav-link" id="seguro-tab" data-toggle="tab" href="#seguro" role="tab" aria-controls="seguro" aria-selected="false">Redes de seguros</a>
+											</li>
+											<li role="presentation" class="nav-item">
+												<a class="nav-link" id="contacto-tab" data-toggle="tab" href="#contacto" role="tab" aria-controls="contacto" aria-selected="false">Contacto</a>
+											</li>
+											<li role="presentation" class="nav-item">
+												<a class="nav-link" id="experiencia-tab" data-toggle="tab" href="#experiencia" role="tab" aria-controls="experiencia" aria-selected="false">Experiencia</a>
+											</li>
+											<li role="presentation" class="nav-item">
+												<a class="nav-link" id="galeria-tab" data-toggle="tab" href="#galeria" role="tab" aria-controls="galeria" aria-selected="false">Galeria</a>
+											</li>
+
+										</ul>
+										<div class="tab-content mt-5" id="myTabContent">
+											<div role="tabpanel" class="tab-pane fade show active" id="resumen" role="tabpanel" aria-labelledby="resumen-tab">
+												<div class="container-fluid">
+													<h4 class="doctor_nombre">John Doe</h4>
+													<hr>
+													<div class="row">
+														<div class="col-md-8">
+
+															<p class="doctor_descripcion">
+																Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...
+															</p>
+															<h5 class="text-muted">Especializaciones</h5>
+															<p class="doctor_especialidades">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam lacus nisl, dignissim eget augue faucibus, convallis pretium mauris. Vivamus hendrerit eros vitae tempus tempor. Nulla facilisi. </p>
+															<h5 class="text-muted">Horarios de atención</h5>
+															<p class="doctor_horarios">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam lacus nisl, dignissim eget augue faucibus, convallis pretium mauris. Vivamus hendrerit eros vitae tempus tempor. Nulla facilisi. </p>
+															<h5 class="text-muted">Redes de Seguros</h5>
+															<ul class="doctor_seguros">
+
+															</ul>
+															<h5 class="text-muted">Formas de pago</h5>
+															<p class="doctor_pagos">
+																Duis nec elit non leo molestie varius. Pellentesque eu purus vitae felis mollis bibendum at sed sem. Aenean rhoncus nibh vel vehicula dapibus. Fusce aliquet felis in viverra interdum. Etiam pulvinar justo at turpis lacinia, id aliquam sem facilisis.
+															</p>
+														</div>
+														<div class="col-md-4">
+															<h5 class="text-muted">Local</h5>
+															<p class="doctor_local">5</p>
+															<h5 class="text-muted">Años de experiencia</h5>
+															<p class="doctor_exp_num">10</p>
+														</div>
+													</div>
+												</div>
+
+											</div>
+											<div role="tabpanel" class="tab-pane fade" id="seguro" role="tabpanel" aria-labelledby="seguro-tab">
+												<div class="container-fluid" id="lista-seguros">
+													<h4>Lista de redes de seguros</h4>
+													<hr>
+													<div class="row doctor-seguros-card">
+
+													</div>
+
+												</div>
+											</div>
+											<div role="tabpanel" class="tab-pane fade" id="contacto" role="tabpanel" aria-labelledby="contacto-tab">
+												<div class="container-fluid">
+													<h4>Información de contacto</h4>
+													<hr>
+													<div class="row">
+														<div class="col-md-6">
+															<h5 class="text-muted">Numeros telefónico</h5>
+															<p class="doctor_telefono_1">(+503) 0000 0000</p>
+															<p class="doctor_telefono_2">(+503) 0000 0000</p>
+															<h5 class="text-muted">Correo electronico</h5>
+															<p class="doctor_correo">email@example.com</p>
+														</div>
+														<div class="col-md-6">
+															<h5 class="text-muted">Facebook</h5>
+															<p class="doctor_facebook">/john-doe</p>
+															<h5 class="text-muted ">Instagram</h5>
+															<p class="doctor_instagram">@johndoe.sv</p>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div role="tabpanel" class="tab-pane fade" id="experiencia" role="tabpanel" aria-labelledby="experiencia-tab">
+												<div class="container-fluid">
+													<h4>Experiencia y Educación</h4>
+													<hr>
+													<div class="row">
+														<div class="col-md-6">
+															<h5 class="text-muted">Estudios Universitarios</h5>
+															<p class="doctor_estudios">Proin ullamcorper egestas tellus vel.</p>
+															<h5 class="text-muted">Posgrados</h5>
+															<p class="doctor_postgrados">
+																Fusce elementum quam et tempus pellentesque. Proin eu ex iaculis, ultricies leo sit amet, rhoncus ligula. Praesent nec est tempor, accumsan tortor vitae, commodo risus. Fusce vitae dolor id justo auctor feugiat.
+															</p>
+														</div>
+														<div class="col-md-6">
+															<h5 class="text-muted">Especializaciónes</h5>
+															<p class="doctor_especializaciones">
+																Fusce interdum urna non finibus commodo. Aenean ut enim vel nisl efficitur fermentum. Maecenas vitae erat aliquet, rhoncus ante id, euismod odio.
+															</p>
+															<h5 class="text-muted">Experiencia</h5>
+															<p class="doctor_experiencia">
+																Mauris nec leo vitae nisl blandit dapibus. Nunc ac tellus sodales, blandit elit non, varius purus. Cras efficitur arcu vitae neque rutrum accumsan. Quisque suscipit velit ut libero maximus suscipit. Morbi auctor tortor non sem posuere elementum. Morbi in orci ultrices nibh tristique facilisis at ut erat.
+															</p>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div role="tabpanel" class="tab-pane fade" id="galeria" role="tabpanel" aria-labelledby="galeria-tab">
+												<div class="container-fluid">
+													<div id="gallery" class="simplegallery">
+														<div class="content text-center galeria_content">
+														</div>
+
+														<div class="clear"></div>
+
+														<div class="thumbnail container">
+														</div>
+
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
 								</div>
-							</div>
-							<div class="modal-footer">
-								<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+								</div>
 							</div>
 						</div>
+
 					</div>
 				</div>
-
 			</div>
 		</div>
-	</div>
+	</main>
 	<?php include "../../components/footer.php" ?>
 	<script type="text/javascript" src="/js/jquery.min.js"></script>
 	<script type="text/javascript" src="/js/simplegallery.min.js"></script>
 	<!-- Bootstrap core JavaScript -->
 	<script type="text/javascript" src="/js/bootstrap.min.js"></script>
 	<script>
-		$('#previewModal').on('shown.bs.modal', function () {
+		$('#previewModal').on('shown.bs.modal', function() {
 			$(".thumb").click(function() {
 				var id = $(this).attr("id");
 				var cap_id = ".caption_" + id.substr(id.length - 1);
@@ -291,7 +290,7 @@
 						html += '		<div class="card-body d-flex align-items-center flex-nowrap ">';
 						html += '			<img src="/backpanel/seguros/' + response['seguros'][i]['doc_redes_seguros_img'] + '">';
 						html += '			<div class=" ml-3 d-flex flex-column justify-content-center">';
-						html += '				<a href="'+response['seguros'][i]['doc_redes_seguros_link'] + '" target="_blank">';
+						html += '				<a href="' + response['seguros'][i]['doc_redes_seguros_link'] + '" target="_blank">';
 						html += '					<h4 class="card-title m-0">' + response['seguros'][i]['doc_redes_seguros_nombre'] + '</h4>';
 						html += '				</a>';
 						html += '				<p class="card-text text-muted">' + response['seguros'][i]['doc_redes_seguros_desc'] + '</p>';
@@ -364,12 +363,12 @@
 		$('.galeria-btn').on('click', function(e) {
 			e.stopPropagation();
 		});
-		
-		$('.borrar-btn').click(function(e){
+
+		$('.borrar-btn').click(function(e) {
 			e.stopPropagation();
 
 			var confirm_alert = confirm("Esta seguro que desea borrar la información.");
-			if(!confirm_alert) return;
+			if (!confirm_alert) return;
 
 			var row = $(this).closest('tr');
 
@@ -378,12 +377,12 @@
 			$.ajax({
 				url: '/backpanel/doctores/delete.php',
 				type: 'POST',
-				data:{
+				data: {
 					id: doctor_id
 				},
-				success: function(response){
-					
-					$(row).fadeOut(500, function(){
+				success: function(response) {
+
+					$(row).fadeOut(500, function() {
 						$(this).remove();
 					})
 

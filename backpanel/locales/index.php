@@ -18,175 +18,175 @@
 
 <body>
 
-	<?php include "../../components/navbar.php" ?>
-	<div class="container-fluid p-5">
+	<main class="d-flex align-items-stretch">
+		<div class="container-fluid d-flex align-items-stretch">
 
-		<div class="row">
-			<div class="col-md-2">
-				<?php include "../../components/side-bar.php" ?>
-			</div>
-			<div class="col-md-10">
-				<h2>Locales</h2>
-				<?php
+			<div class="row" style="width: 100vw;">
+				<div class="col-md-3 p-0">
+					<?php include "../../components/side-bar.php" ?>
+				</div>
+				<div class="col-md-9 p-5">
+					<h2>Locales</h2>
+					<?php
 
-				$db = new db($dbHost, $dbUID, $dbPWD, $dbName);
-				$sql = "SELECT * FROM locales";
-				$locales = $db->query($sql)->fetchAll();
+					$db = new db($dbHost, $dbUID, $dbPWD, $dbName);
+					$sql = "SELECT * FROM locales";
+					$locales = $db->query($sql)->fetchAll();
 
-				?>
+					?>
 
-				<div class="table-responsive mt-4">
-					<table class="table table-hover" id="locales-table">
-						<thead class="thead-dark">
-							<th scope="col">Id</th>
-							<th scope="col">Nombre</th>
-							<th scope="col">Descripción</th>
-							<th></th>
-							<th></th>
-							<th></th>
-						</thead>
+					<div class="table-responsive mt-4">
+						<table class="table table-hover" id="locales-table">
+							<thead class="thead-dark">
+								<th scope="col">Id</th>
+								<th scope="col">Nombre</th>
+								<th scope="col">Descripción</th>
+								<th></th>
+								<th></th>
+								<th></th>
+							</thead>
 
-						<tbody id="local-table-body">
-							<?php
-							foreach ($locales as $local) {
-							?>
+							<tbody id="local-table-body">
+								<?php
+								foreach ($locales as $local) {
+								?>
 
-								<tr id="row-<?= $local['locales_key'] ?>">
-									<th scope="row"><?= $local['locales_key'] ?></th>
-									<td><?= $local['locales_nombre'] ?></td>
-									<td><?= $local['locales_desc'] ?></td>
-									<td><a class="btn btn-info" href="/backpanel/galeria/?id=<?= $local['locales_galeria_key'] ?>">Ir a la galeria</a></td>
-									<td>
-										<button class="btn btn-warning update-btn" data-id="<?= $local['locales_key'] ?>" data-url="<?= $local['locales_preview'] ?>">
-											Modificar
+									<tr id="row-<?= $local['locales_key'] ?>">
+										<th scope="row"><?= $local['locales_key'] ?></th>
+										<td><?= $local['locales_nombre'] ?></td>
+										<td><?= $local['locales_desc'] ?></td>
+										<td><a class="btn btn-info" href="/backpanel/galeria/?id=<?= $local['locales_galeria_key'] ?>">Ir a la galeria</a></td>
+										<td>
+											<button class="btn btn-warning update-btn" data-id="<?= $local['locales_key'] ?>" data-url="<?= $local['locales_preview'] ?>">
+												Modificar
+											</button>
+										</td>
+										<td>
+											<button class="btn btn-danger delete-btn" data-id="<?= $local['locales_key'] ?>">
+												Borrar
+											</button>
+										</td>
+									</tr>
+
+								<?php
+								}
+								?>
+							</tbody>
+
+						</table>
+
+
+						<!-- Modal -->
+						<div class="modal fade" id="creationModal" tabindex="-1" aria-labelledby="creationModalLabel" aria-hidden="true">
+							<div class="modal-dialog modal-dialog-centered">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h5 class="modal-title" id="creationModalLabel">Forma de creación</h5>
+										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+											<span aria-hidden="true">&times;</span>
 										</button>
-									</td>
-									<td>
-										<button class="btn btn-danger delete-btn" data-id="<?= $local['locales_key'] ?>">
-											Borrar
-										</button>
-									</td>
-								</tr>
-
-							<?php
-							}
-							?>
-						</tbody>
-
-					</table>
-
-
-					<!-- Modal -->
-					<div class="modal fade" id="creationModal" tabindex="-1" aria-labelledby="creationModalLabel" aria-hidden="true">
-						<div class="modal-dialog modal-dialog-centered">
-							<div class="modal-content">
-								<div class="modal-header">
-									<h5 class="modal-title" id="creationModalLabel">Forma de creación</h5>
-									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-										<span aria-hidden="true">&times;</span>
-									</button>
-								</div>
-								<form method="POST" id="creation-form">
-									<div class="modal-body">
-										<div class="container-fluid">
-											<div class="form-group row">
-												<div class="col">
-													<label for="nombre">Nombre</label>
-													<input class="form-control" type="text" name="nombre" required>
-												</div>
-											</div>
-
-											<div class="form-group row">
-												<div class="col">
-													<Label>Imagen de muestra</Label>
-													<div class="custom-file">
-														<input type="file" name="image" class="custom-file-input" id="imageInput" required>
-														<label class="custom-file-label" for="imageInput">Escoger imagen</label>
+									</div>
+									<form method="POST" id="creation-form">
+										<div class="modal-body">
+											<div class="container-fluid">
+												<div class="form-group row">
+													<div class="col">
+														<label for="nombre">Nombre</label>
+														<input class="form-control" type="text" name="nombre" required>
 													</div>
 												</div>
-											</div>
 
-											<div class="form-group row">
-												<div class="col">
-													<Label>Descripcion</Label>
-													<textarea name="descripcion" class="form-control"></textarea>
+												<div class="form-group row">
+													<div class="col">
+														<Label>Imagen de muestra</Label>
+														<div class="custom-file">
+															<input type="file" name="image" class="custom-file-input" id="imageInput" required>
+															<label class="custom-file-label" for="imageInput">Escoger imagen</label>
+														</div>
+													</div>
+												</div>
+
+												<div class="form-group row">
+													<div class="col">
+														<Label>Descripcion</Label>
+														<textarea name="descripcion" class="form-control"></textarea>
+													</div>
+												</div>
+
+											</div>
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+											<button type="submit" name="creation-submit" class="btn btn-primary">Guardar</button>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+						<!-- Modal -->
+						<div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="updateModalLabel" aria-hidden="true">
+							<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h5 class="modal-title" id="updateModalLabel">Forma de actualizacion</h5>
+										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+										</button>
+									</div>
+									<div class="modal-body">
+										<form method="POST" id="update-form">
+											<div class="container-fluid">
+												<div class="row">
+													<img src="" id="local-preview" class="w-100">
 												</div>
 											</div>
+											<div class="container-fluid">
+												<div class="form-group row">
+													<div class="col">
+														<label for="id">Id</label>
+														<input class="form-control" type="number" name="id" id="update-id" readonly>
+													</div>
+													<div class="col">
+														<label for="nombre">Nombre</label>
+														<input class="form-control" type="text" name="nombre" id="update-nombre" required>
+													</div>
+												</div>
 
-										</div>
+												<div class="form-group row">
+													<div class="col">
+														<Label>Imagen de muestra</Label>
+														<div class="custom-file">
+															<input type="file" name="image" class="custom-file-input" id="imageInput" required>
+															<label id="update-img" class="custom-file-label" for="imageInput">Escoger imagen</label>
+														</div>
+													</div>
+												</div>
+
+												<div class="form-group row">
+													<div class="col">
+														<Label>Descripcion</Label>
+														<textarea id="update-desc" name="descripcion" class="form-control"></textarea>
+													</div>
+												</div>
+
+										</form>
 									</div>
 									<div class="modal-footer">
 										<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-										<button type="submit" name="creation-submit" class="btn btn-primary">Guardar</button>
+										<button id="update-submit" class="btn btn-primary">Guardar</button>
 									</div>
-								</form>
-							</div>
-						</div>
-					</div>
-					<!-- Modal -->
-					<div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="updateModalLabel" aria-hidden="true">
-						<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-							<div class="modal-content">
-								<div class="modal-header">
-									<h5 class="modal-title" id="updateModalLabel">Forma de actualizacion</h5>
-									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-										<span aria-hidden="true">&times;</span>
-									</button>
-								</div>
-								<div class="modal-body">
-									<form method="POST" id="update-form">
-										<div class="container-fluid">
-											<div class="row">
-												<img src="" id="local-preview" class="w-100">
-											</div>
-										</div>
-										<div class="container-fluid">
-											<div class="form-group row">
-												<div class="col">
-													<label for="id">Id</label>
-													<input class="form-control" type="number" name="id" id="update-id" readonly>
-												</div>
-												<div class="col">
-													<label for="nombre">Nombre</label>
-													<input class="form-control" type="text" name="nombre" id="update-nombre" required>
-												</div>
-											</div>
-
-											<div class="form-group row">
-												<div class="col">
-													<Label>Imagen de muestra</Label>
-													<div class="custom-file">
-														<input type="file" name="image" class="custom-file-input" id="imageInput" required>
-														<label id="update-img" class="custom-file-label" for="imageInput">Escoger imagen</label>
-													</div>
-												</div>
-											</div>
-
-											<div class="form-group row">
-												<div class="col">
-													<Label>Descripcion</Label>
-													<textarea id="update-desc" name="descripcion" class="form-control"></textarea>
-												</div>
-											</div>
-
-									</form>
-								</div>
-								<div class="modal-footer">
-									<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-									<button id="update-submit" class="btn btn-primary">Guardar</button>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
+				<button type="button" class="btn btn-success" data-toggle="modal" data-target="#creationModal">
+					Crear
+				</button>
 			</div>
-			<button type="button" class="btn btn-success" data-toggle="modal" data-target="#creationModal">
-				Crear
-			</button>
 		</div>
-	</div>
-	</div>
-
+		</div>
+	</main>
 	<?php include "../../components/footer.php" ?>
 	<script type="text/javascript" src="/js/jquery.min.js"></script>
 	<!-- Bootstrap core JavaScript -->
@@ -294,12 +294,12 @@
 						alert("ERROR: " + response['mensaje']);
 					}
 
-					
+
 					console.log(response);
 
 					var url = $('#update-img').html();
 
-					
+
 					var html = '<th scope="row">' + response['id'] + '</th>';
 					html += '	<td>' + response['nombre'] + '</td>';
 					html += '	<td>' + response['descripcion'] + '</td>';
@@ -315,8 +315,8 @@
 					html += '			Borrar';
 					html += '		</button>';
 					html += '	</td>';
-					
-					var rowID = '#row-'+response['id'];
+
+					var rowID = '#row-' + response['id'];
 					$(rowID).hide();
 					$(rowID).html(html);
 					$(rowID).fadeIn(800);
@@ -327,23 +327,23 @@
 				}
 			});
 		});
-		$(document).on('click', '.delete-btn', function(){
+		$(document).on('click', '.delete-btn', function() {
 
 			var delete_id = $(this).data('id');
 
-			var row = $(this).closest('tr');	
+			var row = $(this).closest('tr');
 
 			$.ajax({
-				url:'/backpanel/locales/delete.php',
-				type:'POST',
-				data:{
+				url: '/backpanel/locales/delete.php',
+				type: 'POST',
+				data: {
 					id: delete_id
 				},
-				success:function(response){
+				success: function(response) {
 
 					console.log(response);
 
-					$(row).fadeOut(800, function(){
+					$(row).fadeOut(800, function() {
 						$(this).remove();
 					})
 				}

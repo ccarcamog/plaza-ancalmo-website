@@ -149,14 +149,14 @@ $especialidades_json = json_encode($especialidades);
 
 <body>
 
-	<?php include "../../components/navbar.php" ?>
-	<div class="container-fluid p-5">
+
+	<div class="container-fluid p-0">
 
 		<div class="row">
-			<div class="col-md-2">
+			<div class="col-md-3 p-0">
 				<?php include "../../components/side-bar.php" ?>
 			</div>
-			<div class="col-md-10 d-flex flex-column justify-content-center align-items-center">
+			<div class="col-md-9 p-5 d-flex flex-column justify-content-center align-items-center">
 				<h2>Crear doctor</h2>
 
 				<div class="container">

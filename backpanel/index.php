@@ -15,18 +15,19 @@
 </head>
 
 <body>
-	<?php include "../components/navbar.php" ?>
-	<div class="container-fluid p-5">
+	
+	<div class="container-fluid p-0">
 		
-		<div class="row">	
-			<div class="col-md-2">
+		<div class="row" style="width: 100vw;">	
+			<div class="col-md-3">
 				<?php include "../components/side-bar.php" ?>
 			</div>
-			<div class="col-md-10">
+			<div class="col-md-9">
 				
 			</div>
 		</div>
 	</div>
+	<?php include "../components/footer.php" ?>
 	<script type="text/javascript" src="/js/jquery.min.js"></script>
 	<!-- Bootstrap core JavaScript -->
 	<script type="text/javascript" src="/js/bootstrap.min.js"></script>

@@ -1,5 +1,5 @@
 <!-- Footer -->
-<footer class="page-footer font-small bg-dark  mt-5">
+<footer class="page-footer font-small bg-dark" style="max-width: 100vw;">
 
   <!-- Copyright -->
   <div class="footer-copyright text-center text-white py-3">

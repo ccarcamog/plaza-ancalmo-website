@@ -22,7 +22,7 @@
 
 	if (isset($_POST['update-submit'])) {
 
-		
+
 
 		$id = $_POST['id'];
 		$nombre = $_POST['nombre'];
@@ -49,7 +49,6 @@
 			$sql = "UPDATE doc_redes_seguros SET doc_redes_seguros_img=? WHERE doc_redes_seguros_key=?";
 			$db->query($sql, $target_file, $id);
 			$db->close();
-			
 		}
 
 		$db->close();
@@ -73,56 +72,57 @@
 
 	?>
 
-	<?php include "../../components/navbar.php" ?>
-	<div class="container-fluid p-5">
+	<main class="d-flex align-items-stretch">
+		<div class="container-fluid d-flex align-items-stretch">
 
-		<div class="row">
-			<div class="col-md-2">
-				<?php include "../../components/side-bar.php" ?>
-			</div>
-			<div class="col-md-10 d-flex flex-column justify-content-center align-items-center">
-				<h2> Actualizar red de seguros</h2>
+			<div class="row" style="width: 100vw;">
+				<div class="col-md-3 p-0">
+					<?php include "../../components/side-bar.php" ?>
+				</div>
+				<div class="col-md-9 d-flex flex-column justify-content-center align-items-center">
+					<h2> Actualizar red de seguros</h2>
 
-				<div class="container mt-4">
-					<form action="create.php" method="POST" enctype="multipart/form-data">
-						<div class="form-group row">
-							<div class="col-md-3">
-								<label for="id">ID</label>
-								<input class="form-control" type="number" name="id" value="<?= $_GET['id'] ?>" readonly>
-							</div>
-							<div class="col-md-9">
-								<label for="nombre">Nombre</label>
-								<input class="form-control" type="text" name="nombre" placeholder="Nombre" value="<?= $nombre ?>" required>
-							</div>
-						</div>
-						<!-- <div class="form-group">
-						</div> -->
-						<div class="form-group">
-							<label for="descripcion">Descripcion</label>
-							<textarea class="form-control" name="descripcion" placeholder="Descripcion" required><?= $desc ?></textarea>
-						</div>
-						<div class="form-group">
-							<label for="link">Url del sitio</label>
-							<input type="text" name="link" class="form-control" placeholder="Link al sitio" value="<?= $link ?>" required>
-						</div>
-						<div class="form-group">
-							<label for="image">Imagen</label>
-							<div class="input-group mb-3">
-								<div class="custom-file">
-									<input type="file" name="image" class="custom-file-input" id="imageInput">
-									<label class="custom-file-label" for="imageInput"><?= $img ?></label>
+					<div class="container mt-4">
+						<form action="create.php" method="POST" enctype="multipart/form-data">
+							<div class="form-group row">
+								<div class="col-md-3">
+									<label for="id">ID</label>
+									<input class="form-control" type="number" name="id" value="<?= $_GET['id'] ?>" readonly>
+								</div>
+								<div class="col-md-9">
+									<label for="nombre">Nombre</label>
+									<input class="form-control" type="text" name="nombre" placeholder="Nombre" value="<?= $nombre ?>" required>
 								</div>
 							</div>
-						</div>
-						<div class="form-group text-center">
-							<input type="submit" name="update-submit" value="Actualizar" class="btn btn-success">
-						</div>
-					</form>
-				</div>
+							<!-- <div class="form-group">
+						</div> -->
+							<div class="form-group">
+								<label for="descripcion">Descripcion</label>
+								<textarea class="form-control" name="descripcion" placeholder="Descripcion" required><?= $desc ?></textarea>
+							</div>
+							<div class="form-group">
+								<label for="link">Url del sitio</label>
+								<input type="text" name="link" class="form-control" placeholder="Link al sitio" value="<?= $link ?>" required>
+							</div>
+							<div class="form-group">
+								<label for="image">Imagen</label>
+								<div class="input-group mb-3">
+									<div class="custom-file">
+										<input type="file" name="image" class="custom-file-input" id="imageInput">
+										<label class="custom-file-label" for="imageInput"><?= $img ?></label>
+									</div>
+								</div>
+							</div>
+							<div class="form-group text-center">
+								<input type="submit" name="update-submit" value="Actualizar" class="btn btn-success">
+							</div>
+						</form>
+					</div>
 
+				</div>
 			</div>
 		</div>
-	</div>
+	</main>
 	<?php include "../../components/footer.php" ?>
 	<script type="text/javascript" src="/js/jquery.min.js"></script>
 	<!-- Bootstrap core JavaScript -->
