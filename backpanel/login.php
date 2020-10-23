@@ -23,7 +23,7 @@ if (isset($_SESSION['username'])) {
 </head>
 
 <body>
-	<nav class="d-flex justify-content-center" id="top-navbar">
+	<nav class="d-flex flex-wrap justify-content-center" id="top-navbar">
 		<div class="d-flex align-items-center my-4 px-4 border-right" style="width:300px">
 			<a class="navbar-brand ml-lg-5" href="/">
 				<img src="/img/svg/Logo Plaza Ancalmo copy.svg" width="75" alt="Logo de Plaza Ancalmo">
@@ -36,7 +36,7 @@ if (isset($_SESSION['username'])) {
 	</nav>
 	<main>
 
-		<div class="container p-5">
+		<div class="container p-md-5">
 
 			<div class="row justify-content-center align-items-center">
 				<div class="col-md-4 p-0" style="border-radius:15px; overflow:hidden">
