@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php require "../php/db.php" ?>
+<?php require "../php/credentials.php" ?>
 
 <head>
 	<meta charset="UTF-8">
@@ -30,25 +32,60 @@
 		</div>
 	</div>
 
+	<?php
+
+	$db = new db($dbHost, $dbUID, $dbPWD, $dbName);
+
+	$galeria_id = 1;
+
+	$sql = "SELECT * FROM galeria_img WHERE galeria_img_galeria_key=? ORDER BY galeria_img_orden DESC";
+	$galeria_imgs = $db->query($sql, $galeria_id)->fetchAll();
+
+
+
+
+	?>
+
 	<div class="container mt-5">
 
 		<div id="gallery" class="simplegallery">
 			<div class="content text-center">
 
-				<img src="/galeria/galeria/foto0.jpg" class="w-75 image_1" alt="" />
-				<p class="caption caption_1">Descripción de la imagen  1</p>
+				<!-- <img src="/backpanel/galeria/<?= $galeria_imgs[0]['galeria_img_url'] ?>" class="w-75 image_1" alt="" />
+				<p class="caption caption_1"><strong><?= $galeria_imgs[0]['galeria_img_nombre'] ?></strong> <?= $galeria_imgs[0]['galeria_img_caption'] ?></p>
 				<?php
-				for ($i = 1; $i < 9; $i++) {
+				// for ($i = 1; $i < count($galeria_imgs); $i++) {
 				?>
-					<img src="/galeria/galeria/foto<?php echo $i ?>.jpg" class="w-75 image_<?php echo ($i + 1) ?>" style="display:none" alt="" />
+					<img src="/backpanel/galeria/<?= $galeria_imgs[$i]['galeria_img_url'] ?>" class="w-75 image_<?= $i + 1 ?>" style="display:none"/>
+					<p class="caption caption_<?= $i + 1 ?>" style="display:none"><strong><?= $galeria_imgs[$i]['galeria_img_nombre'] ?></strong> <?= $galeria_imgs[$i]['galeria_img_caption'] ?></p>
 				<?php
-				}
-				for ($i = 1; $i < 9; $i++) {
-				?>
-					<p class="caption caption_<?php echo ($i + 1) ?> " style="display:none" >Descripción de la imagen <?php echo ($i + 1) ?></p>
-				<?php
-				}
-				?>
+				// }				
+				?> -->
+
+				<div id="galeriaCarousel" class="carousel slide" data-ride="carousel">
+					<div class="carousel-inner">
+						<?php 
+							for($i = 0; $i < count($galeria_imgs); $i++){
+						?>
+						<div class="carousel-item <?php if(!$i) echo "active" ?>">
+							<img src="/backpanel/galeria/<?= $galeria_imgs[$i]['galeria_img_url'] ?>" class="w-75 image_<?= $i + 1 ?>"/>
+							<p class="caption caption_<?= $i + 1 ?>"><strong><?= $galeria_imgs[$i]['galeria_img_nombre'] ?></strong> <?= $galeria_imgs[$i]['galeria_img_caption'] ?></p>
+						</div>
+						<?php 
+							}
+						?>
+					</div>
+					<a class="carousel-control-prev" href="#galeriaCarousel" role="button" data-slide="prev">
+						<!-- <span class="carousel-control-prev-icon" aria-hidden="true"></span> -->
+						<img  class="svg-inverted" src="img/svg/arrow_left.svg">
+						<span class="sr-only">Previous</span>
+					</a>
+					<a class="carousel-control-next" href="#galeriaCarousel" role="button" data-slide="next">
+						<!-- <span class="carousel-control-next-icon" aria-hidden="true"></span> -->
+						<img  class="svg-inverted" src="img/svg/arrow_right.svg">
+						<span class="sr-only">Next</span>
+					</a>
+				</div>
 
 
 			</div>
@@ -57,11 +94,11 @@
 
 			<div class="thumbnail container">
 				<?php
-				for ($i = 0; $i < 9; $i++) {
+				for ($i = 0; $i < count($galeria_imgs); $i++) {
 				?>
-					<div class="thumb" id="thumbid_<?php echo ($i + 1) ?>">
-						<a href="#" rel="<?php echo ($i + 1) ?>">
-							<img src="/galeria/galeria/foto<?php echo $i ?>.jpg" id="thumb_<?php echo ($i + 1) ?>" class="thumbs" alt="" />
+					<div class="thumb" id="thumbid_<?= ($i + 1) ?>" data-id="<?= $i ?>">
+						<a rel="<?= ($i + 1) ?>">
+							<img src="/backpanel/galeria/<?= $galeria_imgs[$i]['galeria_img_url'] ?>" id="thumb_<?= ($i + 1) ?>" class="thumbs" alt="" />
 						</a>
 					</div>
 				<?php
@@ -86,17 +123,13 @@
 	<script>
 		$(document).ready(function() {
 
-			$('#gallery').simplegallery({
-				galltime: 400,
-				gallcontent: '.content',
-				gallthumbnail: '.thumbnail',
-				gallthumb: '.thumb'
+			$('#galeriaCarousel').carousel({
+				interval: 5000
 			});
-			$(".thumb").click(function(){
-				var id = $(this).attr("id");
-				var cap_id = ".caption_" + id.substr(id.length - 1);
-				$(".caption").css("display","none");
-				$(cap_id).css("display", "block");
+			$(".thumb").click(function() {
+				var id = $(this).data("id");
+				$('#galeriaCarousel').carousel(id);
+
 			});
 
 		});
