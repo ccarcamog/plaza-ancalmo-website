@@ -76,13 +76,13 @@
 						?>
 					</div>
 					<a class="carousel-control-prev" href="#galeriaCarousel" role="button" data-slide="prev">
-						<!-- <span class="carousel-control-prev-icon" aria-hidden="true"></span> -->
-						<img  class="svg-inverted" src="img/svg/arrow_left.svg">
+						
+						<img  class="direction-arrow" src="img/svg/left-arrow-angle.svg">
 						<span class="sr-only">Previous</span>
 					</a>
 					<a class="carousel-control-next" href="#galeriaCarousel" role="button" data-slide="next">
-						<!-- <span class="carousel-control-next-icon" aria-hidden="true"></span> -->
-						<img  class="svg-inverted" src="img/svg/arrow_right.svg">
+						
+						<img  class="direction-arrow" src="img/svg/right-arrow-angle.svg">
 						<span class="sr-only">Next</span>
 					</a>
 				</div>
