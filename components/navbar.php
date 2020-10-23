@@ -8,7 +8,7 @@ require $root . "/php/credentials.php"
 ?>
 <?php
 $db = new db($dbHost, $dbUID, $dbPWD, $dbName);
-$sql = "SELECT * FROM doc_especialidades";
+$sql = "SELECT * FROM doc_especialidades WHERE doc_especialidades_key IN (SELECT doc_especialidades_key FROM doc_doctores_especialidades)";
 $especialidades = $db->query($sql)->fetchAll();
 
 ?>

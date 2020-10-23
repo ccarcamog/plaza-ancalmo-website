@@ -382,6 +382,8 @@
 				},
 				success: function(response) {
 
+					
+
 					$(row).fadeOut(500, function() {
 						$(this).remove();
 					})
