@@ -180,34 +180,34 @@
 
 					<div class="carousel-item active">
 						<div class="row">
-							<div class="col-3"><img src="https://cdn.freebiesupply.com/logos/large/2x/oral-b-1-logo-png-transparent.png" alt="oralb logo"></div>
-							<div class="col-3"><img src="https://logosvector.net/wp-content/uploads/2013/01/bayer-.eps-logo-vector.png" alt="bayer logo"></div>
-							<div class="col-3"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Colgate_logo.svg/1024px-Colgate_logo.svg.png" alt="colgate logo"></div>
-							<div class="col-3"><img src="https://logos-marcas.com/wp-content/uploads/2020/09/Nestle-Logo.png" alt="nestle logo"></div>
+							<div class="col-3"><img src="/img/oral-b-1-logo-png-transparent.png" alt="oralb logo"></div>
+							<div class="col-3"><img src="/img/bayer-.eps-logo-vector.png" alt="bayer logo"></div>
+							<div class="col-3"><img src="/img/Colgate_logo.svg.png" alt="colgate logo"></div>
+							<div class="col-3"><img src="/img/Nestle-logo.png" alt="nestle logo"></div>
 						</div>
 					</div>
 					<div class="carousel-item">
 						<div class="row">
-							<div class="col-3"><img src="https://cdn.freebiesupply.com/logos/large/2x/oral-b-1-logo-png-transparent.png" alt="oralb logo"></div>
-							<div class="col-3"><img src="https://logosvector.net/wp-content/uploads/2013/01/bayer-.eps-logo-vector.png" alt="bayer logo"></div>
-							<div class="col-3"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Colgate_logo.svg/1024px-Colgate_logo.svg.png" alt="colgate logo"></div>
-							<div class="col-3"><img src="https://logos-marcas.com/wp-content/uploads/2020/09/Nestle-Logo.png" alt="nestle logo"></div>
+						<div class="col-3"><img src="/img/oral-b-1-logo-png-transparent.png" alt="oralb logo"></div>
+							<div class="col-3"><img src="img/bayer-.eps-logo-vector.png" alt="bayer logo"></div>
+							<div class="col-3"><img src="/img/Colgate_logo.svg.png" alt="colgate logo"></div>
+							<div class="col-3"><img src="/img/Nestle-logo.png" alt="nestle logo"></div>
 						</div>
 					</div>
 					<div class="carousel-item">
 						<div class="row">
-							<div class="col-3"><img src="https://cdn.freebiesupply.com/logos/large/2x/oral-b-1-logo-png-transparent.png" alt="oralb logo"></div>
-							<div class="col-3"><img src="https://logosvector.net/wp-content/uploads/2013/01/bayer-.eps-logo-vector.png" alt="bayer logo"></div>
-							<div class="col-3"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Colgate_logo.svg/1024px-Colgate_logo.svg.png" alt="colgate logo"></div>
-							<div class="col-3"><img src="https://logos-marcas.com/wp-content/uploads/2020/09/Nestle-Logo.png" alt="nestle logo"></div>
+						<div class="col-3"><img src="/img/oral-b-1-logo-png-transparent.png" alt="oralb logo"></div>
+							<div class="col-3"><img src="img/bayer-.eps-logo-vector.png" alt="bayer logo"></div>
+							<div class="col-3"><img src="/img/Colgate_logo.svg.png" alt="colgate logo"></div>
+							<div class="col-3"><img src="/img/Nestle-logo.png" alt="nestle logo"></div>
 						</div>
 					</div>
 					<div class="carousel-item">
 						<div class="row">
-							<div class="col-3"><img src="https://cdn.freebiesupply.com/logos/large/2x/oral-b-1-logo-png-transparent.png" alt="oralb logo"></div>
-							<div class="col-3"><img src="https://logosvector.net/wp-content/uploads/2013/01/bayer-.eps-logo-vector.png" alt="bayer logo"></div>
-							<div class="col-3"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Colgate_logo.svg/1024px-Colgate_logo.svg.png" alt="colgate logo"></div>
-							<div class="col-3"><img src="https://logos-marcas.com/wp-content/uploads/2020/09/Nestle-Logo.png" alt="nestle logo"></div>
+						<div class="col-3"><img src="/img/oral-b-1-logo-png-transparent.png" alt="oralb logo"></div>
+							<div class="col-3"><img src="img/bayer-.eps-logo-vector.png" alt="bayer logo"></div>
+							<div class="col-3"><img src="/img/Colgate_logo.svg.png" alt="colgate logo"></div>
+							<div class="col-3"><img src="/img/Nestle-logo.png" alt="nestle logo"></div>
 						</div>
 					</div>
 				</div>
