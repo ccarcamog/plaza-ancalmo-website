@@ -145,15 +145,15 @@ $redes = $db->query($sql, $id)->fetchAll();
 						?>
 							<div class="col-md-6 p-3">
 								<div class="card text-left">
-								  <div class="card-body d-flex align-items-center">
-									  <img src="/backpanel/seguros/<?=$seguro['doc_redes_seguros_img']?>">
-									  <div class=" ml-3 d-flex flex-column justify-content-center">
-										<a href="<?=$seguro['doc_redes_seguros_link']?>" target="_blank">
-											<h4 class="card-title m-0"><?=$seguro['doc_redes_seguros_nombre']?></h4>
-										</a>
-										<p class="card-text text-muted"><?=$seguro['doc_redes_seguros_desc']?></p>
-									  </div>
-								  </div>
+									<div class="card-body d-flex align-items-center">
+										<img src="/backpanel/seguros/<?= $seguro['doc_redes_seguros_img'] ?>">
+										<div class=" ml-3 d-flex flex-column justify-content-center">
+											<a href="<?= $seguro['doc_redes_seguros_link'] ?>" target="_blank">
+												<h4 class="card-title m-0"><?= $seguro['doc_redes_seguros_nombre'] ?></h4>
+											</a>
+											<p class="card-text text-muted"><?= $seguro['doc_redes_seguros_desc'] ?></p>
+										</div>
+									</div>
 								</div>
 							</div>
 						<?php
@@ -209,8 +209,8 @@ $redes = $db->query($sql, $id)->fetchAll();
 			$sql = "SELECT * FROM galeria WHERE galeria_key=?";
 			$galeria = $db->query($sql, $galeria_id)->fetchArray();
 
-			$sql = "SELECT * FROM galeria_img WHERE galeria_img_galeria_key=?";
-			$galeria_img = $db->query($sql, $galeria_id)->fetchAll();
+			$sql = "SELECT * FROM galeria_img WHERE galeria_img_galeria_key=? ORDER BY galeria_img_orden DESC";
+			$galeria_imgs = $db->query($sql, $galeria_id)->fetchAll();
 
 			?>
 			<div role="tabpanel" class="tab-pane fade" id="galeria" role="tabpanel" aria-labelledby="galeria-tab">
@@ -220,36 +220,47 @@ $redes = $db->query($sql, $id)->fetchAll();
 					</center>
 					<div id="gallery" class="simplegallery">
 						<div class="content text-center">
-							<img src="/backpanel/galeria/<?= $galeria_img[0]['galeria_img_url'] ?>" class="w-75 image_1" alt="" />
-							<p class="caption caption_1"><strong><?= $galeria_img[0]['galeria_img_nombre'] ?></strong> <?= $galeria_img[0]['galeria_img_caption'] ?></p>
-							<?php
-							for ($i = 1; $i < count($galeria_img); $i++) {
-							?>
-								<img src="/backpanel/galeria/<?= $galeria_img[$i]['galeria_img_url'] ?>" class="w-75 image_<?php echo ($i + 1) ?>" style="display:none" alt="" />
-							<?php
-							}
-							for ($i = 1; $i < count($galeria_img); $i++) {
-							?>
-								<p class="caption caption_<?php echo ($i + 1) ?> " style="display:none"><strong><?= $galeria_img[$i]['galeria_img_nombre'] ?></strong> <?= $galeria_img[$i]['galeria_img_caption'] ?></p>
-							<?php
-							}
-							?>
+							<div id="galeriaCarousel" class="carousel slide" data-ride="carousel">
+								<div class="carousel-inner">
+									<?php
+									for ($i = 0; $i < count($galeria_imgs); $i++) {
+									?>
+										<div class="carousel-item <?php if (!$i) echo "active" ?>">
+											<img src="/backpanel/galeria/<?= $galeria_imgs[$i]['galeria_img_url'] ?>" class="w-75 image_<?= $i + 1 ?>" />
+											<p class="caption caption_<?= $i + 1 ?>"><strong><?= $galeria_imgs[$i]['galeria_img_nombre'] ?></strong> <?= $galeria_imgs[$i]['galeria_img_caption'] ?></p>
+										</div>
+									<?php
+									}
+									?>
+								</div>
+								<a class="carousel-control-prev" href="#galeriaCarousel" role="button" data-slide="prev">
+
+									<img class="direction-arrow" src="/img/svg/left-arrow-angle.svg">
+									<span class="sr-only">Previous</span>
+								</a>
+								<a class="carousel-control-next" href="#galeriaCarousel" role="button" data-slide="next">
+
+									<img class="direction-arrow" src="/img/svg/right-arrow-angle.svg">
+									<span class="sr-only">Next</span>
+								</a>
+							</div>
 						</div>
 
 						<div class="clear"></div>
 
 						<div class="thumbnail container">
 							<?php
-							for ($i = 0; $i < count($galeria_img); $i++) {
+							for ($i = 0; $i < count($galeria_imgs); $i++) {
 							?>
-								<div class="thumb" id="thumbid_<?php echo ($i + 1) ?>">
-									<a href="#" rel="<?php echo ($i + 1) ?>">
-										<img src="/backpanel/galeria/<?= $galeria_img[$i]['galeria_img_url'] ?>" id="thumb_<?php echo ($i + 1) ?>" class="thumbs" alt="" />
+								<div class="thumb" id="thumbid_<?= ($i + 1) ?>" data-id="<?= $i ?>">
+									<a rel="<?= ($i + 1) ?>">
+										<img src="/backpanel/galeria/<?= $galeria_imgs[$i]['galeria_img_url'] ?>" id="thumb_<?= ($i + 1) ?>" class="thumbs" alt="" />
 									</a>
 								</div>
 							<?php
 							}
 							?>
+
 
 						</div>
 
@@ -274,11 +285,13 @@ $redes = $db->query($sql, $id)->fetchAll();
 		<script>
 			$(document).ready(function() {
 
-				$('#gallery').simplegallery({
-					galltime: 500,
-					gallcontent: '.content',
-					gallthumbnail: '.thumbnail',
-					gallthumb: '.thumb'
+				$('#galeriaCarousel').carousel({
+					interval: 5000
+				});
+				$(".thumb").click(function() {
+					var id = $(this).data("id");
+					$('#galeriaCarousel').carousel(id);
+
 				});
 
 			});
@@ -288,12 +301,6 @@ $redes = $db->query($sql, $id)->fetchAll();
 				if ($(window).width() <= 768) {
 					$("#myTab").tabCollapse();
 				}
-			});
-			$(".thumb").click(function() {
-				var id = $(this).attr("id");
-				var cap_id = ".caption_" + id.substr(id.length - 1);
-				$(".caption").css("display", "none");
-				$(cap_id).css("display", "block");
 			});
 		</script>
 	</body>

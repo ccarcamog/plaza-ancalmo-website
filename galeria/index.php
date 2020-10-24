@@ -41,9 +41,6 @@
 	$sql = "SELECT * FROM galeria_img WHERE galeria_img_galeria_key=? ORDER BY galeria_img_orden DESC";
 	$galeria_imgs = $db->query($sql, $galeria_id)->fetchAll();
 
-
-
-
 	?>
 
 	<div class="container mt-5">
@@ -51,18 +48,7 @@
 		<div id="gallery" class="simplegallery">
 			<div class="content text-center">
 
-				<!-- <img src="/backpanel/galeria/<?= $galeria_imgs[0]['galeria_img_url'] ?>" class="w-75 image_1" alt="" />
-				<p class="caption caption_1"><strong><?= $galeria_imgs[0]['galeria_img_nombre'] ?></strong> <?= $galeria_imgs[0]['galeria_img_caption'] ?></p>
-				<?php
-				// for ($i = 1; $i < count($galeria_imgs); $i++) {
-				?>
-					<img src="/backpanel/galeria/<?= $galeria_imgs[$i]['galeria_img_url'] ?>" class="w-75 image_<?= $i + 1 ?>" style="display:none"/>
-					<p class="caption caption_<?= $i + 1 ?>" style="display:none"><strong><?= $galeria_imgs[$i]['galeria_img_nombre'] ?></strong> <?= $galeria_imgs[$i]['galeria_img_caption'] ?></p>
-				<?php
-				// }				
-				?> -->
-
-				<div id="galeriaCarousel" class="carousel slide" data-ride="carousel">
+				<div id="galeriaCarousel" class="carousel slide d-flex flex-column justify-content-center" data-ride="carousel">
 					<div class="carousel-inner">
 						<?php 
 							for($i = 0; $i < count($galeria_imgs); $i++){
@@ -75,14 +61,14 @@
 							}
 						?>
 					</div>
-					<a class="carousel-control-prev" href="#galeriaCarousel" role="button" data-slide="prev">
+					<a class="carousel-control-prev d-none d-md-flex" href="#galeriaCarousel" role="button" data-slide="prev">
 						
-						<img  class="direction-arrow" src="img/svg/left-arrow-angle.svg">
+						<img  class="direction-arrow" src="/img/svg/left-arrow-angle.svg">
 						<span class="sr-only">Previous</span>
 					</a>
-					<a class="carousel-control-next" href="#galeriaCarousel" role="button" data-slide="next">
+					<a class="carousel-control-next d-none d-md-flex" href="#galeriaCarousel" role="button" data-slide="next">
 						
-						<img  class="direction-arrow" src="img/svg/right-arrow-angle.svg">
+						<img  class="direction-arrow" src="/img/svg/right-arrow-angle.svg">
 						<span class="sr-only">Next</span>
 					</a>
 				</div>

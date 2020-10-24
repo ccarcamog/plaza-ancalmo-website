@@ -70,12 +70,27 @@
 	margin-top: 20px;
 }
 
-#galeriaCarousel .carousel-item img{
-  height: 80vh;
-  width: 80vw;
-  object-fit: scale-down;
-
+#galeriaCarousel{
+  /* min-height: 90vh; */
 }
+
+@media (min-width: 768px) {
+  #galeriaCarousel .carousel-item img{
+    height: 80vh;
+    width: 80vw;
+    object-fit: scale-down;
+  
+  }
+}
+@media (max-width: 767px) {
+  #galeriaCarousel .carousel-item img{
+    height: 40vh;
+    width: 40vw;
+    object-fit: scale-down;
+  
+  }
+}
+
 
 .direction-arrow{
   height: 60px;

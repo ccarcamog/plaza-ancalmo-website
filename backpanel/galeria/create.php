@@ -25,7 +25,7 @@ if ($_FILES['imagen']['tmp_name'] != "") {
 		echo json_encode($result);
 		exit();
 	}
-	if ($_FILES['imagen']['size'] > 400000) {
+	if ($_FILES['imagen']['size'] > 600000) {
 		$result['error'] = $_FILES['imagen']['name'].": El archivo debe ser inferior a 400kb";
 		$result['check'] = 0;
 

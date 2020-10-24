@@ -1,3 +1,5 @@
+<?php require "../php/db.php" ?>
+<?php require "../php/credentials.php" ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -132,7 +134,7 @@
 
 			</div>
 			<div class="col-md-8 p-0 m-0" id="domicilioCard">
-				<div class="row m-0 p-0" >
+				<div class="row m-0 p-0">
 					<div class="col-md-6 m-0 p-3" id="domicilioLugares">
 						<center>
 							<h3>ENVIOS A:</h3>
@@ -188,7 +190,7 @@
 					</div>
 					<div class="carousel-item">
 						<div class="row">
-						<div class="col-3"><img src="/img/oral-b-1-logo-png-transparent.png" alt="oralb logo"></div>
+							<div class="col-3"><img src="/img/oral-b-1-logo-png-transparent.png" alt="oralb logo"></div>
 							<div class="col-3"><img src="img/bayer-.eps-logo-vector.png" alt="bayer logo"></div>
 							<div class="col-3"><img src="/img/Colgate_logo.svg.png" alt="colgate logo"></div>
 							<div class="col-3"><img src="/img/Nestle-logo.png" alt="nestle logo"></div>
@@ -196,7 +198,7 @@
 					</div>
 					<div class="carousel-item">
 						<div class="row">
-						<div class="col-3"><img src="/img/oral-b-1-logo-png-transparent.png" alt="oralb logo"></div>
+							<div class="col-3"><img src="/img/oral-b-1-logo-png-transparent.png" alt="oralb logo"></div>
 							<div class="col-3"><img src="img/bayer-.eps-logo-vector.png" alt="bayer logo"></div>
 							<div class="col-3"><img src="/img/Colgate_logo.svg.png" alt="colgate logo"></div>
 							<div class="col-3"><img src="/img/Nestle-logo.png" alt="nestle logo"></div>
@@ -204,7 +206,7 @@
 					</div>
 					<div class="carousel-item">
 						<div class="row">
-						<div class="col-3"><img src="/img/oral-b-1-logo-png-transparent.png" alt="oralb logo"></div>
+							<div class="col-3"><img src="/img/oral-b-1-logo-png-transparent.png" alt="oralb logo"></div>
 							<div class="col-3"><img src="img/bayer-.eps-logo-vector.png" alt="bayer logo"></div>
 							<div class="col-3"><img src="/img/Colgate_logo.svg.png" alt="colgate logo"></div>
 							<div class="col-3"><img src="/img/Nestle-logo.png" alt="nestle logo"></div>
@@ -226,6 +228,17 @@
 
 	<hr>
 
+	<?php
+
+	$db = new db($dbHost, $dbUID, $dbPWD, $dbName);
+
+	$galeria_id = 2;
+
+	$sql = "SELECT * FROM galeria_img WHERE galeria_img_galeria_key=? ORDER BY galeria_img_orden DESC";
+	$galeria_imgs = $db->query($sql, $galeria_id)->fetchAll();
+
+	?>
+
 
 	<div class="container-fluid" id="farmaciaGaleria">
 		<center class="mt-5 mb-5">
@@ -233,37 +246,52 @@
 		</center>
 
 		<div id="gallery" class="simplegallery">
+
 			<div class="content text-center">
-				<img src="/farmacia/galeria/foto0.jpg" class="w-75 image_1" alt="" />
-				<p class="caption caption_1">Descripción de la imagen 1</p>
-				<?php
-				for ($i = 1; $i < 6; $i++) {
-				?>
-					<img src="/farmacia/galeria/foto<?php echo $i ?>.jpg" class="w-75 image_<?php echo ($i + 1) ?>" style="display:none" alt="" />
-				<?php
-				}
-				for ($i = 1; $i < 6; $i++) {
-				?>
-					<p class="caption caption_<?php echo ($i + 1) ?> " style="display:none">Descripción de la imagen <?php echo ($i + 1) ?></p>
-				<?php
-				}
-				?>
+
+				<div id="galeriaCarousel" class="carousel slide" data-ride="carousel">
+					<div class="carousel-inner">
+						<?php
+						for ($i = 0; $i < count($galeria_imgs); $i++) {
+						?>
+							<div class="carousel-item <?php if (!$i) echo "active" ?>">
+								<img src="/backpanel/galeria/<?= $galeria_imgs[$i]['galeria_img_url'] ?>" class="image_<?= $i + 1 ?>" />
+								<p class="caption caption_<?= $i + 1 ?>"><strong><?= $galeria_imgs[$i]['galeria_img_nombre'] ?></strong> <?= $galeria_imgs[$i]['galeria_img_caption'] ?></p>
+							</div>
+						<?php
+						}
+						?>
+					</div>
+					<a class="carousel-control-prev" href="#galeriaCarousel" role="button" data-slide="prev">
+
+						<img class="direction-arrow" src="/img/svg/left-arrow-angle.svg">
+						<span class="sr-only">Previous</span>
+					</a>
+					<a class="carousel-control-next" href="#galeriaCarousel" role="button" data-slide="next">
+
+						<img class="direction-arrow" src="/img/svg/right-arrow-angle.svg">
+						<span class="sr-only">Next</span>
+					</a>
+				</div>
+
+
 			</div>
 
 			<div class="clear"></div>
 
 			<div class="thumbnail container">
 				<?php
-				for ($i = 0; $i < 6; $i++) {
+				for ($i = 0; $i < count($galeria_imgs); $i++) {
 				?>
-					<div class="thumb" id="thumbid_<?php echo ($i + 1) ?>">
-						<a href="#" rel="<?php echo ($i + 1) ?>">
-							<img src="/farmacia/galeria/foto<?php echo $i ?>.jpg" id="thumb_<?php echo ($i + 1) ?>" class="thumbs" alt="" />
+					<div class="thumb" id="thumbid_<?= ($i + 1) ?>" data-id="<?= $i ?>">
+						<a rel="<?= ($i + 1) ?>">
+							<img src="/backpanel/galeria/<?= $galeria_imgs[$i]['galeria_img_url'] ?>" id="thumb_<?= ($i + 1) ?>" class="thumbs" alt="" />
 						</a>
 					</div>
 				<?php
 				}
 				?>
+
 
 			</div>
 
@@ -283,17 +311,13 @@
 	<script>
 		$(document).ready(function() {
 
-			$('#gallery').simplegallery({
-				galltime: 400,
-				gallcontent: '.content',
-				gallthumbnail: '.thumbnail',
-				gallthumb: '.thumb'
+			$('#galeriaCarousel').carousel({
+				interval: 5000
 			});
 			$(".thumb").click(function() {
-				var id = $(this).attr("id");
-				var cap_id = ".caption_" + id.substr(id.length - 1);
-				$(".caption").css("display", "none");
-				$(cap_id).css("display", "block");
+				var id = $(this).data("id");
+				$('#galeriaCarousel').carousel(id);
+
 			});
 
 		});
