@@ -214,13 +214,36 @@
 											</div>
 											<div role="tabpanel" class="tab-pane fade" id="galeria" role="tabpanel" aria-labelledby="galeria-tab">
 												<div class="container-fluid">
+
 													<div id="gallery" class="simplegallery">
-														<div class="content text-center galeria_content">
+														<div class="content text-center">
+
+															<div id="galeriaCarousel" class="carousel slide d-flex flex-column justify-content-center" data-ride="carousel">
+																<div class="carousel-inner">
+																																			
+																</div>
+																<a class="carousel-control-prev d-none d-md-flex" href="#galeriaCarousel" role="button" data-slide="prev">
+
+																	<img class="direction-arrow" src="/img/svg/left-arrow-angle.svg">
+																	<span class="sr-only">Previous</span>
+																</a>
+																<a class="carousel-control-next d-none d-md-flex" href="#galeriaCarousel" role="button" data-slide="next">
+
+																	<img class="direction-arrow" src="/img/svg/right-arrow-angle.svg">
+																	<span class="sr-only">Next</span>
+																</a>
+															</div>
+
 														</div>
-
 														<div class="clear"></div>
-
 														<div class="thumbnail container">
+														
+																<div class="thumb" id="thumbid_<?= ($i + 1) ?>" data-id="<?= $i ?>">
+																	<a rel="<?= ($i + 1) ?>">
+																		<img src="/backpanel/galeria/<?= $galeria_imgs[$i]['galeria_img_url'] ?>" id="thumb_<?= ($i + 1) ?>" class="thumbs" alt="" />
+																	</a>
+																</div>
+
 														</div>
 
 													</div>
@@ -248,10 +271,8 @@
 	<script>
 		$('#previewModal').on('shown.bs.modal', function() {
 			$(".thumb").click(function() {
-				var id = $(this).attr("id");
-				var cap_id = ".caption_" + id.substr(id.length - 1);
-				$(".caption").css("display", "none");
-				$(cap_id).css("display", "block");
+				var id = $(this).data("id");
+				$('#galeriaCarousel').carousel(id);
 			});
 		})
 	</script>
@@ -315,15 +336,19 @@
 					var galeria_nombre = response['galeria']['galeria_nombre'];
 					var galeria = response['galeria_img'];
 
-					$('.galeria_content').html('');
+					$('.carousel-inner').html('');
 					for (var i = 0; i < galeria.length; i++) {
 
-						if (i == 0) var html = '<img src="/backpanel/galeria/' + galeria[i]['galeria_img_url'] + '" class="w-75 image_' + (i + 1) + '"/>';
-						else var html = '<img src="/backpanel/galeria/' + galeria[i]['galeria_img_url'] + '" class="w-75 image_' + (i + 1) + '" style="display:none"/>';
-						$('.galeria_content').append(html);
+						if(!i) var html = '<div class="carousel-item active">';
+						else  var html = '<div class="carousel-item">';
+						html += '	<img src="/backpanel/galeria/'+ galeria[i]['galeria_img_url'] +'" class="w-75 image_'+ (i+1) +'" />'
+						html += '	<p class="caption caption_'+ (i+1) +'"><strong>'+ galeria[i]['galeria_img_nombre'] +'</strong> '+ galeria[i]['galeria_img_caption'] +'</p>'
+						html += '</div>'
 
+						$('.carousel-inner').append(html);
 					}
-					// $('.galeria_content').html('');
+
+					$('.galeria_content').html('');
 					for (var i = 0; i < galeria.length; i++) {
 						if (i == 0) var html = '<p class="caption caption_' + (i + 1) + '"><strong>' + galeria[i]['galeria_img_nombre'] + '</strong> ' + galeria[i]['galeria_img_caption'] + '</p>';
 						else var html = '<p class="caption caption_' + (i + 1) + '" style="display:none"><strong>' + galeria[i]['galeria_img_nombre'] + '</strong> ' + galeria[i]['galeria_img_caption'] + '</p>';
@@ -334,8 +359,8 @@
 					$('.thumbnail').html('');
 					for (var i = 0; i < galeria.length; i++) {
 						var html = '';
-						html += '<div class="thumb" id="thumbid_' + (i + 1) + '">';
-						html += '<a href="#" rel="' + (i + 1) + '">';
+						html += '<div class="thumb" id="thumbid_' + (i + 1) + '" data-id="'+i+'">';
+						html += '<a rel="' + (i + 1) + '">';
 						html += '<img src="/backpanel/galeria/' + galeria[i]['galeria_img_url'] + '" id="thumb_' + (i + 1) + '" class="thumbs" alt="" />';
 						html += '</a>';
 						html += '</div>';
@@ -344,11 +369,8 @@
 
 					}
 
-					$('#gallery').simplegallery({
-						galltime: 500,
-						gallcontent: '.content',
-						gallthumbnail: '.thumbnail',
-						gallthumb: '.thumb'
+					$('#galeriaCarousel').carousel({
+						interval: 5000
 					});
 
 					$('#previewModal').modal('show');
@@ -382,7 +404,7 @@
 				},
 				success: function(response) {
 
-					
+
 
 					$(row).fadeOut(500, function() {
 						$(this).remove();

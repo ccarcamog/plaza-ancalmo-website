@@ -70,9 +70,6 @@
 	margin-top: 20px;
 }
 
-#galeriaCarousel{
-  /* min-height: 90vh; */
-}
 
 @media (min-width: 768px) {
   #galeriaCarousel .carousel-item img{
