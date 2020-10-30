@@ -340,11 +340,27 @@ $especialidades_json = json_encode($especialidades);
 			console.log(seguros_json);
 			$('.especialidades-select').select2({
 				placeholder: "Seleccione las especialidades",
-				data: especialidades_json
+				data: especialidades_json,
+				language: {
+					noResults: function() {
+						return "Especialidad no encontrada? <a href='/backpanel/especialidades'>Puedes crearla aqui</a>";
+					}
+				},
+				escapeMarkup: function(markup) {
+					return markup;
+				}
 			});
 			$('.seguros-select').select2({
 				placeholder: "Seleccione los seguros",
-				data: seguros_json
+				data: seguros_json,
+				language: {
+					noResults: function() {
+						return "Red no encontrada? <a href='/backpanel/seguros'>Puedes crearla aqui</a>";
+					}
+				},
+				escapeMarkup: function(markup) {
+					return markup;
+				}
 			});
 		});
 	</script>
