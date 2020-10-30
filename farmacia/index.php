@@ -256,7 +256,7 @@
 						?>
 							<div class="carousel-item <?php if (!$i) echo "active" ?>">
 								<img src="/backpanel/galeria/<?= $galeria_imgs[$i]['galeria_img_url'] ?>" class="image_<?= $i + 1 ?>" />
-								<p class="caption caption_<?= $i + 1 ?>"><strong><?= $galeria_imgs[$i]['galeria_img_nombre'] ?></strong> <?= $galeria_imgs[$i]['galeria_img_caption'] ?></p>
+								<p class="caption caption_<?= $i + 1 ?>"><strong><?= $galeria_imgs[$i]['galeria_img_nombre'] ?></strong><br><?= $galeria_imgs[$i]['galeria_img_caption'] ?></p>
 							</div>
 						<?php
 						}

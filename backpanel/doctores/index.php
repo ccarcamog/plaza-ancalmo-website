@@ -342,7 +342,7 @@
 						if(!i) var html = '<div class="carousel-item active">';
 						else  var html = '<div class="carousel-item">';
 						html += '	<img src="/backpanel/galeria/'+ galeria[i]['galeria_img_url'] +'" class="w-75 image_'+ (i+1) +'" />'
-						html += '	<p class="caption caption_'+ (i+1) +'"><strong>'+ galeria[i]['galeria_img_nombre'] +'</strong> '+ galeria[i]['galeria_img_caption'] +'</p>'
+						html += '	<p class="caption caption_'+ (i+1) +'"><strong>'+ galeria[i]['galeria_img_nombre'] +'</strong><br>'+ galeria[i]['galeria_img_caption'] +'</p>'
 						html += '</div>'
 
 						$('.carousel-inner').append(html);
