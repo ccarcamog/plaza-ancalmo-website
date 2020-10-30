@@ -52,10 +52,11 @@
 							<tbody>
 
 								<?php
+								$count = 1; 
 								foreach ($doctores as $doctor) {
 								?>
 									<tr id="row-<?= $doctor['doc_doctores_key'] ?>" data-id="<?= $doctor['doc_doctores_key'] ?>">
-										<th scope="row"><?= $doctor['doc_doctores_key'] ?></th>
+										<th scope="row"><?= $count++?></th>
 										<td><?= $doctor['doc_doctor_nombre'] ?></td>
 										<td>
 											<a class="btn btn-info galeria-btn" href="/backpanel/galeria/?id=<?= $doctor['doc_doctor_galeria'] ?>">Ir a galeria</a>
@@ -403,8 +404,6 @@
 					id: doctor_id
 				},
 				success: function(response) {
-
-
 
 					$(row).fadeOut(500, function() {
 						$(this).remove();

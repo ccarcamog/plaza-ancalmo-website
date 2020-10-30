@@ -48,11 +48,12 @@
 
 							<tbody id="especialidades-table-body">
 								<?php
+								$count = 1;
 								foreach ($especialidades as $especialidad) {
 								?>
 
 									<tr id="row-<?= $especialidad['doc_especialidades_key'] ?>">
-										<th scope="row"><?= $especialidad['doc_especialidades_key'] ?></th>
+										<th scope="row"><?= $count++ ?></th>
 										<td><?= $especialidad['doc_especialidades_nombre'] ?></td>
 										<td><?= $especialidad['doc_especialidades_nombre_mas'] ?></td>
 										<td><?= $especialidad['doc_especialidades_nombre_fem'] ?></td>
@@ -179,6 +180,7 @@
 	<!-- Bootstrap core JavaScript -->
 	<script type="text/javascript" src="/js/bootstrap.min.js"></script>
 	<script>
+		var count = <?= $count ?>;
 		$(document).ready(function() {
 			$("#creation-form").on('submit', function(event) {
 				event.preventDefault();
@@ -190,7 +192,7 @@
 					success: function(response) {
 						// alert(response.nombre);
 						var html = '<tr id="row-' + response.id + '">';
-						html += '<th scope="rows">' + response.id + '</th>';
+						html += '<th scope="rows">' + (count++) + '</th>';
 						html += '<td>' + response.nombre + '</td>';
 						html += '<td>' + response.masculino + '</td>';
 						html += '<td>' + response.femenino + '</td>';
@@ -216,7 +218,7 @@
 
 				var row = $(rowID).children().toArray();
 
-				var id = row[0].innerHTML;
+				var id = rowNum;
 				var nombre = row[1].innerHTML;
 				var masculino = row[2].innerHTML;
 				var femenino = row[3].innerHTML;
@@ -238,9 +240,16 @@
 					data: $(this).serialize(),
 					dataType: "json",
 					success: function(response) {
+
+						var rowID = '#row-' + response.id;
+
+						var row = $(rowID).children().toArray();
+
+						var id = row[0].innerHTML;
+
 						// alert(response.nombre);
 						var html = '';
-						html += '<th scope="rows" id="row-' + response.id + '">' + response.id + '</th>';
+						html += '<th scope="rows" id="row-' + response.id + '">' + id + '</th>';
 						html += '<td>' + response.nombre + '</td>';
 						html += '<td>' + response.masculino + '</td>';
 						html += '<td>' + response.femenino + '</td>';
@@ -253,7 +262,6 @@
 
 						$('#updateModal').modal('hide');
 
-						var rowID = '#row-' + response.id;
 						$(rowID).hide();
 						$(rowID).html(html);
 						$(rowID).fadeIn(500);

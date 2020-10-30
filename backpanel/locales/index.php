@@ -48,11 +48,12 @@
 
 							<tbody id="local-table-body">
 								<?php
+								$count = 1;
 								foreach ($locales as $local) {
 								?>
 
 									<tr id="row-<?= $local['locales_key'] ?>">
-										<th scope="row"><?= $local['locales_key'] ?></th>
+										<th scope="row"><?= $count++ ?></th>
 										<td><?= $local['locales_nombre'] ?></td>
 										<td><?= $local['locales_desc'] ?></td>
 										<td><a class="btn btn-info" href="/backpanel/galeria/?id=<?= $local['locales_galeria_key'] ?>">Ir a la galeria</a></td>
@@ -140,7 +141,7 @@
 													<img src="" id="local-preview" class="w-100">
 												</div>
 											</div>
-											<div class="container-fluid">
+											<div class="container-fluid mt-4">
 												<div class="form-group row">
 													<div class="col">
 														<label for="id">Id</label>
@@ -192,6 +193,7 @@
 	<!-- Bootstrap core JavaScript -->
 	<script type="text/javascript" src="/js/bootstrap.min.js"></script>
 	<script>
+		var count = <?= $count ?>;
 		$('#imageInput').on('change', function() {
 			var filename = $(this).val();
 			// alert(filename);
@@ -225,7 +227,7 @@
 					console.log(response);
 
 					var html = '<tr id="row-' + response['id'] + '">';
-					html += '	<th scope="row">' + response['id'] + '</th>';
+					html += '	<th scope="row">' + (count++) + '</th>';
 					html += '	<td>' + response['nombre'] + '</td>';
 					html += '	<td>' + response['descripcion'] + '</td>';
 					// html += '	<td>' + response['preview'] + '</td>';
@@ -262,7 +264,7 @@
 
 			var row = $(rowID).children().toArray();
 
-			var id = row[0].innerHTML;
+			var id = rowNum;
 			var nombre = row[1].innerHTML;
 			var descripcion = row[2].innerHTML;
 
@@ -299,8 +301,11 @@
 
 					var url = $('#update-img').html();
 
+					var rowID = '#row-' + response['id'];
 
-					var html = '<th scope="row">' + response['id'] + '</th>';
+					var id_count = $(rowID).children().toArray()[0].innerHTML;
+
+					var html = '<th scope="row">' + id_count + '</th>';
 					html += '	<td>' + response['nombre'] + '</td>';
 					html += '	<td>' + response['descripcion'] + '</td>';
 					// html += '	<td>' + url + '</td>';
@@ -316,7 +321,6 @@
 					html += '		</button>';
 					html += '	</td>';
 
-					var rowID = '#row-' + response['id'];
 					$(rowID).hide();
 					$(rowID).html(html);
 					$(rowID).fadeIn(800);

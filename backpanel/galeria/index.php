@@ -75,12 +75,13 @@
 							<tbody>
 
 								<?php
+								$count = 1;
 								foreach ($imagenes as $imagen) {
 								?>
 
-									<tr id="row-<?= $imagen['galeria_img_key'] ?>">
+									<tr id="row-<?= $imagen['galeria_img_key'] ?>" data-id="<?= $imagen['galeria_img_key'] ?>">
 										<td><img src="/img/svg/sort-result.svg" style="height:1em"></td>
-										<th scope="row"><?= $imagen['galeria_img_key'] ?></th>
+										<th scope="row"><?= $count++ ?></th>
 										<td><img src="/backpanel/galeria/<?= $imagen['galeria_img_url'] ?>" height="100"></td>
 										<td><?= $imagen['galeria_img_nombre'] ?></td>
 										<td><?= $imagen['galeria_img_caption'] ?></td>
@@ -192,6 +193,8 @@
 	<script type="text/javascript" src="/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="/js/jquery-ui.js"></script>
 	<script>
+		var count = <?= $count ?>;
+
 		function updateOrder(keys) {
 			var dataString = JSON.stringify(keys);
 			$.ajax({
@@ -222,10 +225,11 @@
 					return true;
 				}
 
-				var rowID = $(this).children().toArray()[1].innerHTML;
+				var rowID = $(this).data('id');
 				// console.log(rowID + "," + (i + 1));
 				keys.push(rowID);
 			});
+			
 			updateOrder(keys);
 		};
 
@@ -252,7 +256,7 @@
 
 				html = '<tr id="row-' + key + '">';
 				html += '<td><img src="/img/svg/sort-result.svg" style="height:1em"></td>';
-				html += '<th scope="row">' + key + '</th>';
+				html += '<th scope="row">' + (count++) + '</th>';
 				html += '<td><img src="/backpanel/galeria/' + path + '" height="100"></td>';
 				html += '<td>newImage</td>';
 				html += '<td></td>'
@@ -387,7 +391,6 @@
 			var nombre = row[3].innerHTML;
 			var descripcion = row[4].innerHTML;
 
-			console.log(row);
 
 			$('#update-nombre').val(nombre);
 			$('#update-descripcion').val(descripcion);
@@ -408,10 +411,15 @@
 
 					var path = $('#update-img').prop('src');
 
+					var rowID = '#row-' + response.id;
+					var row = $(rowID).children().toArray();
+
+					var id = row[1].innerHTML;
+
 					var html = '';
 
 					html += '<td><img src="/img/svg/sort-result.svg" style="height:1em"></td>';
-					html += '<th scope="row">' + response.id + '</th>';
+					html += '<th scope="row">' + id + '</th>';
 					html += '<td><img src="' + path + '" height="100"></td>';
 					html += '<td>' + response.nombre + '</td>';
 					html += '<td>' + response.descripcion + '</td>';
@@ -421,7 +429,6 @@
 
 					$('#updateModal').modal('hide');
 
-					var rowID = '#row-' + response.id;
 					$(rowID).hide();
 					$(rowID).html(html);
 					$(rowID).fadeIn(500);

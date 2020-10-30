@@ -53,11 +53,12 @@
 							<tbody>
 
 								<?php
+								$count = 1;
 								foreach ($seguros as $seguro) {
 								?>
 
 									<tr>
-										<th scope="row"><?= $seguro['doc_redes_seguros_key'] ?></th>
+										<th scope="row"><?= $count++?></th>
 										<td><?= $seguro['doc_redes_seguros_nombre'] ?></td>
 										<td><?= $seguro['doc_redes_seguros_desc'] ?></td>
 										<td><a href="<?= $seguro['doc_redes_seguros_link'] ?>" target="_blank"><?= $seguro['doc_redes_seguros_link'] ?></a></td>

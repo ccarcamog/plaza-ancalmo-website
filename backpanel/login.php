@@ -40,7 +40,7 @@ if (isset($_SESSION['username'])) {
 
 			<div class="row justify-content-center align-items-center">
 				<div class="col-md-4 p-0" style="border-radius:15px; overflow:hidden">
-					<img src="/img/mision-bg.jpg" style="width:100%; height:50vh; object-fit:cover">
+					<img src="/img/login-img.jpg" style="width:100%; height:50vh; object-fit:cover">
 				</div>
 				<div class="col-md-4 p-5">
 					<h4>Log In</h4>
