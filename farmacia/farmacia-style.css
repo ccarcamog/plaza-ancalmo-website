@@ -118,7 +118,11 @@
 	margin: 5px;
 }
 
-#domicilioInfo img:hover {
+#repartidor-img{
+	opacity: 1;
+}
+
+#domicilioInfo img:not(#repartidor-img):hover {
 	opacity: 0.9;
 }
 

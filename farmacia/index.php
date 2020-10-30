@@ -147,7 +147,7 @@
 						</div>
 					</div>
 					<div class="col-md-6 m-0 p-0" id="domicilioImg">
-						<img src="/img/deliveryman.jpg" alt="repartidor feliz">
+						<img src="/img/farmacia-entrega.jpeg" alt="repartidor ancalmo" id="repartidor-img">
 					</div>
 				</div>
 			</div>
