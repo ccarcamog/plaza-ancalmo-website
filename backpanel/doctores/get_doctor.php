@@ -38,7 +38,7 @@
 	$doctor['galeria'] = $galeria;
 	
 
-	$sql = "SELECT * FROM galeria_img WHERE galeria_img_galeria_key=?";
+	$sql = "SELECT * FROM galeria_img WHERE galeria_img_galeria_key=? ORDER BY galeria_img_orden ASC";
 	$galeria_img = $db->query($sql, $galeria_id)->fetchAll();
 	$doctor['galeria_img'] = $galeria_img;
 

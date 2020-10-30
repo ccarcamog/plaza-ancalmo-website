@@ -209,7 +209,7 @@ $redes = $db->query($sql, $id)->fetchAll();
 			$sql = "SELECT * FROM galeria WHERE galeria_key=?";
 			$galeria = $db->query($sql, $galeria_id)->fetchArray();
 
-			$sql = "SELECT * FROM galeria_img WHERE galeria_img_galeria_key=? ORDER BY galeria_img_orden DESC";
+			$sql = "SELECT * FROM galeria_img WHERE galeria_img_galeria_key=? ORDER BY galeria_img_orden ASC";
 			$galeria_imgs = $db->query($sql, $galeria_id)->fetchAll();
 
 			?>
