@@ -239,11 +239,6 @@
 														<div class="clear"></div>
 														<div class="thumbnail container">
 														
-																<div class="thumb" id="thumbid_<?= ($i + 1) ?>" data-id="<?= $i ?>">
-																	<a rel="<?= ($i + 1) ?>">
-																		<img src="/backpanel/galeria/<?= $galeria_imgs[$i]['galeria_img_url'] ?>" id="thumb_<?= ($i + 1) ?>" class="thumbs" alt="" />
-																	</a>
-																</div>
 
 														</div>
 
@@ -404,6 +399,8 @@
 					id: doctor_id
 				},
 				success: function(response) {
+
+					console.log(response);
 
 					$(row).fadeOut(500, function() {
 						$(this).remove();

@@ -254,7 +254,7 @@
 
 				$('#progressbar').css("width", str_progress);
 
-				html = '<tr id="row-' + key + ' data-id="'+ (count++) +'">';
+				html = '<tr id="row-' + key + '" data-id="'+ key +'">';
 				html += '<td><img src="/img/svg/sort-result.svg" style="height:1em"></td>';
 				html += '<th scope="row">' + (count++) + '</th>';
 				html += '<td><img src="/backpanel/galeria/' + path + '" height="100"></td>';

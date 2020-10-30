@@ -33,10 +33,10 @@ if ($_FILES['imagen']['tmp_name'] != "") {
 		exit();
 	}
 
-	$sql = "INSERT INTO galeria_img (galeria_img_nombre, galeria_img_url, galeria_img_galeria_key) VALUES (?,?,?)";
 	
 	$db = new db($dbHost, $dbUID, $dbPWD, $dbName);
 	
+	$sql = "INSERT INTO galeria_img (galeria_img_nombre, galeria_img_url, galeria_img_galeria_key) VALUES (?,?,?)";
 	$insertion = $db->query($sql, "newImage", "/galeria/galeria/no_photo.jpg", $galeria);
 	$id = $insertion->lastInsertID();
 
@@ -46,8 +46,14 @@ if ($_FILES['imagen']['tmp_name'] != "") {
 	
 	move_uploaded_file($_FILES["imagen"]["tmp_name"], $target_file);
 
-	$sql = "UPDATE galeria_img SET galeria_img_url=? WHERE galeria_img_key=?";
-	$db->query($sql, $target_file, $id);
+	$sql = "SELECT MAX(galeria_img_orden) FROM galeria_img WHERE galeria_img_galeria_key=?";
+	$max_orden = $db->query($sql, $galeria)->fetchArray();
+	
+	$orden = 0;
+	if($max_orden != null) $orden = $max_orden['MAX(galeria_img_orden)'];
+
+	$sql = "UPDATE galeria_img SET galeria_img_url=?, galeria_img_orden=? WHERE galeria_img_key=?";
+	$db->query($sql, $target_file, ($orden + 1), $id);
 
 	$result['key'] = $id;
 	$result['check'] = 1;
