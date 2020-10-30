@@ -108,7 +108,7 @@ if (isset($_POST['create-submit'])) {
 
 
 
-	header("Location: index.php?success=true&message=El doctor ha sido creado con exito");
+	header("Location: index.php?success=true&nombre=".$nombre."&galeria=".$galeria_id);
 	exit();
 }
 
@@ -320,8 +320,11 @@ $especialidades_json = json_encode($especialidades);
 	<script type="text/javascript" src="/js/select2.min.js"></script>
 	<script type="text/javascript">
 		$('#imageInput').on('change', function() {
-			var filename = $(this).val();
-			// alert(filename);
+			var filepath = $(this).val();
+			var fileNameIndex = Math.max(filepath.lastIndexOf("\\") + 1, filepath.lastIndexOf("/") + 1);
+			
+			var filename = filepath.substr(fileNameIndex);
+
 			$(this).next('.custom-file-label').html(filename);
 		});
 

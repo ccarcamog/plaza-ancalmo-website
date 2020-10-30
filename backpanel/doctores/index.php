@@ -35,7 +35,7 @@
 					?>
 
 						<div class="alert alert-success w-100 alert-dismissible fade show" role="alert">
-							<strong>Exito:</strong> <?= $_GET['message'] ?>
+							<?= $_GET['nombre']?> ha sido añadido con éxito. <a href="/backpanel/galeria/?id=<?=$_GET['galeria']?>">Ir a la galeria</a>
 							<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 								<span aria-hidden="true">&times;</span>
 							</button>
