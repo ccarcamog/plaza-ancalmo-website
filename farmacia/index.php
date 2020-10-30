@@ -191,7 +191,7 @@
 					<div class="carousel-item">
 						<div class="row">
 							<div class="col-3"><img src="/img/oral-b-1-logo-png-transparent.png" alt="oralb logo"></div>
-							<div class="col-3"><img src="img/bayer-.eps-logo-vector.png" alt="bayer logo"></div>
+							<div class="col-3"><img src="/img/bayer-.eps-logo-vector.png" alt="bayer logo"></div>
 							<div class="col-3"><img src="/img/Colgate_logo.svg.png" alt="colgate logo"></div>
 							<div class="col-3"><img src="/img/Nestle-logo.png" alt="nestle logo"></div>
 						</div>
@@ -199,7 +199,7 @@
 					<div class="carousel-item">
 						<div class="row">
 							<div class="col-3"><img src="/img/oral-b-1-logo-png-transparent.png" alt="oralb logo"></div>
-							<div class="col-3"><img src="img/bayer-.eps-logo-vector.png" alt="bayer logo"></div>
+							<div class="col-3"><img src="/img/bayer-.eps-logo-vector.png" alt="bayer logo"></div>
 							<div class="col-3"><img src="/img/Colgate_logo.svg.png" alt="colgate logo"></div>
 							<div class="col-3"><img src="/img/Nestle-logo.png" alt="nestle logo"></div>
 						</div>
@@ -207,7 +207,7 @@
 					<div class="carousel-item">
 						<div class="row">
 							<div class="col-3"><img src="/img/oral-b-1-logo-png-transparent.png" alt="oralb logo"></div>
-							<div class="col-3"><img src="img/bayer-.eps-logo-vector.png" alt="bayer logo"></div>
+							<div class="col-3"><img src="/img/bayer-.eps-logo-vector.png" alt="bayer logo"></div>
 							<div class="col-3"><img src="/img/Colgate_logo.svg.png" alt="colgate logo"></div>
 							<div class="col-3"><img src="/img/Nestle-logo.png" alt="nestle logo"></div>
 						</div>
