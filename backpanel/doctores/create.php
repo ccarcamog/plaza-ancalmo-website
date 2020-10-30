@@ -216,7 +216,7 @@ $especialidades_json = json_encode($especialidades);
 							</div>
 							<div class="col">
 								<label for="local">Local</label>
-								<input class="form-control" type="number" min=1 name="local" required>
+								<input class="form-control" type="text" name="local" required>
 							</div>
 						</div>
 						<div class="form-group row">
