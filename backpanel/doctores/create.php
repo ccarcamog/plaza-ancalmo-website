@@ -108,7 +108,7 @@ if (isset($_POST['create-submit'])) {
 
 
 
-	header("Location: index.php");
+	header("Location: index.php?success=true&message=El doctor ha sido creado con exito");
 	exit();
 }
 

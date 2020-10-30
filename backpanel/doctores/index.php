@@ -27,6 +27,26 @@
 					<?php include "../../components/side-bar.php" ?>
 				</div>
 				<div class="col-md-9 p-5">
+
+					<?php
+
+					if ($_GET['success']) {
+
+					?>
+
+						<div class="alert alert-success w-100 alert-dismissible fade show" role="alert">
+							<strong>Exito:</strong> <?= $_GET['message'] ?>
+							<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+
+					<?php
+
+					}
+
+					?>
+
 					<h2>DOCTORES</h2>
 					<?php
 
@@ -52,11 +72,11 @@
 							<tbody>
 
 								<?php
-								$count = 1; 
+								$count = 1;
 								foreach ($doctores as $doctor) {
 								?>
 									<tr id="row-<?= $doctor['doc_doctores_key'] ?>" data-id="<?= $doctor['doc_doctores_key'] ?>">
-										<th scope="row"><?= $count++?></th>
+										<th scope="row"><?= $count++ ?></th>
 										<td><?= $doctor['doc_doctor_nombre'] ?></td>
 										<td>
 											<a class="btn btn-info galeria-btn" href="/backpanel/galeria/?id=<?= $doctor['doc_doctor_galeria'] ?>">Ir a galeria</a>
@@ -221,7 +241,7 @@
 
 															<div id="galeriaCarousel" class="carousel slide d-flex flex-column justify-content-center" data-ride="carousel">
 																<div class="carousel-inner">
-																																			
+
 																</div>
 																<a class="carousel-control-prev d-none d-md-flex" href="#galeriaCarousel" role="button" data-slide="prev">
 
@@ -238,7 +258,7 @@
 														</div>
 														<div class="clear"></div>
 														<div class="thumbnail container">
-														
+
 
 														</div>
 
@@ -335,10 +355,10 @@
 					$('.carousel-inner').html('');
 					for (var i = 0; i < galeria.length; i++) {
 
-						if(!i) var html = '<div class="carousel-item active">';
-						else  var html = '<div class="carousel-item">';
-						html += '	<img src="/backpanel/galeria/'+ galeria[i]['galeria_img_url'] +'" class="w-75 image_'+ (i+1) +'" />'
-						html += '	<p class="caption caption_'+ (i+1) +'"><strong>'+ galeria[i]['galeria_img_nombre'] +'</strong><br>'+ galeria[i]['galeria_img_caption'] +'</p>'
+						if (!i) var html = '<div class="carousel-item active">';
+						else var html = '<div class="carousel-item">';
+						html += '	<img src="/backpanel/galeria/' + galeria[i]['galeria_img_url'] + '" class="w-75 image_' + (i + 1) + '" />'
+						html += '	<p class="caption caption_' + (i + 1) + '"><strong>' + galeria[i]['galeria_img_nombre'] + '</strong><br>' + galeria[i]['galeria_img_caption'] + '</p>'
 						html += '</div>'
 
 						$('.carousel-inner').append(html);
@@ -355,7 +375,7 @@
 					$('.thumbnail').html('');
 					for (var i = 0; i < galeria.length; i++) {
 						var html = '';
-						html += '<div class="thumb" id="thumbid_' + (i + 1) + '" data-id="'+i+'">';
+						html += '<div class="thumb" id="thumbid_' + (i + 1) + '" data-id="' + i + '">';
 						html += '<a rel="' + (i + 1) + '">';
 						html += '<img src="/backpanel/galeria/' + galeria[i]['galeria_img_url'] + '" id="thumb_' + (i + 1) + '" class="thumbs" alt="" />';
 						html += '</a>';

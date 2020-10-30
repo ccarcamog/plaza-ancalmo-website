@@ -120,7 +120,7 @@ if (isset($_POST['update-submit'])) {
 
 	$db->query($sql, $galeria_nombre, $galeria_id);
 
-	header("Location: index.php");
+	header("Location: index.php?success=true&message=El doctor ha sido actualizado con exito");
 	exit();
 }
 
