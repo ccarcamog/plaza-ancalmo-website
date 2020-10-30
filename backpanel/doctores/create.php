@@ -343,7 +343,7 @@ $especialidades_json = json_encode($especialidades);
 				data: especialidades_json,
 				language: {
 					noResults: function() {
-						return "Especialidad no encontrada? <a href='/backpanel/especialidades'>Puedes crearla aqui</a>";
+						return "¿Especialidad no encontrada? <a href='/backpanel/especialidades'>Pruebe crearla aqui</a>";
 					}
 				},
 				escapeMarkup: function(markup) {
@@ -355,7 +355,7 @@ $especialidades_json = json_encode($especialidades);
 				data: seguros_json,
 				language: {
 					noResults: function() {
-						return "Red no encontrada? <a href='/backpanel/seguros'>Puedes crearla aqui</a>";
+						return "¿Red de seguros no encontrada? <a href='/backpanel/seguros'>Pruebe crearla aqui</a>";
 					}
 				},
 				escapeMarkup: function(markup) {
