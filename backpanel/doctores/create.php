@@ -8,25 +8,24 @@
 $db = new db($dbHost, $dbUID, $dbPWD, $dbName);
 
 if (isset($_POST['create-submit'])) {
-	
+
 	$imageFileType = "";
 
-	if($_FILES['image']['tmp_name'] != ""){
-		$imageFileType = strtolower(pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION));		
-		if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"){
-	
+	if ($_FILES['image']['tmp_name'] != "") {
+		$imageFileType = strtolower(pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION));
+		if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg") {
+
 			header("Location: ?error=true&message=El tipo de imagen es incorrecto");
 			exit();
-			
 		}
-		if($_FILES['image']['size'] > 400000){
-			header("Location: ?error=true&message=Peso de la imagen excedido");
+		if ($_FILES['image']['size'] > 500000) {
+			header("Location: ?error=true&message=Peso de la imagen debe ser menor a 500kb");
 			exit();
 		}
-	}else{
+	} else {
 		header("Location: ?error=true&message=Seleccionar una imagen de perfil");
 		exit();
-	}	
+	}
 
 	$nombre = $_POST['nombre'];
 	$genero = $_POST['genero'];
@@ -75,13 +74,13 @@ if (isset($_POST['create-submit'])) {
 	$id = $insertion->lastInsertID();
 
 	$target_dir = "img/";
-	$target_file = $target_dir."profile_pic".$id.".".$imageFileType;
+	$target_file = $target_dir . "profile_pic" . $id . "." . $imageFileType;
 	move_uploaded_file($_FILES["image"]["tmp_name"], $target_file);
 
 	$sql = "UPDATE doc_doctores SET doc_doctor_img=? WHERE doc_doctores_key=?";
 	$db->query($sql, $target_file, $id);
 
-	$galeria_nombre = "Galeria de ".$nombre;
+	$galeria_nombre = "Galeria de " . $nombre;
 	$sql = "INSERT INTO galeria (galeria_nombre) VALUES (?)";
 
 	$db->query($sql, $galeria_nombre);
@@ -92,21 +91,19 @@ if (isset($_POST['create-submit'])) {
 
 	$seguros = $_POST['seguros'];
 
-	foreach($seguros as $seguro){
+	foreach ($seguros as $seguro) {
 
 		$sql = "INSERT INTO doc_doctores_redes_seguros (doc_doctores_key, doc_redes_seguros_key) VALUES (?,?)";
-		
-		$db->query($sql, $id, $seguro);
 
+		$db->query($sql, $id, $seguro);
 	}
 
 	$especialidades = $_POST['especialidades'];
 
-	foreach($especialidades as $especialidad){
+	foreach ($especialidades as $especialidad) {
 
 		$sql = "INSERT INTO doc_doctores_especialidades (doc_doctores_key, doc_especialidades_key) VALUES (?,?)";
 		$db->query($sql, $id, $especialidad);
-
 	}
 
 
@@ -149,151 +146,173 @@ $especialidades_json = json_encode($especialidades);
 
 <body>
 
+	<main class="d-flex align-items-stretch">
 
-	<div class="container-fluid p-0">
+		<div class="container-fluid d-flex align-items-stretch">
 
-		<div class="row">
-			<div class="col-md-3 p-0">
-				<?php include "../../components/side-bar.php" ?>
-			</div>
-			<div class="col-md-9 p-5 d-flex flex-column justify-content-center align-items-center">
-				<h2>Crear doctor</h2>
+			<div class="row" style="width: 100vw;">
+				<div class="col-md-3 p-0">
+					<?php include "../../components/side-bar.php" ?>
+				</div>
+				<div class="col-md-9 p-5 d-flex flex-column justify-content-center align-items-center">
 
-				<div class="container">
-					<form action="create.php" method="POST" enctype="multipart/form-data">
+					<?php
 
-						<h3>Información personal</h3>
-						<div class="form-group row">
-							<div class="col">
-								<label for="nombre">Nombre</label>
-								<input class="form-control" type="text" name="nombre" placeholder="Nombre" required>
-							</div>
-							<div class="col">
-								<Label for="genero">Genero</Label>
-								<select class="custom-select" name="genero" required>
-									<option value="" selected>Seleccionar</option>
-									<option value="M">Masculino</option>
-									<option value="F">Femenino</option>
-									<!-- <option value="3">Three</option> -->
-								</select>
-							</div>
+					if ($_GET['error']) {
+
+					?>
+
+						<div class="alert alert-warning w-100 alert-dismissible fade show" role="alert">
+							<strong>Error:</strong> <?= $_GET['message'] ?>
+							<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
 						</div>
-						<div class="form-group row">
-							<div class="col">
-								<label for="descripcion">Descripcion</label>
-								<textarea class="form-control" name="descripcion" placeholder="Descripcion"></textarea>
-							</div>
-						</div>
-						<div class="form-group row">
-							<div class="col">
-								<Label>Imagen de perfil</Label>
-								<div class="custom-file">
-									<input type="file" name="image" class="custom-file-input" id="imageInput" required>
-									<label class="custom-file-label" for="imageInput">Escoger imagen</label>
+
+					<?php
+
+					}
+
+					?>
+
+					<h2>Crear doctor</h2>
+
+					<div class="container">
+						<form action="create.php" method="POST" enctype="multipart/form-data">
+
+							<h3>Información personal</h3>
+							<div class="form-group row">
+								<div class="col">
+									<label for="nombre">Nombre</label>
+									<input class="form-control" type="text" name="nombre" placeholder="Nombre" required>
+								</div>
+								<div class="col">
+									<Label for="genero">Genero</Label>
+									<select class="custom-select" name="genero" required>
+										<option value="" selected>Seleccionar</option>
+										<option value="M">Masculino</option>
+										<option value="F">Femenino</option>
+										<!-- <option value="3">Three</option> -->
+									</select>
 								</div>
 							</div>
-							<div class="col">
-								<label for="prioridad">Prioridad</label>
-								<input class="form-control" type="number" name="prioridad" value=1 min=1>
+							<div class="form-group row">
+								<div class="col">
+									<label for="descripcion">Descripcion</label>
+									<textarea class="form-control" name="descripcion" placeholder="Descripcion"></textarea>
+								</div>
 							</div>
-						</div>
-						<hr>
-						<h3>Informacion de contacto</h3>
-						<div class="form-group row">
-							<div class="col">
-								<label for="facebook">Facebook</label>
-								<input class="form-control" type="text" name="facebook">
+							<div class="form-group row">
+								<div class="col">
+									<Label>Imagen de perfil</Label>
+									<div class="custom-file">
+										<input type="file" name="image" class="custom-file-input" id="imageInput" required>
+										<label class="custom-file-label" for="imageInput">Escoger imagen (Menor a 500kb)</label>
+									</div>
+								</div>
+								<div class="col">
+									<label for="prioridad">Prioridad</label>
+									<input class="form-control" type="number" name="prioridad" value=1 min=1>
+								</div>
 							</div>
-							<div class="col">
-								<label for="instagram">Instagram</label>
-								<input class="form-control" type="text" name="instagram">
+							<hr>
+							<h3>Informacion de contacto</h3>
+							<div class="form-group row">
+								<div class="col">
+									<label for="facebook">Facebook</label>
+									<input class="form-control" type="text" name="facebook">
+								</div>
+								<div class="col">
+									<label for="instagram">Instagram</label>
+									<input class="form-control" type="text" name="instagram">
+								</div>
 							</div>
-						</div>
-						<div class="form-group row">
-							<div class="col">
-								<label for="correo">Correo electrónico</label>
-								<input class="form-control" type="email" name="correo">
+							<div class="form-group row">
+								<div class="col">
+									<label for="correo">Correo electrónico</label>
+									<input class="form-control" type="email" name="correo">
+								</div>
+								<div class="col">
+									<label for="local">Local</label>
+									<input class="form-control" type="text" name="local" required>
+								</div>
 							</div>
-							<div class="col">
-								<label for="local">Local</label>
-								<input class="form-control" type="text" name="local" required>
+							<div class="form-group row">
+								<div class="col">
+									<label for="telefono1">Telefono 1</label>
+									<input class="form-control" type="text" name="telefono1" required>
+								</div>
+								<div class="col">
+									<label for="telefono2">Telefono 2</label>
+									<input class="form-control" type="text" name="telefono2">
+								</div>
 							</div>
-						</div>
-						<div class="form-group row">
-							<div class="col">
-								<label for="telefono1">Telefono 1</label>
-								<input class="form-control" type="text" name="telefono1" required>
-							</div>
-							<div class="col">
-								<label for="telefono2">Telefono 2</label>
-								<input class="form-control" type="text" name="telefono2">
-							</div>
-						</div>
-						<hr>
-						<h3>Estudios</h3>
-						
-						<div class="form-group row">
+							<hr>
+							<h3>Estudios</h3>
 
-							<div class="col">
-								<label for="especialidades[]">Especialidades</label>
-								<select class="form-control especialidades-select" name="especialidades[]" multiple="multiple">
-								</select>
+							<div class="form-group row">
+
+								<div class="col">
+									<label for="especialidades[]">Especialidades</label>
+									<select class="form-control especialidades-select" name="especialidades[]" multiple="multiple">
+									</select>
+								</div>
 							</div>
-						</div>
-						<div class="form-group row">
-							<div class="col">
-								<label for="estudios">Estudios Universitarios</label>
-								<textarea class="form-control" name="estudios"></textarea>
+							<div class="form-group row">
+								<div class="col">
+									<label for="estudios">Estudios Universitarios</label>
+									<textarea class="form-control" name="estudios"></textarea>
+								</div>
+								<div class="col">
+									<label for="postgrados">Postgrados</label>
+									<textarea class="form-control" name="postgrados"></textarea>
+								</div>
 							</div>
-							<div class="col">
-								<label for="postgrados">Postgrados</label>
-								<textarea class="form-control" name="postgrados"></textarea>
+							<div class="form-group row">
+								<div class="col">
+									<label for="especializaciones">Especializaciones</label>
+									<textarea class="form-control" name="especializaciones"></textarea>
+								</div>
+								<div class="col">
+									<label for="experiencia">Experiencia</label>
+									<textarea class="form-control" name="experiencia"></textarea>
+								</div>
 							</div>
-						</div>
-						<div class="form-group row">
-							<div class="col">
-								<label for="especializaciones">Especializaciones</label>
-								<textarea class="form-control" name="especializaciones"></textarea>
+							<div class="form-group row">
+								<div class="col">
+									<label for="exp_num">Años de experiencia</label>
+									<input class="form-control" type="number" name="exp_num" min=1>
+								</div>
 							</div>
-							<div class="col">
-								<label for="experiencia">Experiencia</label>
-								<textarea class="form-control" name="experiencia"></textarea>
+							<hr>
+							<h3>Atención</h3>
+							<div class="form-group row">
+								<div class="col">
+									<label for="horarios">Horarios</label>
+									<textarea class="form-control" name="horarios"></textarea>
+								</div>
+								<div class="col">
+									<label for="pagos">Pagos</label>
+									<textarea class="form-control" name="pagos"></textarea>
+								</div>
 							</div>
-						</div>
-						<div class="form-group row">
-							<div class="col">
-								<label for="exp_num">Años de experiencia</label>
-								<input class="form-control" type="number" name="exp_num" min=1>
+							<div class="form-group row">
+								<div class="col">
+									<label for="seguros[]">Seguros</label>
+									<select class="form-control seguros-select" name="seguros[]" multiple="multiple">
+									</select>
+								</div>
 							</div>
-						</div>
-						<hr>
-						<h3>Atención</h3>
-						<div class="form-group row">
-							<div class="col">
-								<label for="horarios">Horarios</label>
-								<textarea class="form-control" name="horarios"></textarea>
+							<div class="form-group text-center">
+								<input type="submit" name="create-submit" value="Crear" class="btn btn-success">
 							</div>
-							<div class="col">
-								<label for="pagos">Pagos</label>
-								<textarea class="form-control" name="pagos"></textarea>
-							</div>
-						</div>
-						<div class="form-group row">
-							<div class="col">
-								<label for="seguros[]">Seguros</label>
-								<select class="form-control seguros-select" name="seguros[]" multiple="multiple">
-								</select>
-							</div>
-						</div>
-						<div class="form-group text-center">
-							<input type="submit" name="create-submit" value="Crear" class="btn btn-success">
-						</div>
-					</form>
+						</form>
+					</div>
+
 				</div>
-
 			</div>
 		</div>
-	</div>
+	</main>
 	<?php include "../../components/footer.php" ?>
 	<script type="text/javascript" src="/js/jquery.min.js"></script>
 	<!-- Bootstrap core JavaScript -->
