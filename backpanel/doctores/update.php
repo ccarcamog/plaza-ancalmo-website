@@ -265,7 +265,7 @@ $especialidades_json = json_encode($especialidades);
 								</div>
 								<div class="col">
 									<label for="local">Local</label>
-									<input class="form-control" type="number" min=1 name="local" value="<?= $doctor['doc_doctor_local'] ?>" required>
+									<input class="form-control" type="text" name="local" value="<?= $doctor['doc_doctor_local'] ?>" required>
 								</div>
 							</div>
 							<div class="form-group row">
@@ -385,11 +385,27 @@ $especialidades_json = json_encode($especialidades);
 			console.log(seguros_json);
 			$('.especialidades-select').select2({
 				placeholder: "Seleccione las especialidades",
-				data: especialidades_json
+				data: especialidades_json,
+				language: {
+					noResults: function() {
+						return "¿Especialidad no encontrada? <a href='/backpanel/especialidades'>Pruebe crearla aqui</a>";
+					}
+				},
+				escapeMarkup: function(markup) {
+					return markup;
+				}
 			});
 			$('.seguros-select').select2({
 				placeholder: "Seleccione los seguros",
-				data: seguros_json
+				data: seguros_json,
+				language: {
+					noResults: function() {
+						return "¿Red de seguros no encontrada? <a href='/backpanel/seguros'>Pruebe crearla aqui</a>";
+					}
+				},
+				escapeMarkup: function(markup) {
+					return markup;
+				}
 			});
 		});
 	</script>
