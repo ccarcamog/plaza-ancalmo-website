@@ -322,8 +322,22 @@ $especialidades_json = json_encode($especialidades);
 		$('#imageInput').on('change', function() {
 			var filepath = $(this).val();
 			var fileNameIndex = Math.max(filepath.lastIndexOf("\\") + 1, filepath.lastIndexOf("/") + 1);
-			
 			var filename = filepath.substr(fileNameIndex);
+
+			var fileTypeIndex = filepath.lastIndexOf('.') +1;
+			var fileType = filepath.substr(fileTypeIndex);
+
+			if(fileType != 'png' && fileType != 'jpg' && fileType != 'jpeg'){
+				alert("Solo formatos de imagenes son permitidos.");
+				$(this).val('');
+				return;
+			}
+
+			if(this.files[0].size/1024 > 500){
+				alert("La imagen debe ser menor a 500kb.");
+				$(this).val('');
+				return;
+			}
 
 			$(this).next('.custom-file-label').html(filename);
 		});
