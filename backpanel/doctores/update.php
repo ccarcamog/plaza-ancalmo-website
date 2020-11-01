@@ -79,7 +79,7 @@ if (isset($_POST['update-submit'])) {
 			header("Location: ?id=" . $id . "&error=true&message=El tipo de imagen es incorrecto");
 			exit();
 		}
-		if ($_FILES['image']['size'] > 400000) {
+		if ($_FILES['image']['size'] > 500000) {
 			header("Location: ?id=" . $id . "&error=true&message=Peso de la imagen excedido");
 			exit();
 		}
@@ -120,7 +120,7 @@ if (isset($_POST['update-submit'])) {
 
 	$db->query($sql, $galeria_nombre, $galeria_id);
 
-	header("Location: index.php?success=true&message=El doctor ha sido actualizado con exito");
+	header("Location: index.php?success=update&nombre=" . $nombre . "&galeria=" . $galeria_id);
 	exit();
 }
 
@@ -202,7 +202,7 @@ $especialidades_json = json_encode($especialidades);
 
 							<h3>Información personal</h3>
 							<div class="form-group row">
-								<div class="col">
+								<div class="col d-none">
 									<label for="id">Id</label>
 									<input class="form-control" type="number" name="id" value="<?= $doctor['doc_doctores_key'] ?>" readonly>
 								</div>
@@ -333,7 +333,7 @@ $especialidades_json = json_encode($especialidades);
 									<select class="form-control seguros-select" name="seguros[]" multiple="multiple">
 									</select>
 								</div>
-								<div class="col">
+								<div class="col d-none">
 									<label for="galeria">Galeria id</label>
 									<input class="form-control" type="number" name="galeria" value="<?= $doctor['doc_doctor_galeria'] ?>" readonly>
 								</div>
@@ -355,8 +355,25 @@ $especialidades_json = json_encode($especialidades);
 	<script type="text/javascript" src="/js/select2.min.js"></script>
 	<script type="text/javascript">
 		$('#imageInput').on('change', function() {
-			var filename = $(this).val();
-			// alert(filename);
+			var filepath = $(this).val();
+			var fileNameIndex = Math.max(filepath.lastIndexOf("\\") + 1, filepath.lastIndexOf("/") + 1);
+			var filename = filepath.substr(fileNameIndex);
+
+			var fileTypeIndex = filepath.lastIndexOf('.') + 1;
+			var fileType = filepath.substr(fileTypeIndex).toLowerCase();
+
+			if (fileType != 'png' && fileType != 'jpg' && fileType != 'jpeg') {
+				alert("Solo formatos de imagenes son permitidos.");
+				$(this).val('');
+				return;
+			}
+
+			if (this.files[0].size / 1024 > 500) {
+				alert("La imagen debe ser menor a 500kb.");
+				$(this).val('');
+				return;
+			}
+
 			$(this).next('.custom-file-label').html(filename);
 		});
 

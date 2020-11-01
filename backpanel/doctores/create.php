@@ -108,7 +108,7 @@ if (isset($_POST['create-submit'])) {
 
 
 
-	header("Location: index.php?success=true&nombre=".$nombre."&galeria=".$galeria_id);
+	header("Location: index.php?success=creation&nombre=".$nombre."&galeria=".$galeria_id);
 	exit();
 }
 
@@ -325,7 +325,7 @@ $especialidades_json = json_encode($especialidades);
 			var filename = filepath.substr(fileNameIndex);
 
 			var fileTypeIndex = filepath.lastIndexOf('.') +1;
-			var fileType = filepath.substr(fileTypeIndex);
+			var fileType = filepath.substr(fileTypeIndex).toLowerCase();
 
 			if(fileType != 'png' && fileType != 'jpg' && fileType != 'jpeg'){
 				alert("Solo formatos de imagenes son permitidos.");

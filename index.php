@@ -94,7 +94,7 @@
 					<div class="service col-md-4  text-center text-white">
 						<img class="svg-inverted" src="/img/svg/noun_Pharmacy_3125931.svg" alt="farmacia icon" width="80">
 						<h3>Farmacia</h3>
-						<p>Equipada con productos de calidad/</p>
+						<p>Equipada con productos de calidad</p>
 					</div>
 					<div class="service col-md-4  text-center text-white">
 						<img class="svg-inverted" src="/img/svg/ginecologia.svg" alt="ginecologia icon" width="80">
