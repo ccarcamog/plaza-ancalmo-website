@@ -115,12 +115,12 @@ if (isset($_POST['update-submit'])) {
 		$db->query($sql, $id, $especialidad);
 	}
 
-	$galeria_nombre = "Galeria de " . $nombre;
+	$galeria_nombre = "Galeria de " .(($genero == 'M')?"Dr. ":"Dra. ").$nombre;
 	$sql = "UPDATE galeria SET galeria_nombre=? WHERE galeria_key=?";
 
 	$db->query($sql, $galeria_nombre, $galeria_id);
 
-	header("Location: index.php?success=update&nombre=" . $nombre . "&galeria=" . $galeria_id);
+	header("Location: index.php?success=update&nombre=" . $nombre . "&galeria=" . $galeria_id."&genero=".$genero);
 	exit();
 }
 

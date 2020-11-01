@@ -78,7 +78,7 @@
 				</div>
 				<div class=" col-sm-8 doctor-text">
 					<a href="/especialidades/doctor/?id=<?= $doctor['doc_doctores_key']?>" class="doctor-title d-inline">
-						<h3 class="m-0"><?=$doctor['doc_doctor_nombre']?></h3>
+						<h3 class="m-0"><?= ($doctor['doc_doctores_genero'] == 'M')?"Dr.":"Dra."?> <?=$doctor['doc_doctor_nombre']?></h3>
 						<h4 class="text-muted ml-md-3">
 							<?php if($doctor['doc_doctor_genero'] == 'M'){ 
 								echo $especialidad['doc_especialidades_nombre_mas'];

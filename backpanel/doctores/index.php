@@ -35,7 +35,7 @@
 					?>
 
 						<div class="alert alert-success w-100 alert-dismissible fade show" role="alert">
-							<?= $_GET['nombre']?> ha sido añadido con éxito. <a href="/backpanel/galeria/?id=<?=$_GET['galeria']?>">Ir a la galeria</a>
+						<?= ($_GET['genero'] == 'M')?"Dr.":"Dra."?> <?= $_GET['nombre']?> ha sido añadido con éxito. <a href="/backpanel/galeria/?id=<?=$_GET['galeria']?>">Ir a la galeria</a>
 							<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 								<span aria-hidden="true">&times;</span>
 							</button>
@@ -47,7 +47,7 @@
 
 					?>
 						<div class="alert alert-success w-100 alert-dismissible fade show" role="alert">
-							Informacion de <?= $_GET['nombre']?> ha sido actualizada con éxito.</a>
+							Informacion de <?= ($_GET['genero'] == 'M')?"Dr.":"Dra."?> <?= $_GET['nombre']?> ha sido actualizada con éxito.</a>
 							<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 								<span aria-hidden="true">&times;</span>
 							</button>
@@ -89,7 +89,7 @@
 								?>
 									<tr id="row-<?= $doctor['doc_doctores_key'] ?>" data-id="<?= $doctor['doc_doctores_key'] ?>">
 										<th scope="row"><?= $count++ ?></th>
-										<td><?= $doctor['doc_doctor_nombre'] ?></td>
+										<td><?= ($doctor['doc_doctores_genero'] == 'M')?"Dr.":"Dra."?> <?= $doctor['doc_doctor_nombre'] ?></td>
 										<td>
 											<a class="btn btn-info galeria-btn" href="/backpanel/galeria/?id=<?= $doctor['doc_doctor_galeria'] ?>">Ir a galeria</a>
 
@@ -247,7 +247,9 @@
 											</div>
 											<div role="tabpanel" class="tab-pane fade" id="galeria" role="tabpanel" aria-labelledby="galeria-tab">
 												<div class="container-fluid">
-
+												<center>
+													<h4 id="galeria_nombre"></h4>
+												</center>
 													<div id="gallery" class="simplegallery">
 														<div class="content text-center">
 
@@ -318,7 +320,7 @@
 				success: function(response) {
 					console.log(response);
 
-					$('.doctor_nombre').html(response['doc_doctor_nombre']);
+					$('.doctor_nombre').html(((response['doc_doctores_genero']=='M')?'Dr. ':'Dra. ') + response['doc_doctor_nombre']);
 					$('.doctor_especialidad').html(response['especialidades'].join(", "));
 					$('.doctor_img').attr("src", "/backpanel/doctores/" + response['doc_doctor_img']);
 					$('.doctor_descripcion').html(response['doc_doctor_desc']);
@@ -363,6 +365,8 @@
 
 					var galeria_nombre = response['galeria']['galeria_nombre'];
 					var galeria = response['galeria_img'];
+
+					$('#galeria_nombre').html(galeria_nombre);
 
 					$('.carousel-inner').html('');
 					for (var i = 0; i < galeria.length; i++) {

@@ -80,7 +80,7 @@ if (isset($_POST['create-submit'])) {
 	$sql = "UPDATE doc_doctores SET doc_doctor_img=? WHERE doc_doctores_key=?";
 	$db->query($sql, $target_file, $id);
 
-	$galeria_nombre = "Galeria de " . $nombre;
+	$galeria_nombre = "Galeria de " .(($genero == 'M')?"Dr. ":"Dra. ").$nombre;
 	$sql = "INSERT INTO galeria (galeria_nombre) VALUES (?)";
 
 	$db->query($sql, $galeria_nombre);
@@ -108,7 +108,7 @@ if (isset($_POST['create-submit'])) {
 
 
 
-	header("Location: index.php?success=creation&nombre=".$nombre."&galeria=".$galeria_id);
+	header("Location: index.php?success=creation&nombre=".$nombre."&galeria=".$galeria_id."&genero=".$genero);
 	exit();
 }
 

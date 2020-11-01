@@ -66,7 +66,7 @@ $redes = $db->query($sql, $id)->fetchAll();
 			</div>
 			<div class="col-sm-4 doctor-title">
 				<div class="">
-					<h3 class="m-0"><?= $doctor['doc_doctor_nombre'] ?></h3>
+					<h3 class="m-0"><?= ($doctor['doc_doctores_genero'] == 'M')?"Dr.":"Dra."?> <?= $doctor['doc_doctor_nombre'] ?></h3>
 					<h4 class="text-muted"><?= $especialidades_txt ?></h4>
 				</div>
 
@@ -102,7 +102,7 @@ $redes = $db->query($sql, $id)->fetchAll();
 		<div class="tab-content mt-5" id="myTabContent">
 			<div role="tabpanel" class="tab-pane fade show active" id="resumen" role="tabpanel" aria-labelledby="resumen-tab">
 				<div class="container-fluid">
-					<h4><?= $doctor['doc_doctor_nombre'] ?></h4>
+					<h4><?= ($doctor['doc_doctores_genero'] == 'M')?"Dr.":"Dra."?> <?= $doctor['doc_doctor_nombre'] ?></h4>
 					<hr>
 					<div class="row">
 						<div class="col-md-8">
