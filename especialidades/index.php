@@ -24,30 +24,56 @@
 
 	<?php include "../components/navbar.php" ?>
 
-	<?php 
+	<?php
 
-		$db = new db($dbHost, $dbUID, $dbPWD, $dbName);
+	$db = new db($dbHost, $dbUID, $dbPWD, $dbName);
 
-		$especialidad = array(
-			'doc_especialidades_nombre' => 'Todos'
-		);
+	$especialidad = array(
+		'doc_especialidades_nombre' => 'Todos'
+	);
 
-		$sql = "SELECT * FROM doc_doctores ORDER BY doc_doctor_prioridad DESC";
+	$sql = "SELECT * FROM doc_doctores ORDER BY doc_doctor_prioridad DESC";
 
-		if(isset($_GET['especialidad'])){
+	if (isset($_GET['especialidad'])) {
+
+		$id = $_GET['especialidad'];
+
+		$sql = "SELECT * FROM doc_especialidades WHERE doc_especialidades_key=?";
+
+		$especialidad = $db->query($sql, $id)->fetchArray();
+
+		$sql = "SELECT d.* FROM doc_doctores d INNER JOIN doc_doctores_especialidades de ON d.doc_doctores_key=de.doc_doctores_key WHERE de.doc_especialidades_key=? ORDER BY d.doc_doctor_prioridad DESC";
+	}
+
+	$doctores = $db->query($sql, $id)->fetchAll();
+
+	$sql = "SELECT e.* FROM doc_especialidades e INNER JOIN doc_doctores_especialidades de ON de.doc_especialidades_key=e.doc_especialidades_key WHERE de.doc_doctores_key=?";
+
+	if (!isset($_GET['especialidad'])) {
+
+		foreach ($doctores as &$doctor) {
+
+			$doctor_especialidades = $db->query($sql, $doctor['doc_doctores_key'])->fetchAll();
 			
-			$id = $_GET['especialidad'];
-		
-			$sql = "SELECT * FROM doc_especialidades WHERE doc_especialidades_key=?";
-
-			$especialidad = $db->query($sql, $id)->fetchArray();	
-
-			$sql = "SELECT d.* FROM doc_doctores d INNER JOIN doc_doctores_especialidades de ON d.doc_doctores_key=de.doc_doctores_key WHERE de.doc_especialidades_key=? ORDER BY d.doc_doctor_prioridad DESC";
+			$especialidades_array = array();
 			
+			if ($doctor['doc_doctores_genero'] == 'M') {
+				foreach ($doctor_especialidades as $especialidad) {
+					$especialidades_array[] = $especialidad['doc_especialidades_nombre_mas'];
+				}
+			} else {
+				foreach ($especialidades as $especialidad) {
+					$especialidades_array[] = $especialidad['doc_especialidades_nombre_fem'];
+				}
+			}
+			
+			$especialidades_txt = implode(", ", $especialidades_array);
+			
+			$doctor['doc_especialidades'] = $especialidades_txt;
+			echo $doctor['doc_especialidades']."\n";
 		}
-		
-		$doctores = $db->query($sql, $id)->fetchAll();
-	
+	}
+
 	?>
 
 	<div class="container-fluid" id="especialidadTitle">
@@ -58,7 +84,7 @@
 
 	<div class="container p-md-4 mt-3" id="especialidad info">
 		<div>
-			<h2><?=$especialidad['doc_especialidades_nombre']?></h2>
+			<h2><?= $especialidad['doc_especialidades_nombre'] ?></h2>
 			<p class="text-muted">Contamos con los mejores especialistas para cuidar de ti y de tu familia</p>
 		</div>
 	</div>
@@ -68,22 +94,26 @@
 
 	<div class="container" id="listaDoctores">
 		<?php
-		foreach($doctores as $doctor) {
+		foreach ($doctores as $doctor) {
 
 		?>
 
 			<div class="row doctor">
 				<div class="col-sm-4 doctor-image mb-3">
-					<img src="/backpanel/doctores/<?= $doctor['doc_doctor_img']?>" alt="doctor profile pic">
+					<img src="/backpanel/doctores/<?= $doctor['doc_doctor_img'] ?>" alt="doctor profile pic">
 				</div>
 				<div class=" col-sm-8 doctor-text">
-					<a href="/especialidades/doctor/?id=<?= $doctor['doc_doctores_key']?>" class="doctor-title d-inline">
-						<h3 class="m-0"><?= ($doctor['doc_doctores_genero'] == 'M')?"Dr.":"Dra."?> <?=$doctor['doc_doctor_nombre']?></h3>
+					<a href="/especialidades/doctor/?id=<?= $doctor['doc_doctores_key'] ?>" class="doctor-title d-inline">
+						<h3 class="m-0"><?= ($doctor['doc_doctores_genero'] == 'M') ? "Dr." : "Dra." ?> <?= $doctor['doc_doctor_nombre'] ?></h3>
 						<h4 class="text-muted ml-md-3">
-							<?php if($doctor['doc_doctor_genero'] == 'M'){ 
-								echo $especialidad['doc_especialidades_nombre_mas'];
-							}else{
-								echo $especialidad['doc_especialidades_nombre_fem'];	
+							<?php if (isset($_GET['especialidad'])) {
+								if($doctor['doc_doctores_genero'] == 'M'){
+									echo $especialidad['doc_especialidades_nombre_mas'];
+								}else{
+									echo $especialidad['doc_especialidades_nombre_fem'];
+								}
+							} else{
+								echo ($doctor['doc_especialidades']);
 							}
 							?>
 						</h4>
@@ -91,8 +121,8 @@
 					<hr>
 					<p>Contacto: <br>
 						<?= $doctor['doc_doctor_email'] ?><br>
-						<?= $doctor['doc_doctor_tel_1']?><br>
-						<?= $doctor['doc_doctor_tel_2']?>
+						<?= $doctor['doc_doctor_tel_1'] ?><br>
+						<?= $doctor['doc_doctor_tel_2'] ?>
 					</p>
 				</div>
 			</div>
