@@ -44,7 +44,7 @@
 }
 
 #introTexto h2 {
-	font-family: 'Sansita Swashed';
+	font-family: 'Gotham';
 	color: #4bb7bc;
 }
 
@@ -98,13 +98,13 @@
 }
 
 #bancoAmigoTitle h3 {
-	font-family: 'Sansita Swashed';
+	font-family: 'Gotham';
 	color: #4bb7bc;
 }
 
 /* DOMICILIO --------------------------------------------------------------- */
 #domicilioInfo h2 {
-	font-family: 'Sansita Swashed';
+	font-family: 'Gotham';
 	color: #4bb7bc;
 
 }
@@ -190,7 +190,7 @@
 }
 
 #hugoTexto h3 {
-	font-family: 'Sansita Swashed';
+	font-family: 'Gotham';
 	color: #4bb7bc;
 }
 
@@ -201,7 +201,7 @@
 
 /* CAROUSEL MARCAS ------------------------------------------------------*/
 #marcasCarousel h3 {
-	font-family: 'Sansita Swashed';
+	font-family: 'Gotham';
 	color: #4bb7bc;
 }
 
@@ -237,7 +237,7 @@
 
 
 #farmaciaGaleria h3 {
-	font-family: 'Sansita Swashed';
+	font-family: 'Gotham';
 	color: #4bb7bc;
 	padding: 0;
 }
