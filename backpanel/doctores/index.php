@@ -323,15 +323,19 @@
 					$('.doctor_nombre').html(((response['doc_doctores_genero']=='M')?'Dr. ':'Dra. ') + response['doc_doctor_nombre']);
 					$('.doctor_especialidad').html(response['especialidades'].join(", "));
 					$('.doctor_img').attr("src", "/backpanel/doctores/" + response['doc_doctor_img']);
-					$('.doctor_descripcion').html(response['doc_doctor_desc']);
-					$('.doctor_especialidades').html(response['doc_doctor_especializaciones']);
-					$('.doctor_horarios').html(response['doc_doctor_horarios']);
-					$('.doctor_pagos').html(response['doc_doctor_pagos']);
-					$('.doctor_local').html(response['doc_doctor_local']);
-					$('.doctor_exp_num').html(response['doc_doctor_exp_num']);
+					$('.doctor_descripcion').html(response['doc_doctor_desc']?response['doc_doctor_desc']:"Completa esta información para que aparezca en el perfil.");
+					$('.doctor_especialidades').html(response['doc_doctor_especializaciones']?response['doc_doctor_especializaciones']:"Completa esta información para que aparezca en el perfil.");
+					$('.doctor_horarios').html(response['doc_doctor_horarios']?response['doc_doctor_horarios']:"Completa esta información para que aparezca en el perfil.");
+					$('.doctor_pagos').html(response['doc_doctor_pagos']?response['doc_doctor_pagos']:"Completa esta información para que aparezca en el perfil.");
+					$('.doctor_local').html(response['doc_doctor_local']?response['doc_doctor_local']:"Completa esta información para que aparezca en el perfil.");
+					$('.doctor_exp_num').html(response['doc_doctor_exp_num']?response['doc_doctor_tel_1']:"Completa esta información para que aparezca en el perfil.");
 					$('.doctor_seguros').html('');
 
 					$('.doctor-seguros-card').html('');
+					if(response['seguros'].length == 0){
+						$('.doctor_seguros').append('<li>Completa esta información para que aparezca en el perfil.</li>');
+						$('.doctor-seguros-card').html('Completa esta información para que aparezca en el perfil.');
+					}
 					for (var i = 0; i < response['seguros'].length; i++) {
 						$('.doctor_seguros').append('<li>' + response['seguros'][i]['doc_redes_seguros_nombre'] + '</li>');
 
@@ -352,29 +356,38 @@
 						$('.doctor-seguros-card').append($(html));
 
 					}
-					$('.doctor_telefono_1').html(response['doc_doctor_tel_1']);
-					$('.doctor_telefono_2').html(response['doc_doctor_tel_2']);
-					$('.doctor_correo').html(response['doc_doctor_email']);
-					$('.doctor_facebook').html(response['doc_doctor_fb']);
-					$('.doctor_estudios').html(response['doc_doctor_estudios']);
-					$('.doctor_postgrados').html(response['doc_doctor_postgrados']);
-					$('.doctor_especializaciones').html(response['doc_doctor_especializaciones']);
-					$('.doctor_experiencia').html(response['doc_doctor_exp']);
+					$('.doctor_telefono_1').html(response['doc_doctor_tel_1']?response['doc_doctor_tel_1']:"Completa esta información para que aparezca en el perfil.");
+					$('.doctor_telefono_2').html(response['doc_doctor_tel_2']?response['doc_doctor_tel_2']:"Completa esta información para que aparezca en el perfil.");
+					$('.doctor_correo').html(response['doc_doctor_email']?response['doc_doctor_email']:"Completa esta información para que aparezca en el perfil.");
+					$('.doctor_facebook').html(response['doc_doctor_fb']?response['doc_doctor_fb']:"Completa esta información para que aparezca en el perfil.");
+					$('.doctor_instagram').html(response['doc_doctor_ig']?response['doc_doctor_ig']:"Completa esta información para que aparezca en el perfil.");
+					$('.doctor_estudios').html(response['doc_doctor_estudios']?response['doc_doctor_estudios']:"Completa esta información para que aparezca en el perfil.");
+					$('.doctor_postgrados').html(response['doc_doctor_postgrados']?response['doc_doctor_postgrados']:"Completa esta información para que aparezca en el perfil.");
+					$('.doctor_especializaciones').html(response['doc_doctor_especializaciones']?response['doc_doctor_especializaciones']:"Completa esta información para que aparezca en el perfil.");
+					$('.doctor_experiencia').html(response['doc_doctor_exp']?response['doc_doctor_exp']:"Completa esta información para que aparezca en el perfil.");
 
 					console.log(response['galeria']);
 
 					var galeria_nombre = response['galeria']['galeria_nombre'];
+					var galeria_id = response['galeria']['galeria_key'];
 					var galeria = response['galeria_img'];
 
 					$('#galeria_nombre').html(galeria_nombre);
 
 					$('.carousel-inner').html('');
+					if(galeria.length == 0){
+						var html = '<div class="carousel-item active">';
+						html += '<p class="mt-5">Agrega imagenes a la galeria <a href="/backpanel/galeria/?id=' + galeria_id + '" target="_blank">aquí</a></p>'
+						html += '</div>'
+						$('.carousel-inner').append(html);
+					}
+					$('.carousel-inner').append(html);
 					for (var i = 0; i < galeria.length; i++) {
 
 						if (!i) var html = '<div class="carousel-item active">';
 						else var html = '<div class="carousel-item">';
 						html += '	<img src="/backpanel/galeria/' + galeria[i]['galeria_img_url'] + '" class="w-75 image_' + (i + 1) + '" />'
-						html += '	<p class="caption caption_' + (i + 1) + '"><strong>' + galeria[i]['galeria_img_nombre'] + '</strong><br>' + galeria[i]['galeria_img_caption'] + '</p>'
+						html += '	<p class="caption caption_' + (i + 1) + '"><strong>' + galeria[i]['galeria_img_nombre'] + '</strong><br>' + (galeria[i]['galeria_img_caption']?galeria[i]['galeria_img_caption']:("Agrega una descripcion <a href='/backpanel/galeria/?id=" + galeria_id + "' target='_blank'> aquí </a>"))+ '</p>'
 						html += '</div>'
 
 						$('.carousel-inner').append(html);
