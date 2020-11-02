@@ -34,45 +34,46 @@
 
 	$sql = "SELECT * FROM doc_doctores ORDER BY doc_doctor_prioridad DESC";
 
+	
 	if (isset($_GET['especialidad'])) {
 
 		$id = $_GET['especialidad'];
-
+		
 		$sql = "SELECT * FROM doc_especialidades WHERE doc_especialidades_key=?";
-
+		
 		$especialidad = $db->query($sql, $id)->fetchArray();
-
+		
 		$sql = "SELECT d.* FROM doc_doctores d INNER JOIN doc_doctores_especialidades de ON d.doc_doctores_key=de.doc_doctores_key WHERE de.doc_especialidades_key=? ORDER BY d.doc_doctor_prioridad DESC";
 	}
-
+	
 	$doctores = $db->query($sql, $id)->fetchAll();
 
-	$sql = "SELECT e.* FROM doc_especialidades e INNER JOIN doc_doctores_especialidades de ON de.doc_especialidades_key=e.doc_especialidades_key WHERE de.doc_doctores_key=?";
-
+	
 	if (!isset($_GET['especialidad'])) {
+		
+		$sql = "SELECT e.* FROM doc_especialidades e INNER JOIN doc_doctores_especialidades de ON de.doc_especialidades_key=e.doc_especialidades_key WHERE de.doc_doctores_key=?";
+		foreach ($doctores as &$doctor_i) {
 
-		foreach ($doctores as &$doctor) {
-
-			$doctor_especialidades = $db->query($sql, $doctor['doc_doctores_key'])->fetchAll();
+			$doctor_especialidades = $db->query($sql, $doctor_i['doc_doctores_key'])->fetchAll();
 			
 			$especialidades_array = array();
 			
-			if ($doctor['doc_doctores_genero'] == 'M') {
-				foreach ($doctor_especialidades as $especialidad) {
-					$especialidades_array[] = $especialidad['doc_especialidades_nombre_mas'];
+			if ($doctor_i['doc_doctores_genero'] == 'M') {
+				foreach ($doctor_especialidades as $especialidad_doc) {
+					$especialidades_array[] = $especialidad_doc['doc_especialidades_nombre_mas'];
 				}
 			} else {
-				foreach ($especialidades as $especialidad) {
-					$especialidades_array[] = $especialidad['doc_especialidades_nombre_fem'];
+				foreach ($especialidades as $especialidad_doc) {
+					$especialidades_array[] = $especialidad_doc['doc_especialidades_nombre_fem'];
 				}
 			}
 			
 			$especialidades_txt = implode(", ", $especialidades_array);
 			
-			$doctor['doc_especialidades'] = $especialidades_txt;
-			echo $doctor['doc_especialidades']."\n";
+			$doctor_i['doc_especialidades'] = $especialidades_txt;
+			
 		}
-	}
+	}	
 
 	?>
 
@@ -94,8 +95,13 @@
 
 	<div class="container" id="listaDoctores">
 		<?php
-		foreach ($doctores as $doctor) {
+		for ($i = 0; $i < count($doctores); $i++) {
 
+			// echo json_encode($doctores);
+			
+			// echo json_encode($doctores[$i]);
+			$doctor = $doctores[$i];
+		
 		?>
 
 			<div class="row doctor">

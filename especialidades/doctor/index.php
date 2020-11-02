@@ -35,6 +35,14 @@ $especialidades_txt = implode(", ", $especialidades_array);
 $sql = "SELECT s.* FROM doc_redes_seguros s INNER JOIN doc_doctores_redes_seguros ds ON s.doc_redes_seguros_key=ds.doc_redes_seguros_key WHERE ds.doc_doctores_key=?";
 $redes = $db->query($sql, $id)->fetchAll();
 
+$galeria_id = $doctor['doc_doctor_galeria'];
+
+$sql = "SELECT * FROM galeria WHERE galeria_key=?";
+$galeria = $db->query($sql, $galeria_id)->fetchArray();
+
+$sql = "SELECT * FROM galeria_img WHERE galeria_img_galeria_key=? ORDER BY galeria_img_orden ASC";
+$galeria_imgs = $db->query($sql, $galeria_id)->fetchAll();
+
 ?>
 
 <head>
@@ -66,7 +74,7 @@ $redes = $db->query($sql, $id)->fetchAll();
 			</div>
 			<div class="col-sm-4 doctor-title">
 				<div class="">
-					<h3 class="m-0"><?= ($doctor['doc_doctores_genero'] == 'M')?"Dr.":"Dra."?> <?= $doctor['doc_doctor_nombre'] ?></h3>
+					<h3 class="m-0"><?= ($doctor['doc_doctores_genero'] == 'M') ? "Dr." : "Dra." ?> <?= $doctor['doc_doctor_nombre'] ?></h3>
 					<h4 class="text-muted"><?= $especialidades_txt ?></h4>
 				</div>
 
@@ -82,54 +90,85 @@ $redes = $db->query($sql, $id)->fetchAll();
 					Agendar consulta
 				</a>
 			</li>
-			<li role="presentation" class="nav-item active">
-				<a class="nav-link active" id="resumen-tab" data-toggle="tab" href="#resumen" role="tab" aria-controls="resumen" aria-selected="true">Resumen</a>
-			</li>
-			<li role="presentation" class="nav-item">
-				<a class="nav-link" id="seguro-tab" data-toggle="tab" href="#seguro" role="tab" aria-controls="seguro" aria-selected="false">Redes de seguros</a>
-			</li>
-			<li role="presentation" class="nav-item">
-				<a class="nav-link" id="contacto-tab" data-toggle="tab" href="#contacto" role="tab" aria-controls="contacto" aria-selected="false">Contacto</a>
-			</li>
-			<li role="presentation" class="nav-item">
-				<a class="nav-link" id="experiencia-tab" data-toggle="tab" href="#experiencia" role="tab" aria-controls="experiencia" aria-selected="false">Experiencia</a>
-			</li>
-			<li role="presentation" class="nav-item">
-				<a class="nav-link" id="galeria-tab" data-toggle="tab" href="#galeria" role="tab" aria-controls="galeria" aria-selected="false">Galeria</a>
-			</li>
+			<?php if ($doctor['doc_doctor_desc'] || $doctor['doc_doctor_especializaciones'] || $doctor['doc_doctor_horarios'] || count($redes) > 0 || $doctor['doc_doctor_pagos'] || $doctor['doc_doctor_local'] || $doctor['doc_doctor_exp_num']) { ?>
+
+				<li role="presentation" class="nav-item active">
+					<a class="nav-link active" id="resumen-tab" data-toggle="tab" href="#resumen" role="tab" aria-controls="resumen" aria-selected="true">Resumen</a>
+				</li>
+
+			<?php } ?>
+			<?php if (count($redes)) { ?>
+				<li role="presentation" class="nav-item">
+					<a class="nav-link" id="seguro-tab" data-toggle="tab" href="#seguro" role="tab" aria-controls="seguro" aria-selected="false">Redes de seguros</a>
+				</li>
+			<?php } ?>
+			<?php if ($doctor['doc_doctor_tel_1'] || $doctor['doc_doctor_tel_2'] || $doctor['doc_doctor_email'] || $doctor['doc_doctor_fb'] || $doctor['doc_doctor_ig']) { ?>
+				<li role="presentation" class="nav-item">
+					<a class="nav-link" id="contacto-tab" data-toggle="tab" href="#contacto" role="tab" aria-controls="contacto" aria-selected="false">Contacto</a>
+				</li>
+			<?php } ?>
+			<?php if($doctor['doc_doctor_estudios'] || $doctor['doc_doctor_postgrados'] || $doctor['doc_doctor_especializaciones'] || $doctor['doc_doctor_exp']){ ?>			
+				<li role="presentation" class="nav-item">
+					<a class="nav-link" id="experiencia-tab" data-toggle="tab" href="#experiencia" role="tab" aria-controls="experiencia" aria-selected="false">Experiencia</a>
+				</li>
+			<?php } ?>
+			<?php if(count($galeria_imgs) > 0){ ?>
+				<li role="presentation" class="nav-item">
+					<a class="nav-link" id="galeria-tab" data-toggle="tab" href="#galeria" role="tab" aria-controls="galeria" aria-selected="false">Galeria</a>
+				</li>			
+			<?php } ?>
 
 		</ul>
 		<div class="tab-content mt-5" id="myTabContent">
 			<div role="tabpanel" class="tab-pane fade show active" id="resumen" role="tabpanel" aria-labelledby="resumen-tab">
 				<div class="container-fluid">
-					<h4><?= ($doctor['doc_doctores_genero'] == 'M')?"Dr.":"Dra."?> <?= $doctor['doc_doctor_nombre'] ?></h4>
+					<h4><?= ($doctor['doc_doctores_genero'] == 'M') ? "Dr." : "Dra." ?> <?= $doctor['doc_doctor_nombre'] ?></h4>
 					<hr>
 					<div class="row">
-						<div class="col-md-8">
+						<?php if ($doctor['doc_doctor_desc'] || $doctor['doc_doctor_especializaciones'] || $doctor['doc_doctor_horarios'] || count($redes) > 0 || $doctor['doc_doctor_pagos']) { ?>
+							<div class="col-md-8">
 
-							<p><?= $doctor['doc_doctor_desc'] ?></p>
-							<h5 class="text-muted">Especializaciones</h5>
-							<p><?= $doctor['doc_doctor_especializaciones'] ?></p>
-							<h5 class="text-muted">Horarios de atención</h5>
-							<p><?= $doctor['doc_doctor_horarios'] ?></p>
-							<h5 class="text-muted">Redes de Seguros</h5>
-							<ul>
-								<?php
-								foreach ($redes as $seguro) {
-								?>
-									<li><?= $seguro['doc_redes_seguros_nombre'] ?></li>
-								<?php
-								}
-								?>
-							</ul>
-							<h5 class="text-muted">Formas de pago</h5>
-							<p><?= $doctor['doc_doctor_pagos'] ?></p>
-						</div>
+								<p><?= $doctor['doc_doctor_desc'] ?></p>
+
+								<?php if ($doctor['doc_doctor_especializaciones']) { ?>
+									<h5 class="text-muted">Especializaciones</h5>
+									<p><?= $doctor['doc_doctor_especializaciones'] ?></p>
+								<?php } ?>
+								<?php if ($doctor['doc_doctor_horarios']) { ?>
+									<h5 class="text-muted">Horarios de atención</h5>
+									<p><?= $doctor['doc_doctor_horarios'] ?></p>
+								<?php } ?>
+
+								<?php if (count($redes) > 0) { ?>
+
+
+									<h5 class="text-muted">Redes de Seguros</h5>
+									<ul>
+										<?php
+										foreach ($redes as $seguro) {
+										?>
+											<li><?= $seguro['doc_redes_seguros_nombre'] ?></li>
+										<?php
+										}
+										?>
+									</ul>
+
+								<?php } ?>
+								<?php if ($doctor['doc_doctor_pagos']) { ?>
+									<h5 class="text-muted">Formas de pago</h5>
+									<p><?= $doctor['doc_doctor_pagos'] ?></p>
+								<?php } ?>
+							</div>
+						<?php } ?>
 						<div class="col-md-4">
-							<h5 class="text-muted">Local</h5>
-							<p><?= $doctor['doc_doctor_local'] ?></p>
-							<h5 class="text-muted">Años de experiencia</h5>
-							<p><?= $doctor['doc_doctor_exp_num'] ?></p>
+							<?php if ($doctor['doc_doctor_local']) { ?>
+								<h5 class="text-muted">Local</h5>
+								<p><?= $doctor['doc_doctor_local'] ?></p>
+							<?php } ?>
+							<?php if ($doctor['doc_doctor_exp_num']) { ?>
+								<h5 class="text-muted">Años de experiencia</h5>
+								<p><?= $doctor['doc_doctor_exp_num'] ?></p>
+							<?php } ?>
 						</div>
 					</div>
 				</div>
@@ -137,29 +176,27 @@ $redes = $db->query($sql, $id)->fetchAll();
 			</div>
 			<div role="tabpanel" class="tab-pane fade" id="seguro" role="tabpanel" aria-labelledby="seguro-tab">
 				<div class="container-fluid" id="lista-seguros">
-					<h4>Lista de redes de seguros</h4>
-					<hr>
-					<div class="row">
-						<?php
-						foreach ($redes as $seguro) {
-						?>
-							<div class="col-md-6 p-3">
-								<div class="card text-left">
-									<div class="card-body d-flex align-items-center">
-										<img src="/backpanel/seguros/<?= $seguro['doc_redes_seguros_img'] ?>">
-										<div class=" ml-3 d-flex flex-column justify-content-center">
-											<a href="<?= $seguro['doc_redes_seguros_link'] ?>" target="_blank">
-												<h4 class="card-title m-0"><?= $seguro['doc_redes_seguros_nombre'] ?></h4>
-											</a>
-											<p class="card-text text-muted"><?= $seguro['doc_redes_seguros_desc'] ?></p>
+					<?php if (count($redes) > 0) { ?>
+						<h4>Lista de redes de seguros</h4>
+						<hr>
+						<div class="row">
+							<?php foreach ($redes as $seguro) { ?>
+								<div class="col-md-6 p-3">
+									<div class="card text-left">
+										<div class="card-body d-flex align-items-center">
+											<img src="/backpanel/seguros/<?= $seguro['doc_redes_seguros_img'] ?>">
+											<div class=" ml-3 d-flex flex-column justify-content-center">
+												<a href="<?= $seguro['doc_redes_seguros_link'] ?>" target="_blank">
+													<h4 class="card-title m-0"><?= $seguro['doc_redes_seguros_nombre'] ?></h4>
+												</a>
+												<p class="card-text text-muted"><?= $seguro['doc_redes_seguros_desc'] ?></p>
+											</div>
 										</div>
 									</div>
 								</div>
-							</div>
-						<?php
-						}
-						?>
-					</div>
+							<?php } ?>
+						</div>
+					<?php } ?>
 				</div>
 			</div>
 			<div role="tabpanel" class="tab-pane fade" id="contacto" role="tabpanel" aria-labelledby="contacto-tab">
@@ -167,18 +204,28 @@ $redes = $db->query($sql, $id)->fetchAll();
 					<h4>Información de contacto</h4>
 					<hr>
 					<div class="row">
+						<?php if ($doctor['doc_doctor_tel_1'] || $doctor['doc_doctor_tel_2'] || $doctor['doc_doctor_email']) { ?>
+							<div class="col-md-6">
+								<?php if ($doctor['doc_doctor_tel_1'] || $doctor['doc_doctor_tel_2']) { ?>
+									<h5 class="text-muted">Numeros telefónico</h5>
+									<p><?= $doctor['doc_doctor_tel_1'] ?></p>
+									<p><?= $doctor['doc_doctor_tel_2'] ?></p>
+								<?php } ?>
+								<?php if ($doctor['doc_doctor_email']) { ?>
+									<h5 class="text-muted">Correo electronico</h5>
+									<p><?= $doctor['doc_doctor_email'] ?></p>
+								<?php } ?>
+							</div>
+						<?php } ?>
 						<div class="col-md-6">
-							<h5 class="text-muted">Numeros telefónico</h5>
-							<p><?= $doctor['doc_doctor_tel_1'] ?></p>
-							<p><?= $doctor['doc_doctor_tel_2'] ?></p>
-							<h5 class="text-muted">Correo electronico</h5>
-							<p><?= $doctor['doc_doctor_email'] ?></p>
-						</div>
-						<div class="col-md-6">
-							<h5 class="text-muted">Facebook</h5>
-							<p><?= $doctor['doc_doctor_fb'] ?></p>
-							<h5 class="text-muted">Instagram</h5>
-							<p><?= $doctor['doc_doctor_ig'] ?></p>
+							<?php if ($doctor['doc_doctor_fb']) { ?>
+								<h5 class="text-muted">Facebook</h5>
+								<p><?= $doctor['doc_doctor_fb'] ?></p>
+							<?php } ?>
+							<?php if ($doctor['doc_doctor_ig']) { ?>
+								<h5 class="text-muted">Instagram</h5>
+								<p><?= $doctor['doc_doctor_ig'] ?></p>
+							<?php } ?>
 						</div>
 					</div>
 				</div>
@@ -188,31 +235,32 @@ $redes = $db->query($sql, $id)->fetchAll();
 					<h4>Experiencia y Educación</h4>
 					<hr>
 					<div class="row">
+						<?php if ($doctor['doc_doctor_estudios'] || $doctor['doc_doctor_postgrados']) { ?>
+
+							<div class="col-md-6">
+								<?php if ($doctor['doc_doctor_estudios']) { ?>
+									<h5 class="text-muted">Estudios Universitarios</h5>
+									<p><?= $doctor['doc_doctor_estudios'] ?></p>
+								<?php } ?>
+								<?php if ($doctor['doc_doctor_postgrados']) { ?>
+									<h5 class="text-muted">Posgrados</h5>
+									<p><?= $doctor['doc_doctor_postgrados'] ?></p>
+								<?php } ?>
+							</div>
+						<?php } ?>
 						<div class="col-md-6">
-							<h5 class="text-muted">Estudios Universitarios</h5>
-							<p><?= $doctor['doc_doctor_estudios'] ?></p>
-							<h5 class="text-muted">Posgrados</h5>
-							<p><?= $doctor['doc_doctor_postgrados'] ?></p>
-						</div>
-						<div class="col-md-6">
-							<h5 class="text-muted">Especializaciónes</h5>
-							<p><?= $doctor['doc_doctor_especializaciones'] ?></p>
-							<h5 class="text-muted">Experiencia</h5>
-							<p><?= $doctor['doc_doctor_exp'] ?></p>
+							<?php if ($doctor['doc_doctor_especializaciones']) { ?>
+								<h5 class="text-muted">Especializaciónes</h5>
+								<p><?= $doctor['doc_doctor_especializaciones'] ?></p>
+							<?php } ?>
+							<?php if ($doctor['doc_doctor_exp']) { ?>
+								<h5 class="text-muted">Experiencia</h5>
+								<p><?= $doctor['doc_doctor_exp'] ?></p>
+							<?php } ?>
 						</div>
 					</div>
 				</div>
 			</div>
-			<?php
-			$galeria_id = $doctor['doc_doctor_galeria'];
-
-			$sql = "SELECT * FROM galeria WHERE galeria_key=?";
-			$galeria = $db->query($sql, $galeria_id)->fetchArray();
-
-			$sql = "SELECT * FROM galeria_img WHERE galeria_img_galeria_key=? ORDER BY galeria_img_orden ASC";
-			$galeria_imgs = $db->query($sql, $galeria_id)->fetchAll();
-
-			?>
 			<div role="tabpanel" class="tab-pane fade" id="galeria" role="tabpanel" aria-labelledby="galeria-tab">
 				<div class="container-fluid">
 					<center>
