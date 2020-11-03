@@ -24,6 +24,7 @@
 
 	$imageFileType = "";
 	if($image['tmp_name'] != ""){
+
 		$imageFileType = strtolower(pathinfo($image['name'], PATHINFO_EXTENSION));		
 		if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"){
 			$response['error'] = true;

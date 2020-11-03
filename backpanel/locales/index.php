@@ -109,7 +109,7 @@
 
 												<div class="form-group row">
 													<div class="col">
-														<Label>Descripcion</Label>
+														<Label>Descripción</Label>
 														<textarea name="descripcion" class="form-control"></textarea>
 													</div>
 												</div>
@@ -165,7 +165,7 @@
 
 												<div class="form-group row">
 													<div class="col">
-														<Label>Descripcion</Label>
+														<Label>Descripción</Label>
 														<textarea id="update-desc" name="descripcion" class="form-control"></textarea>
 													</div>
 												</div>
@@ -272,7 +272,8 @@
 			$('#update-nombre').val(nombre);
 			$('#update-img').html(url);
 			$('#update-desc').html(descripcion);
-			$('#local-preview').attr('src', '/backpanel/locales/' + url);
+			var d = new Date();
+			$('#local-preview').attr('src', '/backpanel/locales/' + url +'?'+d.getTime());
 
 			$('#updateModal').modal('show');
 
@@ -324,7 +325,7 @@
 					$(rowID).hide();
 					$(rowID).html(html);
 					$(rowID).fadeIn(800);
-
+					$('#local-preview').attr('src','');
 					$('#update-form')[0].reset();
 					$('#updateModal').modal('hide');
 

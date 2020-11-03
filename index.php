@@ -89,16 +89,16 @@
 					<div class="service col-md-4 text-center text-white">
 						<img class="svg-inverted" src="/img/svg/noun_Stethoscope_2049574.svg" alt="medicina general icon" width="80">
 						<h3>Medicina General</h3>
-						<p>Primero tu salud</p>
+						<p>Primero tu salud.</p>
 					</div>
 					<div class="service col-md-4  text-center text-white">
 						<img class="svg-inverted" src="/img/svg/noun_Pharmacy_3125931.svg" alt="farmacia icon" width="80">
 						<h3>Farmacia</h3>
-						<p>Equipada con productos de calidad</p>
+						<p>Equipada con productos de calidad.</p>
 					</div>
 					<div class="service col-md-4  text-center text-white">
 						<img class="svg-inverted" src="/img/svg/ginecologia.svg" alt="ginecologia icon" width="80">
-						<h3>Ginecologia</h3>
+						<h3>Ginecología</h3>
 						<p>Te ayudamos a cuidarte.</p>
 					</div>
 					<div class="service col-md-4 text-center text-white">
@@ -114,7 +114,7 @@
 					<div class="service col-md-4 text-center text-white">
 						<img class="svg-inverted" src="/img/svg/noun_lab_2355623.svg" alt="laboratorio icon" width="80">
 						<h3>Laboratorio</h3>
-						<p>Un laboratorio de alta tecnologia <br>para ti.</p>
+						<p>Un laboratorio de alta tecnología <br>para ti.</p>
 					</div>
 
 				</div>
@@ -122,7 +122,7 @@
 		</div>
 
 		<center class="mt-5">
-			<h4>Tambien ofrecemos</h4>
+			<h4>También ofrecemos</h4>
 			<!-- <hr> -->
 		</center>
 
@@ -157,8 +157,8 @@
 					<div class="">
 						<h2>Conócenos</h2>
 						<hr class="border-white">
-						<p> Telefono: 2243 0300</p>
-						<p> Email: <a class="text-white" href="mailto:servicioalcliente@ancalmo.com" target="_blank"> servicioalcliente@ancalmo.com</a></p>
+						<p> Teléfono: 2243 0300</p>
+						<p> e-mail: <a class="text-white" href="mailto:servicioalcliente@ancalmo.com" target="_blank"> servicioalcliente@ancalmo.com</a></p>
 						<p>Blv. Walter Deininger, Antiguo Cuscatlán</p>
 						<a href="/contacto" class="btn btn-lg btn-primary">
 							Contactanos

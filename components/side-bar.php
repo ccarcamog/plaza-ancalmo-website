@@ -31,13 +31,13 @@
 		<li class="nav-item">
 			<a class="nav-link" href="/backpanel/galeria">
 				<img class="svg-inverted" src="/img/svg/galeria-icon.svg">
-				Galeria Plaza
+				Galería Plaza
 			</a>
 		</li>
 		<li class="nav-item">
 			<a class="nav-link" href="/backpanel/galeria?id=2">
 				<img class="svg-inverted" src="/img/svg/galeria-icon.svg">
-				Galeria Farmacia
+				Galería Farmacia
 			</a>
 		</li>
 		<li class="nav-item">

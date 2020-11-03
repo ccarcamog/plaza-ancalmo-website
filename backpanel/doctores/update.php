@@ -211,7 +211,7 @@ $especialidades_json = json_encode($especialidades);
 									<input class="form-control" type="text" name="nombre" value="<?= $doctor['doc_doctor_nombre'] ?>" required>
 								</div>
 								<div class="col">
-									<Label for="genero">Genero</Label>
+									<Label for="genero">Género</Label>
 									<select class="custom-select" name="genero" required>
 										<!-- <option value="" selected>Seleccionar</option> -->
 										<?php
@@ -229,7 +229,7 @@ $especialidades_json = json_encode($especialidades);
 							</div>
 							<div class="form-group row">
 								<div class="col">
-									<label for="descripcion">Descripcion</label>
+									<label for="descripcion">Descripción</label>
 									<textarea class="form-control" name="descripcion"><?= $doctor['doc_doctor_desc'] ?></textarea>
 								</div>
 							</div>
@@ -247,7 +247,7 @@ $especialidades_json = json_encode($especialidades);
 								</div>
 							</div>
 							<hr>
-							<h3>Informacion de contacto</h3>
+							<h3>Información de contacto</h3>
 							<div class="form-group row">
 								<div class="col">
 									<label for="facebook">Facebook</label>

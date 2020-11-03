@@ -75,7 +75,7 @@
 								<tr>
 									<th scope="col">id</th>
 									<th scope="col">nombre</th>
-									<th scope="col">galeria</th>
+									<th scope="col">galería</th>
 									<th></th>
 									<th></th>
 
@@ -91,7 +91,7 @@
 										<th scope="row"><?= $count++ ?></th>
 										<td><?= ($doctor['doc_doctores_genero'] == 'M')?"Dr.":"Dra."?> <?= $doctor['doc_doctor_nombre'] ?></td>
 										<td>
-											<a class="btn btn-info galeria-btn" href="/backpanel/galeria/?id=<?= $doctor['doc_doctor_galeria'] ?>">Ir a galeria</a>
+											<a class="btn btn-info galeria-btn" href="/backpanel/galeria/?id=<?= $doctor['doc_doctor_galeria'] ?>">Ir a galería</a>
 
 										</td>
 										<td><a class="btn btn-warning actualizar-btn" href="/backpanel/doctores/update.php?id=<?= $doctor['doc_doctores_key'] ?>">Actualizar</a></td>

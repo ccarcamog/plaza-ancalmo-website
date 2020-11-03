@@ -59,7 +59,7 @@
 										<td><?= $especialidad['doc_especialidades_nombre_fem'] ?></td>
 										<td>
 											<button class="btn btn-warning update-btn" data-id="<?= $especialidad['doc_especialidades_key'] ?>">
-												Modificar
+												Actualizar
 											</button>
 										</td>
 										<td>
@@ -128,7 +128,7 @@
 							<div class="modal-dialog modal-dialog-centered">
 								<div class="modal-content">
 									<div class="modal-header">
-										<h5 class="modal-title" id="updateModalLabel">Forma de actualizacion</h5>
+										<h5 class="modal-title" id="updateModalLabel">Forma de actualización</h5>
 										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 											<span aria-hidden="true">&times;</span>
 										</button>
@@ -197,7 +197,7 @@
 						html += '<td>' + response.masculino + '</td>';
 						html += '<td>' + response.femenino + '</td>';
 						html += '<td>';
-						html += '<button class="btn btn-warning update-btn" data-id="' + response.id + '"> Modificar </button>';
+						html += '<button class="btn btn-warning update-btn" data-id="' + response.id + '"> Actualizar </button>';
 						html += '</td>'
 						html += '<td>';
 						html += '<button class="btn btn-danger delete-btn" data-id="' + response.id + '"> Borrar </button>';
@@ -254,7 +254,7 @@
 						html += '<td>' + response.masculino + '</td>';
 						html += '<td>' + response.femenino + '</td>';
 						html += '<td>';
-						html += '<button class="btn btn-warning update-btn" data-id="' + response.id + '"> Modificar </button>';
+						html += '<button class="btn btn-warning update-btn" data-id="' + response.id + '"> Actualizar </button>';
 						html += '</td>'
 						html += '<td>';
 						html += '<button class="btn btn-danger delete-btn" data-id="' + response.id + '"> Borrar </button>';

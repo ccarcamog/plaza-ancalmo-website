@@ -42,7 +42,7 @@
 				<h2>Tu lugar de confianza</h2>
 				<hr>
 				<p>¡Somos un nuevo concepto en farmacias porque tenemos de todo para todos!</p>
-				<p>Nuestra visión de servicio nos inspira a trabajar con excelencia, ofreciéndote medicamentos y productos de calidad. Somos tu lugar de confianza.</p>
+				<p>Nuestra visión de servicio nos inspira a trabajar con excelencia, ofreciendo medicamentos y productos de calidad. Somos tu lugar de confianza.</p>
 				<p>Síguenos en nuestras redes:</p>
 				<p>
 					<a href="https://www.facebook.com/FarmaciasAncalmo/" target="_blank">
@@ -128,7 +128,7 @@
 		</center>
 		<div class="row p-3">
 			<div class="col-md-4 p-3" id="domicilioContacto">
-				<h3>TELEFONOS:</h3>
+				<h3>TELÉFONOS:</h3>
 				<p><img src="/img/svg/telephone.svg" width=40 alt="whatsapp logo"> 2243-1000 <br> <a href="https://wa.me/50378602663" target="_blank"> <img src="/img/svg/whatsapp.svg" width=40 alt="whatsapp logo"></a> 7860-2663 </p>
 
 			</div>
@@ -140,7 +140,7 @@
 						</center>
 						<div id="locations">
 							<p><img src="/img/svg/pointer.svg" height="20px">ANTIGUO CUSCATLAN</p>
-							<p><img src="/img/svg/pointer.svg" height="20px">COLONIA ESCALON</p>
+							<p><img src="/img/svg/pointer.svg" height="20px">COLONIA ESCALÓN</p>
 							<p><img src="/img/svg/pointer.svg" height="20px">CIUDAD MERLIOT</p>
 							<p><img src="/img/svg/pointer.svg" height="20px">SANTA TECLA</p>
 						</div>

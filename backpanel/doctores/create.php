@@ -1,9 +1,7 @@
 <?php require "../../php/verify-session.php" ?>
 <?php require "../../php/db.php" ?>
 <?php require "../../php/credentials.php" ?>
-
 <?php
-
 
 $db = new db($dbHost, $dbUID, $dbPWD, $dbName);
 
@@ -80,7 +78,7 @@ if (isset($_POST['create-submit'])) {
 	$sql = "UPDATE doc_doctores SET doc_doctor_img=? WHERE doc_doctores_key=?";
 	$db->query($sql, $target_file, $id);
 
-	$galeria_nombre = "Galeria de " .(($genero == 'M')?"Dr. ":"Dra. ").$nombre;
+	$galeria_nombre = "Galería de " .(($genero == 'M')?"Dr. ":"Dra. ").$nombre;
 	$sql = "INSERT INTO galeria (galeria_nombre) VALUES (?)";
 
 	$db->query($sql, $galeria_nombre);
@@ -127,14 +125,13 @@ $especialidades_json = json_encode($especialidades);
 
 
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Crear red de seguros</title>
+	<title>Crear Doctor</title>
 
 	<link rel="icon" href="/img/Logo Plaza Ancalmo.png">
 	<!-- MDB icon -->
@@ -187,7 +184,7 @@ $especialidades_json = json_encode($especialidades);
 									<input class="form-control" type="text" name="nombre" placeholder="Nombre" required>
 								</div>
 								<div class="col">
-									<Label for="genero">Genero</Label>
+									<Label for="genero">Género</Label>
 									<select class="custom-select" name="genero" required>
 										<option value="" selected>Seleccionar</option>
 										<option value="M">Masculino</option>
@@ -198,7 +195,7 @@ $especialidades_json = json_encode($especialidades);
 							</div>
 							<div class="form-group row">
 								<div class="col">
-									<label for="descripcion">Descripcion</label>
+									<label for="descripcion">Descripción</label>
 									<textarea class="form-control" name="descripcion" placeholder="Descripcion"></textarea>
 								</div>
 							</div>
@@ -216,7 +213,7 @@ $especialidades_json = json_encode($especialidades);
 								</div>
 							</div>
 							<hr>
-							<h3>Informacion de contacto</h3>
+							<h3>Información de contacto</h3>
 							<div class="form-group row">
 								<div class="col">
 									<label for="facebook">Facebook</label>

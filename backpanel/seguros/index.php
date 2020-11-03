@@ -43,7 +43,7 @@
 								<tr>
 									<th scope="col">id</th>
 									<th scope="col">nombre</th>
-									<th scope="col">descripcion</th>
+									<th scope="col">descripción</th>
 									<th scope="col">link</th>
 									<th class="text-center" scope="col">img</th>
 									<th></th>
@@ -71,7 +71,7 @@
 											}
 											?>
 										</td>
-										<td><a class="btn btn-warning" href="/backpanel/seguros/update.php/?id=<?= $seguro['doc_redes_seguros_key'] ?>">Modificar</a></td>
+										<td><a class="btn btn-warning" href="/backpanel/seguros/update.php/?id=<?= $seguro['doc_redes_seguros_key'] ?>">Actualizar</a></td>
 										<td>
 											<button class="btn btn-danger delete" data-id="<?= $seguro['doc_redes_seguros_key'] ?>">
 												Borrar
@@ -85,7 +85,7 @@
 							</tbody>
 						</table>
 					</div>
-					<a href="/backpanel/seguros/create.php" class="btn btn-success">Nueva red de seguros</a>
+					<a href="/backpanel/seguros/create.php" class="btn btn-success">Crear red de seguros</a>
 
 				</div>
 			</div>

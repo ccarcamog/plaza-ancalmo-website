@@ -207,12 +207,12 @@ $galeria_imgs = $db->query($sql, $galeria_id)->fetchAll();
 						<?php if ($doctor['doc_doctor_tel_1'] || $doctor['doc_doctor_tel_2'] || $doctor['doc_doctor_email']) { ?>
 							<div class="col-md-6">
 								<?php if ($doctor['doc_doctor_tel_1'] || $doctor['doc_doctor_tel_2']) { ?>
-									<h5 class="text-muted">Numeros telefónico</h5>
+									<h5 class="text-muted">Números telefónico</h5>
 									<p><?= $doctor['doc_doctor_tel_1'] ?></p>
 									<p><?= $doctor['doc_doctor_tel_2'] ?></p>
 								<?php } ?>
 								<?php if ($doctor['doc_doctor_email']) { ?>
-									<h5 class="text-muted">Correo electronico</h5>
+									<h5 class="text-muted">Correo electrónico</h5>
 									<p><?= $doctor['doc_doctor_email'] ?></p>
 								<?php } ?>
 							</div>
