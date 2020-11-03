@@ -126,7 +126,7 @@
 			<!-- <hr> -->
 		</center>
 
-<div class="container mt-4" id="serviciosPracticos">
+		<div class="container mt-4" id="serviciosPracticos">
 
 
 			<div class="row">
