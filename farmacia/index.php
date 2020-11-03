@@ -120,8 +120,7 @@
 		</center>
 	</div>
 
-
-	<hr>
+	<hr class="division">
 
 	<div class="container mt-5" id="domicilioInfo">
 		<center>
@@ -155,20 +154,21 @@
 	</div>
 	<div class="container" id="hugoDeliveries">
 		<div class="row">
-			<div class="col-md-6 text-center p-4" id="hugoImage">
+			<div class="col-md-6 p-4" id="hugoImage">
 				<img src="/img/hugoImage.jpg" alt="Hugo delivery">
 			</div>
-			<div class="col-md-6 p-4 text-center" id="hugoTexto">
+			<div class="col-md-6 p-4" id="hugoTexto">
 
-				<h3>Hacemos envíos por <img id="hugoLogo" src="/img/hugo-logo.png" alt="Hugo Logo Texto"></h3>
-				<hr>
-				<p>Encuéntranos en la aplicación</p>
-				<p><img src="/img/hugoIcon.png" alt="Hugo Icon" id="hugoIcon" width="30"></p>
+				<h3>Encuéntranos en <img id="hugoLogo" src="/img/hugo-logo.png" alt="Hugo Logo Texto"></h3>
+				<hr class="w-100">
+				<p>Haz tu pedido por medio de Hugo App. <br><br> Encuéntranos como Farmacia Ancalmo, y descubre todos los productos y ofertas que tenemos para tí.</p>
+				<!-- <p><img src="/img/hugoIcon.png" alt="Hugo Icon" id="hugoIcon" width="30"></p> -->
 
 			</div>
 		</div>
 	</div>
-	<hr>
+	<hr class="division">
+
 	<div class="container-fluid p-4" id="marcasCarousel">
 
 		<h3 class="text-center">Contamos con marcas de la más alta calidad</h3>
@@ -226,7 +226,7 @@
 
 	</div>
 
-	<hr>
+	<hr class="division">
 
 	<?php
 
