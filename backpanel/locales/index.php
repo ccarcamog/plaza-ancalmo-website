@@ -120,7 +120,7 @@
 										</div>
 										<div class="modal-footer">
 											<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-											<button type="submit" name="creation-submit" class="btn btn-primary">Guardar</button>
+											<button type="submit" name="creation-submit" class="btn btn-create btn-primary">Guardar</button>
 										</div>
 									</form>
 								</div>
@@ -206,6 +206,8 @@
 
 			evt.preventDefault();
 
+			$('.btn-create').prop('disabled',true);
+
 			var form = document.getElementById('creation-form');
 
 			var fd = new FormData(form);
@@ -252,6 +254,7 @@
 					$('tr:last-child').hide();
 					$('tr:last-child').fadeIn(800);
 
+					$('.btn-create').prop('disabled',false);
 					$('#creation-form')[0].reset();
 					$('#creationModal').modal('hide');
 				}
@@ -260,6 +263,7 @@
 		});
 		$(document).on('click', '.update-btn', function() {
 
+			
 			var rowNum = $(this).data('id');
 			var url = $(this).data('url');
 			var rowID = '#row-' + rowNum;
