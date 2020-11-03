@@ -33,7 +33,7 @@
 								<input class="form-control" type="text" name="username" id="username-field" required>
 							</div>
 							<div class="col-md-6">
-								<label for="mail">Correo electronico</label>
+								<label for="mail">Correo electrónico</label>
 								<input class="form-control" type="email" name="mail" id="email-field" required>
 							</div>
 						</div>

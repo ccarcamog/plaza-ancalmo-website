@@ -36,9 +36,6 @@
 	$galeria = 	$db->query($sql, $id)->fetchArray();
 
 	if (!isset($galeria['galeria_key'])) {
-
-		echo $id . " not set";
-
 		$id = 1;
 		$sql = "SELECT * FROM galeria WHERE galeria_key = ?";
 		$galeria = 	$db->query($sql, $id)->fetchArray();
@@ -66,7 +63,7 @@
 									<th scope="col">id</th>
 									<th scope="col">img</th>
 									<th scope="col">nombre</th>
-									<th scope="col">descripcion</th>
+									<th scope="col">descripción</th>
 
 									<th></th>
 									<th></th>
@@ -107,7 +104,7 @@
 							<div class="modal-dialog modal-dialog-centered">
 								<div class="modal-content">
 									<div class="modal-header">
-										<h5 class="modal-title" id="agregarModalLabel">Agregar Imagenes</h5>
+										<h5 class="modal-title" id="agregarModalLabel">Agregar Imágenes</h5>
 										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 											<span aria-hidden="true">&times;</span>
 										</button>

@@ -86,8 +86,8 @@
 								<input class="form-control" type="text" name="nombre" placeholder="Nombre" required>
 							</div>
 							<div class="form-group">
-								<label for="descripcion">Descripcion</label>
-								<textarea class="form-control" name="descripcion" placeholder="Descripcion" required></textarea>
+								<label for="descripcion">Descripción</label>
+								<textarea class="form-control" name="descripcion" placeholder="Descripción" required></textarea>
 							</div>
 							<div class="form-group">
 								<label for="link">Url del sitio</label>

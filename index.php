@@ -158,10 +158,10 @@
 						<h2>Conócenos</h2>
 						<hr class="border-white">
 						<p> Teléfono: 2243 0300</p>
-						<p> e-mail: <a class="text-white" href="mailto:servicioalcliente@ancalmo.com" target="_blank"> servicioalcliente@ancalmo.com</a></p>
+						<p> E-mail: <a class="text-white" href="mailto:servicioalcliente@ancalmo.com" target="_blank"> servicioalcliente@ancalmo.com</a></p>
 						<p>Blv. Walter Deininger, Antiguo Cuscatlán</p>
 						<a href="/contacto" class="btn btn-lg btn-primary">
-							Contactanos
+							Contáctanos
 						</a>
 						<h4 class="mt-2">
 							<a class=text-white href="https://www.facebook.com/PlazaAncalmo/" target="_blank">

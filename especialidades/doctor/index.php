@@ -114,7 +114,7 @@ $galeria_imgs = $db->query($sql, $galeria_id)->fetchAll();
 			<?php } ?>
 			<?php if(count($galeria_imgs) > 0){ ?>
 				<li role="presentation" class="nav-item">
-					<a class="nav-link" id="galeria-tab" data-toggle="tab" href="#galeria" role="tab" aria-controls="galeria" aria-selected="false">Galeria</a>
+					<a class="nav-link" id="galeria-tab" data-toggle="tab" href="#galeria" role="tab" aria-controls="galeria" aria-selected="false">Galería</a>
 				</li>			
 			<?php } ?>
 

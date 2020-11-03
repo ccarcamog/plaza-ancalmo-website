@@ -109,7 +109,7 @@
 						<div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable w-75">
 							<div class="modal-content">
 								<div class="modal-header">
-									<h5 class="modal-title" id="previewModalLabel">Pagina del doctor</h5>
+									<h5 class="modal-title" id="previewModalLabel">Página del doctor</h5>
 									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 										<span aria-hidden="true">&times;</span>
 									</button>
@@ -150,7 +150,7 @@
 												<a class="nav-link" id="experiencia-tab" data-toggle="tab" href="#experiencia" role="tab" aria-controls="experiencia" aria-selected="false">Experiencia</a>
 											</li>
 											<li role="presentation" class="nav-item">
-												<a class="nav-link" id="galeria-tab" data-toggle="tab" href="#galeria" role="tab" aria-controls="galeria" aria-selected="false">Galeria</a>
+												<a class="nav-link" id="galeria-tab" data-toggle="tab" href="#galeria" role="tab" aria-controls="galeria" aria-selected="false">Galería</a>
 											</li>
 
 										</ul>
@@ -204,10 +204,10 @@
 													<hr>
 													<div class="row">
 														<div class="col-md-6">
-															<h5 class="text-muted">Numeros telefónico</h5>
+															<h5 class="text-muted">Números telefónicos</h5>
 															<p class="doctor_telefono_1">(+503) 0000 0000</p>
 															<p class="doctor_telefono_2">(+503) 0000 0000</p>
-															<h5 class="text-muted">Correo electronico</h5>
+															<h5 class="text-muted">Correo electrónico</h5>
 															<p class="doctor_correo">email@example.com</p>
 														</div>
 														<div class="col-md-6">
@@ -381,7 +381,7 @@
 						html += '</div>'
 						$('.carousel-inner').append(html);
 					}
-					$('.carousel-inner').append(html);
+					// $('.carousel-inner').append(html);
 					for (var i = 0; i < galeria.length; i++) {
 
 						if (!i) var html = '<div class="carousel-item active">';

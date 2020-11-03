@@ -75,14 +75,14 @@
 				<div class="col-md-4 p-4 text-white text-center">
 					<img src="/img/svg/security.svg" alt="seguridad icon" height=100 class="svg-inverted">
 					<hr class="border-white">
-					<h3>Seguridad</h3>
+					<h3><b>Seguridad</b></h3>
 					<p>Seguimos protocolos de bioseguridad y contamos con seguridad para tu confianza.</p>
 
 				</div>
 				<div class="col-md-4 p-4 text-white text-center">
 					<img src="/img/svg/variety.svg" alt="seguridad icon" height=100 class="svg-inverted">
 					<hr class="border-white">
-					<h3>Variedad</h3>
+					<h3><b>Variedad</b></h3>
 					<p>Contamos con una amplia variedad de productos de la más alta calidad.</p>
 				</div>
 			</div>

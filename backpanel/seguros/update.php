@@ -97,8 +97,8 @@
 							<!-- <div class="form-group">
 						</div> -->
 							<div class="form-group">
-								<label for="descripcion">Descripcion</label>
-								<textarea class="form-control" name="descripcion" placeholder="Descripcion" required><?= $desc ?></textarea>
+								<label for="descripcion">Descripción</label>
+								<textarea class="form-control" name="descripcion" placeholder="Descripción" required><?= $desc ?></textarea>
 							</div>
 							<div class="form-group">
 								<label for="link">Url del sitio</label>

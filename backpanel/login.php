@@ -31,7 +31,7 @@ if (isset($_SESSION['username'])) {
 			<a href="/" class="navbar-brand">PLAZA <br>ANCALMO</a>
 		</div>
 		<div class="d-flex align-items-center my-4 px-4" style="width:300px">
-			<a class="navbar-brand text-black" id="admin-text">Modulo de <br>Administrador</a>
+			<a class="navbar-brand text-black" id="admin-text">Módulo de <br>Administrador</a>
 		</div>
 	</nav>
 	<main>

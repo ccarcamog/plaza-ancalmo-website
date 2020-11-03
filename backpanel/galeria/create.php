@@ -37,7 +37,7 @@ if ($_FILES['imagen']['tmp_name'] != "") {
 	$db = new db($dbHost, $dbUID, $dbPWD, $dbName);
 	
 	$sql = "INSERT INTO galeria_img (galeria_img_nombre, galeria_img_url, galeria_img_galeria_key) VALUES (?,?,?)";
-	$insertion = $db->query($sql, "newImage", "/galeria/galeria/no_photo.jpg", $galeria);
+	$insertion = $db->query($sql, "nueva image", "/galeria/galeria/no_photo.jpg", $galeria);
 	$id = $insertion->lastInsertID();
 
 	

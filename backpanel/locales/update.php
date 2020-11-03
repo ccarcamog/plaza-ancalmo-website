@@ -12,6 +12,7 @@
 	$db = new db($dbHost, $dbUID, $dbPWD, $dbName);
 	
 	$sql = "UPDATE locales SET locales_nombre=?, locales_desc=? WHERE locales_key=?";
+	$db->query($sql, $nombre, $descripcion, $id);
 	
 	$response = array(
 		'error'=>false,
@@ -20,6 +21,18 @@
 		'descripcion'=>$descripcion
 	);
 	
+	$sql = "SELECT * FROM locales WHERE locales_key=?";
+	$local_updated = $db->query($sql, $id)->fetchArray();
+
+	$galeria_id = $local_updated['locales_galeria_key'];
+	$galeria_nombre = "Galería de ".$nombre;
+
+	$sql = "UPDATE galeria SET galeria_nombre=? WHERE galeria_key=?";
+	$db->query($sql, $galeria_nombre, $galeria_id);
+
+
+	$response['galeria'] = $galeria_id;
+
 	$image = $_FILES['image'];
 
 	$imageFileType = "";

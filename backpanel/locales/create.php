@@ -34,7 +34,7 @@
 
 	$db = new db($dbHost, $dbUID, $dbPWD, $dbName);
 
-	$galeria_nombre = "Galeria de ".$nombre;
+	$galeria_nombre = "Galería de ".$nombre;
 	$sql = "INSERT INTO galeria (galeria_nombre) VALUES (?)";
 	$db->query($sql, $galeria_nombre);
 	$galeria_id = $db->lastInsertID();

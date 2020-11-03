@@ -115,7 +115,7 @@ if (isset($_POST['update-submit'])) {
 		$db->query($sql, $id, $especialidad);
 	}
 
-	$galeria_nombre = "Galeria de " .(($genero == 'M')?"Dr. ":"Dra. ").$nombre;
+	$galeria_nombre = "Galería de " .(($genero == 'M')?"Dr. ":"Dra. ").$nombre;
 	$sql = "UPDATE galeria SET galeria_nombre=? WHERE galeria_key=?";
 
 	$db->query($sql, $galeria_nombre, $galeria_id);
@@ -334,7 +334,7 @@ $especialidades_json = json_encode($especialidades);
 									</select>
 								</div>
 								<div class="col d-none">
-									<label for="galeria">Galeria id</label>
+									<label for="galeria">Galería id</label>
 									<input class="form-control" type="number" name="galeria" value="<?= $doctor['doc_doctor_galeria'] ?>" readonly>
 								</div>
 							</div>

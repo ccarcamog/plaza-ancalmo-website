@@ -14,7 +14,9 @@
 	<!-- Bootstrap core CSS -->
 	<link rel="stylesheet" href="/css/bootstrap.min.css">
 	<link rel="stylesheet" href="/css/style.css">
+
 </head>
+
 
 <body>
 
@@ -129,7 +131,7 @@
 							<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
 								<div class="modal-content">
 									<div class="modal-header">
-										<h5 class="modal-title" id="updateModalLabel">Forma de actualizacion</h5>
+										<h5 class="modal-title" id="updateModalLabel">Forma de actualización</h5>
 										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 											<span aria-hidden="true">&times;</span>
 										</button>
