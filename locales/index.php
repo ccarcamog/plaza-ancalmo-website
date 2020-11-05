@@ -30,7 +30,7 @@ $locales = $db->query($sql)->fetchAll();
 	<main>
 		<div class="container-fluid" id="localesTitle">
 			<div class="filter p-md-5">
-				<h1>Locales:</h1>
+				<h1>Locales disponibles:</h1>
 			</div>
 		</div>
 		<div class="container" id="ListaLocales">
