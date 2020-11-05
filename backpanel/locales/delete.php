@@ -20,7 +20,7 @@ $db->query($sql, $galeria_id);
 $sql = "DELETE FROM galeria WHERE galeria_key=?";
 $db->query($sql, $galeria_id);
 
-$img = fopen($deleted['locales_preview'], "w+");
+$img = fopen($deleted['locales_img'], "w+");
 unlink($img);
 
 ?>
