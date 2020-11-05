@@ -14,7 +14,7 @@ drop table if exists
 #Create table statements
 create table galeria (
     galeria_key int auto_increment comment 'Valor autogenerado. Id de galería',
-    galeria_nombre varchar(25) not null comment 'Nombre de la galería',
+    galeria_nombre varchar(100) not null comment 'Nombre de la galería',
     constraint galeria_pk
 		primary key (galeria_key)
 );
@@ -107,9 +107,11 @@ create table doc_doctores_redes_seguros (
 create table locales (
     locales_key int auto_increment comment 'Valor autogenerado. Id del local disponible',
     locales_nombre varchar(25) not null comment 'Nombre del local',
-    locales_preview varchar(100) not null comment 'Información de preview de local. Breve descripción',
-    locales_desc varchar(850) not null comment 'Información completa del local',
+    locales_img varchar(100) not null comment 'Imagen de perfil del local',
+    locales_preview varchar(250) not null comment 'Información de preview de local. Breve descripción',
+    locales_desc varchar(1000) not null comment 'Información completa del local',
     locales_galeria_key int not null comment 'Id de galería',
+    locales_contacto varchar(250) not null comment 'Información de contacto del local',
     index (locales_galeria_key),
     constraint locales_pk
 		primary key (locales_key),
