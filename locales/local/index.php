@@ -71,19 +71,17 @@ $galeria_imgs = $db->query($sql, $galeria_id)->fetchAll();
 					<div class="container mb-5">
 						<div class="row">
 							<?php if ($local['locales_desc']) { ?>
-								<div class="col-md-6">
-									<h4 class="text-muted">
-										Descripción del local
-									</h4>
+								<div class="col-md-12">
+									
 									<p>
 										<?= $local['locales_desc'] ?>
 									</p>
 								</div>
 							<?php } ?>
-							<div class="col-md-6">
+							<div class="col-md-12">
 
 								<?php if ($local['locales_contacto']) { ?>
-									<h4 class="text-muted">Contacto</h4>
+									<h4 class="text-muted">Información de contacto</h4>
 									<p><?= $local['locales_contacto'] ?></p>
 								<?php } ?>
 							</div>
