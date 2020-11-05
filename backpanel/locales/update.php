@@ -7,18 +7,22 @@
 	$id = $_POST['id'];	
 	$nombre = $_POST['nombre'];
 	$descripcion= $_POST['descripcion'];
-	
+	$contacto = $_POST['contacto'];
+	$preview  = $_POST['preview'];
+
 	
 	$db = new db($dbHost, $dbUID, $dbPWD, $dbName);
 	
-	$sql = "UPDATE locales SET locales_nombre=?, locales_desc=? WHERE locales_key=?";
-	$db->query($sql, $nombre, $descripcion, $id);
+	$sql = "UPDATE locales SET locales_nombre=?, locales_desc=?, locales_contacto=?, locales_preview=? WHERE locales_key=?";
+	$db->query($sql, $nombre, $descripcion, $contacto, $preview, $id);
 	
 	$response = array(
 		'error'=>false,
 		'id'=>$id,
 		'nombre' => $nombre,
-		'descripcion'=>$descripcion
+		'descripcion'=>$descripcion,
+		'contacto' => $contacto,
+		'preview' => $preview
 	);
 	
 	$sql = "SELECT * FROM locales WHERE locales_key=?";

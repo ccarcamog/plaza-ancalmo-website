@@ -60,7 +60,7 @@
 										<td><?= $local['locales_desc'] ?></td>
 										<td><a class="btn btn-info" href="/backpanel/galeria/?id=<?= $local['locales_galeria_key'] ?>">Ir a la galeria</a></td>
 										<td>
-											<button class="btn btn-warning update-btn" data-id="<?= $local['locales_key'] ?>" data-url="<?= $local['locales_preview'] ?>">
+											<button class="btn btn-warning update-btn" data-id="<?= $local['locales_key'] ?>" data-url="<?= $local['locales_img'] ?>">
 												Modificar
 											</button>
 										</td>
@@ -81,7 +81,7 @@
 
 						<!-- Modal -->
 						<div class="modal fade" id="creationModal" tabindex="-1" aria-labelledby="creationModalLabel" aria-hidden="true">
-							<div class="modal-dialog modal-dialog-centered">
+							<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
 								<div class="modal-content">
 									<div class="modal-header">
 										<h5 class="modal-title" id="creationModalLabel">Forma de creación</h5>
@@ -89,8 +89,8 @@
 											<span aria-hidden="true">&times;</span>
 										</button>
 									</div>
-									<form method="POST" id="creation-form">
-										<div class="modal-body">
+									<div class="modal-body">
+										<form method="POST" id="creation-form">
 											<div class="container-fluid">
 												<div class="form-group row">
 													<div class="col">
@@ -98,7 +98,18 @@
 														<input class="form-control" type="text" name="nombre" required>
 													</div>
 												</div>
-
+												<div class="form-group row">
+													<div class="col">
+														<label for="nombre">Preview</label>
+														<input class="form-control" type="text" name="preview" required>
+													</div>
+												</div>
+												<div class="form-group row">
+													<div class="col">
+														<label for="nombre">Contacto</label>
+														<input class="form-control" type="text" name="contacto" required>
+													</div>
+												</div>
 												<div class="form-group row">
 													<div class="col">
 														<Label>Imagen de muestra</Label>
@@ -117,12 +128,12 @@
 												</div>
 
 											</div>
-										</div>
-										<div class="modal-footer">
-											<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-											<button type="submit" name="creation-submit" class="btn btn-create btn-primary">Guardar</button>
-										</div>
-									</form>
+										</form>
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+										<button type="submit" name="creation-submit" class="btn btn-create btn-primary">Guardar</button>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -140,7 +151,7 @@
 										<form method="POST" id="update-form">
 											<div class="container-fluid">
 												<div class="row">
-													<img src="" id="local-preview" class="w-100">
+													<img src="" id="local-img" class="w-100">
 												</div>
 											</div>
 											<div class="container-fluid mt-4">
@@ -154,7 +165,18 @@
 														<input class="form-control" type="text" name="nombre" id="update-nombre" required>
 													</div>
 												</div>
-
+												<div class="form-group row">
+													<div class="col">
+														<label for="nombre">Preview</label>
+														<input class="form-control" id="update-preview" type="text" name="preview" required>
+													</div>
+												</div>
+												<div class="form-group row">
+													<div class="col">
+														<label for="nombre">Contacto</label>
+														<input class="form-control" id="update-contacto" type="text" name="contacto" required>
+													</div>
+												</div>
 												<div class="form-group row">
 													<div class="col">
 														<Label>Imagen de muestra</Label>
@@ -195,6 +217,8 @@
 	<!-- Bootstrap core JavaScript -->
 	<script type="text/javascript" src="/js/bootstrap.min.js"></script>
 	<script>
+		var locales = <?= json_encode($locales) ?>;
+		console.log(locales);
 		var count = <?= $count ?>;
 		$('#imageInput').on('change', function() {
 			var filename = $(this).val();
@@ -202,11 +226,11 @@
 			$(this).next('.custom-file-label').html(filename);
 		});
 
-		$('#creation-form').on('submit', function(evt) {
+		$('.btn-create').on('click', function(evt) {
 
 			evt.preventDefault();
 
-			$('.btn-create').prop('disabled',true);
+			$('.btn-create').prop('disabled', true);
 
 			var form = document.getElementById('creation-form');
 
@@ -221,14 +245,24 @@
 				processData: false,
 				success: function(response) {
 
+					console.log(response);
 
 					if (response['error']) {
+						$('.btn-create').prop('disabled', false);
 						alert("ERROR: " + response['mensaje']);
 						return;
 					}
 
 
-					console.log(response);
+					locales.push({
+						locales_key: response['id'],
+						locales_desc: response['descripcion'],
+						locales_galeria_key: response['galeria'],
+						locales_contacto: response['contacto'],
+						locales_img: response['image'],
+						locales_nombre: response['nombre'],
+						locales_preview: response['preview']
+					});
 
 					var html = '<tr id="row-' + response['id'] + '">';
 					html += '	<th scope="row">' + (count++) + '</th>';
@@ -237,7 +271,7 @@
 					// html += '	<td>' + response['preview'] + '</td>';
 					html += '	<td><a class="btn btn-info" href="/backpanel/galeria/?id=' + response['galeria'] + '">Ir a la galeria</a></td>';
 					html += '	<td>';
-					html += '		<button class="btn btn-warning update-btn" data-id="' + response['id'] + '" data-url="' + response['preview'] + '">';
+					html += '		<button class="btn btn-warning update-btn" data-id="' + response['id'] + '" data-url="' + response['image'] + '">';
 					html += '			Modificar';
 					html += '		</button>';
 					html += '	</td>';
@@ -248,13 +282,13 @@
 					html += '	</td>';
 					html += '</tr>';
 
-					console.log(html);
+
 
 					$('#local-table-body').append(html);
 					$('tr:last-child').hide();
 					$('tr:last-child').fadeIn(800);
 
-					$('.btn-create').prop('disabled',false);
+					$('.btn-create').prop('disabled', false);
 					$('#creation-form')[0].reset();
 					$('#creationModal').modal('hide');
 				}
@@ -263,23 +297,33 @@
 		});
 		$(document).on('click', '.update-btn', function() {
 
-			
+
 			var rowNum = $(this).data('id');
 			var url = $(this).data('url');
 			var rowID = '#row-' + rowNum;
 
 			var row = $(rowID).children().toArray();
 
+			var local = locales.find(obj => {
+				return obj.locales_key == rowNum;
+			});
+
+
 			var id = rowNum;
-			var nombre = row[1].innerHTML;
-			var descripcion = row[2].innerHTML;
+			var nombre = local['locales_nombre'];
+			var descripcion = local['locales_desc'];
+			var preview = local['locales_preview'];
+			var contacto = local['locales_contacto'];
+
 
 			$('#update-id').val(id);
 			$('#update-nombre').val(nombre);
+			$('#update-preview').val(preview);
+			$('#update-contacto').val(contacto);
 			$('#update-img').html(url);
 			$('#update-desc').html(descripcion);
 			var d = new Date();
-			$('#local-preview').attr('src', '/backpanel/locales/' + url +'?'+d.getTime());
+			$('#local-img').attr('src', '/backpanel/locales/' + url + '?' + d.getTime());
 
 			$('#updateModal').modal('show');
 
@@ -298,13 +342,22 @@
 				processData: false,
 				success: function(response) {
 
-
 					if (response['error']) {
 						alert("ERROR: " + response['mensaje']);
+						return;
 					}
 
+					var id = response['id'];
 
-					console.log(response);
+					var local_index = locales.map(obj => {
+						return "" + obj.locales_key;
+					}).indexOf(id);
+
+					locales[local_index].locales_nombre = response['nombre'];
+					locales[local_index].locales_desc = response['descripcion'];
+					locales[local_index].locales_contacto = response['contacto'];
+					locales[local_index].locales_preview = response['preview'];
+
 
 					var url = $('#update-img').html();
 
@@ -331,7 +384,7 @@
 					$(rowID).hide();
 					$(rowID).html(html);
 					$(rowID).fadeIn(800);
-					$('#local-preview').attr('src','');
+					$('#local-preview').attr('src', '');
 					$('#update-form')[0].reset();
 					$('#updateModal').modal('hide');
 

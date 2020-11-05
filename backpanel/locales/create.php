@@ -6,6 +6,8 @@
 	$nombre = $_POST['nombre'];
 	$descripcion = $_POST['descripcion'];
 	$image = $_FILES['image'];
+	$contacto = $_POST['contacto'];
+	$preview = $_POST['preview'];
 	$response = array('error'=>false);
 
 	$imageFileType = "";
@@ -40,8 +42,8 @@
 	$galeria_id = $db->lastInsertID();
 
 	$db = new db($dbHost, $dbUID, $dbPWD, $dbName);
-	$sql = "INSERT INTO locales (locales_nombre, locales_desc, locales_galeria_key) VALUES (?,?,?)";
-	$db->query($sql, $nombre, $descripcion, $galeria_id);
+	$sql = "INSERT INTO locales (locales_nombre, locales_desc, locales_galeria_key, locales_contacto, locales_preview) VALUES (?,?,?,?,?)";
+	$db->query($sql, $nombre, $descripcion, $galeria_id, $contacto, $preview);
 	$local_id = $db->lastInsertID();
 
 	$target_dir = 'img/';
@@ -49,15 +51,17 @@
 
 	move_uploaded_file($image["tmp_name"], $target_file);
 
-	$sql = "UPDATE locales SET locales_preview=? WHERE locales_key=?";
+	$sql = "UPDATE locales SET locales_img=? WHERE locales_key=?";
 	$db->query($sql, $target_file, $local_id);
 
 	
 	$response['id'] = $local_id;
 	$response['nombre'] = $nombre;
 	$response['descripcion'] = $descripcion;
-	$response['preview'] = $target_file;
+	$response['preview'] = $preview;
+	$response['contacto'] = $contacto;
 	$response['galeria'] = $galeria_id;
+	$response['imagen'] = $target_file;
  
 	$db->close();
 
