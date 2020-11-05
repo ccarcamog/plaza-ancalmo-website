@@ -34,30 +34,30 @@
 
 	$sql = "SELECT * FROM doc_doctores ORDER BY doc_doctor_prioridad DESC";
 
-	
+
 	if (isset($_GET['especialidad'])) {
 
 		$id = $_GET['especialidad'];
-		
+
 		$sql = "SELECT * FROM doc_especialidades WHERE doc_especialidades_key=?";
-		
+
 		$especialidad = $db->query($sql, $id)->fetchArray();
-		
+
 		$sql = "SELECT d.* FROM doc_doctores d INNER JOIN doc_doctores_especialidades de ON d.doc_doctores_key=de.doc_doctores_key WHERE de.doc_especialidades_key=? ORDER BY d.doc_doctor_prioridad DESC";
 	}
-	
+
 	$doctores = $db->query($sql, $id)->fetchAll();
 
-	
+
 	if (!isset($_GET['especialidad'])) {
-		
+
 		$sql = "SELECT e.* FROM doc_especialidades e INNER JOIN doc_doctores_especialidades de ON de.doc_especialidades_key=e.doc_especialidades_key WHERE de.doc_doctores_key=?";
 		foreach ($doctores as &$doctor_i) {
 
 			$doctor_especialidades = $db->query($sql, $doctor_i['doc_doctores_key'])->fetchAll();
-			
+
 			$especialidades_array = array();
-			
+
 			if ($doctor_i['doc_doctores_genero'] == 'M') {
 				foreach ($doctor_especialidades as $especialidad_doc) {
 					$especialidades_array[] = $especialidad_doc['doc_especialidades_nombre_mas'];
@@ -67,13 +67,12 @@
 					$especialidades_array[] = $especialidad_doc['doc_especialidades_nombre_fem'];
 				}
 			}
-			
+
 			$especialidades_txt = implode(", ", $especialidades_array);
-			
+
 			$doctor_i['doc_especialidades'] = $especialidades_txt;
-			
 		}
-	}	
+	}
 
 	?>
 
@@ -98,10 +97,10 @@
 		for ($i = 0; $i < count($doctores); $i++) {
 
 			// echo json_encode($doctores);
-			
+
 			// echo json_encode($doctores[$i]);
 			$doctor = $doctores[$i];
-		
+
 		?>
 
 			<div class="row doctor">
@@ -113,12 +112,12 @@
 						<h3 class="m-0"><?= ($doctor['doc_doctores_genero'] == 'M') ? "Dr." : "Dra." ?> <?= $doctor['doc_doctor_nombre'] ?></h3>
 						<h4 class="text-muted ml-md-3">
 							<?php if (isset($_GET['especialidad'])) {
-								if($doctor['doc_doctores_genero'] == 'M'){
+								if ($doctor['doc_doctores_genero'] == 'M') {
 									echo $especialidad['doc_especialidades_nombre_mas'];
-								}else{
+								} else {
 									echo $especialidad['doc_especialidades_nombre_fem'];
 								}
-							} else{
+							} else {
 								echo ($doctor['doc_especialidades']);
 							}
 							?>
@@ -141,15 +140,12 @@
 
 	<?php include "../components/footer.php" ?>
 
-	<body>
+	<script type="text/javascript" src="/js/jquery.min.js"></script>
+	<!-- Bootstrap core JavaScript -->
+	<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+	<!-- MDB core JavaScript -->
+	<!-- <script type="text/javascript" src="/js/mdb.min.js"></script> -->
 
-
-		<script type="text/javascript" src="/js/jquery.min.js"></script>
-		<!-- Bootstrap core JavaScript -->
-		<script type="text/javascript" src="/js/bootstrap.min.js"></script>
-		<!-- MDB core JavaScript -->
-		<!-- <script type="text/javascript" src="/js/mdb.min.js"></script> -->
-
-	</body>
+</body>
 
 </html>

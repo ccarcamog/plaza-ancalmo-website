@@ -1,11 +1,11 @@
-#especialidadTitle{
-	background-image: url("/img/especialidad-bg.jpg");
+#localesTitle{
+	background-image: url("/img/locales-bg.jpg");
 	background-size: cover;
 	background-position: center center;
 	height: 30vh;
 	padding:0;
 }
-#especialidadTitle .filter{
+#localesTitle .filter{
 	background-color:rgba(76, 143, 187, 0.623);
 	display:flex;
 	justify-content: center;
@@ -14,12 +14,12 @@
 	height: 100%;
 	width: 100%;
 }
-#especialidadTitle h1{
+#localesTitle h1{
 	font-weight: 600;
 	font-size: 2em;
 }
 
-#listaDoctores .doctor{
+#listaLocales .local{
 	padding:20px;
 	margin:30px 0;	
 	border: solid rgba(0, 0, 0, 0.267) 1px;
@@ -28,19 +28,21 @@
 	align-items: center;
 }
 
-#listaDoctores .doctor img{
+#listaLocales .local img{
 	width: 100%;
+	height: 300px;
+	object-fit: scale-down;
 	border-radius: 15px;
 }
 
-#listaDoctores .doctor-title {
+#listaLocales .local-title {
 	color: rgba(0, 0, 0, 0.7);
 }
-#listaDoctores .doctor-title h3, h4{
+#listaLocales .local-title h3, h4{
 	display: inline;
 }
 
-#listaDoctores .doctor-title:hover{
+#listaLocales .local-title:hover{
 	color: rgba(0, 0, 0, 1);
 	text-decoration: none;
 }

@@ -53,7 +53,7 @@ $especialidades = $db->query($sql)->fetchAll();
             ?>
           </div>
         </div>
-        <a class="nav-link" href="#">Locales Disponibles</a>
+        <a class="nav-link" href="/locales">Locales Disponibles</a>
         <a class="nav-link" href="/galeria">Galería</a>
 
 

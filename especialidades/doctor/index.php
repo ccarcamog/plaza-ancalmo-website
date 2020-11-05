@@ -66,258 +66,258 @@ $galeria_imgs = $db->query($sql, $galeria_id)->fetchAll();
 <body>
 
 	<?php include "../../components/navbar.php" ?>
-
-	<div class="container" id="doctorInfo">
-		<div class="row p-3">
-			<div class="col-sm-4 pb-3">
-				<img src="/backpanel/doctores/<?= $doctor['doc_doctor_img'] ?>" alt="doctor seguro pic">
-			</div>
-			<div class="col-sm-4 doctor-title">
-				<div class="">
-					<h3 class="m-0"><?= ($doctor['doc_doctores_genero'] == 'M') ? "Dr." : "Dra." ?> <?= $doctor['doc_doctor_nombre'] ?></h3>
-					<h4 class="text-muted"><?= $especialidades_txt ?></h4>
+	<main>
+		<div class="container" id="doctorInfo">
+			<div class="row p-3">
+				<div class="col-sm-4 pb-3">
+					<img src="/backpanel/doctores/<?= $doctor['doc_doctor_img'] ?>" alt="doctor seguro pic">
 				</div>
+				<div class="col-sm-4 doctor-title">
+					<div class="">
+						<h3 class="m-0"><?= ($doctor['doc_doctores_genero'] == 'M') ? "Dr." : "Dra." ?> <?= $doctor['doc_doctor_nombre'] ?></h3>
+						<h4 class="text-muted"><?= $especialidades_txt ?></h4>
+					</div>
 
+				</div>
 			</div>
 		</div>
-	</div>
 
-	<div class="container" id="doctorTabs">
-		<ul class="nav nav-tabs" id="myTab" role="tablist">
-			<li>
-				<a href="#" class="btn btn-danger mr-3">
-					<img src="/img/svg/calendar-line.svg" class="svg-inverted mr-2" alt="calendar icon" height="20px">
-					Agendar consulta
-				</a>
-			</li>
-			<?php if ($doctor['doc_doctor_desc'] || $doctor['doc_doctor_especializaciones'] || $doctor['doc_doctor_horarios'] || count($redes) > 0 || $doctor['doc_doctor_pagos'] || $doctor['doc_doctor_local'] || $doctor['doc_doctor_exp_num']) { ?>
-
-				<li role="presentation" class="nav-item active">
-					<a class="nav-link active" id="resumen-tab" data-toggle="tab" href="#resumen" role="tab" aria-controls="resumen" aria-selected="true">Resumen</a>
+		<div class="container" id="doctorTabs">
+			<ul class="nav nav-tabs" id="myTab" role="tablist">
+				<li>
+					<a href="#" class="btn btn-danger mr-3">
+						<img src="/img/svg/calendar-line.svg" class="svg-inverted mr-2" alt="calendar icon" height="20px">
+						Agendar consulta
+					</a>
 				</li>
+				<?php if ($doctor['doc_doctor_desc'] || $doctor['doc_doctor_especializaciones'] || $doctor['doc_doctor_horarios'] || count($redes) > 0 || $doctor['doc_doctor_pagos'] || $doctor['doc_doctor_local'] || $doctor['doc_doctor_exp_num']) { ?>
 
-			<?php } ?>
-			<?php if (count($redes)) { ?>
-				<li role="presentation" class="nav-item">
-					<a class="nav-link" id="seguro-tab" data-toggle="tab" href="#seguro" role="tab" aria-controls="seguro" aria-selected="false">Redes de seguros</a>
-				</li>
-			<?php } ?>
-			<?php if ($doctor['doc_doctor_tel_1'] || $doctor['doc_doctor_tel_2'] || $doctor['doc_doctor_email'] || $doctor['doc_doctor_fb'] || $doctor['doc_doctor_ig']) { ?>
-				<li role="presentation" class="nav-item">
-					<a class="nav-link" id="contacto-tab" data-toggle="tab" href="#contacto" role="tab" aria-controls="contacto" aria-selected="false">Contacto</a>
-				</li>
-			<?php } ?>
-			<?php if($doctor['doc_doctor_estudios'] || $doctor['doc_doctor_postgrados'] || $doctor['doc_doctor_especializaciones'] || $doctor['doc_doctor_exp']){ ?>			
-				<li role="presentation" class="nav-item">
-					<a class="nav-link" id="experiencia-tab" data-toggle="tab" href="#experiencia" role="tab" aria-controls="experiencia" aria-selected="false">Experiencia</a>
-				</li>
-			<?php } ?>
-			<?php if(count($galeria_imgs) > 0){ ?>
-				<li role="presentation" class="nav-item">
-					<a class="nav-link" id="galeria-tab" data-toggle="tab" href="#galeria" role="tab" aria-controls="galeria" aria-selected="false">Galería</a>
-				</li>			
-			<?php } ?>
+					<li role="presentation" class="nav-item active">
+						<a class="nav-link active" id="resumen-tab" data-toggle="tab" href="#resumen" role="tab" aria-controls="resumen" aria-selected="true">Resumen</a>
+					</li>
 
-		</ul>
-		<div class="tab-content mt-5" id="myTabContent">
-			<div role="tabpanel" class="tab-pane fade show active" id="resumen" role="tabpanel" aria-labelledby="resumen-tab">
-				<div class="container-fluid">
-					<h4><?= ($doctor['doc_doctores_genero'] == 'M') ? "Dr." : "Dra." ?> <?= $doctor['doc_doctor_nombre'] ?></h4>
-					<hr>
-					<div class="row">
-						<?php if ($doctor['doc_doctor_desc'] || $doctor['doc_doctor_especializaciones'] || $doctor['doc_doctor_horarios'] || count($redes) > 0 || $doctor['doc_doctor_pagos']) { ?>
-							<div class="col-md-8">
+				<?php } ?>
+				<?php if (count($redes)) { ?>
+					<li role="presentation" class="nav-item">
+						<a class="nav-link" id="seguro-tab" data-toggle="tab" href="#seguro" role="tab" aria-controls="seguro" aria-selected="false">Redes de seguros</a>
+					</li>
+				<?php } ?>
+				<?php if ($doctor['doc_doctor_tel_1'] || $doctor['doc_doctor_tel_2'] || $doctor['doc_doctor_email'] || $doctor['doc_doctor_fb'] || $doctor['doc_doctor_ig']) { ?>
+					<li role="presentation" class="nav-item">
+						<a class="nav-link" id="contacto-tab" data-toggle="tab" href="#contacto" role="tab" aria-controls="contacto" aria-selected="false">Contacto</a>
+					</li>
+				<?php } ?>
+				<?php if ($doctor['doc_doctor_estudios'] || $doctor['doc_doctor_postgrados'] || $doctor['doc_doctor_especializaciones'] || $doctor['doc_doctor_exp']) { ?>
+					<li role="presentation" class="nav-item">
+						<a class="nav-link" id="experiencia-tab" data-toggle="tab" href="#experiencia" role="tab" aria-controls="experiencia" aria-selected="false">Experiencia</a>
+					</li>
+				<?php } ?>
+				<?php if (count($galeria_imgs) > 0) { ?>
+					<li role="presentation" class="nav-item">
+						<a class="nav-link" id="galeria-tab" data-toggle="tab" href="#galeria" role="tab" aria-controls="galeria" aria-selected="false">Galería</a>
+					</li>
+				<?php } ?>
 
-								<p><?= $doctor['doc_doctor_desc'] ?></p>
-
-								<?php if ($doctor['doc_doctor_especializaciones']) { ?>
-									<h5 class="text-muted">Especializaciones</h5>
-									<p><?= $doctor['doc_doctor_especializaciones'] ?></p>
-								<?php } ?>
-								<?php if ($doctor['doc_doctor_horarios']) { ?>
-									<h5 class="text-muted">Horarios de atención</h5>
-									<p><?= $doctor['doc_doctor_horarios'] ?></p>
-								<?php } ?>
-
-								<?php if (count($redes) > 0) { ?>
-
-
-									<h5 class="text-muted">Redes de Seguros</h5>
-									<ul>
-										<?php
-										foreach ($redes as $seguro) {
-										?>
-											<li><?= $seguro['doc_redes_seguros_nombre'] ?></li>
-										<?php
-										}
-										?>
-									</ul>
-
-								<?php } ?>
-								<?php if ($doctor['doc_doctor_pagos']) { ?>
-									<h5 class="text-muted">Formas de pago</h5>
-									<p><?= $doctor['doc_doctor_pagos'] ?></p>
-								<?php } ?>
-							</div>
-						<?php } ?>
-						<div class="col-md-4">
-							<?php if ($doctor['doc_doctor_local']) { ?>
-								<h5 class="text-muted">Local</h5>
-								<p><?= $doctor['doc_doctor_local'] ?></p>
-							<?php } ?>
-							<?php if ($doctor['doc_doctor_exp_num']) { ?>
-								<h5 class="text-muted">Años de experiencia</h5>
-								<p><?= $doctor['doc_doctor_exp_num'] ?></p>
-							<?php } ?>
-						</div>
-					</div>
-				</div>
-
-			</div>
-			<div role="tabpanel" class="tab-pane fade" id="seguro" role="tabpanel" aria-labelledby="seguro-tab">
-				<div class="container-fluid" id="lista-seguros">
-					<?php if (count($redes) > 0) { ?>
-						<h4>Lista de redes de seguros</h4>
+			</ul>
+			<div class="tab-content mt-5" id="myTabContent">
+				<div role="tabpanel" class="tab-pane fade show active" id="resumen" role="tabpanel" aria-labelledby="resumen-tab">
+					<div class="container-fluid">
+						<h4><?= ($doctor['doc_doctores_genero'] == 'M') ? "Dr." : "Dra." ?> <?= $doctor['doc_doctor_nombre'] ?></h4>
 						<hr>
 						<div class="row">
-							<?php foreach ($redes as $seguro) { ?>
-								<div class="col-md-6 p-3">
-									<div class="card text-left">
-										<div class="card-body d-flex align-items-center">
-											<img src="/backpanel/seguros/<?= $seguro['doc_redes_seguros_img'] ?>">
-											<div class=" ml-3 d-flex flex-column justify-content-center">
-												<a href="<?= $seguro['doc_redes_seguros_link'] ?>" target="_blank">
-													<h4 class="card-title m-0"><?= $seguro['doc_redes_seguros_nombre'] ?></h4>
-												</a>
-												<p class="card-text text-muted"><?= $seguro['doc_redes_seguros_desc'] ?></p>
+							<?php if ($doctor['doc_doctor_desc'] || $doctor['doc_doctor_especializaciones'] || $doctor['doc_doctor_horarios'] || count($redes) > 0 || $doctor['doc_doctor_pagos']) { ?>
+								<div class="col-md-8">
+
+									<p><?= $doctor['doc_doctor_desc'] ?></p>
+
+									<?php if ($doctor['doc_doctor_especializaciones']) { ?>
+										<h5 class="text-muted">Especializaciones</h5>
+										<p><?= $doctor['doc_doctor_especializaciones'] ?></p>
+									<?php } ?>
+									<?php if ($doctor['doc_doctor_horarios']) { ?>
+										<h5 class="text-muted">Horarios de atención</h5>
+										<p><?= $doctor['doc_doctor_horarios'] ?></p>
+									<?php } ?>
+
+									<?php if (count($redes) > 0) { ?>
+
+
+										<h5 class="text-muted">Redes de Seguros</h5>
+										<ul>
+											<?php
+											foreach ($redes as $seguro) {
+											?>
+												<li><?= $seguro['doc_redes_seguros_nombre'] ?></li>
+											<?php
+											}
+											?>
+										</ul>
+
+									<?php } ?>
+									<?php if ($doctor['doc_doctor_pagos']) { ?>
+										<h5 class="text-muted">Formas de pago</h5>
+										<p><?= $doctor['doc_doctor_pagos'] ?></p>
+									<?php } ?>
+								</div>
+							<?php } ?>
+							<div class="col-md-4">
+								<?php if ($doctor['doc_doctor_local']) { ?>
+									<h5 class="text-muted">Local</h5>
+									<p><?= $doctor['doc_doctor_local'] ?></p>
+								<?php } ?>
+								<?php if ($doctor['doc_doctor_exp_num']) { ?>
+									<h5 class="text-muted">Años de experiencia</h5>
+									<p><?= $doctor['doc_doctor_exp_num'] ?></p>
+								<?php } ?>
+							</div>
+						</div>
+					</div>
+
+				</div>
+				<div role="tabpanel" class="tab-pane fade" id="seguro" role="tabpanel" aria-labelledby="seguro-tab">
+					<div class="container-fluid" id="lista-seguros">
+						<?php if (count($redes) > 0) { ?>
+							<h4>Lista de redes de seguros</h4>
+							<hr>
+							<div class="row">
+								<?php foreach ($redes as $seguro) { ?>
+									<div class="col-md-6 p-3">
+										<div class="card text-left">
+											<div class="card-body d-flex align-items-center">
+												<img src="/backpanel/seguros/<?= $seguro['doc_redes_seguros_img'] ?>">
+												<div class=" ml-3 d-flex flex-column justify-content-center">
+													<a href="<?= $seguro['doc_redes_seguros_link'] ?>" target="_blank">
+														<h4 class="card-title m-0"><?= $seguro['doc_redes_seguros_nombre'] ?></h4>
+													</a>
+													<p class="card-text text-muted"><?= $seguro['doc_redes_seguros_desc'] ?></p>
+												</div>
 											</div>
 										</div>
 									</div>
-								</div>
-							<?php } ?>
-						</div>
-					<?php } ?>
-				</div>
-			</div>
-			<div role="tabpanel" class="tab-pane fade" id="contacto" role="tabpanel" aria-labelledby="contacto-tab">
-				<div class="container-fluid">
-					<h4>Información de contacto</h4>
-					<hr>
-					<div class="row">
-						<?php if ($doctor['doc_doctor_tel_1'] || $doctor['doc_doctor_tel_2'] || $doctor['doc_doctor_email']) { ?>
-							<div class="col-md-6">
-								<?php if ($doctor['doc_doctor_tel_1'] || $doctor['doc_doctor_tel_2']) { ?>
-									<h5 class="text-muted">Números telefónico</h5>
-									<p><?= $doctor['doc_doctor_tel_1'] ?></p>
-									<p><?= $doctor['doc_doctor_tel_2'] ?></p>
-								<?php } ?>
-								<?php if ($doctor['doc_doctor_email']) { ?>
-									<h5 class="text-muted">Correo electrónico</h5>
-									<p><?= $doctor['doc_doctor_email'] ?></p>
 								<?php } ?>
 							</div>
 						<?php } ?>
-						<div class="col-md-6">
-							<?php if ($doctor['doc_doctor_fb']) { ?>
-								<h5 class="text-muted">Facebook</h5>
-								<p><?= $doctor['doc_doctor_fb'] ?></p>
-							<?php } ?>
-							<?php if ($doctor['doc_doctor_ig']) { ?>
-								<h5 class="text-muted">Instagram</h5>
-								<p><?= $doctor['doc_doctor_ig'] ?></p>
-							<?php } ?>
-						</div>
 					</div>
 				</div>
-			</div>
-			<div role="tabpanel" class="tab-pane fade" id="experiencia" role="tabpanel" aria-labelledby="experiencia-tab">
-				<div class="container-fluid">
-					<h4>Experiencia y Educación</h4>
-					<hr>
-					<div class="row">
-						<?php if ($doctor['doc_doctor_estudios'] || $doctor['doc_doctor_postgrados']) { ?>
-
-							<div class="col-md-6">
-								<?php if ($doctor['doc_doctor_estudios']) { ?>
-									<h5 class="text-muted">Estudios Universitarios</h5>
-									<p><?= $doctor['doc_doctor_estudios'] ?></p>
-								<?php } ?>
-								<?php if ($doctor['doc_doctor_postgrados']) { ?>
-									<h5 class="text-muted">Posgrados</h5>
-									<p><?= $doctor['doc_doctor_postgrados'] ?></p>
-								<?php } ?>
-							</div>
-						<?php } ?>
-						<div class="col-md-6">
-							<?php if ($doctor['doc_doctor_especializaciones']) { ?>
-								<h5 class="text-muted">Especializaciónes</h5>
-								<p><?= $doctor['doc_doctor_especializaciones'] ?></p>
-							<?php } ?>
-							<?php if ($doctor['doc_doctor_exp']) { ?>
-								<h5 class="text-muted">Experiencia</h5>
-								<p><?= $doctor['doc_doctor_exp'] ?></p>
-							<?php } ?>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div role="tabpanel" class="tab-pane fade" id="galeria" role="tabpanel" aria-labelledby="galeria-tab">
-				<div class="container-fluid">
-					<center>
-						<h4><?= $galeria['galeria_nombre'] ?></h4>
-					</center>
-					<div id="gallery" class="simplegallery">
-						<div class="content text-center">
-							<div id="galeriaCarousel" class="carousel slide" data-ride="carousel">
-								<div class="carousel-inner">
-									<?php
-									for ($i = 0; $i < count($galeria_imgs); $i++) {
-									?>
-										<div class="carousel-item <?php if (!$i) echo "active" ?>">
-											<img src="/backpanel/galeria/<?= $galeria_imgs[$i]['galeria_img_url'] ?>" class="w-75 image_<?= $i + 1 ?>" />
-											<p class="caption caption_<?= $i + 1 ?>"><strong><?= $galeria_imgs[$i]['galeria_img_nombre'] ?></strong><br><?= $galeria_imgs[$i]['galeria_img_caption'] ?></p>
-										</div>
-									<?php
-									}
-									?>
+				<div role="tabpanel" class="tab-pane fade" id="contacto" role="tabpanel" aria-labelledby="contacto-tab">
+					<div class="container-fluid">
+						<h4>Información de contacto</h4>
+						<hr>
+						<div class="row">
+							<?php if ($doctor['doc_doctor_tel_1'] || $doctor['doc_doctor_tel_2'] || $doctor['doc_doctor_email']) { ?>
+								<div class="col-md-6">
+									<?php if ($doctor['doc_doctor_tel_1'] || $doctor['doc_doctor_tel_2']) { ?>
+										<h5 class="text-muted">Números telefónico</h5>
+										<p><?= $doctor['doc_doctor_tel_1'] ?></p>
+										<p><?= $doctor['doc_doctor_tel_2'] ?></p>
+									<?php } ?>
+									<?php if ($doctor['doc_doctor_email']) { ?>
+										<h5 class="text-muted">Correo electrónico</h5>
+										<p><?= $doctor['doc_doctor_email'] ?></p>
+									<?php } ?>
 								</div>
-								<a class="carousel-control-prev" href="#galeriaCarousel" role="button" data-slide="prev">
-
-									<img class="direction-arrow" src="/img/svg/left-arrow-angle.svg">
-									<span class="sr-only">Previous</span>
-								</a>
-								<a class="carousel-control-next" href="#galeriaCarousel" role="button" data-slide="next">
-
-									<img class="direction-arrow" src="/img/svg/right-arrow-angle.svg">
-									<span class="sr-only">Next</span>
-								</a>
+							<?php } ?>
+							<div class="col-md-6">
+								<?php if ($doctor['doc_doctor_fb']) { ?>
+									<h5 class="text-muted">Facebook</h5>
+									<p><?= $doctor['doc_doctor_fb'] ?></p>
+								<?php } ?>
+								<?php if ($doctor['doc_doctor_ig']) { ?>
+									<h5 class="text-muted">Instagram</h5>
+									<p><?= $doctor['doc_doctor_ig'] ?></p>
+								<?php } ?>
 							</div>
 						</div>
+					</div>
+				</div>
+				<div role="tabpanel" class="tab-pane fade" id="experiencia" role="tabpanel" aria-labelledby="experiencia-tab">
+					<div class="container-fluid">
+						<h4>Experiencia y Educación</h4>
+						<hr>
+						<div class="row">
+							<?php if ($doctor['doc_doctor_estudios'] || $doctor['doc_doctor_postgrados']) { ?>
 
-						<div class="clear"></div>
+								<div class="col-md-6">
+									<?php if ($doctor['doc_doctor_estudios']) { ?>
+										<h5 class="text-muted">Estudios Universitarios</h5>
+										<p><?= $doctor['doc_doctor_estudios'] ?></p>
+									<?php } ?>
+									<?php if ($doctor['doc_doctor_postgrados']) { ?>
+										<h5 class="text-muted">Posgrados</h5>
+										<p><?= $doctor['doc_doctor_postgrados'] ?></p>
+									<?php } ?>
+								</div>
+							<?php } ?>
+							<div class="col-md-6">
+								<?php if ($doctor['doc_doctor_especializaciones']) { ?>
+									<h5 class="text-muted">Especializaciónes</h5>
+									<p><?= $doctor['doc_doctor_especializaciones'] ?></p>
+								<?php } ?>
+								<?php if ($doctor['doc_doctor_exp']) { ?>
+									<h5 class="text-muted">Experiencia</h5>
+									<p><?= $doctor['doc_doctor_exp'] ?></p>
+								<?php } ?>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div role="tabpanel" class="tab-pane fade" id="galeria" role="tabpanel" aria-labelledby="galeria-tab">
+					<div class="container-fluid">
+						<center>
+							<h4><?= $galeria['galeria_nombre'] ?></h4>
+						</center>
+						<div id="gallery" class="simplegallery">
+							<div class="content text-center">
+								<div id="galeriaCarousel" class="carousel slide" data-ride="carousel">
+									<div class="carousel-inner">
+										<?php
+										for ($i = 0; $i < count($galeria_imgs); $i++) {
+										?>
+											<div class="carousel-item <?php if (!$i) echo "active" ?>">
+												<img src="/backpanel/galeria/<?= $galeria_imgs[$i]['galeria_img_url'] ?>" class="w-75 image_<?= $i + 1 ?>" />
+												<p class="caption caption_<?= $i + 1 ?>"><strong><?= $galeria_imgs[$i]['galeria_img_nombre'] ?></strong><br><?= $galeria_imgs[$i]['galeria_img_caption'] ?></p>
+											</div>
+										<?php
+										}
+										?>
+									</div>
+									<a class="carousel-control-prev" href="#galeriaCarousel" role="button" data-slide="prev">
 
-						<div class="thumbnail container">
-							<?php
-							for ($i = 0; $i < count($galeria_imgs); $i++) {
-							?>
-								<div class="thumb" id="thumbid_<?= ($i + 1) ?>" data-id="<?= $i ?>">
-									<a rel="<?= ($i + 1) ?>">
-										<img src="/backpanel/galeria/<?= $galeria_imgs[$i]['galeria_img_url'] ?>" id="thumb_<?= ($i + 1) ?>" class="thumbs" alt="" />
+										<img class="direction-arrow" src="/img/svg/left-arrow-angle.svg">
+										<span class="sr-only">Previous</span>
+									</a>
+									<a class="carousel-control-next" href="#galeriaCarousel" role="button" data-slide="next">
+
+										<img class="direction-arrow" src="/img/svg/right-arrow-angle.svg">
+										<span class="sr-only">Next</span>
 									</a>
 								</div>
-							<?php
-							}
-							?>
+							</div>
 
+							<div class="clear"></div>
+
+							<div class="thumbnail container">
+								<?php
+								for ($i = 0; $i < count($galeria_imgs); $i++) {
+								?>
+									<div class="thumb" id="thumbid_<?= ($i + 1) ?>" data-id="<?= $i ?>">
+										<a rel="<?= ($i + 1) ?>">
+											<img src="/backpanel/galeria/<?= $galeria_imgs[$i]['galeria_img_url'] ?>" id="thumb_<?= ($i + 1) ?>" class="thumbs" alt="" />
+										</a>
+									</div>
+								<?php
+								}
+								?>
+
+
+							</div>
 
 						</div>
-
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-
+	</main>
 	<?php include "../../components/footer.php" ?>
 
 	<body>
