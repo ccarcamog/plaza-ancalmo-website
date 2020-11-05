@@ -233,7 +233,7 @@
 															</p>
 														</div>
 														<div class="col-md-6">
-															<h5 class="text-muted">Especializaciónes</h5>
+															<h5 class="text-muted">Especializaciones</h5>
 															<p class="doctor_especializaciones">
 																Fusce interdum urna non finibus commodo. Aenean ut enim vel nisl efficitur fermentum. Maecenas vitae erat aliquet, rhoncus ante id, euismod odio.
 															</p>
