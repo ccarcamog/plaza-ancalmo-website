@@ -46,7 +46,7 @@
 	<div class="container-fluid" id="contactoMapa">
 		<div class="text-center p-3 p-md-5">
 
-			<h3>Encuentranos</h3>
+			<h3>Encuéntranos</h3>
 			<p class="">
 				Bulevard Walter Deininger Antiguo Cuscatlán, El Salvador <br>
 				O navega con:
@@ -79,14 +79,14 @@
 			<div class="vertical-line d-none d-md-flex"></div>
 			<hr class="border-black d-md-none">
 			<div class="col-md-5">
-				<h3 id="llamanos-title">O llamanos</h3>
+				<h3 id="llámanos-title">O llamanos</h3>
 				<p class="text-muted">2243 0300</p>
 				<img src="/img/svg/phone-square.svg" alt="phone icon" height="60">
 			</div>
 		</div>
 	</div>
 
-	<div class="container mt-5" id="contactoForma">
+	<div class="container mt-5 mb-5" id="contactoForma">
 		
 			<div class="filter p-5">
 				<h4 class="mb-4">Forma de contacto</h4>
