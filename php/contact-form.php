@@ -105,8 +105,8 @@ if (isset($_POST["contact-submit"])) {
 	}else{
 		?>
 
-	<div class=" alert alert-success alert-dismissible fade show" role="alert">
-		<strong>ERROR!</strong> Tu correo NO ha sido enviado exitosamente
+	<div class=" alert alert-danger alert-dismissible fade show" role="alert">
+		<strong>ERROR!</strong> ha fallado el envio de correo, intenta nuevamente en unos minutos. 
 		<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 			<span aria-hidden="true">&times;</span>
 		</button>
