@@ -26,7 +26,7 @@
 	<?php include "../components/navbar.php" ?>
 	
 	<?php 
-		include "../php/contact-form.php";
+		require "../php/contact-form.php";
 	?>
 
 	<header class="container-fluid" id="contactoHeader">
@@ -91,7 +91,7 @@
 			<div class="filter p-5">
 				<h4 class="mb-4">Forma de contacto</h4>
 				
-				<form action="/contacto" method="POST">
+				<form action="/contacto/index.php" method="POST">
 					<div class="row form-group">
 						<div class="col">
 							<input type="text" name="nombre" class="form-control" placeholder="Nombre">
