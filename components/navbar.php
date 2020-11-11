@@ -35,7 +35,6 @@ $especialidades = $db->query($sql)->fetchAll();
         <a class="nav-link" href="/acerca-de">Nosotros</a>
         <a class="nav-link" href="/farmacia">Farmacia Ancalmo</a>
         <!-- <a class="nav-link" href="http://www.menendezlab.com/" target="_blank">Laboratorio Menéndez</a> -->
-        <a class="nav-link" href="#">Lifestyle</a>
         <div class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" id="especialidadesDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Doctores
