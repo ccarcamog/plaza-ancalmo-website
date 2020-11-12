@@ -89,7 +89,7 @@
 								?>
 									<tr id="row-<?= $doctor['doc_doctores_key'] ?>" data-id="<?= $doctor['doc_doctores_key'] ?>">
 										<th scope="row"><?= $count++ ?></th>
-										<td><?= ($doctor['doc_doctores_genero'] == 'M')?"Dr.":"Dra."?> <?= $doctor['doc_doctor_nombre'] ?></td>
+										<td><?= ($doctor['doc_doctores_genero'] == 'M') ? "Dr." : ($doctor['doc_doctores_genero'] == 'F' ? "Dra." : "")?> <?= $doctor['doc_doctor_nombre'] ?></td>
 										<td>
 											<a class="btn btn-info galeria-btn" href="/backpanel/galeria/?id=<?= $doctor['doc_doctor_galeria'] ?>">Ir a galería</a>
 
@@ -320,7 +320,7 @@
 				success: function(response) {
 					console.log(response);
 
-					$('.doctor_nombre').html(((response['doc_doctores_genero']=='M')?'Dr. ':'Dra. ') + response['doc_doctor_nombre']);
+					$('.doctor_nombre').html(((response['doc_doctores_genero']=='M')?'Dr. ':(response['doc_doctores_genero']=='F')?'Dra. ':"") + response['doc_doctor_nombre']);
 					$('.doctor_especialidad').html(response['especialidades'].join(", "));
 					$('.doctor_img').attr("src", "/backpanel/doctores/" + response['doc_doctor_img']);
 					$('.doctor_descripcion').html(response['doc_doctor_desc']?response['doc_doctor_desc']:"Completa esta información para que aparezca en el perfil.");

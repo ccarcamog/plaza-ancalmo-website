@@ -24,9 +24,13 @@ if ($doctor['doc_doctores_genero'] == 'M') {
 	foreach ($especialidades as $especialidad) {
 		$especialidades_array[] = $especialidad['doc_especialidades_nombre_mas'];
 	}
-} else {
+} else if ($doctor['doc_doctores_genero'] == 'F'){
 	foreach ($especialidades as $especialidad) {
 		$especialidades_array[] = $especialidad['doc_especialidades_nombre_fem'];
+	}
+}else{
+	foreach ($especialidades as $especialidad) {
+		$especialidades_array[] = $especialidad['doc_especialidades_nombre'];
 	}
 }
 
@@ -74,7 +78,7 @@ $galeria_imgs = $db->query($sql, $galeria_id)->fetchAll();
 				</div>
 				<div class="col-sm-4 doctor-title">
 					<div class="">
-						<h3 class="m-0"><?= ($doctor['doc_doctores_genero'] == 'M') ? "Dr." : "Dra." ?> <?= $doctor['doc_doctor_nombre'] ?></h3>
+						<h3 class="m-0"><?= ($doctor['doc_doctores_genero'] == 'M') ? "Dr." : ($doctor['doc_doctores_genero'] == 'F' ? "Dra." : "") ?> <?= $doctor['doc_doctor_nombre'] ?></h3>
 						<h4 class="text-muted"><?= $especialidades_txt ?></h4>
 					</div>
 
@@ -122,7 +126,7 @@ $galeria_imgs = $db->query($sql, $galeria_id)->fetchAll();
 			<div class="tab-content mt-5" id="myTabContent">
 				<div role="tabpanel" class="tab-pane fade show active" id="resumen" role="tabpanel" aria-labelledby="resumen-tab">
 					<div class="container-fluid">
-						<h4><?= ($doctor['doc_doctores_genero'] == 'M') ? "Dr." : "Dra." ?> <?= $doctor['doc_doctor_nombre'] ?></h4>
+						<h4><?= ($doctor['doc_doctores_genero'] == 'M') ? "Dr." : ($doctor['doc_doctores_genero'] == 'F' ? "Dra." : "") ?> <?= $doctor['doc_doctor_nombre'] ?></h4>
 						<hr>
 						<div class="row">
 							<?php if ($doctor['doc_doctor_desc'] || $doctor['doc_doctor_especializaciones'] || $doctor['doc_doctor_horarios'] || count($redes) > 0 || $doctor['doc_doctor_pagos']) { ?>

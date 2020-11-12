@@ -78,7 +78,7 @@ if (isset($_POST['create-submit'])) {
 	$sql = "UPDATE doc_doctores SET doc_doctor_img=? WHERE doc_doctores_key=?";
 	$db->query($sql, $target_file, $id);
 
-	$galeria_nombre = "Galería de " .(($genero == 'M')?"Dr. ":"Dra. ").$nombre;
+	$galeria_nombre = "Galería de " .(($genero == 'M')?"Dr. ": ($genero == 'F' ? "Dra. ": "")).$nombre;
 	$sql = "INSERT INTO galeria (galeria_nombre) VALUES (?)";
 
 	$db->query($sql, $galeria_nombre);
@@ -189,6 +189,7 @@ $especialidades_json = json_encode($especialidades);
 										<option value="" selected>Seleccionar</option>
 										<option value="M">Masculino</option>
 										<option value="F">Femenino</option>
+										<option value="X">Ninguno</option>
 										<!-- <option value="3">Three</option> -->
 									</select>
 								</div>
@@ -330,7 +331,7 @@ $especialidades_json = json_encode($especialidades);
 				return;
 			}
 
-			if(this.files[0].size/1024 > 500){
+			if(this.files[0].size > 500000){
 				alert("La imagen debe ser menor a 500kb.");
 				$(this).val('');
 				return;

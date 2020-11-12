@@ -115,7 +115,7 @@ if (isset($_POST['update-submit'])) {
 		$db->query($sql, $id, $especialidad);
 	}
 
-	$galeria_nombre = "Galería de " .(($genero == 'M')?"Dr. ":"Dra. ").$nombre;
+	$galeria_nombre = "Galería de " .(($genero == 'M')?"Dr. ": ($genero == 'F' ? "Dra. ": "")).$nombre;
 	$sql = "UPDATE galeria SET galeria_nombre=? WHERE galeria_key=?";
 
 	$db->query($sql, $galeria_nombre, $galeria_id);
@@ -217,10 +217,16 @@ $especialidades_json = json_encode($especialidades);
 										<?php
 										if ($doctor['doc_doctores_genero'] == 'M') {
 											echo '<option value="M">Masculino</option>
-											<option value="F">Femenino</option>';
-										} else {
+											<option value="F">Femenino</option>
+											<option value="X">Ninguno</option>';
+										} else if($doctor['doc_doctores_genero'] == 'F'){
 											echo '<option value="F">Femenino</option>
-											<option value="M">Masculino</option>';
+											<option value="M">Masculino</option>
+											<option value="X">Ninguno</option>';
+										}else{
+											echo '<option value="X">Ninguno</option>
+											<option value="M">Masculino</option>
+											<option value="F">Femenino</option>';
 										}
 										?>
 
@@ -368,7 +374,7 @@ $especialidades_json = json_encode($especialidades);
 				return;
 			}
 
-			if (this.files[0].size / 1024 > 500) {
+			if (this.files[0].size > 500000) {
 				alert("La imagen debe ser menor a 500kb.");
 				$(this).val('');
 				return;
