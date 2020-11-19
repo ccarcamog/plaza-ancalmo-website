@@ -260,3 +260,7 @@ h4 {
 	object-fit: scale-down;
 	margin: 0 5px;
 }
+.btn-ancalmo{
+	background-color: #6bd9de;
+	color: white;
+}

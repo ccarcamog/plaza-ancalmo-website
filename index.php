@@ -69,7 +69,7 @@
 				</div>
 
 
-				<a href="/acerca-de" class="btn btn-lg btn-warning">
+				<a href="/acerca-de" class="btn btn-lg btn-ancalmo">
 					Conoce más
 				</a>
 			</div>
@@ -160,7 +160,7 @@
 						<p> Teléfono: 2243 0300</p>
 						<p> E-mail: <a class="text-white" href="mailto:servicioalcliente@ancalmo.com" target="_blank"> servicioalcliente@ancalmo.com</a></p>
 						<p>Blv. Walter Deininger, Antiguo Cuscatlán</p>
-						<a href="/contacto" class="btn btn-lg btn-primary">
+						<a href="/contacto" class="btn btn-lg btn-ancalmo">
 							Contáctanos
 						</a>
 						<h4 class="mt-2">
