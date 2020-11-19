@@ -42,7 +42,9 @@
 	$galeria_img = $db->query($sql, $galeria_id)->fetchAll();
 	$doctor['galeria_img'] = $galeria_img;
 
-
+	if(!file_exists($doctor['doc_doctor_img'])){
+		$doctor['doc_doctor_img'] = 'img/no-user-image.jpg';
+	}
 
 	echo json_encode($doctor);
 	exit();

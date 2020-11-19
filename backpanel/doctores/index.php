@@ -35,7 +35,7 @@
 					?>
 
 						<div class="alert alert-success w-100 alert-dismissible fade show" role="alert">
-						<?= ($_GET['genero'] == 'M')?"Dr.":"Dra."?> <?= $_GET['nombre']?> ha sido añadido con éxito. <a href="/backpanel/galeria/?id=<?=$_GET['galeria']?>">Ir a la galeria</a>
+						<?= ($_GET['genero'] == 'M')?"Dr.":($_GET['genero'] == 'F'?"Dra.":"")?> <?= $_GET['nombre']?> ha sido añadido con éxito. <a href="/backpanel/galeria/?id=<?=$_GET['galeria']?>">Ir a la galeria</a>
 							<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 								<span aria-hidden="true">&times;</span>
 							</button>
@@ -47,7 +47,7 @@
 
 					?>
 						<div class="alert alert-success w-100 alert-dismissible fade show" role="alert">
-							Informacion de <?= ($_GET['genero'] == 'M')?"Dr.":"Dra."?> <?= $_GET['nombre']?> ha sido actualizada con éxito.</a>
+							Informacion de <?= ($_GET['genero'] == 'M')?"Dr.":($_GET['genero'] == 'F'?"Dra.":"")?> <?= $_GET['nombre']?> ha sido actualizada con éxito.</a>
 							<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 								<span aria-hidden="true">&times;</span>
 							</button>

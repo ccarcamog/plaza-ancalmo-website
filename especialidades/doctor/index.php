@@ -47,6 +47,10 @@ $galeria = $db->query($sql, $galeria_id)->fetchArray();
 $sql = "SELECT * FROM galeria_img WHERE galeria_img_galeria_key=? ORDER BY galeria_img_orden ASC";
 $galeria_imgs = $db->query($sql, $galeria_id)->fetchAll();
 
+if(!file_exists('../../backpanel/doctores/'.$doctor['doc_doctor_img'])){
+	$doctor['doc_doctor_img'] = 'img/no-user-image.jpg';
+}
+
 ?>
 
 <head>
@@ -76,7 +80,7 @@ $galeria_imgs = $db->query($sql, $galeria_id)->fetchAll();
 				<div class="col-sm-4 pb-3">
 					<img src="/backpanel/doctores/<?= $doctor['doc_doctor_img'] ?>" alt="doctor seguro pic">
 				</div>
-				<div class="col-sm-4 doctor-title">
+				<div class="col-sm-8 doctor-title">
 					<div class="">
 						<h3 class="m-0"><?= ($doctor['doc_doctores_genero'] == 'M') ? "Dr." : ($doctor['doc_doctores_genero'] == 'F' ? "Dra." : "") ?> <?= $doctor['doc_doctor_nombre'] ?></h3>
 						<h4 class="text-muted"><?= $especialidades_txt ?></h4>

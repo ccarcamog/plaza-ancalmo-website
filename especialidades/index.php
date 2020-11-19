@@ -57,22 +57,22 @@
 			$doctor_especialidades = $db->query($sql, $doctor_i['doc_doctores_key'])->fetchAll();
 
 			$especialidades_array = array();
-			
+
 			$count = 0;
 			if ($doctor_i['doc_doctores_genero'] == 'M') {
-				foreach ($doctor_especialidades as $especialidad_doc) {					
+				foreach ($doctor_especialidades as $especialidad_doc) {
 					$especialidades_array[$count++] = $especialidad_doc['doc_especialidades_nombre_mas'];
 				}
-			} else if ($doctor_i['doc_doctores_genero'] == 'F'){
-				foreach ($doctor_especialidades as $especialidad_doc) {					
+			} else if ($doctor_i['doc_doctores_genero'] == 'F') {
+				foreach ($doctor_especialidades as $especialidad_doc) {
 					$especialidades_array[$count++] = $especialidad_doc['doc_especialidades_nombre_fem'];
 				}
-			} else{
-				foreach ($doctor_especialidades as $especialidad_doc) {					
+			} else {
+				foreach ($doctor_especialidades as $especialidad_doc) {
 					$especialidades_array[$count++] = $especialidad_doc['doc_especialidades_nombre'];
 				}
 			}
-			
+
 			$especialidades_txt = implode(", ", $especialidades_array);
 
 			$doctor_i['doc_especialidades'] = $especialidades_txt;
@@ -107,6 +107,10 @@
 			// echo json_encode($doctores[$i]);
 			$doctor = $doctores[$i];
 
+			if (!file_exists('../backpanel/doctores/' . $doctor['doc_doctor_img'])) {
+				$doctor['doc_doctor_img'] = 'img/no-user-image.jpg';
+			}
+
 		?>
 
 			<div class="row doctor">
@@ -115,12 +119,12 @@
 				</div>
 				<div class=" col-sm-8 doctor-text">
 					<a href="/especialidades/doctor/?id=<?= $doctor['doc_doctores_key'] ?>" class="doctor-title d-inline">
-						<h3 class="m-0"><?= ($doctor['doc_doctores_genero'] == 'M') ? "Dr." : ($doctor['doc_doctores_genero'] == 'F' ? "Dra." : "") ?> <?= $doctor['doc_doctor_nombre'] ?></h3>
-						<h4 class="text-muted ml-md-3">
+						<h3 class="m-0"><?= ($doctor['doc_doctores_genero'] == 'M') ? "Dr." : ($doctor['doc_doctores_genero'] == 'F' ? "Dra." : "") ?> <?= $doctor['doc_doctor_nombre'] ?></h3> <br>
+						<h4 class="text-muted">
 							<?php if (isset($_GET['especialidad'])) {
 								if ($doctor['doc_doctores_genero'] == 'M') {
 									echo $especialidad['doc_especialidades_nombre_mas'];
-								} else if($doctor['doc_doctores_genero'] == 'F'){
+								} else if ($doctor['doc_doctores_genero'] == 'F') {
 									echo $especialidad['doc_especialidades_nombre_fem'];
 								} else {
 									echo $especialidad['doc_especialidades_nombre'];
@@ -132,9 +136,9 @@
 						</h4>
 					</a>
 					<hr>
-					<p>Contacto: <br>
-						<?= $doctor['doc_doctor_email'] ?><br>
-						<?= $doctor['doc_doctor_tel_1'] ?><br>
+					<p class="mb-0">Contacto: <br>
+						<?= $doctor['doc_doctor_email'].($doctor['doc_doctor_email']?"<br>":"") ?>
+						<?= $doctor['doc_doctor_tel_1'].($doctor['doc_doctor_tel_1']?"<br>":"") ?>
 						<?= $doctor['doc_doctor_tel_2'] ?>
 					</p>
 				</div>
