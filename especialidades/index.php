@@ -6,7 +6,23 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Odontología</title>
+
+	<?php
+	$db = new db($dbHost, $dbUID, $dbPWD, $dbName);
+
+	$especialidad = array(
+		'doc_especialidades_nombre' => 'Todos'
+	);
+
+	$db = new db($dbHost, $dbUID, $dbPWD, $dbName);
+
+	if(isset($_GET['especialidad'])){
+		$especialidad = $db->query("SELECT * FROM doc_especialidades WHERE doc_especialidades_key=?", $_GET['especialidad'])->fetchArray();
+	}
+
+	?>
+
+	<title><?=$especialidad['doc_especialidades_nombre']?></title>
 	<link rel="icon" href="/img/Logo Plaza Ancalmo.png">
 	<!-- Bootstrap core CSS -->
 	<link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -25,12 +41,6 @@
 	<?php include "../components/navbar.php" ?>
 
 	<?php
-
-	$db = new db($dbHost, $dbUID, $dbPWD, $dbName);
-
-	$especialidad = array(
-		'doc_especialidades_nombre' => 'Todos'
-	);
 
 	$sql = "SELECT * FROM doc_doctores ORDER BY doc_doctor_prioridad DESC";
 
@@ -137,8 +147,8 @@
 					</a>
 					<hr>
 					<p class="mb-0">Contacto: <br>
-						<?= $doctor['doc_doctor_email'].($doctor['doc_doctor_email']?"<br>":"") ?>
-						<?= $doctor['doc_doctor_tel_1'].($doctor['doc_doctor_tel_1']?"<br>":"") ?>
+						<?= $doctor['doc_doctor_email'] . ($doctor['doc_doctor_email'] ? "<br>" : "") ?>
+						<?= $doctor['doc_doctor_tel_1'] . ($doctor['doc_doctor_tel_1'] ? "<br>" : "") ?>
 						<?= $doctor['doc_doctor_tel_2'] ?>
 					</p>
 				</div>
