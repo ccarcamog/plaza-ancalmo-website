@@ -79,9 +79,10 @@
 			<div class="vertical-line d-none d-md-flex"></div>
 			<hr class="border-black d-md-none">
 			<div class="col-md-5">
-				<h3 id="llámanos-title">O llamanos</h3>
+				<h3 id="llámanos-title">O llamanos <br><br></h3>
+				
 				<p class="text-muted">2243 0300</p>
-				<img src="/img/svg/phone-square.svg" alt="phone icon" height="60">
+				<img src="/img/svg/noun_Phone_52971.svg" alt="phone icon" height="60">
 			</div>
 		</div>
 	</div>

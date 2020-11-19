@@ -97,7 +97,7 @@
 						<p>Equipada con productos de calidad.</p>
 					</div>
 					<div class="service col-md-4  text-center text-white">
-						<img class="svg-inverted" src="/img/svg/ginecologia.svg" alt="ginecologia icon" width="80">
+						<img class="svg-inverted" src="img/svg/noun_Uterus_2007067.svg" alt="ginecologia icon" width="80">
 						<h3>Ginecología</h3>
 						<p>Te ayudamos a cuidarte.</p>
 					</div>
@@ -136,12 +136,12 @@
 					<h3>Retiro de efectivo</h3>
 				</div>
 				<div class="col-md-4 text-center">
-					<img src="/img/svg/cash-payment.svg" height="100" alt="pago de servicios">
+					<img src="/img/svg/noun_Machine_3022659.svg" height="100" alt="pago de servicios">
 					<hr>
 					<h3>Pago de servicios</h3>
 				</div>
 				<div class="col-md-4 text-center">
-					<img src="/img/svg/home-location.svg" height="100" alt="pago de servicios">
+					<img src="/img/svg/noun_home location_1183883.svg" height="100" alt="pago de servicios">
 					<hr>
 					<h3>Servicio a domicilio</h3>
 				</div>
@@ -160,7 +160,7 @@
 						<p> Teléfono: 2243 0300</p>
 						<p> E-mail: <a class="text-white" href="mailto:servicioalcliente@ancalmo.com" target="_blank"> servicioalcliente@ancalmo.com</a></p>
 						<p>Blv. Walter Deininger, Antiguo Cuscatlán</p>
-						<a href="/contacto" class="btn btn-lg btn-ancalmo">
+						<a href="/contacto" class="btn btn-lg btn-ancalmo-inverted">
 							Contáctanos
 						</a>
 						<h4 class="mt-2">

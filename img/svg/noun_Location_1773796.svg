@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   data-name="Layer 1"
+   viewBox="0 0 90 89.970001"
+   x="0px"
+   y="0px"
+   version="1.1"
+   id="svg14"
+   sodipodi:docname="noun_Location_1773796.svg"
+   width="90"
+   height="89.970001"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)">
+  <metadata
+     id="metadata20">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs18" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1366"
+     inkscape:window-height="689"
+     id="namedview16"
+     showgrid="false"
+     inkscape:zoom="1.888"
+     inkscape:cx="45"
+     inkscape:cy="32.5"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg14" />
+  <title
+     id="title2">Ui Location Map OL</title>
+  <path
+     d="M 45,79.25 43.33,77.4 C 42.33,76.24 17.84,48.88 17.84,27.16 a 27.16,27.16 0 1 1 54.32,0 c 0,21.72 -24.45,49.08 -25.49,50.24 z M 45,4.47 A 22.7,22.7 0 0 0 22.34,27.16 C 22.34,44.03 39.5,65.87 45,72.44 50.5,65.87 67.66,44.03 67.66,27.16 A 22.7,22.7 0 0 0 45,4.47 Z"
+     id="path4"
+     inkscape:connector-curvature="0" />
+  <path
+     d="M 45,41.69 A 14.53,14.53 0 1 1 59.51,27.16 14.54,14.54 0 0 1 45,41.69 Z m 0,-24.56 a 10,10 0 1 0 10,10 10,10 0 0 0 -10,-10 z"
+     id="path6"
+     inkscape:connector-curvature="0" />
+  <path
+     d="m 58.91,69.32 c -1.14,1.57 -2.23,3 -3.24,4.29 17.73,0.9 28.2,3.89 29.74,5.8 -1.83,2.27 -16.22,6.06 -40.41,6.06 -24.19,0 -38.58,-3.79 -40.41,-6.06 1.54,-1.91 12,-4.9 29.74,-5.8 -1,-1.29 -2.1,-2.72 -3.24,-4.29 C 17.78,70.18 0,72.6 0,79.41 c 0,10.26 40.39,10.56 45,10.56 4.61,0 45,-0.3 45,-10.56 C 90,72.6 72.22,70.18 58.91,69.32 Z"
+     id="path8"
+     inkscape:connector-curvature="0" />
+</svg>

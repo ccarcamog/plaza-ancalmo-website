@@ -73,14 +73,14 @@
 					<p>Contamos con servicio a domicilio, pago de servicios y muchas cosas más.</p>
 				</div>
 				<div class="col-md-4 p-4 text-white text-center">
-					<img src="/img/svg/security.svg" alt="seguridad icon" height=100 class="svg-inverted">
+					<img src="/img/svg/noun_security lock_2734036.svg" alt="seguridad icon" height=100 class="svg-inverted">
 					<hr class="border-white">
 					<h3><b>Seguridad</b></h3>
 					<p>Seguimos protocolos de bioseguridad y contamos con seguridad para tu confianza.</p>
 
 				</div>
 				<div class="col-md-4 p-4 text-white text-center">
-					<img src="/img/svg/variety.svg" alt="seguridad icon" height=100 class="svg-inverted">
+					<img src="/img/svg/noun_shopping_3406366.svg" alt="seguridad icon" height=100 class="svg-inverted">
 					<hr class="border-white">
 					<h3><b>Variedad</b></h3>
 					<p>Contamos con una amplia variedad de productos de la más alta calidad.</p>
@@ -98,19 +98,19 @@
 
 		<div class="row mt-5">
 			<div class="col-md-3 text-center">
-				<img src="/img/svg/retiro-remesas.svg" height=100 alt="retiro de efectivo">
+				<img src="/img/svg/noun_hand with money_1380858.svg" height=100 alt="retiro de efectivo">
 				<h4 class="mt-4">Retiro de remesas</h4>
 			</div>
 			<div class="col-md-3 text-center">
-				<img src="/img/svg/ahorro-efectivo.svg" height=100 alt="retiro de efectivo">
+				<img src="/img/svg/noun_Piggy Bank_435075.svg" height=100 alt="retiro de efectivo">
 				<h4 class="mt-4">Abono a cuentas de ahorro</h4>
 			</div>
 			<div class="col-md-3 text-center">
-				<img src="/img/svg/retiro-efectivo.svg" height=100 alt="retiro de efectivo">
+				<img src="/img/svg/noun_Purse_3021154.svg" height=100 alt="retiro de efectivo">
 				<h4 class="mt-4">Retiro de efectivo</h4>
 			</div>
 			<div class="col-md-3 text-center">
-				<img src="/img/svg/pago-servicios.svg" height=100 alt="retiro de efectivo">
+				<img src="/img/svg/noun_hand_payment_2199577.svg" height=100 alt="retiro de efectivo">
 				<h4 class="mt-4">Pago de servicios</h4>
 			</div>
 		</div>
@@ -139,10 +139,10 @@
 							<h3>ENVIOS A:</h3>
 						</center>
 						<div id="locations">
-							<p><img src="/img/svg/pointer.svg" height="20px">ANTIGUO CUSCATLAN</p>
-							<p><img src="/img/svg/pointer.svg" height="20px">COLONIA ESCALÓN</p>
-							<p><img src="/img/svg/pointer.svg" height="20px">CIUDAD MERLIOT</p>
-							<p><img src="/img/svg/pointer.svg" height="20px">SANTA TECLA</p>
+							<p><img src="/img/svg/noun_Location_1773796.svg" class="svg-inverted" height="30px">ANTIGUO CUSCATLAN</p>
+							<p><img src="/img/svg/noun_Location_1773796.svg" class="svg-inverted" height="30px">COLONIA ESCALÓN</p>
+							<p><img src="/img/svg/noun_Location_1773796.svg" class="svg-inverted" height="30px">CIUDAD MERLIOT</p>
+							<p><img src="/img/svg/noun_Location_1773796.svg" class="svg-inverted" height="30px">SANTA TECLA</p>
 						</div>
 					</div>
 					<div class="col-md-6 m-0 p-0" id="domicilioImg">
