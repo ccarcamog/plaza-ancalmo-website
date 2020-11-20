@@ -6,16 +6,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Acerca de</title>
 	<link rel="icon" href="/img/Logo Plaza Ancalmo.png">
-	<!-- MDB icon -->
-	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" href="/css/bootstrap.min.css">
-	<!-- favicon  -->
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
-	<!-- Material Design Bootstrap -->
-	<!-- <link rel="stylesheet" href="/css/mdb.min.css"> -->
-	<!-- Your custom styles (optional) -->
-	<link rel="stylesheet" href="/css/style.css">
-	<link rel="stylesheet" href="/acerca-de/acerca-de-style.css">
 </head>
 
 <body>
@@ -91,3 +81,6 @@
 </body>
 
 </html>
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/acerca-de/acerca-de-style.css">

@@ -7,20 +7,11 @@
 	<title>Plaza ANCALMO</title>
 
 	<link rel="icon" href="/img/Logo Plaza Ancalmo.png">
-	<!-- MDB icon -->
-	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" href="/css/bootstrap.min.css">
-	<!-- favicon  -->
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
-	<!-- Material Design Bootstrap -->
-	<!-- <link rel="stylesheet" href="css/mdb.min.css"> -->
-	<!-- Your custom styles (optional) -->
-	<link rel="stylesheet" href="/css/style.css">
 
 </head>
 
 <body>
-
+	
 	<!-- jQuery -->
 	<script type="text/javascript" src="js/jquery.min.js"></script>
 	<?php include 'components/navbar.php' ?>
@@ -191,6 +182,6 @@
 
 </body>
 
-
-
 </html>
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/style.css">

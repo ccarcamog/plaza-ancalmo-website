@@ -16,23 +16,15 @@
 
 	$db = new db($dbHost, $dbUID, $dbPWD, $dbName);
 
-	if(isset($_GET['especialidad'])){
+	if (isset($_GET['especialidad'])) {
 		$especialidad = $db->query("SELECT * FROM doc_especialidades WHERE doc_especialidades_key=?", $_GET['especialidad'])->fetchArray();
 	}
 
 	?>
 
-	<title><?=$especialidad['doc_especialidades_nombre']?></title>
+	<title><?= $especialidad['doc_especialidades_nombre'] ?></title>
 	<link rel="icon" href="/img/Logo Plaza Ancalmo.png">
 	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" href="/css/bootstrap.min.css">
-	<!-- favicon  -->
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
-	<!-- Material Design Bootstrap -->
-	<!-- <link rel="stylesheet" href="/css/mdb.min.css"> -->
-	<!-- Your custom styles (optional) -->
-	<link rel="stylesheet" href="/css/style.css">
-	<link rel="stylesheet" href="/especialidades/especialidades-style.css">
 
 </head>
 
@@ -171,3 +163,6 @@
 </body>
 
 </html>
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/especialidades/especialidades-style.css">

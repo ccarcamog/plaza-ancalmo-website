@@ -8,25 +8,16 @@
 	<link rel="icon" href="/img/Logo Plaza Ancalmo.png">
 	<!-- MDB icon -->
 	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" href="/css/bootstrap.min.css">
 	<!-- favicon  -->
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
-	<!-- Material Design Bootstrap -->
-	<!-- <link rel="stylesheet" href="/css/mdb.min.css"> -->
-	<!-- Your custom styles (optional) -->
-	<link rel="stylesheet" href="/css/style.css">
-	<link rel="stylesheet" href="/contacto/contacto-style.css">
-	<link rel="stylesheet" href="/css/simplegallery.demo1.css">
-
 
 </head>
 
 <body>
 
 	<?php include "../components/navbar.php" ?>
-	
-	<?php 
-		require "../php/contact-form.php";
+
+	<?php
+	require "../php/contact-form.php";
 	?>
 
 	<header class="container-fluid" id="contactoHeader">
@@ -80,7 +71,7 @@
 			<hr class="border-black d-md-none">
 			<div class="col-md-5">
 				<h3 id="llámanos-title">O llamanos <br><br></h3>
-				
+
 				<p class="text-muted">2243 0300</p>
 				<img src="/img/svg/noun_Phone_52971.svg" alt="phone icon" height="60">
 			</div>
@@ -88,35 +79,35 @@
 	</div>
 
 	<div class="container mt-5 mb-5" id="contactoForma">
-		
-			<div class="filter p-5">
-				<h4 class="mb-4">Forma de contacto</h4>
-				
-				<form action="/contacto/index.php" method="POST">
-					<div class="row form-group">
-						<div class="col">
-							<input type="text" name="nombre" class="form-control" placeholder="Nombre">
-						</div>
-						<div class="col">
-							<input type="text" name="apellido" class="form-control" placeholder="Apellido">
-						</div>
+
+		<div class="filter p-5">
+			<h4 class="mb-4">Forma de contacto</h4>
+
+			<form action="/contacto/index.php" method="POST">
+				<div class="row form-group">
+					<div class="col">
+						<input type="text" name="nombre" class="form-control" placeholder="Nombre">
 					</div>
-					<div class="row form-group">
-						<div class="col">
-							<input type="email" name="email" placeholder="Correo electrónico" class="form-control">
-						</div>
+					<div class="col">
+						<input type="text" name="apellido" class="form-control" placeholder="Apellido">
 					</div>
-					<div class="row form-group p-3">
-						<textarea name="comentario" id="comentario" rows="5" class="form-control" placeholder="Comentario"></textarea>
+				</div>
+				<div class="row form-group">
+					<div class="col">
+						<input type="email" name="email" placeholder="Correo electrónico" class="form-control">
 					</div>
-					<div class="row form-group p-3 pb-0">
-						<div class="col">
-							<input type="submit" name="contact-submit" value="Enviar" class="btn btn-lg btn-warning">
-						</div>
+				</div>
+				<div class="row form-group p-3">
+					<textarea name="comentario" id="comentario" rows="5" class="form-control" placeholder="Comentario"></textarea>
+				</div>
+				<div class="row form-group p-3 pb-0">
+					<div class="col">
+						<input type="submit" name="contact-submit" value="Enviar" class="btn btn-lg btn-warning">
 					</div>
-				</form>
-			</div>
-	
+				</div>
+			</form>
+		</div>
+
 	</div>
 
 
@@ -136,3 +127,7 @@
 </body>
 
 </html>
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/contacto/contacto-style.css">
+<!-- <link rel="stylesheet" href="/css/simplegallery.demo1.css"> -->

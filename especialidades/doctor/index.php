@@ -24,11 +24,11 @@ if ($doctor['doc_doctores_genero'] == 'M') {
 	foreach ($especialidades as $especialidad) {
 		$especialidades_array[] = $especialidad['doc_especialidades_nombre_mas'];
 	}
-} else if ($doctor['doc_doctores_genero'] == 'F'){
+} else if ($doctor['doc_doctores_genero'] == 'F') {
 	foreach ($especialidades as $especialidad) {
 		$especialidades_array[] = $especialidad['doc_especialidades_nombre_fem'];
 	}
-}else{
+} else {
 	foreach ($especialidades as $especialidad) {
 		$especialidades_array[] = $especialidad['doc_especialidades_nombre'];
 	}
@@ -47,7 +47,7 @@ $galeria = $db->query($sql, $galeria_id)->fetchArray();
 $sql = "SELECT * FROM galeria_img WHERE galeria_img_galeria_key=? ORDER BY galeria_img_orden ASC";
 $galeria_imgs = $db->query($sql, $galeria_id)->fetchAll();
 
-if(!file_exists('../../backpanel/doctores/'.$doctor['doc_doctor_img'])){
+if (!file_exists('../../backpanel/doctores/' . $doctor['doc_doctor_img'])) {
 	$doctor['doc_doctor_img'] = 'img/no-user-image.jpg';
 }
 
@@ -59,15 +59,6 @@ if(!file_exists('../../backpanel/doctores/'.$doctor['doc_doctor_img'])){
 	<title><?= $doctor['doc_doctor_nombre'] ?></title>
 	<link rel="icon" href="/img/Logo Plaza Ancalmo.png">
 	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" href="/css/bootstrap.min.css">
-	<!-- favicon  -->
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
-	<!-- Material Design Bootstrap -->
-	<!-- <link rel="stylesheet" href="css/mdb.min.css"> -->
-	<!-- Your custom styles (optional) -->
-	<link rel="stylesheet" href="/css/style.css">
-	<link rel="stylesheet" href="/especialidades/doctor/doctor-style.css">
-	<link rel="stylesheet" href="/css/simplegallery.demo1.css">
 
 </head>
 
@@ -362,3 +353,7 @@ if(!file_exists('../../backpanel/doctores/'.$doctor['doc_doctor_img'])){
 	</body>
 
 </html>
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/especialidades/doctor/doctor-style.css">
+<link rel="stylesheet" href="/css/simplegallery.demo1.css">

@@ -16,12 +16,6 @@ $locales = $db->query($sql)->fetchAll();
 	<link rel="icon" href="/img/Logo Plaza Ancalmo.png">
 	<title>Locales disponibles</title>
 
-	<link rel="stylesheet" href="/css/bootstrap.min.css">
-	<!-- Material Design Bootstrap -->
-	<!-- <link rel="stylesheet" href="/css/mdb.min.css"> -->
-	<!-- Your custom styles (optional) -->
-	<link rel="stylesheet" href="/css/style.css">
-	<link rel="stylesheet" href="/locales/locales-style.css">
 </head>
 
 <body>
@@ -48,7 +42,7 @@ $locales = $db->query($sql)->fetchAll();
 						</a>
 						<hr class="w-100">
 						<h4 class="text-muted"> <?= $local['locales_preview'] ?> </h4>
-						
+
 					</div>
 				</div>
 
@@ -66,3 +60,6 @@ $locales = $db->query($sql)->fetchAll();
 </body>
 
 </html>
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/locales/locales-style.css">

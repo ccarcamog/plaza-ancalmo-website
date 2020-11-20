@@ -8,17 +8,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Galeria</title>
 	<link rel="icon" href="/img/Logo Plaza Ancalmo.png">
-	<!-- MDB icon -->
-	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" href="/css/bootstrap.min.css">
-	<!-- favicon  -->
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
-	<!-- Material Design Bootstrap -->
-	<!-- <link rel="stylesheet" href="/css/mdb.min.css"> -->
-	<!-- Your custom styles (optional) -->
-	<link rel="stylesheet" href="/css/style.css">
-	<link rel="stylesheet" href="/galeria/galeria-style.css">
-	<link rel="stylesheet" href="/css/simplegallery.demo1.css">
 
 </head>
 
@@ -50,25 +39,25 @@
 
 				<div id="galeriaCarousel" class="carousel slide d-flex flex-column justify-content-center" data-ride="carousel">
 					<div class="carousel-inner">
-						<?php 
-							for($i = 0; $i < count($galeria_imgs); $i++){
+						<?php
+						for ($i = 0; $i < count($galeria_imgs); $i++) {
 						?>
-						<div class="carousel-item <?php if(!$i) echo "active" ?>">
-							<img src="/backpanel/galeria/<?= $galeria_imgs[$i]['galeria_img_url'] ?>" class="w-75 image_<?= $i + 1 ?>"/>
-							<p class="caption caption_<?= $i + 1 ?>"><strong><?= $galeria_imgs[$i]['galeria_img_nombre'] ?></strong><br><?= $galeria_imgs[$i]['galeria_img_caption'] ?></p>
-						</div>
-						<?php 
-							}
+							<div class="carousel-item <?php if (!$i) echo "active" ?>">
+								<img src="/backpanel/galeria/<?= $galeria_imgs[$i]['galeria_img_url'] ?>" class="w-75 image_<?= $i + 1 ?>" />
+								<p class="caption caption_<?= $i + 1 ?>"><strong><?= $galeria_imgs[$i]['galeria_img_nombre'] ?></strong><br><?= $galeria_imgs[$i]['galeria_img_caption'] ?></p>
+							</div>
+						<?php
+						}
 						?>
 					</div>
 					<a class="carousel-control-prev d-none d-md-flex" href="#galeriaCarousel" role="button" data-slide="prev">
-						
-						<img  class="direction-arrow" src="/img/svg/left-arrow-angle.svg">
+
+						<img class="direction-arrow" src="/img/svg/left-arrow-angle.svg">
 						<span class="sr-only">Previous</span>
 					</a>
 					<a class="carousel-control-next d-none d-md-flex" href="#galeriaCarousel" role="button" data-slide="next">
-						
-						<img  class="direction-arrow" src="/img/svg/right-arrow-angle.svg">
+
+						<img class="direction-arrow" src="/img/svg/right-arrow-angle.svg">
 						<span class="sr-only">Next</span>
 					</a>
 				</div>
@@ -124,3 +113,8 @@
 </body>
 
 </html>
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<!-- favicon  -->
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/galeria/galeria-style.css">
+<link rel="stylesheet" href="/css/simplegallery.demo1.css">

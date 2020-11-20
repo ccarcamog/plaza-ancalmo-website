@@ -10,15 +10,7 @@
 	<link rel="icon" href="/img/svg/Logo Plaza Ancalmo.svg">
 	<!-- MDB icon -->
 	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" href="/css/bootstrap.min.css">
-	<!-- favicon  -->
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
-	<!-- Material Design Bootstrap -->
-	<!-- <link rel="stylesheet" href="css/mdb.min.css"> -->
-	<!-- Your custom styles (optional) -->
-	<link rel="stylesheet" href="/css/style.css">
-	<link rel="stylesheet" href="/farmacia/farmacia-style.css">
-	<link rel="stylesheet" href="/css/simplegallery.demo1.css">
+
 
 
 </head>
@@ -326,3 +318,8 @@
 </body>
 
 </html>
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<!-- favicon  -->
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/farmacia/farmacia-style.css">
+<link rel="stylesheet" href="/css/simplegallery.demo1.css">
