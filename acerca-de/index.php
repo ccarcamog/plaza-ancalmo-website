@@ -20,7 +20,7 @@
 
 	<div class="container text-center" id="acerca-de-intro">
 		<div class="container-fluid px-5 pt-5">
-			<h3 class="text-muted">¿Quiénes Somos?</h3>
+			<h3 class="text-muted">¿Quiénes somos?</h3>
 			<hr>
 		</div>
 		<img src="/img/featured-image.jpg" alt="featured image" id="featured-image">

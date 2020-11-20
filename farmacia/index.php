@@ -33,7 +33,7 @@
 
 				<h2>Tu lugar de confianza</h2>
 				<hr>
-				<p>¡Somos un nuevo concepto en farmacias porque tenemos de todo para todos!</p>
+				<p>¡Somos un nuevo concepto en farmacias, porque tenemos de todo para todos!</p>
 				<p>Nuestra visión de servicio nos inspira a trabajar con excelencia, ofreciendo medicamentos y productos de calidad. Somos tu lugar de confianza.</p>
 				<p>Síguenos en nuestras redes:</p>
 				<p>
@@ -62,13 +62,13 @@
 					<img class="svg-inverted" src="/img/svg/check.svg" height=100 alt="conveniencia icon">
 					<hr class="border-white">
 					<h3><b>Conveniencia</b></h3>
-					<p>Contamos con servicio a domicilio, pago de servicios y muchas cosas más.</p>
+					<p>Contamos con servicio a domicilio, pago de servicios y mucho más.</p>
 				</div>
 				<div class="col-md-4 p-4 text-white text-center">
 					<img src="/img/svg/noun_security lock_2734036.svg" alt="seguridad icon" height=100 class="svg-inverted">
 					<hr class="border-white">
 					<h3><b>Seguridad</b></h3>
-					<p>Seguimos protocolos de bioseguridad y contamos con seguridad para tu confianza.</p>
+					<p>Seguimos protocolos estrictos de bioseguridad y contamos con seguridad para consolidar tu confianza.</p>
 
 				</div>
 				<div class="col-md-4 p-4 text-white text-center">
