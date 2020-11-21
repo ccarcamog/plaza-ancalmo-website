@@ -124,7 +124,7 @@
 		</center>
 		<div class="row p-3">
 			<div class="col-md-4 p-3" id="domicilioContacto">
-				<h3>TELÉFONOS:</h3>
+				<h3>Teléfonos:</h3>
 				<p><img src="/img/svg/telephone.svg" width=40 alt="whatsapp logo"> 2243-1000 <br> <a href="https://wa.me/50378602663" target="_blank"> <img src="/img/svg/whatsapp.svg" width=40 alt="whatsapp logo"></a> 7860-2663 </p>
 
 			</div>
@@ -132,13 +132,13 @@
 				<div class="row m-0 p-0">
 					<div class="col-md-6 m-0 p-3" id="domicilioLugares">
 						<center>
-							<h3>ENVIOS A:</h3>
+							<h3>Envios a:</h3>
 						</center>
 						<div id="locations">
-							<p><img src="/img/svg/noun_Location_1773796.svg" class="svg-inverted" height="30px">ANTIGUO CUSCATLAN</p>
-							<p><img src="/img/svg/noun_Location_1773796.svg" class="svg-inverted" height="30px">COLONIA ESCALÓN</p>
-							<p><img src="/img/svg/noun_Location_1773796.svg" class="svg-inverted" height="30px">CIUDAD MERLIOT</p>
-							<p><img src="/img/svg/noun_Location_1773796.svg" class="svg-inverted" height="30px">SANTA TECLA</p>
+							<p><img src="/img/svg/noun_Location_1773796.svg" class="svg-inverted" height="30px">Antiguo Cuscatlán</p>
+							<p><img src="/img/svg/noun_Location_1773796.svg" class="svg-inverted" height="30px">Colonia Escalón</p>
+							<p><img src="/img/svg/noun_Location_1773796.svg" class="svg-inverted" height="30px">Ciudad Merliot</p>
+							<p><img src="/img/svg/noun_Location_1773796.svg" class="svg-inverted" height="30px">Santa Tecla</p>
 						</div>
 					</div>
 					<div class="col-md-6 m-0 p-0" id="domicilioImg">
