@@ -25,7 +25,9 @@
 	<title><?= $especialidad['doc_especialidades_nombre'] ?></title>
 	<link rel="icon" href="/img/Logo Plaza Ancalmo.png">
 	<!-- Bootstrap core CSS -->
-
+	<link rel="stylesheet" href="/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/especialidades/especialidades-style.css">
 </head>
 
 <body>
@@ -163,6 +165,3 @@
 </body>
 
 </html>
-<link rel="stylesheet" href="/css/bootstrap.min.css">
-<link rel="stylesheet" href="/css/style.css">
-<link rel="stylesheet" href="/especialidades/especialidades-style.css">

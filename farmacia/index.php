@@ -10,7 +10,11 @@
 	<link rel="icon" href="/img/svg/Logo Plaza Ancalmo.svg">
 	<!-- MDB icon -->
 	<!-- Bootstrap core CSS -->
-
+	<link rel="stylesheet" href="/css/bootstrap.min.css">
+	<!-- favicon  -->
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/farmacia/farmacia-style.css">
+	<link rel="stylesheet" href="/css/simplegallery.demo1.css">
 
 
 </head>
@@ -318,8 +322,3 @@
 </body>
 
 </html>
-<link rel="stylesheet" href="/css/bootstrap.min.css">
-<!-- favicon  -->
-<link rel="stylesheet" href="/css/style.css">
-<link rel="stylesheet" href="/farmacia/farmacia-style.css">
-<link rel="stylesheet" href="/css/simplegallery.demo1.css">

@@ -23,7 +23,7 @@ $galeria_imgs = $db->query($sql, $galeria_id)->fetchAll();
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="icon" href="/img/Logo Plaza Ancalmo.png">
-	<title>Locales disponibles</title>
+	<title><?= $local['local_nombre'] ?></title>
 
 	<link rel="stylesheet" href="/css/bootstrap.min.css">
 	<!-- Material Design Bootstrap -->

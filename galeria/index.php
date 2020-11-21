@@ -8,7 +8,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Galeria</title>
 	<link rel="icon" href="/img/Logo Plaza Ancalmo.png">
-
+	<link rel="stylesheet" href="/css/bootstrap.min.css">
+	<!-- favicon  -->
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/galeria/galeria-style.css">
+	<link rel="stylesheet" href="/css/simplegallery.demo1.css">
 </head>
 
 <body>
@@ -113,8 +117,3 @@
 </body>
 
 </html>
-<link rel="stylesheet" href="/css/bootstrap.min.css">
-<!-- favicon  -->
-<link rel="stylesheet" href="/css/style.css">
-<link rel="stylesheet" href="/galeria/galeria-style.css">
-<link rel="stylesheet" href="/css/simplegallery.demo1.css">

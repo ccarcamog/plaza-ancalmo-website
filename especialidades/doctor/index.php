@@ -59,7 +59,10 @@ if (!file_exists('../../backpanel/doctores/' . $doctor['doc_doctor_img'])) {
 	<title><?= $doctor['doc_doctor_nombre'] ?></title>
 	<link rel="icon" href="/img/Logo Plaza Ancalmo.png">
 	<!-- Bootstrap core CSS -->
-
+	<link rel="stylesheet" href="/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/especialidades/doctor/doctor-style.css">
+	<link rel="stylesheet" href="/css/simplegallery.demo1.css">
 </head>
 
 <body>
@@ -353,7 +356,3 @@ if (!file_exists('../../backpanel/doctores/' . $doctor['doc_doctor_img'])) {
 	</body>
 
 </html>
-<link rel="stylesheet" href="/css/bootstrap.min.css">
-<link rel="stylesheet" href="/css/style.css">
-<link rel="stylesheet" href="/especialidades/doctor/doctor-style.css">
-<link rel="stylesheet" href="/css/simplegallery.demo1.css">

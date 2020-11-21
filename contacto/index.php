@@ -9,7 +9,9 @@
 	<!-- MDB icon -->
 	<!-- Bootstrap core CSS -->
 	<!-- favicon  -->
-
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/contacto/contacto-style.css">
 </head>
 
 <body>
@@ -127,7 +129,5 @@
 </body>
 
 </html>
-<link rel="stylesheet" href="/css/style.css">
-<link rel="stylesheet" href="/css/bootstrap.min.css">
-<link rel="stylesheet" href="/contacto/contacto-style.css">
+
 <!-- <link rel="stylesheet" href="/css/simplegallery.demo1.css"> -->
