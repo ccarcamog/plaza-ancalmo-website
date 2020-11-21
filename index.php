@@ -53,7 +53,7 @@
 
 
 				<div class=" m-4">
-					<h2 class="mt-5">Plaza Ancalmo</h2>
+					<h2 class="mt-5" style="color:#999; font-weight: bold;">Plaza Ancalmo</h2>
 					<hr>
 					<p class="text-center">
 						Es un moderno complejo de consultorios que nace con el objetivo de atraer diversidad de profesionales de la salud al municipio de Antiguo Cuscatlán, convirtiéndose así en una opción accesible y segura para los visitantes.
@@ -113,7 +113,7 @@
 			</div>
 		</div>
 
-		<center class="mt-5">
+		<center class="mt-5" id="tambien-ofrecemos">
 			<h4>También ofrecemos</h4>
 			<!-- <hr> -->
 		</center>
@@ -156,10 +156,10 @@
 							Contáctanos
 						</a>
 						<h4 class="mt-2">
-							<a class=text-white href="https://www.facebook.com/PlazaAncalmo/" target="_blank">
-								<i class="fab fa-facebook"></i>
+							<a class="text-white social-logo" href="https://www.facebook.com/PlazaAncalmo/" target="_blank">
+								<img src="/img/svg/facebook-white.svg" class="" style="height: 2rem; text-decoration: none;" alt="">
 							</a>
-							<i class="fab fa-instagram"></i>
+							<img src="/img/svg/instagram-white.svg" class="" style="height: 2rem; text-decoration: none;" alt="">
 						</h4>
 					</div>
 
