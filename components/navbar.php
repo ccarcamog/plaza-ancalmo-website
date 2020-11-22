@@ -24,7 +24,7 @@ $especialidades = $db->query($sql)->fetchAll();
       <img src="/img/svg/Logo Plaza Ancalmo copy.svg" width="75" alt="Logo de Plaza Ancalmo">
     </a>
 
-    <a href="/" class="navbar-brand">PLAZA <br>ANCALMO</a>
+    <!-- <a href="/" class="navbar-brand">PLAZA <br>ANCALMO</a> -->
     <!-- toggle button -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
