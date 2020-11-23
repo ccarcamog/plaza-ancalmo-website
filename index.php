@@ -7,12 +7,12 @@
 	<title>Plaza ANCALMO</title>
 
 	<link rel="icon" href="/img/Logo Plaza Ancalmo.png">
-	<link rel="stylesheet" href="/css/bootstrap.min.css">
-	<link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
-
+	
+	<link rel="stylesheet" href="/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/css/style.css">
 	<!-- jQuery -->
 	<script type="text/javascript" src="js/jquery.min.js"></script>
 	<?php include 'components/navbar.php' ?>
