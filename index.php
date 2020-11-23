@@ -7,7 +7,9 @@
 	<title>Plaza ANCALMO</title>
 
 	<link rel="icon" href="/img/Logo Plaza Ancalmo.png">
-	<link rel="stylesheet" href="/css/bootstrap.min.css">
+	<!-- <link rel="stylesheet" href="/css/bootstrap.min.css"> -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
 	<link rel="stylesheet" href="/css/style.css">
 </head>
 
@@ -18,7 +20,9 @@
 	<?php include 'components/navbar.php' ?>
 
 	<main>
-
+		<img src="/img/fachada-1.jpg" class="d-none" alt="">
+		<img src="/img/fachada-2.jpg" class="d-none" alt="">
+		<img src="/img/fachada-3.jpg" class="d-none" alt="">
 		<header id="carouselJumbotron" class="carousel slide" data-ride="carousel">
 			<div class="carousel-inner">
 				<div id="item1" class="carousel-item active">
@@ -174,13 +178,17 @@
 	</main>
 
 	<?php include "components/footer.php" ?>
-	<!-- <script type="text/javascript" src="/js/jquery.min.js"></script> -->
-	<!-- Bootstrap core JavaScript -->
-	<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 	<!-- MDB core JavaScript -->
 	<!-- <script type="text/javascript" src="js/mdb.min.js"></script> -->
-	<!-- Your custom scripts (optional) --> -->
-
+	<!-- Your custom scripts (optional) -->
+	<script>
+		
+		$('#carouselJumbotron').carousel({
+			interval: 5000
+		})
+	</script>
 
 </body>
 
