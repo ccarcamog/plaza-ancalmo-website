@@ -5,7 +5,7 @@
 #introFarmacia img{opacity:.9;width:50px}
 #introFarmacia #introTexto img:hover{opacity:1}
 #introFarmacia #introTexto{display:flex;flex-direction:column;justify-content:center;align-content:center}
-#introTexto h2{font-family:Gotham;color:#4bb7bc}
+#introTexto h2{font-family:'Gotham';color:#4bb7bc}
 #introTexto hr{width:100%}
 #introFarmacia #introImg img{width:100%;border-radius:15px}
 #farmaciaPuntos{background-image:url(/img/farmacia-cajero.jpg);background-size:cover;background-position:center;border-radius:15px;padding:0;background-size:cover}
@@ -14,8 +14,8 @@
 #bancoAmigoImg{position:relative;top:-120px}
 #bancoAmigoImg p{margin-bottom:0!important}
 #bancoAmigoImg img{background-color:#fff}
-#bancoAmigoTitle h3{font-family:Gotham;color:#4bb7bc}
-#domicilioInfo h2{font-family:Gotham;color:#4bb7bc}
+#bancoAmigoTitle h3{font-family:'Gotham';color:#4bb7bc}
+#domicilioInfo h2{font-family:'Gotham';color:#4bb7bc}
 #domicilioInfo p{font-size:1.1em}
 #domicilioInfo img{opacity:.8;margin:5px}
 #repartidor-img{opacity:1}
@@ -31,13 +31,13 @@
 #hugoTexto{display:flex;flex-direction:column;justify-content:center;align-content:right}
 #hugoLogo{height:1.2em;margin-left:5px;margin-bottom:16px;width:auto}
 #hugoTexto hr{border-top:solid 1px #999}
-#hugoTexto h3{font-family:Gotham;color:#4bb7bc;vertical-align:baseline!important}
+#hugoTexto h3{font-family:'Gotham';color:#4bb7bc;vertical-align:baseline!important}
 #hugoTexto h3 span{color:#5f428c}
-#marcasCarousel h3{font-family:Gotham;color:#4bb7bc}
+#marcasCarousel h3{font-family:'Gotham';color:#4bb7bc}
 #marcasCarousel{max-width:100vw}
 #carouselMarcas .container{padding:0}
 #carouselMarcas .carousel-inner{height:100%;width:100%}
 #carouselMarcas .col-3{display:flex;justify-content:center;align-items:center}
 .carousel-indicators{color:#000}
 #carouselMarcas .carousel-inner img{width:100%}
-#farmaciaGaleria h3{font-family:Gotham;color:#4bb7bc;padding:0}
+#farmaciaGaleria h3{font-family:'Gotham';color:#4bb7bc;padding:0}
