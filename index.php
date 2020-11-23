@@ -7,12 +7,12 @@
 	<title>Plaza ANCALMO</title>
 
 	<link rel="icon" href="/img/Logo Plaza Ancalmo.png">
+	<link rel="stylesheet" href="/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
 	
-	<link rel="stylesheet" href="/css/bootstrap.min.css">
-	<link rel="stylesheet" href="/css/style.css">
 	<!-- jQuery -->
 	<script type="text/javascript" src="js/jquery.min.js"></script>
 	<?php include 'components/navbar.php' ?>
@@ -174,12 +174,13 @@
 	</main>
 
 	<?php include "components/footer.php" ?>
-	<script type="text/javascript" src="/js/jquery.min.js"></script>
+	<!-- <script type="text/javascript" src="/js/jquery.min.js"></script> -->
 	<!-- Bootstrap core JavaScript -->
 	<script type="text/javascript" src="/js/bootstrap.min.js"></script>
 	<!-- MDB core JavaScript -->
 	<!-- <script type="text/javascript" src="js/mdb.min.js"></script> -->
-	<!-- Your custom scripts (optional) -->
+	<!-- Your custom scripts (optional) --> -->
+
 
 </body>
 
