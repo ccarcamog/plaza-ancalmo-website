@@ -178,36 +178,21 @@
 
 					<div class="carousel-item active">
 						<div class="row">
-							<div class="col-3"><img src="/img/oral-b-1-logo-png-transparent.png" alt="oralb logo"></div>
-							<div class="col-3"><img src="/img/bayer-.eps-logo-vector.png" alt="bayer logo"></div>
-							<div class="col-3"><img src="/img/Colgate_logo.svg.png" alt="colgate logo"></div>
-							<div class="col-3"><img src="/img/Nestle-logo.png" alt="nestle logo"></div>
+							<div class="col-3"><img src="/img/svg/marcas/LOGO ANCALMO NEGRO Y BLANCO copy-01.svg" alt="Logo Ancalmo"></div>
+							<div class="col-3"><img src="/img/svg/marcas/LOGO-SUERO-ORAL ANCALMO copy-01.svg" alt="bayer logo"></div>
+							<div class="col-3"><img src="/img/svg/marcas/FreeVector-Coca-Cola copy.svg" alt="Coca Cola logo"></div>
+							<div class="col-3"><img src="/img/svg/marcas/la-roche-posay-laboratoire-dermatologique-vector-logo.svg" alt="La Roche Posay logo"></div>
 						</div>
 					</div>
 					<div class="carousel-item">
 						<div class="row">
-							<div class="col-3"><img src="/img/oral-b-1-logo-png-transparent.png" alt="oralb logo"></div>
-							<div class="col-3"><img src="/img/bayer-.eps-logo-vector.png" alt="bayer logo"></div>
-							<div class="col-3"><img src="/img/Colgate_logo.svg.png" alt="colgate logo"></div>
-							<div class="col-3"><img src="/img/Nestle-logo.png" alt="nestle logo"></div>
+							<div class="col-3"><img src="/img/svg/marcas/Logo Bimbo.svg" alt="Bimbo logo"></div>
+							<div class="col-3"><img src="/img/svg/marcas/LOGO HESSEL  copy.svg" alt="Hessel logo"></div>
+							<div class="col-3"><img src="/img/svg/marcas/logo zorritone SIN TEXTO copy.svg" alt="Zorritone logo"></div>
+							<div class="col-3"><img src="/img/svg/marcas/vichy_labolatories_logo copy.svg" alt="Vichy Laboratories logo"></div>
 						</div>
 					</div>
-					<div class="carousel-item">
-						<div class="row">
-							<div class="col-3"><img src="/img/oral-b-1-logo-png-transparent.png" alt="oralb logo"></div>
-							<div class="col-3"><img src="/img/bayer-.eps-logo-vector.png" alt="bayer logo"></div>
-							<div class="col-3"><img src="/img/Colgate_logo.svg.png" alt="colgate logo"></div>
-							<div class="col-3"><img src="/img/Nestle-logo.png" alt="nestle logo"></div>
-						</div>
-					</div>
-					<div class="carousel-item">
-						<div class="row">
-							<div class="col-3"><img src="/img/oral-b-1-logo-png-transparent.png" alt="oralb logo"></div>
-							<div class="col-3"><img src="/img/bayer-.eps-logo-vector.png" alt="bayer logo"></div>
-							<div class="col-3"><img src="/img/Colgate_logo.svg.png" alt="colgate logo"></div>
-							<div class="col-3"><img src="/img/Nestle-logo.png" alt="nestle logo"></div>
-						</div>
-					</div>
+					
 				</div>
 			</div>
 
