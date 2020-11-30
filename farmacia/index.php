@@ -192,7 +192,15 @@
 							<div class="col-3"><img src="/img/svg/marcas/vichy_labolatories_logo copy.svg" alt="Vichy Laboratories logo"></div>
 						</div>
 					</div>
-					
+					<div class="carousel-item">
+						<div class="row">
+							<div class="col-3"><img src="/img/svg/marcas/Nestle.svg" alt="Nestle logo"></div>
+							<div class="col-3"><img src="/img/svg/marcas/Oral-B.svg" alt="Oral B logo"></div>
+							<div class="col-3"><img src="/img/svg/marcas/unnamed-14.svg" alt="Diana logo"></div>
+							<div class="col-3"><img src="/img/svg/marcas/5d835c91c9c262d0605a776c7def140e.svg" alt="Saba Laboratories logo"></div>
+						</div>
+					</div>
+
 				</div>
 			</div>
 
