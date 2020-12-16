@@ -12,23 +12,15 @@
 
 .simplegallery {
   margin: 0 auto;
-  /* width: 80vw; */
 
 }
 
 .simplegallery .content {
   background: #fff;
   position: relative;
-  /* width: 50vw; */
-  /* align-self: center; */
-  /* width: 418px; */
-  /* height: 270px; */
-  /* overflow: scroll; */
 }
 
 .simplegallery .content img {
-  /* width: 60%; */
-  /* border: 1px solid #9c9c9c; */
   border-radius: 15px;
 }
 
@@ -46,17 +38,12 @@
 }
 
 .simplegallery .thumbnail .thumb {
-  /* float: left; */
-  /* height: 100px; */
-  
-  /* height: 100px; */
   width: auto;
   margin: 15px;
   cursor: pointer;
 }
 
 .simplegallery .thumbnail .thumb img {
-  /* border: 1px solid #9c9c9c; */
   border-radius: 15px;
   width: 200px !important;
 	height: 150px !important;
