@@ -280,7 +280,11 @@
          -o-transition: padding 600ms ease;
             transition: padding 600ms ease; }
 
-
+/*IMG*/            
+#thumbnails img{
+  max-height: 90vh;
+  object-fit: scale-down;
+}
 /* Thumbnails */
 .thumb-box {
 	padding: 1.4em 0 1em;

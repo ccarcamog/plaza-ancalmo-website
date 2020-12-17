@@ -14,7 +14,7 @@
 	<!-- favicon  -->
 	<link rel="stylesheet" href="/css/style.css">
 	<link rel="stylesheet" href="/farmacia/farmacia-style.css">
-	<link rel="stylesheet" href="/css/simplegallery.demo1.css">
+	<link rel="stylesheet" href="/css/slippry.css">
 
 
 </head>
@@ -229,62 +229,29 @@
 	?>
 
 
-	<div class="container-fluid" id="farmaciaGaleria">
+	<div class="container" id="farmaciaGaleria">
 		<center class="mt-5 mb-5">
 			<h3>Galería</h3>
 		</center>
 
-		<div id="gallery" class="simplegallery">
-
-			<div class="content text-center">
-
-				<div id="galeriaCarousel" class="carousel slide" data-ride="carousel">
-					<div class="carousel-inner">
-						<?php
-						for ($i = 0; $i < count($galeria_imgs); $i++) {
-						?>
-							<div class="carousel-item <?php if (!$i) echo "active" ?>">
-								<img src="/backpanel/galeria/<?= $galeria_imgs[$i]['galeria_img_url'] ?>" class="image_<?= $i + 1 ?>" />
-								<p class="caption caption_<?= $i + 1 ?>"><strong><?= $galeria_imgs[$i]['galeria_img_nombre'] ?></strong><br><?= $galeria_imgs[$i]['galeria_img_caption'] ?></p>
-							</div>
-						<?php
-						}
-						?>
-					</div>
-					<a class="carousel-control-prev" href="#galeriaCarousel" role="button" data-slide="prev">
-
-						<img class="direction-arrow" src="/img/svg/left-arrow-angle.svg">
-						<span class="sr-only">Previous</span>
+		<ul id="thumbnails">
+			<?php for ($i = 0; $i < count($galeria_imgs); $i++) { ?>
+				<li>
+					<a href="#slide<?= $i + 1 ?>">
+						<img src="/backpanel/galeria/<?= $galeria_imgs[$i]['galeria_img_url'] ?>" alt="<strong><?= $galeria_imgs[$i]['galeria_img_nombre'] ?></strong><br><?= $galeria_imgs[$i]['galeria_img_caption'] ?>" style="max-height:90vh; object-fit:scale-down">
 					</a>
-					<a class="carousel-control-next" href="#galeriaCarousel" role="button" data-slide="next">
+				</li>
 
-						<img class="direction-arrow" src="/img/svg/right-arrow-angle.svg">
-						<span class="sr-only">Next</span>
-					</a>
-				</div>
-
-
-			</div>
-
-			<div class="clear"></div>
-
-			<div class="thumbnail container">
-				<?php
-				for ($i = 0; $i < count($galeria_imgs); $i++) {
-				?>
-					<div class="thumb" id="thumbid_<?= ($i + 1) ?>" data-id="<?= $i ?>">
-						<a rel="<?= ($i + 1) ?>">
-							<img src="/backpanel/galeria/<?= $galeria_imgs[$i]['galeria_img_url'] ?>" id="thumb_<?= ($i + 1) ?>" class="thumbs" alt="" />
-						</a>
-					</div>
-				<?php
-				}
-				?>
-
-
-			</div>
-
+			<?php } ?>
+		</ul>
+		<div class="thumb-box">
+			<ul class="thumbs">
+				<?php for ($i = 0; $i < count($galeria_imgs); $i++) { ?>
+					<li><a href="#<?= $i + 1 ?>" data-slide="<?= $i + 1 ?>"><img src="/backpanel/galeria/<?= $galeria_imgs[$i]['galeria_img_url'] ?>" alt="<strong><?= $galeria_imgs[$i]['galeria_img_nombre'] ?></strong><br><?= $galeria_imgs[$i]['galeria_img_caption'] ?>"></a></li>
+				<?php } ?>
+			</ul>
 		</div>
+
 	</div>
 
 	<?php include "../components/footer.php" ?>
@@ -295,19 +262,25 @@
 	<!-- MDB core JavaScript -->
 	<!-- <script type="text/javascript" src="/js/mdb.min.js"></script> -->
 	<!-- Your custom scripts (optional) -->
-	<script type="text/javascript" src="/js/simplegallery.min.js"></script>
+	<!-- <script type="text/javascript" src="/js/simplegallery.min.js"></script> -->
+	<script src="js/slippry.min.js"></script>
 	<script>
-		$(document).ready(function() {
+		var thumbs = jQuery('#thumbnails').slippry({
+			// general elements & wrapper
+			slippryWrapper: '<div class="slippry_box thumbnails" />',
+			// options
+			transition: 'horizontal',
+			pager: false,
+			auto: false,
+			onSlideBefore: function(el, index_old, index_new) {
+				jQuery('.thumbs a img').removeClass('active');
+				jQuery('img', jQuery('.thumbs a')[index_new]).addClass('active');
+			}
+		});
 
-			$('#galeriaCarousel').carousel({
-				interval: 5000
-			});
-			$(".thumb").click(function() {
-				var id = $(this).data("id");
-				$('#galeriaCarousel').carousel(id);
-
-			});
-
+		jQuery('.thumbs a').click(function() {
+			thumbs.goToSlide($(this).data('slide'));
+			return false;
 		});
 	</script>
 
