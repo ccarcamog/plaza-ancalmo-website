@@ -15,7 +15,8 @@
 	<link rel="stylesheet" href="/css/bootstrap.min.css">
 	<link rel="stylesheet" href="/css/style.css">
 	<link rel="stylesheet" href="/especialidades/doctor/doctor-style.css">
-	<link rel="stylesheet" href="/css/simplegallery.demo1.css">
+	<!-- <link rel="stylesheet" href="/css/simplegallery.demo1.css"> -->
+	<link rel="stylesheet" href="/css/slippry.css">
 </head>
 
 <body>
@@ -35,7 +36,7 @@
 					?>
 
 						<div class="alert alert-success w-100 alert-dismissible fade show" role="alert">
-						<?= ($_GET['genero'] == 'M')?"Dr.":($_GET['genero'] == 'F'?"Dra.":"")?> <?= $_GET['nombre']?> ha sido añadido con éxito. <a href="/backpanel/galeria/?id=<?=$_GET['galeria']?>">Ir a la galeria</a>
+							<?= ($_GET['genero'] == 'M') ? "Dr." : ($_GET['genero'] == 'F' ? "Dra." : "") ?> <?= $_GET['nombre'] ?> ha sido añadido con éxito. <a href="/backpanel/galeria/?id=<?= $_GET['galeria'] ?>">Ir a la galeria</a>
 							<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 								<span aria-hidden="true">&times;</span>
 							</button>
@@ -43,11 +44,11 @@
 
 					<?php
 
-					}else if ($_GET['success'] == 'update'){
+					} else if ($_GET['success'] == 'update') {
 
 					?>
 						<div class="alert alert-success w-100 alert-dismissible fade show" role="alert">
-							Informacion de <?= ($_GET['genero'] == 'M')?"Dr.":($_GET['genero'] == 'F'?"Dra.":"")?> <?= $_GET['nombre']?> ha sido actualizada con éxito.</a>
+							Informacion de <?= ($_GET['genero'] == 'M') ? "Dr." : ($_GET['genero'] == 'F' ? "Dra." : "") ?> <?= $_GET['nombre'] ?> ha sido actualizada con éxito.</a>
 							<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 								<span aria-hidden="true">&times;</span>
 							</button>
@@ -89,7 +90,7 @@
 								?>
 									<tr id="row-<?= $doctor['doc_doctores_key'] ?>" data-id="<?= $doctor['doc_doctores_key'] ?>">
 										<th scope="row"><?= $count++ ?></th>
-										<td><?= ($doctor['doc_doctores_genero'] == 'M') ? "Dr." : ($doctor['doc_doctores_genero'] == 'F' ? "Dra." : "")?> <?= $doctor['doc_doctor_nombre'] ?></td>
+										<td><?= ($doctor['doc_doctores_genero'] == 'M') ? "Dr." : ($doctor['doc_doctores_genero'] == 'F' ? "Dra." : "") ?> <?= $doctor['doc_doctor_nombre'] ?></td>
 										<td>
 											<a class="btn btn-info galeria-btn" href="/backpanel/galeria/?id=<?= $doctor['doc_doctor_galeria'] ?>">Ir a galería</a>
 
@@ -247,36 +248,22 @@
 											</div>
 											<div role="tabpanel" class="tab-pane fade" id="galeria" role="tabpanel" aria-labelledby="galeria-tab">
 												<div class="container-fluid">
-												<center>
-													<h4 id="galeria_nombre"></h4>
-												</center>
-													<div id="gallery" class="simplegallery">
-														<div class="content text-center">
+													<center>
+														<h4 id="galeria_nombre"></h4>
+													</center>
 
-															<div id="galeriaCarousel" class="carousel slide d-flex flex-column justify-content-center" data-ride="carousel">
-																<div class="carousel-inner">
+													<ul id="thumbnails">
 
-																</div>
-																<a class="carousel-control-prev d-none d-md-flex" href="#galeriaCarousel" role="button" data-slide="prev">
-
-																	<img class="direction-arrow" src="/img/svg/left-arrow-angle.svg">
-																	<span class="sr-only">Previous</span>
-																</a>
-																<a class="carousel-control-next d-none d-md-flex" href="#galeriaCarousel" role="button" data-slide="next">
-
-																	<img class="direction-arrow" src="/img/svg/right-arrow-angle.svg">
-																	<span class="sr-only">Next</span>
-																</a>
-															</div>
-
-														</div>
-														<div class="clear"></div>
-														<div class="thumbnail container">
+													</ul>
+													<div class="thumb-box">
+														<ul class="thumbs">
 
 
-														</div>
+
+														</ul>
 
 													</div>
+
 												</div>
 											</div>
 										</div>
@@ -295,18 +282,41 @@
 	</main>
 	<?php include "../../components/footer.php" ?>
 	<script type="text/javascript" src="/js/jquery.min.js"></script>
-	<script type="text/javascript" src="/js/simplegallery.min.js"></script>
+	<!-- <script type="text/javascript" src="/js/simplegallery.min.js"></script> -->
+	<script src="/js/slippry.min.js"></script>
 	<!-- Bootstrap core JavaScript -->
 	<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+	<style>
+		.tall{
+			height:60vh;
+		}
+	</style>
 	<script>
+		var thumbs = jQuery('#thumbnails').slippry({
+			// general elements & wrapper
+			slippryWrapper: '<div class="slippry_box thumbnails"/>',
+			// options
+			transition: 'horizontal',
+			pager: false,
+			fillerClass: 'sy-filler-ready',
+			auto: false,
+			onSlideBefore: function(el, index_old, index_new) {
+				
+				
+				jQuery('.thumbs a img').removeClass('active');
+				jQuery('img', jQuery('.thumbs a')[index_new]).addClass('active');
+			}
+		});
+
 		$('#previewModal').on('shown.bs.modal', function() {
-			$(".thumb").click(function() {
-				var id = $(this).data("id");
-				$('#galeriaCarousel').carousel(id);
+			
+			$('.thumbs a').on('click', function() {
+				thumbs.goToSlide($(this).data('slide'));
+				return false;
 			});
 		})
-	</script>
-	<script type="text/javascript">
+
+
 		$('.table > tbody > tr').click(function() {
 			var doctor_id = $(this).data('id');
 
@@ -320,19 +330,19 @@
 				success: function(response) {
 					console.log(response);
 
-					$('.doctor_nombre').html(((response['doc_doctores_genero']=='M')?'Dr. ':(response['doc_doctores_genero']=='F')?'Dra. ':"") + response['doc_doctor_nombre']);
+					$('.doctor_nombre').html(((response['doc_doctores_genero'] == 'M') ? 'Dr. ' : (response['doc_doctores_genero'] == 'F') ? 'Dra. ' : "") + response['doc_doctor_nombre']);
 					$('.doctor_especialidad').html(response['especialidades'].join(", "));
 					$('.doctor_img').attr("src", "/backpanel/doctores/" + response['doc_doctor_img']);
-					$('.doctor_descripcion').html(response['doc_doctor_desc']?response['doc_doctor_desc']:"Completa esta información para que aparezca en el perfil.");
-					$('.doctor_especialidades').html(response['doc_doctor_especializaciones']?response['doc_doctor_especializaciones']:"Completa esta información para que aparezca en el perfil.");
-					$('.doctor_horarios').html(response['doc_doctor_horarios']?response['doc_doctor_horarios']:"Completa esta información para que aparezca en el perfil.");
-					$('.doctor_pagos').html(response['doc_doctor_pagos']?response['doc_doctor_pagos']:"Completa esta información para que aparezca en el perfil.");
-					$('.doctor_local').html(response['doc_doctor_local']?response['doc_doctor_local']:"Completa esta información para que aparezca en el perfil.");
-					$('.doctor_exp_num').html(response['doc_doctor_exp_num']?response['doc_doctor_tel_1']:"Completa esta información para que aparezca en el perfil.");
+					$('.doctor_descripcion').html(response['doc_doctor_desc'] ? response['doc_doctor_desc'] : "Completa esta información para que aparezca en el perfil.");
+					$('.doctor_especialidades').html(response['doc_doctor_especializaciones'] ? response['doc_doctor_especializaciones'] : "Completa esta información para que aparezca en el perfil.");
+					$('.doctor_horarios').html(response['doc_doctor_horarios'] ? response['doc_doctor_horarios'] : "Completa esta información para que aparezca en el perfil.");
+					$('.doctor_pagos').html(response['doc_doctor_pagos'] ? response['doc_doctor_pagos'] : "Completa esta información para que aparezca en el perfil.");
+					$('.doctor_local').html(response['doc_doctor_local'] ? response['doc_doctor_local'] : "Completa esta información para que aparezca en el perfil.");
+					$('.doctor_exp_num').html(response['doc_doctor_exp_num'] ? response['doc_doctor_tel_1'] : "Completa esta información para que aparezca en el perfil.");
 					$('.doctor_seguros').html('');
 
 					$('.doctor-seguros-card').html('');
-					if(response['seguros'].length == 0){
+					if (response['seguros'].length == 0) {
 						$('.doctor_seguros').append('<li>Completa esta información para que aparezca en el perfil.</li>');
 						$('.doctor-seguros-card').html('Completa esta información para que aparezca en el perfil.');
 					}
@@ -356,15 +366,15 @@
 						$('.doctor-seguros-card').append($(html));
 
 					}
-					$('.doctor_telefono_1').html(response['doc_doctor_tel_1']?response['doc_doctor_tel_1']:"Completa esta información para que aparezca en el perfil.");
-					$('.doctor_telefono_2').html(response['doc_doctor_tel_2']?response['doc_doctor_tel_2']:"Completa esta información para que aparezca en el perfil.");
-					$('.doctor_correo').html(response['doc_doctor_email']?response['doc_doctor_email']:"Completa esta información para que aparezca en el perfil.");
-					$('.doctor_facebook').html(response['doc_doctor_fb']?response['doc_doctor_fb']:"Completa esta información para que aparezca en el perfil.");
-					$('.doctor_instagram').html(response['doc_doctor_ig']?response['doc_doctor_ig']:"Completa esta información para que aparezca en el perfil.");
-					$('.doctor_estudios').html(response['doc_doctor_estudios']?response['doc_doctor_estudios']:"Completa esta información para que aparezca en el perfil.");
-					$('.doctor_postgrados').html(response['doc_doctor_postgrados']?response['doc_doctor_postgrados']:"Completa esta información para que aparezca en el perfil.");
-					$('.doctor_especializaciones').html(response['doc_doctor_especializaciones']?response['doc_doctor_especializaciones']:"Completa esta información para que aparezca en el perfil.");
-					$('.doctor_experiencia').html(response['doc_doctor_exp']?response['doc_doctor_exp']:"Completa esta información para que aparezca en el perfil.");
+					$('.doctor_telefono_1').html(response['doc_doctor_tel_1'] ? response['doc_doctor_tel_1'] : "Completa esta información para que aparezca en el perfil.");
+					$('.doctor_telefono_2').html(response['doc_doctor_tel_2'] ? response['doc_doctor_tel_2'] : "Completa esta información para que aparezca en el perfil.");
+					$('.doctor_correo').html(response['doc_doctor_email'] ? response['doc_doctor_email'] : "Completa esta información para que aparezca en el perfil.");
+					$('.doctor_facebook').html(response['doc_doctor_fb'] ? response['doc_doctor_fb'] : "Completa esta información para que aparezca en el perfil.");
+					$('.doctor_instagram').html(response['doc_doctor_ig'] ? response['doc_doctor_ig'] : "Completa esta información para que aparezca en el perfil.");
+					$('.doctor_estudios').html(response['doc_doctor_estudios'] ? response['doc_doctor_estudios'] : "Completa esta información para que aparezca en el perfil.");
+					$('.doctor_postgrados').html(response['doc_doctor_postgrados'] ? response['doc_doctor_postgrados'] : "Completa esta información para que aparezca en el perfil.");
+					$('.doctor_especializaciones').html(response['doc_doctor_especializaciones'] ? response['doc_doctor_especializaciones'] : "Completa esta información para que aparezca en el perfil.");
+					$('.doctor_experiencia').html(response['doc_doctor_exp'] ? response['doc_doctor_exp'] : "Completa esta información para que aparezca en el perfil.");
 
 					console.log(response['galeria']);
 
@@ -374,49 +384,45 @@
 
 					$('#galeria_nombre').html(galeria_nombre);
 
-					$('.carousel-inner').html('');
-					if(galeria.length == 0){
-						var html = '<div class="carousel-item active">';
-						html += '<p class="mt-5">Agrega imagenes a la galeria <a href="/backpanel/galeria/?id=' + galeria_id + '" target="_blank">aquí</a></p>'
-						html += '</div>'
-						$('.carousel-inner').append(html);
+					$('#thumbnails').html('');
+					if (galeria.length == 0) {
+						var html = '';
+						html += '<li>'
+						html += '	<a href="#slide1">'
+						html += '		<img class="active" src="/img/placeholder.jpg" alt="<strong>No hay imagenes aún</strong><br>Para agregar más imagenes <a href=/backpanel/galeria/?id=' + galeria_id +' target=_blank>haz click aquí</a>">'
+						html += '	</a>'
+						html += '</li>'
+
+						$('#thumbnails').append(html);
 					}
-					// $('.carousel-inner').append(html);
+
 					for (var i = 0; i < galeria.length; i++) {
 
-						if (!i) var html = '<div class="carousel-item active">';
-						else var html = '<div class="carousel-item">';
-						html += '	<img src="/backpanel/galeria/' + galeria[i]['galeria_img_url'] + '" class="w-75 image_' + (i + 1) + '" />'
-						html += '	<p class="caption caption_' + (i + 1) + '"><strong>' + galeria[i]['galeria_img_nombre'] + '</strong><br>' + (galeria[i]['galeria_img_caption']?galeria[i]['galeria_img_caption']:("Agrega una descripcion <a href='/backpanel/galeria/?id=" + galeria_id + "' target='_blank'> aquí </a>"))+ '</p>'
-						html += '</div>'
+						var html = '';
+						html += '<li>';
+						html += '	<a href="#slide' + (i + 1) + '">';
+						if(i == 0){
+							html += '<img class="active" src="/backpanel/galeria/' + galeria[i]['galeria_img_url'] + '" alt="<strong>' + galeria[i]['galeria_img_nombre'] + '</strong><br>' + galeria[i]['galeria_img_caption'] + '</a>">';
+						}else{
+							html += '<img src="/backpanel/galeria/' + galeria[i]['galeria_img_url'] + '" alt="<strong>' + galeria[i]['galeria_img_nombre'] + '</strong><br>' + galeria[i]['galeria_img_caption'] + '</a>">';
+						}
+						html += '	</a>';
+						html += '</li>';
 
-						$('.carousel-inner').append(html);
+						$('#thumbnails').append(html);
 					}
 
-					$('.galeria_content').html('');
-					for (var i = 0; i < galeria.length; i++) {
-						if (i == 0) var html = '<p class="caption caption_' + (i + 1) + '"><strong>' + galeria[i]['galeria_img_nombre'] + '</strong> ' + galeria[i]['galeria_img_caption'] + '</p>';
-						else var html = '<p class="caption caption_' + (i + 1) + '" style="display:none"><strong>' + galeria[i]['galeria_img_nombre'] + '</strong> ' + galeria[i]['galeria_img_caption'] + '</p>';
-						$('.galeria_content').append(html);
-
-					}
-
-					$('.thumbnail').html('');
+					$('.thumbs').html('');
 					for (var i = 0; i < galeria.length; i++) {
 						var html = '';
-						html += '<div class="thumb" id="thumbid_' + (i + 1) + '" data-id="' + i + '">';
-						html += '<a rel="' + (i + 1) + '">';
-						html += '<img src="/backpanel/galeria/' + galeria[i]['galeria_img_url'] + '" id="thumb_' + (i + 1) + '" class="thumbs" alt="" />';
-						html += '</a>';
-						html += '</div>';
+						html += '<li><a href="#' + (i + 1) + '" data-slide="' + (i + 1) + '"><img src="/backpanel/galeria/' + galeria[i]['galeria_img_url'] + '" alt="<strong>' + galeria[i]['galeria_img_nombre'] + '</strong><br>' + galeria[i]['galeria_img_caption'] + '</a>"></a></li>';
 
-						$('.thumbnail').append(html);
+						$('.thumbs').append(html);
 
 					}
 
-					$('#galeriaCarousel').carousel({
-						interval: 5000
-					});
+					thumbs.reloadSlider();
+
 
 					$('#previewModal').modal('show');
 

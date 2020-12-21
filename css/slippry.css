@@ -227,7 +227,7 @@
     padding: 0.4em 1em;
     border-radius: 1.2em; }
     .sy-caption-wrap .sy-caption a:link, .sy-caption-wrap .sy-caption a:visited {
-      color: #e24b70;
+      color: #51c5bb;
       font-weight: 600;
       text-decoration: none; }
     .sy-caption-wrap .sy-caption a:hover, .sy-caption-wrap .sy-caption a:focus {
@@ -258,7 +258,7 @@
     margin: 0 1em 0 0;
     border-radius: 50%; }
     .sy-pager li.sy-active a {
-      background-color: #e24b70; }
+      background-color: #66bbe2; }
     .sy-pager li a {
       width: 100%;
       height: 100%;
@@ -280,8 +280,16 @@
     -webkit-transition: padding 600ms ease;
          -o-transition: padding 600ms ease;
             transition: padding 600ms ease; }
+.sy-filler-ready{
+  width: 100%;
+  -webkit-transition: padding 600ms ease;
+         -o-transition: padding 600ms ease;
+            transition: padding 600ms ease; 
+  padding-top:66.6652%;
+}
 
-/*IMG*/            
+/*IMG*/     
+
 #thumbnails img{
   max-height: 90vh;
   object-fit: scale-down;

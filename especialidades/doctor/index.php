@@ -321,7 +321,7 @@ if (!file_exists('../../backpanel/doctores/' . $doctor['doc_doctor_img'])) {
 				start:1, 
 				pager: false,
 				auto: false,
-				fillerClass: 'tall',
+				fillerClass: 'sy-filler-ready',
 				onSlideBefore: function(el, index_old, index_new) {
 					jQuery('.thumbs a img').removeClass('active');
 					jQuery('img', jQuery('.thumbs a')[index_new]).addClass('active');
