@@ -300,6 +300,7 @@
 			// options
 			transition: 'horizontal',
 			pager: false,
+			fillerClass: 'sy-filler-padding',
 			auto: false,
 			onSlideBefore: function(el, index_old, index_new) {
 				jQuery('.thumbs a img').removeClass('active');

@@ -291,6 +291,11 @@
 
 /*IMG*/     
 
+.sy-filler-padding{
+  padding-top: 66.6662%;
+  width: 100%; 
+}
+
 .thumbnails{
   height: 100% !important;
 }
