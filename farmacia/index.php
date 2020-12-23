@@ -263,7 +263,7 @@
 	<!-- <script type="text/javascript" src="/js/mdb.min.js"></script> -->
 	<!-- Your custom scripts (optional) -->
 	<!-- <script type="text/javascript" src="/js/simplegallery.min.js"></script> -->
-	<script src="js/slippry.min.js"></script>
+	<script src="/js/slippry.min.js"></script>
 	<script>
 		var thumbs = jQuery('#thumbnails').slippry({
 			// general elements & wrapper

@@ -247,22 +247,24 @@
 												</div>
 											</div>
 											<div role="tabpanel" class="tab-pane fade" id="galeria" role="tabpanel" aria-labelledby="galeria-tab">
-												<div class="container-fluid">
-													<center>
-														<h4 id="galeria_nombre"></h4>
-													</center>
+
+												<center>
+													<h4 id="galeria_nombre"></h4>
+												</center>
+
+												<div class="container" style="display: block;">
 
 													<ul id="thumbnails">
 
 													</ul>
-													<div class="thumb-box">
-														<ul class="thumbs">
+
+												</div>
+												<div class="thumb-box">
+													<ul class="thumbs">
 
 
 
-														</ul>
-
-													</div>
+													</ul>
 
 												</div>
 											</div>
@@ -287,29 +289,26 @@
 	<!-- Bootstrap core JavaScript -->
 	<script type="text/javascript" src="/js/bootstrap.min.js"></script>
 	<style>
-		.tall{
-			height:60vh;
+		.tall {
+			height: 60vh;
 		}
 	</style>
 	<script>
 		var thumbs = jQuery('#thumbnails').slippry({
 			// general elements & wrapper
-			slippryWrapper: '<div class="slippry_box thumbnails"/>',
+			slippryWrapper: '<div class="slippry_box thumbnails" />',
 			// options
 			transition: 'horizontal',
 			pager: false,
-			fillerClass: 'sy-filler-ready',
 			auto: false,
 			onSlideBefore: function(el, index_old, index_new) {
-				
-				
 				jQuery('.thumbs a img').removeClass('active');
 				jQuery('img', jQuery('.thumbs a')[index_new]).addClass('active');
 			}
 		});
 
 		$('#previewModal').on('shown.bs.modal', function() {
-			
+
 			$('.thumbs a').on('click', function() {
 				thumbs.goToSlide($(this).data('slide'));
 				return false;
@@ -389,7 +388,7 @@
 						var html = '';
 						html += '<li>'
 						html += '	<a href="#slide1">'
-						html += '		<img class="active" src="/img/placeholder.jpg" alt="<strong>No hay imagenes aún</strong><br>Para agregar más imagenes <a href=/backpanel/galeria/?id=' + galeria_id +' target=_blank>haz click aquí</a>">'
+						html += '		<img class="active" src="/img/placeholder.jpg" alt="<strong>No hay imagenes aún</strong><br>Para agregar más imagenes <a href=/backpanel/galeria/?id=' + galeria_id + ' target=_blank>haz click aquí</a>">'
 						html += '	</a>'
 						html += '</li>'
 
@@ -401,9 +400,9 @@
 						var html = '';
 						html += '<li>';
 						html += '	<a href="#slide' + (i + 1) + '">';
-						if(i == 0){
+						if (i == 0) {
 							html += '<img class="active" src="/backpanel/galeria/' + galeria[i]['galeria_img_url'] + '" alt="<strong>' + galeria[i]['galeria_img_nombre'] + '</strong><br>' + galeria[i]['galeria_img_caption'] + '</a>">';
-						}else{
+						} else {
 							html += '<img src="/backpanel/galeria/' + galeria[i]['galeria_img_url'] + '" alt="<strong>' + galeria[i]['galeria_img_nombre'] + '</strong><br>' + galeria[i]['galeria_img_caption'] + '</a>">';
 						}
 						html += '	</a>';

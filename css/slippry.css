@@ -81,7 +81,8 @@
   height: 100%;
   width: 100%;
   position: absolute;
-  overflow: hidden; }
+  overflow: hidden; 
+}
 
 /* list containing the slides */
 .sy-list {
@@ -280,21 +281,26 @@
     -webkit-transition: padding 600ms ease;
          -o-transition: padding 600ms ease;
             transition: padding 600ms ease; }
-.sy-filler-ready{
+/* .sy-filler-ready{
   width: 100%;
   -webkit-transition: padding 600ms ease;
          -o-transition: padding 600ms ease;
             transition: padding 600ms ease; 
-  padding-top:66.6652%;
-}
+  padding-top:50%;
+} */
 
 /*IMG*/     
+
+.thumbnails{
+  height: 100% !important;
+}
 
 #thumbnails img{
   max-height: 90vh;
   object-fit: scale-down;
 }
 /* Thumbnails */
+
 .thumb-box {
 	padding: 1.4em 0 1em;
 	margin-left: -1%;
@@ -322,8 +328,7 @@
 .thumb-box .thumbs li img {
 	width: 100%;
 	height: 100px;
-  object-fit: cover;
-  object-position: center center;
+  object-fit: scale-down;
 	opacity: 0.8;
 	-webkit-transition: opacity 0.32s;
 	-moz-transition: opacity 0.32s;

@@ -59,11 +59,10 @@ if (!file_exists('../../backpanel/doctores/' . $doctor['doc_doctor_img'])) {
 	<title><?= $doctor['doc_doctor_nombre'] ?></title>
 	<link rel="icon" href="/img/Logo Plaza Ancalmo.png">
 	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" href="/css/bootstrap.min.css">
 	<link rel="stylesheet" href="/css/style.css">
 	<link rel="stylesheet" href="/especialidades/doctor/doctor-style.css">
-	<!-- <link rel="stylesheet" href="/css/simplegallery.demo1.css"> -->
 	<link rel="stylesheet" href="/css/slippry.css">
+	<link rel="stylesheet" href="/css/bootstrap.min.css">
 </head>
 
 <body>
@@ -256,20 +255,15 @@ if (!file_exists('../../backpanel/doctores/' . $doctor['doc_doctor_img'])) {
 									<h5 class="text-muted">Especializaciónes</h5>
 									<p><?= $doctor['doc_doctor_especializaciones'] ?></p>
 								<?php } ?>
-								<?php if ($doctor['doc_doctor_exp']) { ?>
-									<h5 class="text-muted">Experiencia</h5>
-									<p><?= $doctor['doc_doctor_exp'] ?></p>
-								<?php } ?>
 							</div>
 						</div>
 					</div>
 				</div>
-				<div role="tabpanel" class="tab-pane fade" id="galeria" role="tabpanel" aria-labelledby="galeria-tab">
+				<div role="tabpanel" class="tab-pane fade" id="galeria" role="tabpanel" aria-labelledby="galeria-tab" style="display:block">
 
 					<center>
 						<h4><?= $galeria['galeria_nombre'] ?></h4>
 					</center>
-
 
 					<ul id="thumbnails">
 						<?php for ($i = 0; $i < count($galeria_imgs); $i++) { ?>
@@ -286,6 +280,9 @@ if (!file_exists('../../backpanel/doctores/' . $doctor['doc_doctor_img'])) {
 							<?php for ($i = 0; $i < count($galeria_imgs); $i++) { ?>
 								<li><a href="#<?= $i + 1 ?>" data-slide="<?= $i + 1 ?>"><img src="/backpanel/galeria/<?= $galeria_imgs[$i]['galeria_img_url'] ?>" alt="<strong><?= $galeria_imgs[$i]['galeria_img_nombre'] ?></strong><br><?= $galeria_imgs[$i]['galeria_img_caption'] ?>"></a></li>
 							<?php } ?>
+							<?php for ($i = 0; $i < count($galeria_imgs); $i++) { ?>
+								<li><a href="#<?= $i + 1 ?>" data-slide="<?= $i + 1 ?>"><img src="/backpanel/galeria/<?= $galeria_imgs[$i]['galeria_img_url'] ?>" alt="<strong><?= $galeria_imgs[$i]['galeria_img_nombre'] ?></strong><br><?= $galeria_imgs[$i]['galeria_img_caption'] ?>"></a></li>
+							<?php } ?>
 						</ul>
 					</div>
 
@@ -294,6 +291,8 @@ if (!file_exists('../../backpanel/doctores/' . $doctor['doc_doctor_img'])) {
 		</div>
 
 	</main>
+
+
 	<?php include "../../components/footer.php" ?>
 
 	<body>
@@ -305,34 +304,29 @@ if (!file_exists('../../backpanel/doctores/' . $doctor['doc_doctor_img'])) {
 		<!-- <script type="text/javascript" src="/js/mdb.min.js"></script> -->
 		<script type="text/javascript" src="/js/bootstrap-tabcollapse.js"></script>
 		<script type="text/javascript" src="/js/slippry.min.js"></script>
-		<script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
 		<style>
-			.tall{
+			.tall {
 				height: 90vh;
 			}
 		</style>
 		<script>
-			
 			var thumbs = jQuery('#thumbnails').slippry({
 				// general elements & wrapper
 				slippryWrapper: '<div class="slippry_box thumbnails" />',
 				// options
 				transition: 'horizontal',
-				start:1, 
 				pager: false,
 				auto: false,
-				fillerClass: 'sy-filler-ready',
 				onSlideBefore: function(el, index_old, index_new) {
 					jQuery('.thumbs a img').removeClass('active');
 					jQuery('img', jQuery('.thumbs a')[index_new]).addClass('active');
 				}
 			});
-			
+
 			jQuery('.thumbs a').click(function() {
 				thumbs.goToSlide($(this).data('slide'));
 				return false;
 			});
-		
 		</script>
 		<script>
 			$(document).ready(function() {
