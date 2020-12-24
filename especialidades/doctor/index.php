@@ -259,7 +259,7 @@ if (!file_exists('../../backpanel/doctores/' . $doctor['doc_doctor_img'])) {
 						</div>
 					</div>
 				</div>
-				<div role="tabpanel" class="tab-pane fade" id="galeria" role="tabpanel" aria-labelledby="galeria-tab" style="display:block">
+				<div role="tabpanel" class="tab-pane fade" id="galeria" role="tabpanel" aria-labelledby="galeria-tab" >
 
 					<center>
 						<h4><?= $galeria['galeria_nombre'] ?></h4>
@@ -305,11 +305,10 @@ if (!file_exists('../../backpanel/doctores/' . $doctor['doc_doctor_img'])) {
 		<script type="text/javascript" src="/js/bootstrap-tabcollapse.js"></script>
 		<script type="text/javascript" src="/js/slippry.min.js"></script>
 		<style>
-			.tall {
-				height: 90vh;
-			}
+			
 		</style>
 		<script>
+
 			var thumbs = jQuery('#thumbnails').slippry({
 				// general elements & wrapper
 				slippryWrapper: '<div class="slippry_box thumbnails" />',
@@ -322,6 +321,25 @@ if (!file_exists('../../backpanel/doctores/' . $doctor['doc_doctor_img'])) {
 					jQuery('img', jQuery('.thumbs a')[index_new]).addClass('active');
 				}
 			});
+
+			$('a[data-toggle="tab"]').on('shown.bs.tab', function(e) {
+				
+				if(e.target.innerHTML == "Galería"){
+					$('#galeria').css("display","block");
+					thumbs.reloadSlider();					
+				}else{
+					$('#galeria').css('display', "none");
+				}
+			});
+
+			$('.nav-link').on('click', function(e){
+				if(e.target.innerHTML == "Galería"){
+					$('#galeria').css("display","block");
+					thumbs.reloadSlider();					
+				}else{
+					$('#galeria').css('display', "none");
+				}
+			});	
 
 			jQuery('.thumbs a').click(function() {
 				thumbs.goToSlide($(this).data('slide'));
