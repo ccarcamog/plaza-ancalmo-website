@@ -343,7 +343,7 @@
 }
 
 .thumb-box .thumbs li img.active {
-	border-color: blue;
+	border-color: #4bb7bc;
 	opacity: 1;
 }
 
