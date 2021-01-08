@@ -29,7 +29,7 @@
 		</div>
 	</header>
 
-	<div class="container text-center mt-5 p-3" id="introFarmacia">
+	<div class="container text-center mt-5" id="introFarmacia">
 
 		<div class="row">
 
@@ -130,7 +130,7 @@
 			</div>
 			<div class="col-md-8 p-0 m-0" id="domicilioCard">
 				<div class="row m-0 p-0">
-					<div class="col-md-6 m-0 p-3" id="domicilioLugares">
+					<div class="col-md-6 m-0 p-0" id="domicilioLugares">
 						<center>
 							<h3>Envios a:</h3>
 						</center>
@@ -150,7 +150,7 @@
 	</div>
 	<div class="container" id="hugoDeliveries">
 		<div class="row">
-			<div class="col-md-6 p-4" id="hugoImage">
+			<div class="col-md-6 py-4 px-0" id="hugoImage">
 				<img src="/img/hugoImage.jpg" alt="Hugo delivery">
 			</div>
 			<div class="col-md-6 p-4" id="hugoTexto">
