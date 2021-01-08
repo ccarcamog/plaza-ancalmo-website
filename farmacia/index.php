@@ -122,7 +122,7 @@
 		<center>
 			<h2>Servicio a domicilio</h2>
 		</center>
-		<div class="row p-3">
+		<div class="row">
 			<div class="col-md-4 p-3" id="domicilioContacto">
 				<h3>Teléfonos:</h3>
 				<p><img src="/img/svg/telephone.svg" width=40 alt="whatsapp logo"> 2243-1000 <br> <a href="https://wa.me/50378602663" target="_blank"> <img src="/img/svg/whatsapp.svg" width=40 alt="whatsapp logo"></a> 7860-2663 </p>
