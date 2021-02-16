@@ -9,7 +9,7 @@
 #introTexto hr{width:100%}
 #introFarmacia #introImg img{width:100%;border-radius:15px}
 #farmaciaPuntos{background-image:url(/img/farmacia-cajero.jpg);background-size:cover;background-position:center;border-radius:15px;padding:0;background-size:cover}
-#farmaciaPuntos .filter{background-color:rgba(66,122,136,.651);border-radius:15px}
+#farmaciaPuntos .filter{background-color: rgba(107, 217, 222, .75);border-radius:15px}
 #bancoAmigo .row{padding:50px;padding-bottom:120px;border-radius:15px;border:solid rgba(0,0,0,.8) 1px;color:#999}
 #bancoAmigoImg{position:relative;top:-120px}
 #bancoAmigoImg p{margin-bottom:0!important}

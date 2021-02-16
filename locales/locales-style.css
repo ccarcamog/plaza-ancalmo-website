@@ -1,48 +1,8 @@
-#localesTitle{
-	background-image: url("/img/locales-bg.jpg");
-	background-size: cover;
-	background-position: center center;
-	height: 30vh;
-	padding:0;
-}
-#localesTitle .filter{
-	background-color:rgba(76, 143, 187, 0.623);
-	display:flex;
-	justify-content: center;
-	align-items: center;
-	color: white;
-	height: 100%;
-	width: 100%;
-}
-#localesTitle h1{
-	font-weight: 600;
-	font-size: 2em;
-}
-
-#listaLocales .local{
-	padding:20px;
-	margin:30px 0;	
-	border: solid rgba(0, 0, 0, 0.267) 1px;
-	box-shadow: rgba(0, 0, 0, 0.267) 2px 2px 10px;
-	width:100%;
-	align-items: center;
-}
-
-#listaLocales .local img{
-	width: 100%;
-	height: 300px;
-	object-fit: scale-down;
-	border-radius: 15px;
-}
-
-#listaLocales .local-title {
-	color: rgba(0, 0, 0, 0.7);
-}
-#listaLocales .local-title h3, h4{
-	display: inline;
-}
-
-#listaLocales .local-title:hover{
-	color: rgba(0, 0, 0, 1);
-	text-decoration: none;
-}
+#localesTitle{background-image:url(/img/locales-bg.jpg);background-size:cover;background-position:center center;height:30vh;padding:0}
+#localesTitle .filter{background-color:rgba(107,217,222,.75);display:flex;justify-content:center;align-items:center;color:#fff;height:100%;width:100%}
+#localesTitle h1{font-weight:600;font-size:2em}
+#listaLocales .local{padding:20px;margin:30px 0;border:solid rgba(0,0,0,.267) 1px;box-shadow:rgba(0,0,0,.267) 2px 2px 10px;width:100%;align-items:center}
+#listaLocales .local img{width:100%;height:300px;object-fit:scale-down;border-radius:15px}
+#listaLocales .local-title{color:rgba(0,0,0,.7)}
+#listaLocales .local-title h3,h4{display:inline}
+#listaLocales .local-title:hover{color:rgba(0,0,0,1);text-decoration:none}
