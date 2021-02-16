@@ -1,4 +1,4 @@
-#especialidadTitle{background-image:url(/img/especialidad-bg.jpg);background-size:cover;background-position:center center;height:30vh;padding:0}
+#especialidadTitle{background-image:url(/img/especialidad-bg.jpg);background-size:cover;background-position:bottom center;height:30vh;padding:0}
 #especialidadTitle .filter{background-color:rgba(107,217,222,.75);display:flex;justify-content:center;align-items:center;color:#fff;height:100%;width:100%}
 #especialidadTitle h1{font-weight:600;font-size:2em}
 #listaDoctores .doctor{padding:20px;margin:30px 0;border:solid rgba(0,0,0,.267) 1px;box-shadow:rgba(0,0,0,.267) 2px 2px 10px;width:100%;align-items:center}
