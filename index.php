@@ -14,7 +14,7 @@
 </head>
 
 <body>
-	
+
 	<!-- jQuery -->
 	<script type="text/javascript" src="js/jquery.min.js"></script>
 	<?php include 'components/navbar.php' ?>
@@ -72,47 +72,50 @@
 
 		</div>
 
-		<div class="container-fluid p-5 mt-5" id="serviciosMedicos">
-			<center>
-				<h4 class="text-white">Contamos con variadas especialidades médicas</h4>
-				<hr class="border-white">
-			</center>
+		<div class="container-fluid p-0 mt-5" id="serviciosMedicos">
+			<div class="filter p-5 m-0">
+				<center>
+					<h4 class="text-white">Contamos con variadas especialidades médicas</h4>
+					<hr class="border-white">
+				</center>
 
-			<div class="container">
+				<div class="container" id="servicios">
 
-				<div class="row mt-5">
 
-					<div class="service col-md-4 text-center text-white">
-						<img class="svg-inverted" src="/img/svg/noun_Stethoscope_2049574.svg" alt="medicina general icon" width="80">
-						<h3>Medicina General</h3>
-						<p>Primero tu salud.</p>
-					</div>
-					<div class="service col-md-4  text-center text-white">
-						<img class="svg-inverted" src="/img/svg/noun_Pharmacy_3125931.svg" alt="farmacia icon" width="80">
-						<h3>Farmacia</h3>
-						<p>Equipada con productos de calidad.</p>
-					</div>
-					<div class="service col-md-4  text-center text-white">
-						<img class="svg-inverted" src="img/svg/noun_Uterus_2007067.svg" alt="ginecologia icon" width="80">
-						<h3>Ginecología</h3>
-						<p>Te ayudamos a cuidarte.</p>
-					</div>
-					<div class="service col-md-4 text-center text-white">
-						<img class="svg-inverted" src="/img/svg/noun_lipstick_3111444.svg" alt="podologia icon" width="80">
-						<h3>Cuidado Personal</h3>
-						<p>Queremos consentirte.</p>
-					</div>
-					<div class="service col-md-4 text-center text-white">
-						<img class="svg-inverted" src="/img/svg/noun_Glasses_2439301.svg" alt="optometría icon" width="80">
-						<h3>Optometría</h3>
-						<p>Lo mejor en salud visual.</p>
-					</div>
-					<div class="service col-md-4 text-center text-white">
-						<img class="svg-inverted" src="/img/svg/noun_lab_2355623.svg" alt="laboratorio icon" width="80">
-						<h3>Laboratorio</h3>
-						<p>Un laboratorio de alta tecnología <br>para ti.</p>
-					</div>
+					<div class="row mt-5">
 
+						<div class="service col-md-4 text-center text-white">
+							<img class="svg-inverted" src="/img/svg/noun_Stethoscope_2049574.svg" alt="medicina general icon" width="80">
+							<h3>Medicina General</h3>
+							<p>Primero tu salud.</p>
+						</div>
+						<div class="service col-md-4  text-center text-white">
+							<img class="svg-inverted" src="/img/svg/noun_Pharmacy_3125931.svg" alt="farmacia icon" width="80">
+							<h3>Farmacia</h3>
+							<p>Equipada con productos de calidad.</p>
+						</div>
+						<div class="service col-md-4  text-center text-white">
+							<img class="svg-inverted" src="img/svg/noun_Uterus_2007067.svg" alt="ginecologia icon" width="80">
+							<h3>Ginecología</h3>
+							<p>Te ayudamos a cuidarte.</p>
+						</div>
+						<div class="service col-md-4 text-center text-white">
+							<img class="svg-inverted" src="/img/svg/noun_lipstick_3111444.svg" alt="podologia icon" width="80">
+							<h3>Cuidado Personal</h3>
+							<p>Queremos consentirte.</p>
+						</div>
+						<div class="service col-md-4 text-center text-white">
+							<img class="svg-inverted" src="/img/svg/noun_Glasses_2439301.svg" alt="optometría icon" width="80">
+							<h3>Optometría</h3>
+							<p>Lo mejor en salud visual.</p>
+						</div>
+						<div class="service col-md-4 text-center text-white">
+							<img class="svg-inverted" src="/img/svg/noun_lab_2355623.svg" alt="laboratorio icon" width="80">
+							<h3>Laboratorio</h3>
+							<p>Un laboratorio de alta tecnología <br>para ti.</p>
+						</div>
+
+					</div>
 				</div>
 			</div>
 		</div>
@@ -144,35 +147,40 @@
 			</div>
 		</div>
 
-		<div class="container mt-5 mb-5" id="conozcanos">
+		<div class="container mt-5 p-0 mb-5" id="conozcanos">
 
-			<div class="row">
+			<div class="filter m-0">
 
-				<div class="col-md-6 p-md-5 text-center" id="conozcanosInfo">
 
-					<div class="">
-						<h2>Conócenos</h2>
-						<hr class="border-white">
-						<p> Teléfono: 2243-0300</p>
-						<p> E-mail: <a class="text-white" href="mailto:servicioalcliente@ancalmo.com" target="_blank"> servicioalcliente@ancalmo.com</a></p>
-						<p>Blv. Walter Deininger, Antiguo Cuscatlán</p>
-						<a href="/contacto" class="btn btn-lg btn-ancalmo-inverted">
-							Contáctanos
-						</a>
-						<h4 class="mt-2">
-							<a class="text-white social-logo" href="https://www.facebook.com/PlazaAncalmo/" target="_blank">
-								<img src="/img/svg/facebook-white.svg" class="" style="height: 2rem; text-decoration: none;" alt="">
+				<div class="row">
+
+					<div class="col-md-6 p-md-5 text-center" id="conozcanosInfo">
+
+						<div class="">
+							<h2>Conócenos</h2>
+							<hr class="border-white">
+							<p> Teléfono: 2243-0300</p>
+							<p> E-mail: <a class="text-white" href="mailto:servicioalcliente@ancalmo.com" target="_blank"> servicioalcliente@ancalmo.com</a></p>
+							<p>Blv. Walter Deininger, Antiguo Cuscatlán</p>
+							<a href="/contacto" class="btn btn-lg btn-ancalmo-inverted">
+								Contáctanos
 							</a>
-							<img src="/img/svg/instagram-white.svg" class="" style="height: 2rem; text-decoration: none;" alt="">
-						</h4>
+							<h4 class="mt-2">
+								<a class="text-white social-logo" href="https://www.facebook.com/PlazaAncalmo/" target="_blank">
+									<img src="/img/svg/facebook-white.svg" class="" style="height: 2rem; text-decoration: none;" alt="">
+								</a>
+								<img src="/img/svg/instagram-white.svg" class="" style="height: 2rem; text-decoration: none;" alt="">
+							</h4>
+						</div>
+
+					</div>
+					<div class="col-md-6 p-md-5" id="inicioMapa">
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3876.70656254132!2d-89.24696348563988!3d13.675598602740347!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f6331d67f249713%3A0x10e5b9244802c39b!2sPlaza%20Ancalmo!5e0!3m2!1ses!2ssv!4v1601178596250!5m2!1ses!2ssv" height="400" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
 					</div>
 
 				</div>
-				<div class="col-md-6 p-md-5" id="inicioMapa">
-					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3876.70656254132!2d-89.24696348563988!3d13.675598602740347!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f6331d67f249713%3A0x10e5b9244802c39b!2sPlaza%20Ancalmo!5e0!3m2!1ses!2ssv!4v1601178596250!5m2!1ses!2ssv" height="400" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-				</div>
-
 			</div>
+
 		</div>
 
 	</main>
@@ -184,7 +192,6 @@
 	<!-- <script type="text/javascript" src="js/mdb.min.js"></script> -->
 	<!-- Your custom scripts (optional) -->
 	<script>
-		
 		$('#carouselJumbotron').carousel({
 			interval: 5000
 		})

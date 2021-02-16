@@ -1,50 +1,270 @@
 @import url(https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap);
 @import url(https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap);
-body,html{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:0}
-hr{width:90%}
-main{flex:1;width:100%}
-p{font-family:'IBM Plex Sans'}
-.svg-inverted{-webkit-filter:invert(100%);filter:invert(100%)}
-#spacing{height:50px;background-color:rgba(164,166,168,.1)}
-#contactUs{position:absolute;z-index:10;left:calc(100vw - 200px);height:50px;border-bottom-left-radius:15px;border-bottom-right-radius:15px;width:115px;text-align:center;font-family:Montserrat,sans-serif;font-weight:700;font-size:.9em;padding:10px;background-color:#6bd9de}
-#contactanos-tab{border-radius:5px;background-color:#6bd9de;font-weight:700;color:#fff!important}
-#top-navbar .navbar-brand{font-family:Montserrat,sans-serif;color:#000}
-#top-navbar #admin-text{font-family:Montserrat,sans-serif}
-#top-navbar .nav-link{font-family:Montserrat,sans-serif;font-size:.9em;padding:6px;text-align:center;color:rgba(0,0,0,.5)}
-@media(min-width:1200px){
-#top-navbar #navbarNav{margin-top:30px}
-#top-navbar .navbar-nav{position:absolute;transform:translate(-50%);left:50%;overflow:visible;z-index:10}
+
+body,
+html {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0
 }
-#top-navbar .nav-link:hover{color:rgba(0,0,0,.8)}
-#especialidadesDropdown{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}
-#especialidadesDropdown:hover{cursor:pointer}
-#top-navbar .dropdown-menu{font-family:Montserrat,sans-serif;font-weight:light;border-radius:15px}
-#carouselJumbotron{background-color:rgba(107,217,222,.5)}
-#carouselJumbotron .carousel-item{height:80vh;background-size:cover}
-#carouselJumbotron .filter{height:100%;width:100%;background-color:rgba(107,217,222,.75);display:grid;place-items:center;text-align:center}
-#carouselJumbotron .filter h1{color:#fff;font-family:Montserrat,sans-serif;font-weight:600}
-#carouselJumbotron #item1{background-image:url(/img/fachada-1.jpg);background-size:cover;background-position:center center}
-#carouselJumbotron #item2{background-image:url(/img/fachada-2.jpg);background-size:cover;background-position:center center}
-#carouselJumbotron #item3{background-image:url(/img/fachada-3.jpg);background-size:cover;background-position:center center}
-h1,h2,h3,h4{font-family:Montserrat,sans-serif}
-#conozcanos{background-image:url(/img/edificio-plaza.jpg);background-size:cover;color:#fff;border-radius:15px}
-#conozcanos iframe{border-radius:15px;width:100%}
-#conozcanos h2{font-weight:700}
-#conozcanos p{font-size:20px}
-#serviciosMedicos{background-image:url(/img/estetoscopio.jpg);background-size:cover}
-#serviciosMedicos img{width:100%;height:100px;object-fit:scale-down}
-#serviciosMedicos h4{margin:auto}
-#serviciosPracticos{color:#999}
-.sidebar-sticky{height:100%;background-color:#2d3e4d}
-.sidebar-sticky .nav-item a{padding:10px 30px}
-.sidebar-sticky a{color:rgba(255,255,255,.8);width:100%}
-.sidebar-sticky #sidebar-logo{text-align:center;margin-bottom:10px;padding:20px}
-.sidebar-sticky #sidebar-logo img{width:60%;margin-bottom:10px}
-.sidebar-sticky #sidebar-logo h4{color:#fff}
-.sidebar-sticky li:not(#sidebar-logo):hover{background-color:#2c3a4a}
-.sidebar-sticky li a:hover{color:rgba(255,255,255,1)}
-.sidebar-sticky li:not(#sidebar-logo) img{height:1.5em;width:1.5em;object-fit:scale-down;margin:0 5px}
-.btn-ancalmo{background-color:#6bd9de;color:#fff}
-.btn-ancalmo-inverted{background-color:#fff;color:#6bd9de}
-#tambien-ofrecemos{font-family:Montserrat;color:#999;font-style:bolder!important}
-.social-logo:hover{text-decoration:none}
+
+hr {
+  width: 90%
+}
+
+main {
+  flex: 1;
+  width: 100%
+}
+
+p {
+  font-family: 'IBM Plex Sans'
+}
+
+.svg-inverted {
+  -webkit-filter: invert(100%);
+  filter: invert(100%)
+}
+
+#spacing {
+  height: 50px;
+  background-color: rgba(164, 166, 168, .1)
+}
+
+#contactUs {
+  position: absolute;
+  z-index: 10;
+  left: calc(100vw - 200px);
+  height: 50px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  width: 115px;
+  text-align: center;
+  font-family: Montserrat, sans-serif;
+  font-weight: 700;
+  font-size: .9em;
+  padding: 10px;
+  background-color: #6bd9de
+}
+
+#contactanos-tab {
+  border-radius: 5px;
+  background-color: #6bd9de;
+  font-weight: 700;
+  color: #fff !important
+}
+
+#top-navbar .navbar-brand {
+  font-family: Montserrat, sans-serif;
+  color: #000
+}
+
+#top-navbar #admin-text {
+  font-family: Montserrat, sans-serif
+}
+
+#top-navbar .nav-link {
+  font-family: Montserrat, sans-serif;
+  font-size: .9em;
+  padding: 6px;
+  text-align: center;
+  color: rgba(0, 0, 0, .5)
+}
+
+@media(min-width:1200px) {
+  #top-navbar #navbarNav {
+    margin-top: 30px
+  }
+
+  #top-navbar .navbar-nav {
+    position: absolute;
+    transform: translate(-50%);
+    left: 50%;
+    overflow: visible;
+    z-index: 10
+  }
+}
+
+#top-navbar .nav-link:hover {
+  color: rgba(0, 0, 0, .8)
+}
+
+#especialidadesDropdown {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none
+}
+
+#especialidadesDropdown:hover {
+  cursor: pointer
+}
+
+#top-navbar .dropdown-menu {
+  font-family: Montserrat, sans-serif;
+  font-weight: light;
+  border-radius: 15px
+}
+
+#carouselJumbotron {
+  background-color: rgba(107, 217, 222, .5)
+}
+
+#carouselJumbotron .carousel-item {
+  height: 80vh;
+  background-size: cover
+}
+
+#carouselJumbotron .filter {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(107, 217, 222, .75);
+  display: grid;
+  place-items: center;
+  text-align: center
+}
+
+#carouselJumbotron .filter h1 {
+  color: #fff;
+  font-family: Montserrat, sans-serif;
+  font-weight: 600
+}
+
+#carouselJumbotron #item1 {
+  background-image: url(/img/fachada-1.jpg);
+  background-size: cover;
+  background-position: center center
+}
+
+#carouselJumbotron #item2 {
+  background-image: url(/img/fachada-2.jpg);
+  background-size: cover;
+  background-position: center center
+}
+
+#carouselJumbotron #item3 {
+  background-image: url(/img/fachada-3.jpg);
+  background-size: cover;
+  background-position: center center
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: Montserrat, sans-serif
+}
+
+#conozcanos {
+  background-image: url(/img/edificio-plaza.jpg);
+  background-size: cover;
+  color: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+#conozcanos .filter{
+  background-color: rgba(107, 217, 222, .75);
+}
+
+#conozcanos iframe {
+  border-radius: 15px;
+  width: 100%
+}
+
+#conozcanos h2 {
+  font-weight: 700
+}
+
+#conozcanos p {
+  font-size: 20px
+}
+
+#serviciosMedicos {
+  background-image: url(/img/corredor.jpg);
+  background-size: cover
+}
+
+#serviciosMedicos .filter{
+  background-color: rgba(107, 217, 222, .75);
+}
+
+#serviciosMedicos img {
+  width: 100%;
+  height: 100px;
+  object-fit: scale-down
+}
+
+#serviciosMedicos h4 {
+  margin: auto
+}
+
+#serviciosPracticos {
+  color: #999
+}
+
+.sidebar-sticky {
+  height: 100%;
+  background-color: #2d3e4d
+}
+
+.sidebar-sticky .nav-item a {
+  padding: 10px 30px
+}
+
+.sidebar-sticky a {
+  color: rgba(255, 255, 255, .8);
+  width: 100%
+}
+
+.sidebar-sticky #sidebar-logo {
+  text-align: center;
+  margin-bottom: 10px;
+  padding: 20px
+}
+
+.sidebar-sticky #sidebar-logo img {
+  width: 60%;
+  margin-bottom: 10px
+}
+
+.sidebar-sticky #sidebar-logo h4 {
+  color: #fff
+}
+
+.sidebar-sticky li:not(#sidebar-logo):hover {
+  background-color: #2c3a4a
+}
+
+.sidebar-sticky li a:hover {
+  color: rgba(255, 255, 255, 1)
+}
+
+.sidebar-sticky li:not(#sidebar-logo) img {
+  height: 1.5em;
+  width: 1.5em;
+  object-fit: scale-down;
+  margin: 0 5px
+}
+
+.btn-ancalmo {
+  background-color: #6bd9de;
+  color: #fff
+}
+
+.btn-ancalmo-inverted {
+  background-color: #fff;
+  color: #6bd9de
+}
+
+#tambien-ofrecemos {
+  font-family: Montserrat;
+  color: #999;
+  font-style: bolder !important
+}
+
+.social-logo:hover {
+  text-decoration: none
+}
