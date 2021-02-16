@@ -15,7 +15,7 @@
 	<link rel="stylesheet" href="/css/style.css">
 	<link rel="stylesheet" href="/farmacia/farmacia-style.css">
 	<link rel="stylesheet" href="/css/slippry.css">
-
+	<link rel="stylesheet" href="/css/gotham-bold/stylesheet.css">
 
 </head>
 
