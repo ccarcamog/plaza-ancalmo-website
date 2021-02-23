@@ -12,7 +12,7 @@
 	<!-- favicon  -->
 	<link rel="stylesheet" href="/css/style.css">
 	<link rel="stylesheet" href="/galeria/galeria-style.css">
-	<link rel="stylesheet" href="/css/simplegallery.demo1.css">
+	<!-- <link rel="stylesheet" href="/css/simplegallery.demo1.css"> -->
 	<link rel="stylesheet" href="/css/slippry.css">
 </head>
 
@@ -40,20 +40,50 @@
 	<div class="container mt-5">
 
 		<ul id="thumbnails">
-			<?php for ($i = 0; $i < count($galeria_imgs); $i++){ ?>
-			<li>
-				<a href="#slide<?= $i + 1 ?>">
-					<img src="/backpanel/galeria/<?= $galeria_imgs[$i]['galeria_img_url'] ?>" alt="<strong><?= $galeria_imgs[$i]['galeria_img_nombre'] ?></strong><br><?= $galeria_imgs[$i]['galeria_img_caption'] ?>">
-				</a>
-			</li>
+			<?php for ($i = 0; $i < count($galeria_imgs); $i++) { ?>
+				<li>
+					<a href="#slide<?= $i + 1 ?>">
+						<img src="/backpanel/galeria/<?= $galeria_imgs[$i]['galeria_img_url'] ?>" alt="<strong><?= $galeria_imgs[$i]['galeria_img_nombre'] ?></strong><br><?= $galeria_imgs[$i]['galeria_img_caption'] ?>">
+					</a>
+				</li>
 
-			<?php } ?>			
+			<?php } ?>
 		</ul>
 		<div class="thumb-box">
 			<ul class="thumbs">
-				<?php for($i = 0; $i < count($galeria_imgs); $i++){?>
-					<li><a href="#<?= $i+1 ?>" data-slide="<?= $i+1 ?>"><img src="/backpanel/galeria/<?= $galeria_imgs[$i]['galeria_img_url'] ?>" alt="<strong><?= $galeria_imgs[$i]['galeria_img_nombre'] ?></strong><br><?= $galeria_imgs[$i]['galeria_img_caption'] ?>"></a></li>
-				<?php }?>
+				<div id="thumbnailCarousel" class="carousel slide" data-ride="carousel" data-interval="3000">
+					<div class="carousel-inner">
+						<?php
+						$cont = 0;
+						while ($cont < count($galeria_imgs)) {
+						?>
+
+							<div class="carousel-item <?= ($cont == 0) ? "active" : "" ?>">
+
+								<?php
+								for ($i = 0; $i < 5 && $cont < count($galeria_imgs); $i++) {
+								?>
+									<li><a class="thumblink" href="#<?= $cont + 1 ?>" data-goto="<?= $cont + 1 ?>"><img src="/backpanel/galeria/<?= $galeria_imgs[$cont]['galeria_img_url'] ?>" alt="<strong><?= $galeria_imgs[$cont]['galeria_img_nombre'] ?></strong><br><?= $galeria_imgs[$cont]['galeria_img_caption'] ?>"></a></li>
+								<?php
+									$cont++;
+								}
+								?>
+
+							</div>
+						<?php
+						}
+						?>
+					</div>
+					<a class="carousel-control-prev thumbnail-carousel-arrow-prev d-none d-md-flex svg-inverted" href="#thumbnailCarousel" role="button" data-slide="prev">
+						<span class="carousel-control-prev-icon " aria-hidden="true"></span>
+						<span class="sr-only">Previous</span>
+					</a>
+					<a class="carousel-control-next thumbnail-carousel-arrow-next d-none d-md-flex svg-inverted" href="#thumbnailCarousel" role="button" data-slide="next">
+						<span class="carousel-control-next-icon " aria-hidden="true"></span>
+						<span class="sr-only">Next</span>
+					</a>
+				</div>
+
 			</ul>
 		</div>
 
@@ -84,8 +114,9 @@
 			}
 		});
 
-		jQuery('.thumbs a').click(function() {
-			thumbs.goToSlide($(this).data('slide'));
+		jQuery('.thumbs .thumblink').click(function() {
+			
+			thumbs.goToSlide($(this).data('goto'));
 			return false;
 		});
 	</script>

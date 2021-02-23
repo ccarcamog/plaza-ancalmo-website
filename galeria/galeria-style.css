@@ -1,3 +1,11 @@
 #galeriaHeader{background:url(/img/galeria-background.jpg);background-size:cover;background-position:center center}
 #galeriaHeader .filter{background-color:rgba(107,217,222,.75);height:30vh;display:flex;align-items:center;justify-content:center}
 #galeriaHeader h2{font-weight:600}
+.thumbnail-carousel-arrow-prev{
+  width: 20px;
+  left: -20px; 
+}
+.thumbnail-carousel-arrow-next{
+  width: 20px;
+  right: -20px;
+}
