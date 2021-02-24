@@ -50,3 +50,5 @@ h1,h2,h3,h4{font-family:Montserrat,sans-serif}
 .btn-ancalmo-inverted{background-color:#fff;color:#6bd9de}
 #tambien-ofrecemos{font-family:Montserrat;color:#999;font-style:bolder!important}
 .social-logo:hover{text-decoration:none}
+.thumbnail-carousel-arrow-prev{width:20px !important;left:-20px !important;}
+.thumbnail-carousel-arrow-next{width:20px !important;right:-20px !important;}
